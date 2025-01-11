@@ -21,33 +21,55 @@
   --primary-900: #031947;
   --primary-950: #021335;
 
-  --secondary-1: #6F5A26;
-  --secondary-1-50: #F4E6CB;
-  --secondary-1-100: #D1BF9B;
-  --secondary-1-200: #D0B98F;
-  --secondary-1-300: #BFAB86;
-  --secondary-1-400: #9F8B60;
-  --secondary-1-500: #877243;
-  --secondary-1-600: #6F5A26;
-  --secondary-1-700: #655120 ;
-  --secondary-1-800: #574417;
-  --secondary-1-900: #4C360F;
-  --secondary-1-950: #3E2802;
+  --secondary: #6F5A26;
+  --secondary-50: #F4E6CB;
+  --secondary-100: #D1BF9B;
+  --secondary-200: #D0B98F;
+  --secondary-300: #BFAB86;
+  --secondary-400: #9F8B60;
+  --secondary-500: #877243;
+  --secondary-600: #6F5A26;
+  --secondary-700: #655120 ;
+  --secondary-800: #574417;
+  --secondary-900: #4C360F;
+  --secondary-950: #3E2802;
 
-  --secondary-2: #903C3A;
-  --secondary-2-50: #FFC6C3;
-  --secondary-2-100: #F69A96;
-  --secondary-2-200: #E16E68;
-  --secondary-2-300: #C75C56;
-  --secondary-2-400: #A84B46;
-  --secondary-2-500: #994442;
-  --secondary-2-600: #903C3A;
-  --secondary-2-700: #8E312F;
-  --secondary-2-800: #872321;
-  --secondary-2-900: #821613;
-  --secondary-2-950: #811105;
+  --tertiary-: #903C3A;
+  --tertiary-50: #FFC6C3;
+  --tertiary-100: #F69A96;
+  --tertiary-200: #E16E68;
+  --tertiary-300: #C75C56;
+  --tertiary-400: #A84B46;
+  --tertiary-500: #994442;
+  --tertiary-600: #903C3A;
+  --tertiary-700: #8E312F;
+  --tertiary-800: #872321;
+  --tertiary-900: #821613;
+  --tertiary-950: #811105;
 
---special-1: #1D76991A;
+--special-1: #FAF7F2;
 --special-2: #3A3A3A1A;
 
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Dana-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Dana-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Dana-Bold.ttf") format("truetype");
 }
