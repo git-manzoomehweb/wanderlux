@@ -158,7 +158,435 @@
             <img src="../images/china-wall-default.jpg" class="h-[671px] object-cover" loading="lazy" alt="china-wall"
                 width="100%" height="671">
             <div class="relative max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-[-42rem]">
-                <div class="h-[466px] bg-white rounded-b-[34px]">h</div>
+                <div class="h-[466px]  py-10 px-4 bg-white rounded-b-[34px]">
+                              <!-- search engine  -->
+          <div class="relative z-10 mx-auto flex flex-col search-box search-box-container">
+            <div
+              class="select float-left rounded-b-2xl rounded-tl-2xl bg-white">
+              <ul
+                class="overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr grid grid-cols-2 gap-2">
+                <li
+                  class="selected hotel-btn group inactive cursor-pointer flex items-center justify-center font-medium text-center text-zinc-600 bg-zinc-100 rounded-b-xl rounded-tl-xl h-14"
+                  data-id="r-hotel" onclick="check_searchHistory('hotel')">Hotel
+                </li>
+
+                <li
+                class="selected hotel-btn group inactive cursor-pointer flex items-center justify-center font-medium text-center text-zinc-600 bg-zinc-100 rounded-b-xl rounded-tl-xl h-14"
+                data-id="r-hotel" onclick="check_searchHistory('hotel')">Hotel
+              </li>
+              </ul>
+            </div>
+            <div class="relative z-20 search-box-shadow mt-6 clear-both float-right w-full">
+              <div class=" r-hotel dir-ltr" id="Hotel">
+                <form class="relative flex flex-col items-center float-right clear-both w-full frm form-search en" method="post"
+                  data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
+                  onsubmit="form_search_isSubmited(this,event)">
+                  <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
+                  <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
+                    <div class="inner-city h-14">
+                      <div onclick="empty_value(this)" class="h-full click-content">
+                        <div class="relative flex items-center">
+                          <label class="hidden float-right text-base text-fourth" for="departure2">
+                          
+                                <span class="absolute left-0 text-white -top-8">City</span></label>
+                                <div class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.249 2C16.798 2 20.499 5.729 20.499 10.313C20.499 15.948 14.043 21.5 12.249 21.5C10.455 21.5 3.99902 15.948 3.99902 10.313C3.99902 5.729 7.70002 2 12.249 2ZM12.249 3.5C8.52702 3.5 5.49902 6.557 5.49902 10.313C5.49902 15.092 11.123 19.748 12.249 19.996C13.375 19.747 18.999 15.091 18.999 10.313C18.999 6.557 15.971 3.5 12.249 3.5ZM12.25 7C14.042 7 15.5 8.458 15.5 10.251C15.5 12.043 14.042 13.5 12.25 13.5C10.458 13.5 9.00002 12.043 9.00002 10.251C9.00002 8.458 10.458 7 12.25 7ZM12.25 8.5C11.285 8.5 10.5 9.285 10.5 10.251C10.5 11.216 11.285 12 12.25 12C13.215 12 14 11.216 14 10.251C14 9.285 13.215 8.5 12.25 8.5Z" fill="#BFAB86"/>
+                                        </svg>                                        
+                                    </div>
+                          <input type="text" aria-label="city" value="Destination"
+                            class="relative float-left w-full pl-16 font-medium leading-6 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth departure"
+                            id="departure2" name="coHotel" autocomplete="off" required="" placeholder="">
+                          <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
+                        </div>
+                      </div>
+                      <div
+                        class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-[90px] bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
+                        <input type="text" aria-label="select city" oninput="city_search(this)" data-type="3"
+                          class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
+                          autocomplete="off" value="">
+                        <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
+                            class="not-italic fas fa-spinner fa-spin"></i></span>
+                        <div class="p-1 countryFlight Inter-Regular"></div>
+                        <ul class="ul-list Rokh-Regular divide-y divide-y-primary-100  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
+                          <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Tehran</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Shiraz</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Mashhad</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Muscat</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Istanbul</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198422"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Trabzon</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1170764"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Cairo</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Phuket</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Bangkok</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Jeddah</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Riyadh</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Medina</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Dammam</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Dubai</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Bahrain</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Kuwait</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Doha</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Baghdad</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Baku</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Zanzibar</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Delhi</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Milan</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Rome</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Jakarta</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>Kuala Lumpur</span></li>
+                          <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg
+                              class="inline w-3 h-3 align-middle" fill="none" stroke="currentColor" stroke-width="1.5"
+                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round">
+                              </path>
+                              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg><span>London</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2 mt-2 flex-1 Basis_Date_Box max-xl:w-full ">
+                    <div class="relative float-left cursor-pointer city date-city">
+                      <div class="flex items-center overflow-hidden inner-city h-14">
+                        <label class="hidden float-right text-base text-fourth" for="fromdate2">
+                        <span class="absolute left-0 text-white -top-8">Check in Date</span>
+                        </label>
+                        <div class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.249 2C16.798 2 20.499 5.729 20.499 10.313C20.499 15.948 14.043 21.5 12.249 21.5C10.455 21.5 3.99902 15.948 3.99902 10.313C3.99902 5.729 7.70002 2 12.249 2ZM12.249 3.5C8.52702 3.5 5.49902 6.557 5.49902 10.313C5.49902 15.092 11.123 19.748 12.249 19.996C13.375 19.747 18.999 15.091 18.999 10.313C18.999 6.557 15.971 3.5 12.249 3.5ZM12.25 7C14.042 7 15.5 8.458 15.5 10.251C15.5 12.043 14.042 13.5 12.25 13.5C10.458 13.5 9.00002 12.043 9.00002 10.251C9.00002 8.458 10.458 7 12.25 7ZM12.25 8.5C11.285 8.5 10.5 9.285 10.5 10.251C10.5 11.216 11.285 12 12.25 12C13.215 12 14 11.216 14 10.251C14 9.285 13.215 8.5 12.25 8.5Z" fill="#BFAB86"></path>
+                                </svg>                                        
+                            </div>
+                        <input type="text" aria-label="check out" value="Select"
+                          class="relative float-right w-full h-full pl-16 leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
+                          id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
+                          readonly="" name="fdate" required="">
+                        <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
+                          aria-label="mstring_fdate">
+                      </div>
+                    </div>
+                    <div class="relative float-left cursor-pointer city date-city">
+                      <div class="flex items-center overflow-hidden inner-city h-14">
+                        <label class="hidden float-right text-base text-fourth" for="fromdate2">
+                          <span class="absolute left-0 text-white -top-8">Departure Date</span>
+                          </label>
+                          <div class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.249 2C16.798 2 20.499 5.729 20.499 10.313C20.499 15.948 14.043 21.5 12.249 21.5C10.455 21.5 3.99902 15.948 3.99902 10.313C3.99902 5.729 7.70002 2 12.249 2ZM12.249 3.5C8.52702 3.5 5.49902 6.557 5.49902 10.313C5.49902 15.092 11.123 19.748 12.249 19.996C13.375 19.747 18.999 15.091 18.999 10.313C18.999 6.557 15.971 3.5 12.249 3.5ZM12.25 7C14.042 7 15.5 8.458 15.5 10.251C15.5 12.043 14.042 13.5 12.25 13.5C10.458 13.5 9.00002 12.043 9.00002 10.251C9.00002 8.458 10.458 7 12.25 7ZM12.25 8.5C11.285 8.5 10.5 9.285 10.5 10.251C10.5 11.216 11.285 12 12.25 12C13.215 12 14 11.216 14 10.251C14 9.285 13.215 8.5 12.25 8.5Z" fill="#BFAB86"></path>
+                                </svg>                                        
+                            </div>
+                        <input type="text" aria-label="Check out" value="Select"
+                          class="relative float-right w-full h-full pl-16 leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
+                          onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly=""
+                          name="tdate" required="" id="inp2-hotel">
+                        <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
+                          aria-label="mstring_tdate">
+                      </div>
+                    </div>
+                    <div class="clr"></div>
+                  </div>
+          
+                  <div class="relative w-full flex-1 cursor-pointer city pass-box ">
+                    <div class="flex flex-col justify-center inner-city h-14">
+                      <label class="hidden float-left text-fourth" for="passenger2">
+                       <span class="absolute left-0 text-white -top-8">Rooms, Passengers</span></label>
+                       <div class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.249 2C16.798 2 20.499 5.729 20.499 10.313C20.499 15.948 14.043 21.5 12.249 21.5C10.455 21.5 3.99902 15.948 3.99902 10.313C3.99902 5.729 7.70002 2 12.249 2ZM12.249 3.5C8.52702 3.5 5.49902 6.557 5.49902 10.313C5.49902 15.092 11.123 19.748 12.249 19.996C13.375 19.747 18.999 15.091 18.999 10.313C18.999 6.557 15.971 3.5 12.249 3.5ZM12.25 7C14.042 7 15.5 8.458 15.5 10.251C15.5 12.043 14.042 13.5 12.25 13.5C10.458 13.5 9.00002 12.043 9.00002 10.251C9.00002 8.458 10.458 7 12.25 7ZM12.25 8.5C11.285 8.5 10.5 9.285 10.5 10.251C10.5 11.216 11.285 12 12.25 12C13.215 12 14 11.216 14 10.251C14 9.285 13.215 8.5 12.25 8.5Z" fill="#BFAB86"></path>
+                            </svg>                                        
+                        </div>
+                      <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
+                        class="absolute top-0 right-0 w-full h-full text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
+                        id="passenger2">
+                  <div class="relative flex items-center w-full gap-2 pl-16"> 
+                   <div
+                    class="flex items-center h-6 gap-1 text-left passenger-counts text-primary-800 count-room text-fourth">
+                    <span class="count">1</span>
+                    <span class="block"> room </span>
+                  </div>
+                  <div
+                    class="flex items-center h-6 gap-1 text-left text-primary-800 passenger-counts count-adultRoom text-fourth">
+                    <span class="count">2</span>
+                    <span class="block">adult </span>
+                  </div>
+                    <div
+                      class="flex items-center float-left h-6 gap-1 text-left text-primary-800 passenger-counts count-childRoom text-fourth">
+                      <span class="count">0</span>
+                      <span class="block">child </span>
+                    </div>
+                  </div>
+                      <div
+                        class="HotelPassengers hidden rounded-lg w-[90%] p-6 shadow-lg float-right text-sm absolute clear-both top-[90px] bg-white z-10 left-0 text-left leading-6 border max-xl:w-full">
+                        <div class="relative flex flex-col float-right w-full mb-8 itemlable2 IRANSansWeb">
+                          <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]"> <span
+                              class="notshow">Room(S)</span> </label>
+                          <ul class="button-click-room flex justify-between float-right h-12 leading-12 rounded-[7px]">
+                           
+                            <li class="float-left h-12 text-center leading-12">
+                              <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                  class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></span></div>
+                            </li>
+                            <li class="float-right h-12 text-center leading-12">
+                              <div class="button secondary h-full leading-[48px]" onclick="change_room_count(this)"><span
+                                  class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></span></div>
+                            </li>
+                          </ul>
+                          <input type="text" id="textbox-roomcount1"
+                            class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-[40%] top-[50%] text-center"
+                            maxlength="4000" value="1" aria-label="roomcount1" readonly>
+                        </div>
+                        <div class="float-right clear-both w-full mb-4 countRoom countRoomHT ShowRow">
+                          <div class="contentRooms contentRoom">
+                            <div
+                              class="float-right clear-both w-full mb-8 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                              Room 1</div>
+                            <div class="relative flex flex-col float-right w-full mb-8 itemlable2 ">
+                              <label for="textbox-adultcount2" class="float-left text-sm text-primary-800 leading-[48px]"> <span
+                                  class="notshow">Adult</span> </label>
+                              <ul class="flex justify-between float-right w-full h-12 button-click leading-12">
+                                <li class="float-left h-12 text-center leading-12 hover:text-primary">
+                                  <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                                </li>
+                                <li class="float-right h-12 text-center leading-12">
+                                  <div class="button secondary h-full leading-[48px]" onclick="increaseAdult(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                                </li>
+                              </ul>
+                              <input type="text"
+                                class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] right-[40%] text-center"
+                                id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2" readonly>
+                            </div>
+                            <div class="relative flex flex-col float-right w-full itemlable2">
+                              <label for="textbox-childcount2" class="float-left text-primary-800 text-sm leading-[48px]"> <span
+                                  class="notshow">Child</span> </label>
+                              <ul
+                                class="flex justify-between float-right h-12 rounded-lg button-click-childRoom leading-12">
+                                <li class="float-left h-12 text-center leading-12 ">
+                                  <div class="button secondary h-full leading-[48px]" onclick="decreaseChild(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="minus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></span></div>
+                                </li>
+                                <li class="float-right h-12 text-center leading-12">
+                                  <div class="button secondary h-full leading-[48px]" onclick="increaseChild(this)"><span
+                                      class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-primary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24 20V28" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></span></div>
+                                </li>
+                              </ul>
+                              <input type="text"
+                                class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
+                                id="textbox-childcount2" maxlength="4000" value="0" readonly>
+                            </div>
+                            <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
+                            <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage" value="0"
+                              aria-label="childcountandage">
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+          
+                 
+                    <button type="submit"
+                      class="flex w-full items-center justify-center mt-2 text-white rounded-b-xl rounded-tl-xl cursor-pointer submit search-flight bg-primary-900 h-14">
+                      Search
+                     </button>
+                
+                </form>
+              </div>
+            </div>
+          </div>
+        <!-- search engine  -->
+                </div>
                 <div class="mt-5 text-center text-white">
                     <h1 class="mb-6 text-lg font-bold ">Travel around the world</h1>
                     <div class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -604,6 +1032,8 @@
             },
         });
     </script>
+    <script src="https://cdn.basiscore.net/maetravel.com/_js/jquery/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="../js/destino-search-en.js"></script>
 </body>
 
 </html>
