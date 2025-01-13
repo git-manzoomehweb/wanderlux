@@ -74,3 +74,17 @@
   font-weight: 700;
   src: url("./fonts/Dana-Bold.ttf") format("truetype");
 }
+
+.inactive {
+  --tw-bg-opacity: 1;
+  background-color: #F4F4F5 !important;
+  --tw-text-opacity: 1;
+  color: #52525B !important;
+}
+
+.hotel-svg path{
+  fill: white;
+}
+.tour-svg path{
+  stroke: white;
+}
