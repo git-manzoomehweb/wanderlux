@@ -2,56 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    body{
-        font-family: "Dana";
-    }
+@layer base {
+  body {
+    font-family: "Dana";
+  }
 }
 :root {
-  --primary: #0B2A70;
-  --primary-50: #BED2FF;
-  --primary-100: #83A5F3;
-  --primary-200: #4C74CF;
-  --primary-300: #2B54B1;
-  --primary-400: #1C439B;
+  --primary: #0b2a70;
+  --primary-50: #bed2ff;
+  --primary-100: #83a5f3;
+  --primary-200: #4c74cf;
+  --primary-300: #2b54b1;
+  --primary-400: #1c439b;
   --primary-500: #103382;
-  --primary-600: #0B2A70;
+  --primary-600: #0b2a70;
   --primary-700: #062261;
-  --primary-800: #061F55;
+  --primary-800: #061f55;
   --primary-900: #031947;
   --primary-950: #021335;
 
-  --secondary: #6F5A26;
-  --secondary-50: #F4E6CB;
-  --secondary-100: #D1BF9B;
-  --secondary-200: #D0B98F;
-  --secondary-300: #BFAB86;
-  --secondary-400: #9F8B60;
+  --secondary: #6f5a26;
+  --secondary-50: #f4e6cb;
+  --secondary-100: #d1bf9b;
+  --secondary-200: #d0b98f;
+  --secondary-300: #bfab86;
+  --secondary-400: #9f8b60;
   --secondary-500: #877243;
-  --secondary-600: #6F5A26;
-  --secondary-700: #655120 ;
+  --secondary-600: #6f5a26;
+  --secondary-700: #655120;
   --secondary-800: #574417;
-  --secondary-900: #4C360F;
-  --secondary-950: #3E2802;
+  --secondary-900: #4c360f;
+  --secondary-950: #3e2802;
 
-  --tertiary-: #903C3A;
-  --tertiary-50: #FFC6C3;
-  --tertiary-100: #F69A96;
-  --tertiary-200: #E16E68;
-  --tertiary-300: #C75C56;
-  --tertiary-400: #A84B46;
+  --tertiary-: #903c3a;
+  --tertiary-50: #ffc6c3;
+  --tertiary-100: #f69a96;
+  --tertiary-200: #e16e68;
+  --tertiary-300: #c75c56;
+  --tertiary-400: #a84b46;
   --tertiary-500: #994442;
-  --tertiary-600: #903C3A;
-  --tertiary-700: #8E312F;
+  --tertiary-600: #903c3a;
+  --tertiary-700: #8e312f;
   --tertiary-800: #872321;
   --tertiary-900: #821613;
   --tertiary-950: #811105;
 
---special-1: #FAF7F2;
---special-2: #00000066;
---special-3: #00000099;
---special-4: #00000080;
-
+  --special-1: #faf7f2;
+  --special-2: #00000066;
+  --special-3: #00000099;
+  --special-4: #00000080;
 }
 
 @font-face {
@@ -78,14 +77,23 @@
 
 .inactive {
   --tw-bg-opacity: 1;
-  background-color: #F4F4F5 !important;
+  background-color: #f4f4f5 !important;
   --tw-text-opacity: 1;
-  color: #52525B !important;
+  color: #52525b !important;
 }
 
-.hotel-svg path{
+.hotel-svg path {
   fill: white;
 }
-.tour-svg path{
+.tour-svg path {
   stroke: white;
+}
+
+.tour-swiper .swiper-pagination-bullet {
+  opacity: 1 !important;
+  background-color: white !important;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #d0b98f !important;
 }

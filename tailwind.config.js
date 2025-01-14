@@ -53,7 +53,11 @@ module.exports = {
           4: "var(--special-4)",
        },
 
-      }
+      },
+
+      boxShadow: {
+        'custom': '18px 20px 32.5px 6px rgba(10, 10, 10, 0.25)',
+      },
     },
   },
   plugins: [],
