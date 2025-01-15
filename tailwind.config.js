@@ -51,6 +51,7 @@ module.exports = {
           2: "var(--special-2)",
           3: "var(--special-3)",
           4: "var(--special-4)",
+          5: "var(--special-5)",
        },
 
       },

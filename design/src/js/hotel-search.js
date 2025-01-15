@@ -224,7 +224,7 @@ function empty_value(t) {
         </li>
       </ul>
       <input type="text"
-        class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] right-[40%] text-center"
+        class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center"
         id="textbox-adultcount${i}" name="_root.rooms__${i}.adultcount" maxlength="4000" value="2" readonly>
     </div>
     <div class="relative flex flex-col  w-full itemlable2">
@@ -254,7 +254,7 @@ function empty_value(t) {
         </li>
       </ul>
       <input type="text"
-        class="absolute w-12 h-12 cursor-pointer text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-[40%] leading-12"
+        class="absolute w-12 h-12 cursor-pointer text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-0 left-0 mx-auto leading-12"
         id="textbox-childcount${i}" maxlength="4000" value="0" readonly>
     </div>
     <div class="childDropdowns section-select-age"></div>

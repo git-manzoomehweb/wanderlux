@@ -51,6 +51,7 @@
   --special-2: #00000066;
   --special-3: #00000099;
   --special-4: #00000080;
+  --special-5: #03194780;
 }
 
 @font-face {
@@ -96,4 +97,10 @@
 
 .swiper .swiper-pagination-bullet-active {
   background-color: #d0b98f !important;
+}
+
+.notification{
+  position: absolute;
+  right: 4%;
+  top: 4%;
 }
