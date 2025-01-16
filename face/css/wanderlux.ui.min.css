@@ -389,29 +389,14 @@ body {
   -webkit-line-clamp: 4;
 }
 
-.block {
-  display: block;
-}
 
 .inline-block {
   display: inline-block;
 }
-
-.inline {
-  display: inline;
-}
-
-.flex {
-  display: flex;
-}
-
 .grid {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
 
 .size-4 {
   width: 1rem;
