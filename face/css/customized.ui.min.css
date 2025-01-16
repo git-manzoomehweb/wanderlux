@@ -1,3 +1,4 @@
+@charset "utf-8";
 *,
 ::before,
 ::after {
@@ -975,38 +976,36 @@ body {
 
 @font-face {
   font-display: swap;
-
   font-family: "Dana";
-
   font-style: normal;
-
   font-weight: 400;
-
-  src: url("./fonts/Dana-Regular.ttf") format("truetype");
+  src: url("../_fonts/Dana-Regular.woff") format("woff");
 }
-
 @font-face {
   font-display: swap;
-
   font-family: "Dana";
-
   font-style: normal;
-
   font-weight: 500;
-
-  src: url("./fonts/Dana-Medium.ttf") format("truetype");
+  src: url("../_fonts/Dana-Medium.woff") format("woff");
 }
-
 @font-face {
   font-display: swap;
-
   font-family: "Dana";
-
   font-style: normal;
-
   font-weight: 700;
-
-  src: url("./fonts/Dana-Bold.ttf") format("truetype");
+  src: url("../_fonts/Dana-Bold.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "fontawesome";
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url("../_fonts/fontawesome-webfont.eot");
+  src: url("../_fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+    url("../_fonts/fontawesome-webfont.ttf") format("truetype"),
+    url("../_fonts/fontawesome-webfont.woff") format("truetype"),
+    url("../_fonts/fontawesome-webfont.svg") format("svg");
 }
 
 .hover\:scale-105:hover {
