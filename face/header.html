@@ -1,3 +1,15 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="services">
+  <member
+    name="cat"
+    type="tree"
+    request="cat"
+    parentid="213039"
+    order="ord"
+  ></member>
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
+  <member name="info" type="view" />
+</basis>
 <header>
     <div class="relative flex items-center justify-between h-[78px] mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
       <a href="/"><img src="[##cms.cms.cdn##]/images/logo.png" alt="logo-header" width="111" height="36" loading="lazy"
@@ -19,7 +31,7 @@
               <a href="/" class="text-zinc-500 font-medium hover:text-primary-900">Team</a>
             </li>
             <li>
-              <a href="/" class="text-zinc-500 font-medium hover:text-primary-900">BLog</a>
+              <a href="/Blog" class="text-zinc-500 font-medium hover:text-primary-900">BLog</a>
             </li>
           </ul>
         </nav>
@@ -46,7 +58,7 @@
           </div>
         </div>
         <div
-          class="Login_Information cursor-pointer flex items-center bg-primary-900 text-sm pr-7 pl-2 py-1 text-white rounded-b-xl rounded-tl-xl text-center w-full block transition-all hover:bg-tertiary-950 duration-300">
+          class="Login_Information cursor-pointer flex items-center bg-primary-900 text-sm h-14 pr-7 pl-2 py-1 text-white rounded-b-xl rounded-tl-xl text-center w-full transition-all hover:bg-tertiary-950 duration-300">
           <basis core="call" file="authentication/modal" lid="2"></basis>
         </div>
       </div>

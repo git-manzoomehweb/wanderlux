@@ -688,9 +688,6 @@ body {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-.flex-col {
-  flex-direction: column;
-}
 
 .items-end {
   align-items: flex-end;
@@ -700,13 +697,6 @@ body {
   align-items: center;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
 
 .gap-1 {
   gap: 0.25rem;
@@ -898,9 +888,6 @@ body {
   border-width: 2px;
 }
 
-.border-b {
-  border-bottom-width: 1px;
-}
 
 .border-r {
   border-right-width: 1px;
@@ -910,9 +897,6 @@ body {
   border-top-width: 1px;
 }
 
-.border-solid {
-  border-style: solid;
-}
 
 .border-dashed {
   border-style: dashed;
