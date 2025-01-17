@@ -152,3 +152,42 @@ if (document.querySelector(".tourism-swiper")) {
     },
   });
 }
+
+if (document.querySelector(".tourism-swiper-tour")) {
+  var tourismSwiperTour = new Swiper(".tourism-swiper-tour", {
+    slidesPerView: 4,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
+}
+
+if (document.querySelector(".tourism-swiper-hotel")) {
+var tourismSwiperHotel = new Swiper(".tourism-swiper-hotel", {
+  slidesPerView: 4,
+  speed: 400,
+centeredSlides: false,
+spaceBetween: 8,
+grabCursor: true,
+autoplay: {
+  delay: 2500,
+  disableOnInteraction: false,
+},
+loop:true,
+navigation: {
+nextEl: '.swiper-button-next-custom',
+prevEl: '.swiper-button-prev-custom',
+},
+
+});
+}

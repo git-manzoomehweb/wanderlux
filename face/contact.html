@@ -1,58 +1,78 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372683">
+  <member name="our-services" type="view" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372751">
+  <member name="our-goal" type="view" />
+</basis>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../output.css">
-  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+  <!-- Title & Description -->
+  <title>[##cms.seo.title|(Wanderlux Travel Agency)##]</title>
+  <meta name="description"
+      content="[##cms.seo.description|(Experience the best and easiets trip with Wanderlux  Travel Agency.)##]">
+  <!-- Title & Description -->
+  <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+      <member type="list" name="list" request="taglist" preview=""></member>
+  </basis>
+  <basis core="print" datamembername="tag.list">
+      <face filter="key = 'canonical'">
+          <link rel="canonical" href="@value" />
+      </face>
+      <face>
+          <meta property="@key" content="@value" />
+      </face>
+  </basis>
+  <!-- pwa metatags -->
+  <basis core="call" file="pwa.inc" lid="2" />
+  <!-- common styles for all page -->
+  <basis core="call" file="style.inc" lid="2" />
 </head>
 
 <body>
 
+  <basis core="call" file="header.inc" lid="2" />
 
   <main>
     <section class="relative">
-      <img src="../images/contact-background.jpg" alt="contact-background" class="h-[741px] object-cover" width="100%"
+      <img src="[##cms.cms.cdn##]/images/contact-background.jpg" alt="contact-background" class="h-[741px] object-cover" width="100%"
         height="741" loading="lazy">
 
       <div
         class="flex items-end gap-28 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto absolute top-0 left-0 right-0 pt-28">
         <div class="w-1/2">
-          <img src="../images/logo.png" alt="logo" width="321" height="77" loading="lazy">
-          <div class="text-sm text-justify mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus
-            aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique
-            senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien faucibus et molestie
-            ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.
-            Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Velit
-            ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat sed lectus. Non nisi est sit
-            amet facilisis magna. Dignissim diam quis enim lobortis scelerisque fermentum. Odio ut enim blandit volutpat
-            maecenas volutpat. Ornare lectus sit amet est placerat in egestas erat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas
-            purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In
-            egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis
-            pellentesque id nibh tortor id aliquet lectus proin
-          </div>
+          <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="321" height="77" loading="lazy">
+          <basis core="print" datamembername="db.info">
+            <face filter="prpID in(8004)">
+              <div class="text-sm text-justify mt-4">
+                @largetext
+              </div>
+            </face>
+          </basis>
+
         </div>
 
         <div class="w-[461px] relative bg-primary-900 h-[490px] mt-16">
           <div
             class="absolute bottom-[21%] z-10 shadow-custom right-[-23%] rounded-b-2xl rounded-tl-2xl w-[269px] bg-white text-zinc-900 px-7 py-5">
-            <img src="../images/emoji.png" alt="emoji" class="mb-2" width="38" height="38" loading="lazy">
+            <img src="[##cms.cms.cdn##]/images/emoji.png" alt="emoji" class="mb-2" width="38" height="38" loading="lazy">
             Holding more than 150 mazes and booking more than 200,000 hotels
           </div>
           <div
             class=" flex items-center gap-2 absolute bottom-[35%] shadow-sm z-10 left-[-23%] rounded-b-2xl rounded-tl-2xl w-[269px] bg-white text-zinc-900 px-3 py-5">
-            <img src="../images/heart-emoji.png" alt="emoji" width="45" height="45" loading="lazy">
+            <img src="[##cms.cms.cdn##]/images/heart-emoji.png" alt="emoji" width="45" height="45" loading="lazy">
             50,000 thousand customer satisfaction
           </div>
-          <img src="../images/wanderlux-sign.png" class="absolute left-[10%] top-[37%]" alt="wanderlux-sign" width="77"
+          <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute left-[10%] top-[37%]" alt="wanderlux-sign" width="77"
             height="80" loading="lazy">
-          <img src="../images/wanderlux-sign.png" class="absolute top-[7%] right-[5%] z-30" alt="wanderlux-sign"
+          <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute top-[7%] right-[5%] z-30" alt="wanderlux-sign"
             width="118" height="122" loading="lazy">
-          <img src="../images/successful-young-businesswoman.png" alt="successful-young-businesswoman"
+          <img src="[##cms.cms.cdn##]/images/successful-young-businesswoman.png" alt="successful-young-businesswoman"
             class="absolute left-0 right-0 bottom-0 mx-auto" width="322" height="508" loading="lazy">
         </div>
       </div>
@@ -64,9 +84,15 @@
         <span class="font-bold text-tertiary-950">Services<span
             class="absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
       </h2>
-      <div class="grid grid-cols-4 gap-2 mt-6">
-        <!-- items -->
-        <a href=""
+      <basis core="print" datamembername="db.our-services">
+        <layout>
+          <div class="grid grid-cols-4 gap-2 mt-6">
+            <!-- items -->
+            @child
+          </div>
+        </layout>
+        <face filter="RowNumber not in(1)">
+          <div
           class="flex items-center justify-center flex-col px-3 cursor-pointer py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
           <div
             class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
@@ -82,35 +108,13 @@
                 stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          <h2 class="mt-6 mb-3 font-bold text-primary-900">24-Hour Support in 6 Languages</h2>
-          <div class="text-sm text-center text-zinc-500">
-            On All Days of the Week, without a day Off and at Any Hour of the Day and Night
+          <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+          <div class="text-sm text-center text-zinc-500 line-clamp-2">
+            @largetext
           </div>
-        </a>
-
-        <a href=""
-          class="flex items-center justify-center flex-col px-3 cursor-pointer py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
-          <div
-            class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
-            <svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M49.1842 42.1163C50.4411 39.2869 51.1484 36.1446 51.1484 32.8445C51.1484 20.2135 40.8933 9.9781 28.2623 9.9781C15.6511 9.9781 5.39844 20.2135 5.39844 32.8445C5.39844 35.7108 5.92832 38.4636 6.89197 40.9776"
-                stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M10.9032 48.628C12.2242 50.9201 15.1571 51.7039 17.4467 50.3805C19.7338 49.0568 20.5175 46.1313 19.1965 43.8444L15.1743 36.8721C13.8533 34.5825 10.9279 33.7961 8.63827 35.1173L8.07387 35.4401C6.63702 36.2707 5.91244 37.9762 6.4029 39.5609C7.27536 42.3852 8.77136 45.424 10.9032 48.628Z"
-                stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M45.6538 48.628C44.3329 50.9201 41.4001 51.7039 39.1103 50.3805C36.8233 49.0568 36.0395 46.1313 37.3606 43.8444L41.3828 36.8721C42.7037 34.5825 45.6292 33.7961 47.9212 35.1173L48.4832 35.4401C49.92 36.2707 50.6446 37.9762 50.1541 39.5609C49.2818 42.3852 47.7858 45.424 45.6538 48.628Z"
-                stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <h2 class="mt-6 mb-3 font-bold text-primary-900">24-Hour Support in 6 Languages</h2>
-          <div class="text-sm text-center text-zinc-500">
-            On All Days of the Week, without a day Off and at Any Hour of the Day and Night
-          </div>
-        </a>
-
-      </div>
+        </div>
+        </face>
+      </basis>
 
 
     </section>
@@ -120,102 +124,126 @@
       <div class="flex items-center p-9">
         <div class="flex-[1.8] border-r border-solid border-secondary-50 pr-6 mr-6">
           <h1 class="mb-6 text-2xl font-bold text-zinc-900">Contact us</h1>
-          <img src="../images/map.png" class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]" alt="map"
+          <img src="[##cms.cms.cdn##]/images/map.png" class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]" alt="map"
             width="100%" height="140" loading="lazy">
 
-          <div class="flex flex-col gap-3 mt-6">
+            <basis core="print" datamembername="db.info">
+              <layout>
+                <div class="flex flex-col gap-3 mt-6">
+                  @child
+                </div>
+              </layout>
+              <face filter="prpID in(7999)">
+                <div class="flex items-center gap-3">
+                  <div class="self-start flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
+                    <img src="[##cms.cms.cdn##]/images/addres55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto"
+                      width="56" height="56" loading="lazy" />
+                  </div>
+                  <div class="flex flex-col">
+                    <h3 class="font-bold text-primary-900">Dubai</h3>
+                    <div class="text-sm text-zinc-800">@largetext</div>
+                  </div>
+                </div>
+              </face>
+              <face filter="prpID in(8000)">
+                <div class="flex items-center gap-3">
+                  <div class="flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
+                    <img src="[##cms.cms.cdn##]/images/phone55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
+                      height="56" loading="lazy" />
+                  </div>
+                  <div class="flex flex-col">
+                    <h3 class="font-bold text-primary-900">Contact Us</h3>
+                    <a href="tel:@text"
+                      class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">@text
+                      <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
+                    </a>
+                  </div>
+                </div>
+              </face>
+              <face filter="prpID in(8001)">
             <div class="flex items-center gap-3">
               <div class="self-start flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
-                <img src="../icons/addres55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto"
-                  width="56" height="56" loading="lazy" />
-              </div>
-              <div class="flex flex-col">
-                <h3 class="font-bold text-primary-900">Dubai</h3>
-                <div class="text-sm text-zinc-800">Office No. 306, Malik Salma Ali Saif Bin Harib Al Muhairi
-                  Building - Al
-                  Murar Muraqqabat</div>
-              </div>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
-                <img src="../icons/phone55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
-                  height="56" loading="lazy" />
-              </div>
-              <div class="flex flex-col">
-                <h3 class="font-bold text-primary-900">Contact Us</h3>
-                <a href="tel:"
-                  class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">00971501049424
-                  <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
-                </a>
-              </div>
-            </div>
-            <div class="flex items-center gap-3">
-              <div class="self-start flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
-                <img src="../icons/email55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
+                <img src="[##cms.cms.cdn##]/images/email55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
                   height="56" loading="lazy" />
               </div>
               <div class="flex flex-col">
                 <h3 class="font-bold text-primary-900">Email</h3>
-                <a href="mailto:"
-                  class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">imaniroya@yahoo.com
+                <a href="mailto:@text"
+                  class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">@text
                   <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
                 </a>
               </div>
             </div>
-          </div>
+              </face>
+            </basis>
+
 
           <div class="mt-6">
             <h2 class="mb-3 text-2xl font-bold text-zinc-900">Follow us</h2>
-            <ul class="flex gap-2">
-              <li class="flex">
-                <a href="@largetext" aria-label="Telegram" rel="noopener"
-                  class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-700 hover:scale-105">
-                  <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      class="transition-all duration-300 group-hover:fill-primary-200"
-                      d="M24.5721 29.4701L22.1759 31.6967C21.8826 31.9702 21.4053 31.7456 21.4323 31.3452C21.5072 30.2137 21.6237 28.4946 21.7017 27.5388C21.7142 27.388 21.841 27.2195 21.9617 27.1103C24.7603 24.5727 27.5652 22.0414 30.3691 19.5079C30.4731 19.4143 30.5958 19.1835 30.5313 19.0618C30.4585 18.9245 30.1226 18.9661 29.9832 19.0535C26.4223 21.2957 22.8613 23.5369 19.3055 25.7864C19.0871 25.9237 18.8198 25.957 18.5744 25.8779C17.108 25.4068 15.6333 24.9606 14.1638 24.4968C13.8258 24.3897 13.4243 24.2836 13.3858 23.8645C13.3453 23.4266 13.7207 23.2186 14.0598 23.0824C15.4263 22.5312 16.8022 22.0039 18.1761 21.4735C23.1182 19.5693 28.0603 17.6661 33.0023 15.7629C33.1677 15.6995 33.3882 15.6599 33.5608 15.6256C34.0787 15.5216 34.5447 15.7816 34.5956 16.3058C34.6341 16.6895 34.5665 17.117 34.4864 17.4966C33.4568 22.3939 32.4137 27.2892 31.3716 32.1855C31.0908 33.5084 30.4107 33.759 29.3155 32.951C27.9043 31.9089 24.5721 29.4701 24.5721 29.4701Z"
-                      fill="#D0B98F" />
-                  </svg>
-                </a>
-              </li>
-              <li class="flex">
-                <a href="@largetext" aria-label="linkedin" rel="noopener"
-                  class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-700 hover:scale-105">
-                  <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      class="transition-all duration-300 group-hover:fill-primary-200"
-                      d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
-                      fill="#D0B98F" />
-                  </svg>
-                </a>
-              </li>
-              <li class="flex">
-                <a href="@largetext" aria-label="Twitter" rel="noopener"
-                  class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-200 hover:scale-105">
-                  <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      class="transition-all duration-300 group-hover:fill-primary-900"
-                      d="M33.8039 17.3923C33.6937 17.2196 33.494 17.1229 33.2881 17.1572L31.2049 17.4671C30.6173 16.8099 28.8181 15.1334 26.3357 15.8843C24.186 16.5436 23.1626 18.8295 23.1013 20.5747C20.4357 20.0859 17.948 18.7734 16.0428 16.839C15.9065 16.7007 15.7037 16.6497 15.5165 16.7079C15.3293 16.7662 15.192 16.9243 15.1598 17.1167C14.2082 22.7774 15.4375 26.5557 19.0255 28.9269C17.6932 29.6611 16.1655 30.0386 14.6616 29.9846C14.4557 29.9835 14.2675 30.0927 14.178 30.2768C14.0876 30.4598 14.1146 30.6793 14.2456 30.8374C15.7869 32.6906 18.6906 33.3261 21.0046 33.3261C21.2719 33.3261 21.5308 33.3178 21.7794 33.3022C25.149 33.0921 27.9269 31.7006 29.8124 29.2763C31.5981 26.981 32.4623 23.8267 32.2449 20.3687L32.2387 20.3178L33.7987 17.958C33.9121 17.7875 33.9141 17.5649 33.8039 17.3923Z"
-                      fill="#D0B98F" />
-                  </svg>
-                </a>
-              </li>
-              <li class="flex">
-                <a href="@largetext" aria-label="Instagram" rel="noopener"
-                  class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-tertiary-400 hover:scale-105">
-                  <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      class="transition-all duration-300 group-hover:fill-tertiary-900"
-                      d="M23.8397 21.9915C22.261 21.9915 20.9766 23.2738 20.9766 24.8515C20.9766 26.4291 22.261 27.7115 23.8397 27.7115C25.4185 27.7115 26.7018 26.4291 26.7018 24.8515C26.7018 23.2738 25.4185 21.9915 23.8397 21.9915Z"
-                      fill="#D0B98F" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      class="transition-all duration-300 group-hover:fill-tertiary-900"
-                      d="M29.0636 20.7752C28.4708 20.7752 27.9872 20.2948 27.9872 19.7051C27.9872 19.1133 28.4708 18.6328 29.0636 18.6328C29.6564 18.6328 30.1389 19.1133 30.1389 19.7051C30.1389 20.2948 29.6564 20.7752 29.0636 20.7752ZM23.8428 29.2731C21.405 29.2731 19.4207 27.2909 19.4207 24.8531C19.4207 22.4153 21.405 20.4331 23.8428 20.4331C26.2816 20.4331 28.2648 22.4153 28.2648 24.8531C28.2648 27.2909 26.2816 29.2731 23.8428 29.2731ZM28.3907 14.6299H19.6183C16.3329 14.6299 14.125 16.9408 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6183 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9408 31.6771 14.6299 28.3907 14.6299Z"
-                      fill="#D0B98F" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <basis core="print" datamembername="db.info">
+              <layout>
+                <ul class="flex gap-2">
+                  @child
+                </ul>
+              </layout>
+              <face filter="TypeID in('245') and text in('Telegram')">
+                <li class="flex">
+                  <a href="@largetext" aria-label="Telegram" rel="noopener"
+                    class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-700 hover:scale-105">
+                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="transition-all duration-300 group-hover:fill-primary-200"
+                        d="M24.5721 29.4701L22.1759 31.6967C21.8826 31.9702 21.4053 31.7456 21.4323 31.3452C21.5072 30.2137 21.6237 28.4946 21.7017 27.5388C21.7142 27.388 21.841 27.2195 21.9617 27.1103C24.7603 24.5727 27.5652 22.0414 30.3691 19.5079C30.4731 19.4143 30.5958 19.1835 30.5313 19.0618C30.4585 18.9245 30.1226 18.9661 29.9832 19.0535C26.4223 21.2957 22.8613 23.5369 19.3055 25.7864C19.0871 25.9237 18.8198 25.957 18.5744 25.8779C17.108 25.4068 15.6333 24.9606 14.1638 24.4968C13.8258 24.3897 13.4243 24.2836 13.3858 23.8645C13.3453 23.4266 13.7207 23.2186 14.0598 23.0824C15.4263 22.5312 16.8022 22.0039 18.1761 21.4735C23.1182 19.5693 28.0603 17.6661 33.0023 15.7629C33.1677 15.6995 33.3882 15.6599 33.5608 15.6256C34.0787 15.5216 34.5447 15.7816 34.5956 16.3058C34.6341 16.6895 34.5665 17.117 34.4864 17.4966C33.4568 22.3939 32.4137 27.2892 31.3716 32.1855C31.0908 33.5084 30.4107 33.759 29.3155 32.951C27.9043 31.9089 24.5721 29.4701 24.5721 29.4701Z"
+                        fill="#D0B98F" />
+                    </svg>
+                  </a>
+                </li>
+              </face>
+              <face filter="TypeID in('245') and text in('linkedin')">
+                <li class="flex">
+                  <a href="@largetext" aria-label="linkedin" rel="noopener"
+                    class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-700 hover:scale-105">
+                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="transition-all duration-300 group-hover:fill-primary-200"
+                        d="M29.18 27.9315C29.18 28.3621 28.8306 28.7115 28.4 28.7115C27.9695 28.7115 27.62 28.3621 27.62 27.9315V24.3851C27.62 23.3409 26.7735 22.4923 25.7324 22.4923C24.6914 22.4923 23.8448 23.3409 23.8448 24.3851V27.9315C23.8448 28.3621 23.4954 28.7115 23.0648 28.7115C22.6343 28.7115 22.2848 28.3621 22.2848 27.9315V24.3851C22.2848 22.4809 23.8313 20.9323 25.7324 20.9323C27.6336 20.9323 29.18 22.4809 29.18 24.3851V27.9315ZM19.611 21.9099C19.1804 21.9099 18.7936 21.5188 18.7936 21.0883C18.7936 20.6577 19.1804 20.2667 19.611 20.2667C20.0416 20.2667 20.4264 20.6577 20.4264 21.0883C20.4264 21.5188 20.0416 21.9099 19.611 21.9099ZM20.39 27.9315C20.39 28.3621 20.0405 28.7115 19.61 28.7115C19.1794 28.7115 18.83 28.3621 18.83 27.9315V24.0097C18.83 23.5791 19.1794 23.2297 19.61 23.2297C20.0405 23.2297 20.39 23.5791 20.39 24.0097V27.9315ZM28.3907 14.6299H19.6193C16.3329 14.6299 14.125 16.9418 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6193 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9418 31.6771 14.6299 28.3907 14.6299Z"
+                        fill="#D0B98F" />
+                    </svg>
+                  </a>
+                </li>
+              </face>
+              <face filter="TypeID in('245') and text in('Twitter')">
+                <li class="flex">
+                  <a href="@largetext" aria-label="Twitter" rel="noopener"
+                    class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-primary-200 hover:scale-105">
+                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="transition-all duration-300 group-hover:fill-primary-900"
+                        d="M33.8039 17.3923C33.6937 17.2196 33.494 17.1229 33.2881 17.1572L31.2049 17.4671C30.6173 16.8099 28.8181 15.1334 26.3357 15.8843C24.186 16.5436 23.1626 18.8295 23.1013 20.5747C20.4357 20.0859 17.948 18.7734 16.0428 16.839C15.9065 16.7007 15.7037 16.6497 15.5165 16.7079C15.3293 16.7662 15.192 16.9243 15.1598 17.1167C14.2082 22.7774 15.4375 26.5557 19.0255 28.9269C17.6932 29.6611 16.1655 30.0386 14.6616 29.9846C14.4557 29.9835 14.2675 30.0927 14.178 30.2768C14.0876 30.4598 14.1146 30.6793 14.2456 30.8374C15.7869 32.6906 18.6906 33.3261 21.0046 33.3261C21.2719 33.3261 21.5308 33.3178 21.7794 33.3022C25.149 33.0921 27.9269 31.7006 29.8124 29.2763C31.5981 26.981 32.4623 23.8267 32.2449 20.3687L32.2387 20.3178L33.7987 17.958C33.9121 17.7875 33.9141 17.5649 33.8039 17.3923Z"
+                        fill="#D0B98F" />
+                    </svg>
+                  </a>
+                </li>
+              </face>
+              <face filter="TypeID in('245') and text in('Instagram')">
+                <li class="flex">
+                  <a href="@largetext" aria-label="Instagram" rel="noopener"
+                    class="transition-all duration-300 border rounded-full group border-secondary-200 hover:border-tertiary-400 hover:scale-105">
+                    <svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="transition-all duration-300 group-hover:fill-tertiary-900"
+                        d="M23.8397 21.9915C22.261 21.9915 20.9766 23.2738 20.9766 24.8515C20.9766 26.4291 22.261 27.7115 23.8397 27.7115C25.4185 27.7115 26.7018 26.4291 26.7018 24.8515C26.7018 23.2738 25.4185 21.9915 23.8397 21.9915Z"
+                        fill="#D0B98F" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        class="transition-all duration-300 group-hover:fill-tertiary-900"
+                        d="M29.0636 20.7752C28.4708 20.7752 27.9872 20.2948 27.9872 19.7051C27.9872 19.1133 28.4708 18.6328 29.0636 18.6328C29.6564 18.6328 30.1389 19.1133 30.1389 19.7051C30.1389 20.2948 29.6564 20.7752 29.0636 20.7752ZM23.8428 29.2731C21.405 29.2731 19.4207 27.2909 19.4207 24.8531C19.4207 22.4153 21.405 20.4331 23.8428 20.4331C26.2816 20.4331 28.2648 22.4153 28.2648 24.8531C28.2648 27.2909 26.2816 29.2731 23.8428 29.2731ZM28.3907 14.6299H19.6183C16.3329 14.6299 14.125 16.9408 14.125 20.3811V28.6387C14.125 32.078 16.3329 34.3899 19.6183 34.3899H28.3896C31.676 34.3899 33.885 32.078 33.885 28.6387V20.3811C33.885 16.9408 31.6771 14.6299 28.3907 14.6299Z"
+                        fill="#D0B98F" />
+                    </svg>
+                  </a>
+                </li>
+              </face>
+          </basis>
+
           </div>
         </div>
 
@@ -234,23 +262,19 @@
             class="absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
       </h2>
 
-      <div class="mt-3 text-sm text-justify text-zinc-900">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
-        rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis.
-        Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien
-        faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt
-        ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam
-        maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat
-        sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque
-        fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est placerat in
-        egestas erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue
-        mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem
-        mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin
-      </div>
+      <basis core="print" datamembername="db.our-goal">
+        <face filter="TypeID in(129)">
+          <div class="mt-6 text-sm text-justify text-zinc-900">
+            @largetext
+          </div>
+        </face>
+      </basis>
     </section>
+
   </main>
+
+  <basis core="call" file="footer.inc" lid="2" />
 </body>
+
 
 </html>
