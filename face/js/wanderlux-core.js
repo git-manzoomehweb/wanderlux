@@ -43,7 +43,54 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function loadContentHomaPage() {
+
+document.addEventListener("DOMContentLoaded", function () {
+  const fetchContentTour = document.querySelector(".fetch-content-tour");
+  const tourLi = document.querySelectorAll(".tour-li");
+  if (fetchContentTour) {
+    async function firstContent() {
+      const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
+      const firstData = await firstResponse.text();
+      fetchContentTour.innerHTML = firstData;
+    }
+    firstContent();
+
+    tourLi.forEach((item) => {
+      item.addEventListener("click", function () {
+        tourLi.forEach((li) => {
+          li.style.backgroundColor = "";
+          li.style.color = "";
+        });
+
+        item.style.backgroundColor = "#D0B98F";
+        item.style.color = "#031947";
+
+        let cmsQuery = item.getAttribute("data-id");
+
+        async function secondContent() {
+          try {
+            const firstResponse = await fetch(
+              `/tour-load-items.bc?catid=${cmsQuery}`
+            );
+            if (!firstResponse.ok) {
+              throw new Error(`HTTP error! Status: ${firstResponse.status}`);
+            }
+            const firstData = await firstResponse.text();
+            fetchContentTour.innerHTML = firstData;
+          } catch (error) {
+            console.error("Fetch failed:", error);
+            fetchContentTour.innerHTML =
+              "<p>error in load: " + error.message + "</p>";
+          }
+        }
+        secondContent();
+      });
+    });
+  }
+});
+
+
+function loadContentHomePage() {
   loadSearchEngine("search-engine-en.bc", "search-box");
 }
 
@@ -87,7 +134,6 @@ if (document.querySelector(".tour-swiper")) {
       delay: 3000,
       disableOnInteraction: false,
     },
-    loop: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

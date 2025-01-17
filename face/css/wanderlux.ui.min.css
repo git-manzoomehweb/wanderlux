@@ -230,6 +230,11 @@ body {
   margin-right: auto;
 }
 
+.mx-1 {
+  margin-left: 0.25rem /* 4px */;
+  margin-right: 0.25rem /* 4px */;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -296,6 +301,10 @@ body {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem /* 8px */;
 }
 
 .ml-14 {
@@ -421,6 +430,10 @@ body {
   height: 0.125rem;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -491,6 +504,10 @@ body {
 
 .h-\[338px\] {
   height: 338px;
+}
+
+.h-\[395px\] {
+  height: 395px;
 }
 
 .h-\[420px\] {
@@ -595,6 +612,10 @@ body {
 
 .w-\[29\.3px\] {
   width: 29.3px;
+}
+
+.w-\[226px\] {
+  width: 226px;
 }
 
 .w-\[313px\] {
@@ -1397,13 +1418,14 @@ body {
   stroke: white;
 }
 
-.tour-swiper .swiper-pagination-bullet {
+.swiper-pagination-bullet {
   opacity: 1 !important;
   background-color: white !important;
 }
 
-.swiper .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
   background-color: #d0b98f !important;
+  z-index: 20;
 }
 
 .notification {
@@ -1612,4 +1634,8 @@ body {
   .xl\:max-w-7xl {
     max-width: 80rem;
   }
+}
+
+.searchHistory-content {
+  height: 0 !important;
 }

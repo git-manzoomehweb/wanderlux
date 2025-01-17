@@ -1,4 +1,4 @@
-<div class="relative z-10 mx-auto flex flex-col search-box search-box-container">
+<div class="relative z-10 py-10 px-4 bg-white rounded-b-[34px] mx-auto flex flex-col search-box search-box-container">
     <div class="select float-left rounded-b-2xl rounded-tl-2xl bg-white">
       <ul class="overflow-auto flex items-center rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr gap-2">
         <li
@@ -370,7 +370,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="check out" value="" placeholder="Check in Date"
-                  class="relative float-right placeholder-primary-900 font-medium w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
+                  class="relative float-right placeholder-primary-900 cursor-pointer font-medium w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
                   data-cache="0" readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -387,7 +387,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="Check out" value="" placeholder="Check out Date"
-                  class="relative float-right w-full h-full placeholder-primary-900 font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
+                  class="relative float-right w-full h-full placeholder-primary-900 cursor-pointer font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -404,9 +404,9 @@
               <div
                 class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.0703 32.5008C17.5513 32.5008 16.6333 31.5152 16.5684 30.1424C16.5684 27.348 19.5929 26.3841 24.1499 26.3516C28.7152 26.3949 31.7478 27.3588 31.7315 30.1424C31.6584 31.5152 30.7459 32.5008 29.2296 32.5008H19.0703Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
-                    <path d="M24.1576 23.1628C26.2736 23.1628 27.989 21.4474 27.989 19.3314C27.989 17.2154 26.2736 15.5 24.1576 15.5C22.0416 15.5 20.3262 17.2154 20.3262 19.3314C20.3262 21.4474 22.0416 23.1628 24.1576 23.1628Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
-                    </svg>
+                  <path d="M19.0703 32.5008C17.5513 32.5008 16.6333 31.5152 16.5684 30.1424C16.5684 27.348 19.5929 26.3841 24.1499 26.3516C28.7152 26.3949 31.7478 27.3588 31.7315 30.1424C31.6584 31.5152 30.7459 32.5008 29.2296 32.5008H19.0703Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
+                  <path d="M24.1576 23.1628C26.2736 23.1628 27.989 21.4474 27.989 19.3314C27.989 17.2154 26.2736 15.5 24.1576 15.5C22.0416 15.5 20.3262 17.2154 20.3262 19.3314C20.3262 21.4474 22.0416 23.1628 24.1576 23.1628Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
+                  </svg>
               </div>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
                 class="absolute top-0 right-0 w-full h-full outline-none cursor-pointer text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
@@ -598,7 +598,7 @@
                     </svg>
                   </div>
                   <input type="text" aria-label="tours" value="" onclick="city_search(this)" data-type="4"
-                    name="tour-search-text" placeholder="Tours" readonly
+                    name="tour-search-text" placeholder="Destination" readonly
                     class="tour-search-text departure relative float-left cursor-pointer w-full pl-16 outline-none font-medium leading-6 placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth"
                     id="departure3" autocomplete="off" required />
                   <input value="" class="co-id from" type="hidden" name="tourname" aria-label="co-id" />
@@ -626,7 +626,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="check out" value="" placeholder="Check in Date"
-                  class="relative float-right placeholder-primary-900 font-medium w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
+                  class="relative float-right placeholder-primary-900 font-medium cursor-pointer w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
                   data-cache="0" readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -643,7 +643,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="Check out" value="" placeholder="Check out Date"
-                  class="relative float-right w-full h-full placeholder-primary-900 font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
+                  class="relative float-right w-full h-full placeholder-primary-900 cursor-pointer font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -659,11 +659,10 @@
                 <span class="absolute left-0 text-white -top-8">Rooms, Passengers</span></label>
               <div
                 class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M12.249 2C16.798 2 20.499 5.729 20.499 10.313C20.499 15.948 14.043 21.5 12.249 21.5C10.455 21.5 3.99902 15.948 3.99902 10.313C3.99902 5.729 7.70002 2 12.249 2ZM12.249 3.5C8.52702 3.5 5.49902 6.557 5.49902 10.313C5.49902 15.092 11.123 19.748 12.249 19.996C13.375 19.747 18.999 15.091 18.999 10.313C18.999 6.557 15.971 3.5 12.249 3.5ZM12.25 7C14.042 7 15.5 8.458 15.5 10.251C15.5 12.043 14.042 13.5 12.25 13.5C10.458 13.5 9.00002 12.043 9.00002 10.251C9.00002 8.458 10.458 7 12.25 7ZM12.25 8.5C11.285 8.5 10.5 9.285 10.5 10.251C10.5 11.216 11.285 12 12.25 12C13.215 12 14 11.216 14 10.251C14 9.285 13.215 8.5 12.25 8.5Z"
-                    fill="#BFAB86"></path>
-                </svg>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.0703 32.5008C17.5513 32.5008 16.6333 31.5152 16.5684 30.1424C16.5684 27.348 19.5929 26.3841 24.1499 26.3516C28.7152 26.3949 31.7478 27.3588 31.7315 30.1424C31.6584 31.5152 30.7459 32.5008 29.2296 32.5008H19.0703Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
+                  <path d="M24.1576 23.1628C26.2736 23.1628 27.989 21.4474 27.989 19.3314C27.989 17.2154 26.2736 15.5 24.1576 15.5C22.0416 15.5 20.3262 17.2154 20.3262 19.3314C20.3262 21.4474 22.0416 23.1628 24.1576 23.1628Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
+                  </svg>
               </div>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
                 class="absolute top-0 right-0 w-full h-full outline-none text-left cursor-pointer bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"

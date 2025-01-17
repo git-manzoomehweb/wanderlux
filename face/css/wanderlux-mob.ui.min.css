@@ -1631,3 +1631,7 @@ body {
     max-width: 80rem;
   }
 }
+
+.searchHistory-content {
+  height: 0 !important;
+}
