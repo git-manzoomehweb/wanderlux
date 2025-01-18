@@ -383,9 +383,6 @@ body {
   margin-top: 1.75rem;
 }
 
-.mt-9 {
-  margin-top: 2.25rem;
-}
 
 .mt-\[-42rem\] {
   margin-top: -42rem;
@@ -1640,4 +1637,47 @@ body {
 
 .searchHistory-content.en-lang.hotel-searchHistory.unvisible.hidden {
   display: block;
+}
+
+
+[data-bc-schema-direction="rtl"] [data-bc-title-container] {
+  display: none !important;
+}
+[data-bc-schema-direction="rtl"]
+  [data-bc-title-container]
+  [data-bc-question-title] {
+  display: none !important;
+}
+[data-bc-answer-container] input[type="text"] {
+  background-color: white !important;
+  color: #284e65 !important;
+  height: 64px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  direction: ltr !important;
+}
+[data-bc-schema-direction="rtl"] [data-bc-part-container] {
+  width: 100%;
+}
+[data-bc-answer-container] input[type="text"]::placeholder {
+  color: #284e65 !important;
+}
+[data-bc-answer-container] {
+  width: 100% !important;
+}
+[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100% !important;
+}
+[data-bc-schema-direction="rtl"]
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part] {
+  direction: ltr;
+}
+.message-api {
+  color: #284e65;
 }
