@@ -134,6 +134,7 @@ if (document.querySelector(".tour-swiper")) {
       delay: 3000,
       disableOnInteraction: false,
     },
+    
     pagination: {
       el: ".swiper-pagination",
       clickable: true,

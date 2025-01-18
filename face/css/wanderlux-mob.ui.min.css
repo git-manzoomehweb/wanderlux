@@ -1635,3 +1635,7 @@ body {
 .searchHistory-content {
   height: 0 !important;
 }
+
+.searchHistory-content.en-lang.hotel-searchHistory.unvisible.hidden {
+  display: block;
+}
