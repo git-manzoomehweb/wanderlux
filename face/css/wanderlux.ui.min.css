@@ -1051,7 +1051,6 @@ body {
   padding-right: 2.25rem;
 }
 
-
 .px-14 {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
@@ -1678,4 +1677,79 @@ body {
 .contact-form [data-bc-section] {
   margin-bottom: 0 !important;
   padding: 0 !important;
+}
+.contact-form .contact-username [data-bc-answer-container] input[type="text"]::before{
+  content: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zm0 14.5A6.5 6.5 0 1114.5 8 6.507 6.507 0 018 14.5z" fill="#9F8B60"/><path d="M8 3.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#9F8B60"/></svg>');
+  position: absolute;
+  left: 10px; /* موقعیت آیکون */
+  top: 50%;
+  transform: translateY(-50%); /* مرکز کردن عمودی */
+}
+
+
+
+.wanderlux-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
+  display: none !important;
+}
+.wanderlux-form
+  [data-bc-schema-direction="rtl"]
+  [data-bc-title-container]
+  [data-bc-question-title] {
+  display: none !important;
+}
+.wanderlux-form [data-bc-answer-container] input[type="text"] {
+  background-color: #faf7f2 !important;
+  color: #877243 !important;
+  height: 64px !important;
+  padding: 8px 12px !important;
+  font-weight: 400 !important;
+  outline: none !important;
+  border-radius: 8px !important;
+  border: none !important;
+  font-weight: 500;
+  font-size: 16px !important;
+  direction: ltr !important;
+}
+.wanderlux-form [data-bc-schema-direction="rtl"] [data-bc-part-container] {
+  width: 100%;
+}
+.wanderlux-form [data-bc-answer-container] input[type="text"]::placeholder {
+  color: #877243 !important;
+}
+.wanderlux-form [data-bc-answer-container] {
+  width: 100% !important;
+}
+.wanderlux-form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100% !important;
+}
+.wanderlux-form
+  [data-bc-schema-direction="rtl"]
+  [data-bc-part][data-bc-invalid]
+  [data-bc-validation-part] {
+  direction: ltr;
+}
+.wanderlux-form [data-bc-section] {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+
+.wanderlux-form [data-bc-schema-column] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+.wanderlux-form [data-bc-question]{
+  flex: 1;
+}
+
+.wanderlux-form [data-bc-part-related-cell] [data-bc-part-radio] {
+  border: none !important;
+  direction: ltr;
+}
+
+.wanderlux-form [data-bc-part-related-cell] [data-bc-part-checkbox]{
+  border: none !important;
+  direction: ltr;
 }

@@ -57,7 +57,7 @@ if (document.querySelector('input[name="country-radio"]')) {
       const cmsQuery = fetchContentArticle.getAttribute("data-catid");
 
       async function firstContent() {
-        const firstResponse = await fetch(`/article-load-items.bc?catid=213016`);
+        const firstResponse = await fetch(`/article-load-items.bc?catid=213014`);
         const firstData = await firstResponse.text();
         fetchContentArticle.innerHTML = firstData;
       }
