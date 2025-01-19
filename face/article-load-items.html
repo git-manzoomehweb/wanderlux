@@ -1,0 +1,52 @@
+<basis core="dbsource" source="basiscore" lid="20" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="article-list" type="list" link="article.bc" propertyid="7244" perpage="3"
+        pageno="[##cms.query.pagenum|(1)##]" size="314x527" order="ord" />
+    <member name="paging" type="list" request="paging" count="2" parentname="article-list" />
+</basis>
+
+
+<basis core="list" datamembername="db.article-list">
+    <layout>
+        <div class="flex gap-2">
+            <!-- items -->
+            @child
+        </div>
+    </layout>
+    <face filter="link is null">
+        <a href="article.bc?id=@id" class="relative group hover:scale-95 transition-all duration-300">
+            <img src="@00314X00527prp"
+                class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
+                width="100%" height="527" />
+            <div
+                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                <div class="w-[85%] mx-auto">
+                    @prp_7244
+                </div>
+            </div>
+            <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    loading="lazy" />
+                <h2 class="mt-16 text-3xl text-white">@title</h2>
+            </div>
+        </a>
+    </face>
+
+    <face>
+        <a href="@link" class="relative group hover:scale-95 transition-all duration-300">
+            <img src="@00314X00527prp"
+                class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
+                width="100%" height="527" />
+            <div
+                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                <div class="w-[85%] mx-auto">
+                    @prp_7244
+                </div>
+            </div>
+            <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    loading="lazy" />
+                <h2 class="mt-16 text-3xl text-white">@title</h2>
+            </div>
+        </a>
+    </face>
+</basis>

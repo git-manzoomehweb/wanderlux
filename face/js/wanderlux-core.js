@@ -44,6 +44,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+if (document.querySelector('input[name="country-radio"]')) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const radioButtons = document.querySelectorAll(
+      'input[type="radio"][name="category-radio"]'
+    );
+    const fetchContentArticle = document.querySelector(
+      ".fetch-content-article"
+    );
+
+    if (fetchContentArticle) {
+      const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+
+      async function firstContent() {
+        const firstResponse = await fetch(`/article-load-items.bc?catid=213016`);
+        const firstData = await firstResponse.text();
+        fetchContentArticle.innerHTML = firstData;
+      }
+      firstContent();
+
+      radioButtons.forEach((radio) => {
+        radio.addEventListener("change", async function () {
+          if (this.checked) {
+            const selectedCatId = this.value;
+            try {
+              fetchContentArticle.innerHTML =
+                '<div class="text-center flex justify-center items-center">Loading ...</div>';
+              const response = await fetch(
+                `/article-load-items.bc?catid=${selectedCatId}`
+              );
+              const data = await response.text();
+              fetchContentArticle.innerHTML = data;
+            } catch (error) {
+              console.error("Error:", error);
+              fetchContentArticle.innerHTML =
+                '<div class="text-red-500">Error Loading Articles</div>';
+            }
+          }
+        });
+      });
+    }
+  });
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
