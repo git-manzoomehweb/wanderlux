@@ -343,20 +343,12 @@ body {
   margin-top: 4rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mt-24 {
   margin-top: 6rem;
 }
 
 .mt-28 {
   margin-top: 7rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .mt-4 {
@@ -379,11 +371,6 @@ body {
   margin-top: 15rem;
 }
 
-.mt-7 {
-  margin-top: 1.75rem;
-}
-
-
 .mt-\[-42rem\] {
   margin-top: -42rem;
 }
@@ -395,11 +382,11 @@ body {
   -webkit-line-clamp: 1;
 }
 
-.line-clamp-2 {
+.line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
 }
 
 .line-clamp-4 {
@@ -643,10 +630,6 @@ body {
 
 .w-\[98\%\] {
   width: 98%;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .flex-1 {
@@ -1063,6 +1046,12 @@ body {
   padding: 2.25rem;
 }
 
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+
 .px-14 {
   padding-left: 3.5rem;
   padding-right: 3.5rem;
@@ -1123,6 +1112,10 @@ body {
 }
 
 .pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-9 {
   padding-bottom: 1.5rem;
 }
 
@@ -1639,16 +1632,16 @@ body {
   display: block;
 }
 
-
-[data-bc-schema-direction="rtl"] [data-bc-title-container] {
+.contact-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
   display: none !important;
 }
-[data-bc-schema-direction="rtl"]
+.contact-form
+  [data-bc-schema-direction="rtl"]
   [data-bc-title-container]
   [data-bc-question-title] {
   display: none !important;
 }
-[data-bc-answer-container] input[type="text"] {
+.contact-form [data-bc-answer-container] input[type="text"] {
   background-color: white !important;
   color: #284e65 !important;
   height: 64px !important;
@@ -1661,23 +1654,28 @@ body {
   font-size: 16px !important;
   direction: ltr !important;
 }
-[data-bc-schema-direction="rtl"] [data-bc-part-container] {
+.contact-form [data-bc-schema-direction="rtl"] [data-bc-part-container] {
   width: 100%;
 }
-[data-bc-answer-container] input[type="text"]::placeholder {
+.contact-form [data-bc-answer-container] input[type="text"]::placeholder {
   color: #284e65 !important;
 }
-[data-bc-answer-container] {
+.contact-form [data-bc-answer-container] {
   width: 100% !important;
 }
-[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+.contact-form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
   width: 100% !important;
 }
-[data-bc-schema-direction="rtl"]
+.contact-form
+  [data-bc-schema-direction="rtl"]
   [data-bc-part][data-bc-invalid]
   [data-bc-validation-part] {
   direction: ltr;
 }
-.message-api {
-  color: #284e65;
+.contact-form legend {
+  display: none;
+}
+.contact-form [data-bc-section] {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }

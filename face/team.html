@@ -1,6 +1,25 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372790">
     <member name="join-us" type="view" />
+</basis>
+
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372751">
+    <member name="our-goal" type="view" />
+</basis>
+
+
+<basis core="dbsource" source="basiscore" lid="2" mid="11" name="db" catid="213039">
+    <member name="personel" type="list" order="ord" size="314x298" propertyid="2732,1011" />
+</basis>
+
+
+
+  <basis core="dbsource" source="basiscore" lid="2" mid="11" name="personal">
+    <member name="cat" type="tree" request="cat" parentid="211773" order="ord" postsql="select * from [personal.cat] where catid=213039" >
+    </member>
   </basis>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,16 +47,16 @@
     <basis core="call" file="pwa.inc" lid="2" />
     <!-- common styles for all page -->
     <basis core="call" file="style.inc" lid="2" />
-  </head>
-  
+</head>
+
 
 <body>
     <basis core="call" file="header.inc" lid="2" />
 
     <main>
         <section>
-            <img src="../images/background-team.jpg" class="object-cover h-[550px]" alt="background-team" width="100%"
-                height="550" loading="lazy">
+            <img src="[##cms.cms.cdn##]/images/background-team.jpg" class="object-cover h-[550px]" alt="background-team"
+                width="100%" height="550" loading="lazy">
             <div class="w-full bg-primary-900 h-7"></div>
         </section>
 
@@ -49,104 +68,77 @@
                     <span
                         class="absolute -z-10 -right-4 top-4 w-5 h-5 rounded-b-[4px] bg-secondary-100 rounded-tl-[4px]"></span>
                 </h1>
-                <div class="mt-3 text-sm text-zinc-900">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Egestas purus viverra accumsan in nisl nis
-                </div>
+                        <div class="mt-3 text-sm text-zinc-900">
+                            [##personal.cat.urldescription##]
+                        </div>
+   
+
+
             </div>
 
-            <div class="grid grid-cols-4 gap-2 mt-9">
-                <!-- items -->
-                <div
-                    class="relative border border-solid overflow-hidden border-zinc-200 rounded-b-[18px] rounded-tl-[18px]">
-                    <img src="../images/team-person.jpg" alt="" class="h-[298px] object-cover" width="100%" height="298"
-                        loading="lazy">
-                    <img src="../images/mini-sign.png" alt="mini-sign" class="absolute top-[5%] right-0 mr-6" width="27"
-                        height="28" loading="lazy">
-                    <div class="pt-2 pb-6 pl-6">
-                        <h2 class="mb-1 text-lg font-bold text-primary-900">Mohsen heydari</h2>
-                        <h3 class="text-sm text-secondary-400">Senior Designer ui/ux</h3>
+            <basis core="list" datamembername="db.personel">
+                <layout>
+                    <div class="grid grid-cols-4 gap-2 mt-9">
+                        <!-- items -->
+                        @child
                     </div>
-                </div>
+                </layout>
+                <face>
+                    <div
+                        class="relative border border-solid overflow-hidden border-zinc-200 rounded-b-[18px] rounded-tl-[18px]">
+                        <img src="@00314X00298prp" alt="@title" class="h-[298px] object-cover" width="100%" height="298"
+                            loading="lazy">
+                        <img src="[##cms.cms.cdn##]/images/mini-sign.png" alt="mini-sign"
+                            class="absolute top-[5%] right-0 mr-6" width="27" height="28" loading="lazy">
+                        <div class="pt-2 pb-6 pl-6">
+                            <h2 class="mb-1 text-lg font-bold text-primary-900">@title</h2>
+                            <h3 class="text-sm text-secondary-400">@prp_2732</h3>
+                        </div>
+                    </div>
+                </face>
+            </basis>
 
-                <div
-                class="relative border border-solid overflow-hidden border-zinc-200 rounded-b-[18px] rounded-tl-[18px]">
-                <img src="../images/team-person.jpg" alt="" class="h-[298px] object-cover" width="100%" height="298"
-                    loading="lazy">
-                <img src="../images/mini-sign.png" alt="mini-sign" class="absolute top-[5%] right-0 mr-6" width="27"
-                    height="28" loading="lazy">
-                <div class="pt-2 pb-6 pl-6">
-                    <h2 class="mb-1 text-lg font-bold text-primary-900">Mohsen heydari</h2>
-                    <h3 class="text-sm text-secondary-400">Senior Designer ui/ux</h3>
-                </div>
-            </div>
-
-            <div
-            class="relative border border-solid overflow-hidden border-zinc-200 rounded-b-[18px] rounded-tl-[18px]">
-            <img src="../images/team-person.jpg" alt="" class="h-[298px] object-cover" width="100%" height="298"
-                loading="lazy">
-            <img src="../images/mini-sign.png" alt="mini-sign" class="absolute top-[5%] right-0 mr-6" width="27"
-                height="28" loading="lazy">
-            <div class="pt-2 pb-6 pl-6">
-                <h2 class="mb-1 text-lg font-bold text-primary-900">Mohsen heydari</h2>
-                <h3 class="text-sm text-secondary-400">Senior Designer ui/ux</h3>
-            </div>
-        </div>
-
-        <div
-        class="relative border border-solid overflow-hidden border-zinc-200 rounded-b-[18px] rounded-tl-[18px]">
-        <img src="../images/team-person.jpg" alt="" class="h-[298px] object-cover" width="100%" height="298"
-            loading="lazy">
-        <img src="../images/mini-sign.png" alt="mini-sign" class="absolute top-[5%] right-0 mr-6" width="27"
-            height="28" loading="lazy">
-        <div class="pt-2 pb-6 pl-6">
-            <h2 class="mb-1 text-lg font-bold text-primary-900">Mohsen heydari</h2>
-            <h3 class="text-sm text-secondary-400">Senior Designer ui/ux</h3>
-        </div>
-    </div>
-
-            </div>
         </section>
 
         <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-9 mb-3">
             <h2 class="relative inline-block text-3xl"><span
-                class="absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
-            <span class="font-bold text-tertiary-950">Goal<span
-                    class="absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
-        </h2>
-
-            <div class="mt-3 text-sm text-justify text-zinc-900">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
-                rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis.
-                Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien
-                faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt
-                ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam
-                maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat
-                sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque
-                fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est placerat in
-                egestas erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue
-                mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem
-                mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin
-            </div>
+                    class="absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
+                <span class="font-bold text-tertiary-950">Goal<span
+                        class="absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
+            </h2>
+            <basis core="print" datamembername="db.our-goal">
+                <face filter="TypeID in(129)">
+                    <div class="mt-6 text-sm text-justify text-zinc-900">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
         </section>
 
         <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-6 mb-20">
             <div class="relative flex flex-col items-center py-14">
-                <img src="../images/logo.png" alt="" width="224" height="54" loading="lazy">
-                <img src="../images/three-sign.png" class="absolute top-0" alt="wanderlux-sign" width="993" height="200" loading="lazy">
-                <h2 class="mt-3 text-lg font-bold text-zinc-900">JOIN US</h2>
-                <div class="mt-3 text-sm text-center text-zinc-900">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris
-                    rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis.
-                    Morbi tristique
-                </div>
-                <a href="mailto:" class="relative group block text-2xl font-medium mt-14 text-tertiary-900 transition-all duration-300 hover:text-primary-900">imaniroya@yahoo.com
-                  <span class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary-900 duration-300 group-hover:w-full"></span>
-                </a>
+                <img src="[##cms.cms.cdn##]/images/logo.png" alt="" width="224" height="54" loading="lazy">
+                <img src="[##cms.cms.cdn##]/images/three-sign.png" class="absolute top-0" alt="wanderlux-sign"
+                    width="993" height="200" loading="lazy">
+                <basis core="print" datamembername="db.join-us">
+                    <face filter="TypeID in(150)">
+                        <h2 class="mt-3 text-lg font-bold text-zinc-900">@text</h2>
+                    </face>
+                    <face filter="TypeID in(129)">
+                        <div class="mt-3 text-sm text-center text-zinc-900">@largetext</div>
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.info">
+                    <face filter="prpID in(8001)">
+                        <a href="mailto:@text"
+                            class="relative group block text-2xl font-medium mt-14 text-tertiary-900 transition-all duration-300 hover:text-primary-900">@text
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-primary-900 duration-300 group-hover:w-full"></span>
+                        </a>
+                    </face>
+                </basis>
+
             </div>
         </section>
     </main>

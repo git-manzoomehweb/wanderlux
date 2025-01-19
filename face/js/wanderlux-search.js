@@ -408,26 +408,26 @@ function empty_value(t) {
   var destroyChildDropdownRoom = function (t, e) {
     t.find("div.createChildDropdown").get(e).remove();
   };
-  $(".button-click .button").on("click", function () {
-    var t = $(this),
-      e = parseInt(t.closest("ul").next().val()),
-      i = "+" == t.text() ? e + 1 : e > 0 ? e - 1 : 0;
-    i >= 10 ||
-      i < 1 ||
-      (t.closest("ul").next().val(i),
-        $(".cat_textbox").each(function () {
-          $(this).next("span").text();
-        }),
-        t.closest("form").find(".hotel-inputF").attr("placeholder", ""),
-        t.closest("form").find(".hotel-inputH").attr("placeholder", ""),
-        t
-          .closest("form")
-          .find(".count-adult")
-          .text(i + " adult"),
-        t.closest(".inner-city").find(".passenger-counts").show(),
-        $(this).closest(".inner-city").find(".count-adultRoom .count") &&
-        $(this).closest(".inner-city").find(".count-adultRoom .count").text(i));
-  });
+  // $(".button-click .button").on("click", function () {
+  //   var t = $(this),
+  //     e = parseInt(t.closest("ul").next().val()),
+  //     i = "+" == t.text() ? e + 1 : e > 0 ? e - 1 : 0;
+  //   i >= 10 ||
+  //     i < 1 ||
+  //     (t.closest("ul").next().val(i),
+  //       $(".cat_textbox").each(function () {
+  //         $(this).next("span").text();
+  //       }),
+  //       t.closest("form").find(".hotel-inputF").attr("placeholder", ""),
+  //       t.closest("form").find(".hotel-inputH").attr("placeholder", ""),
+  //       t
+  //         .closest("form")
+  //         .find(".count-adult")
+  //         .text(i + " adult"),
+  //       t.closest(".inner-city").find(".passenger-counts").show(),
+  //       $(this).closest(".inner-city").find(".count-adultRoom .count") &&
+  //       $(this).closest(".inner-city").find(".count-adultRoom .count").text(i));
+  // });
   var createChildDropdown = function (t) {
     var e = $("<div />", {
       class: "createChildDropdown mb-4 w-full float-right clear-both",
