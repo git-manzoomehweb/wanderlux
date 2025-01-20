@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-if (document.querySelector('input[name="country-radio"]')) {
+if (document.querySelector('input[name="category-radio"]')) {
   document.addEventListener("DOMContentLoaded", function () {
-    const radioButtons = document.querySelectorAll(
+    const radioCategoriesButtons = document.querySelectorAll(
       'input[type="radio"][name="category-radio"]'
     );
     const fetchContentArticle = document.querySelector(
@@ -57,21 +57,21 @@ if (document.querySelector('input[name="country-radio"]')) {
       const cmsQuery = fetchContentArticle.getAttribute("data-catid");
 
       async function firstContent() {
-        const firstResponse = await fetch(`/article-load-items.bc?catid=213014`);
+        const firstResponse = await fetch(`/article-load-items.bc?catid=213026`);
         const firstData = await firstResponse.text();
         fetchContentArticle.innerHTML = firstData;
       }
       firstContent();
 
-      radioButtons.forEach((radio) => {
+      radioCategoriesButtons.forEach((radio) => {
         radio.addEventListener("change", async function () {
           if (this.checked) {
-            const selectedCatId = this.value;
+            const selectedCategoriesCatId = this.value;
             try {
               fetchContentArticle.innerHTML =
                 '<div class="text-center flex justify-center items-center">Loading ...</div>';
               const response = await fetch(
-                `/article-load-items.bc?catid=${selectedCatId}`
+                `/article-load-items.bc?catid=${selectedCategoriesCatId}`
               );
               const data = await response.text();
               fetchContentArticle.innerHTML = data;
@@ -83,9 +83,42 @@ if (document.querySelector('input[name="country-radio"]')) {
           }
         });
       });
+
     }
   });
 }
+
+
+// paging
+const FetchPageNumPrev = async (dataPageNum) => {
+  const fetchContentArticle = document.querySelector(".fetch-content-article");
+  const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+  const pagingResponse = await fetch(
+    `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+  );
+  const pagingData = await pagingResponse.text();
+  fetchContentArticle.innerHTML = pagingData;
+};
+
+const FetchPageNumNext = async (dataPageNum) => {
+  const fetchContentArticle = document.querySelector(".fetch-content-article");
+  const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+  const pagingResponse = await fetch(
+    `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+  );
+  const pagingData = await pagingResponse.text();
+  fetchContentArticle.innerHTML = pagingData;
+};
+
+const FetchWithPageNum = async (dataPageNum) => {
+  const fetchContentArticle = document.querySelector(".fetch-content-article");
+  const cmsQuery = fetchContentArticle.getAttribute("data-catid");
+  const pagingResponse = await fetch(
+    `/article-load-items.bc?catid=${cmsQuery}&pagenum=${dataPageNum}`
+  );
+  const pagingData = await pagingResponse.text();
+  fetchContentArticle.innerHTML = pagingData;
+};
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -280,6 +313,71 @@ async function RenderFormContact() {
   );
   inputElementVisa7.setAttribute("placeholder", "Message");
 }
+
+
+//wanderlux-form 
+
+function uploadDocumentPassenger(args) {
+  document.querySelector("#passenger-form-resize .Loading_Form").style.display =
+    "block";
+  const captcha = document
+    .querySelector("#passenger-form-resize")
+    .querySelector("#captchaContainer input[name='captcha']").value;
+  const captchaid = document
+    .querySelector("#passenger-form-resize")
+    .querySelector("#captchaContainer input[name='captchaid']").value;
+  const stringJson = JSON.stringify(args.source?.rows[0]);
+  $bc.setSource("cms.uploadPassenger", {
+    value: stringJson,
+    captcha: captcha,
+    captchaid: captchaid,
+    run: true,
+  });
+}
+
+function refreshCaptchaPassenger(e) {
+  $bc.setSource("captcha.refreshPassenger", true);
+}
+
+async function OnProcessedEditObjectPassenger(args) {
+  var response = args.response;
+  var json = await response.json();
+  var errorid = json.errorid;
+  if (errorid == "6") {
+    document.querySelector("#passenger-form-resize .Loading_Form").style.display =
+      "none";
+    document.querySelector("#passenger-form-resize .message-api").innerHTML =
+      "Your request has been successfully registered.";
+  } else {
+    refreshCaptchaPassenger();
+    setTimeout(() => {
+      document.querySelector(
+        "#passenger-form-resize .Loading_Form"
+      ).style.display = "none";
+      document.querySelector("#passenger-form-resize .message-api").innerHTML =
+        "An error occurred, please try again.";
+    }, 2000);
+  }
+}
+
+async function RenderFormPassenger() {
+  var inputElementVisa7 = document.querySelector(
+    ".passenger-username input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Full Name");
+
+  var inputElementVisa7 = document.querySelector(
+    " .passenger-number input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Phone Number");
+
+  var inputElementVisa7 = document.querySelector(
+    " .passenger-email input[data-bc-text-input]"
+  );
+  inputElementVisa7.setAttribute("placeholder", "Email Address");
+}
+
+
 
 if (document.querySelector(".tour-swiper")) {
   var tourSwiper = new Swiper(".tour-swiper", {

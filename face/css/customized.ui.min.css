@@ -1375,7 +1375,7 @@ body {
 .footer-form [data-bc-answer-container] input[type="text"]::placeholder {
   color: #a1a1aa !important;
 }
-[data-bc-answer-container] {
+.footer-form [data-bc-answer-container] {
   width: 100% !important;
 }
 .footer-form [data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
