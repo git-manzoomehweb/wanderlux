@@ -1678,7 +1678,10 @@ body {
   margin-bottom: 0 !important;
   padding: 0 !important;
 }
-.contact-form .contact-username [data-bc-answer-container] input[type="text"]::before{
+.contact-form
+  .contact-username
+  [data-bc-answer-container]
+  input[type="text"]::before {
   content: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8S12.42 0 8 0zm0 14.5A6.5 6.5 0 1114.5 8 6.507 6.507 0 018 14.5z" fill="#9F8B60"/><path d="M8 3.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" fill="#9F8B60"/></svg>');
   position: absolute;
   left: 10px; /* موقعیت آیکون */
@@ -1686,16 +1689,18 @@ body {
   transform: translateY(-50%); /* مرکز کردن عمودی */
 }
 
-
-
 .wanderlux-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {
-  display: none !important;
+  float: left !important;
+  margin-bottom: 24px !important;
+  width: 100% !important;
 }
 .wanderlux-form
   [data-bc-schema-direction="rtl"]
   [data-bc-title-container]
   [data-bc-question-title] {
-  display: none !important;
+  direction: ltr;
+  color: #061f55;
+  font-size: 18px;
 }
 .wanderlux-form [data-bc-answer-container] input[type="text"] {
   background-color: #faf7f2 !important;
@@ -1731,25 +1736,94 @@ body {
 .wanderlux-form [data-bc-section] {
   margin-bottom: 0 !important;
   padding: 0 !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .wanderlux-form [data-bc-schema-column] {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
   gap: 20px;
 }
-.wanderlux-form [data-bc-question]{
+/* .wanderlux-form [data-bc-question]{
   flex: 1;
-}
+} */
 
 .wanderlux-form [data-bc-part-related-cell] [data-bc-part-radio] {
   border: none !important;
   direction: ltr;
 }
 
-.wanderlux-form [data-bc-part-related-cell] [data-bc-part-checkbox]{
+.wanderlux-form [data-bc-part-related-cell] [data-bc-part-checkbox] {
   border: none !important;
   direction: ltr;
+}
+
+.wanderlux-form [data-bc-items] {
+  display: flex;
+  align-items: center;
+  row-gap: 64px;
+  flex-wrap: wrap;
+  column-gap: 111px;
+}
+.wanderlux-form [data-sys-text] {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  align-self: end;
+  float: left;
+  margin-bottom: 24px;
+}
+
+/* .wanderlux-form [data-bc-section] > [data-bc-schema-column]:first-of-type {
+  flex-wrap: nowrap !important;
+} */
+.wanderlux-form fieldset[data-bc-schema-column]:first-of-type {
+  flex-wrap: nowrap !important;
+}
+
+.wanderlux-form legend {
+  padding: 0;
+  color: #1c439b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.wanderlux-form .Full-Name [data-bc-title-container],
+.wanderlux-form .phone-number [data-bc-title-container],
+.wanderlux-form .Email-Address [data-bc-title-container] {
+  display: none !important;
+}
+
+.wanderlux-form .Full-Name,
+.wanderlux-form .phone-number,
+.wanderlux-form .Email-Address {
+  flex: 1;
+}
+
+.wanderlux-form .Gender [data-bc-items] > :first-child,
+.wanderlux-form .sms [data-bc-items] > :first-child {
+  display: none;
+}
+.wanderlux-form .captchaContainerclass.captcha-sefaresh {
+  width: auto !important;
+}
+
+.Gender {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  gap: 3rem !important;
+}
+
+.wanderlux-form .Gender [data-bc-title-container],
+.wanderlux-form .Gender [data-bc-schema-direction="rtl"] [data-bc-title-container] [data-bc-question-title],
+.wanderlux-form .Gender [data-sys-text]{
+  margin-bottom: 0 !important;
+}
+.wanderlux-form .Gender [data-bc-items] {
+  flex-wrap: nowrap !important;
 }
