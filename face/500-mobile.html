@@ -13,16 +13,16 @@
         <member type="list" name="list" request="taglist" preview=""></member>
     </basis>
     <link rel="canonical" href="[##cms.request.:scheme##]://[##cms.request.full-url##]" />
-    <basis core="call" file="pwa.inc"/>
-    <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]"/>
+    <basis core="call" file="pwa.inc" lid="2"/>
+    <basis core="call" file="style.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
 </head>
 
 <body>
 
-    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]"/>
+    <basis core="call" file="header.inc" lid="2" pageindex="[##cms.cms.pageindex##]"/>
     <main>
         <section class="flex flex-col items-center my-56">
-            <img src="../images/500Icon.svg" alt="500" width="203" height="203" loading="lazy">
+            <img src="[##cms.cms.cdn##]/images/500Icon.svg" alt="500" width="203" height="203" loading="lazy">
             <h1 class="w-4/5 mb-6 text-center mt-9 text-zinc-900">There is a problem connecting to the system.</h1>
             <a href="/"
                 class="flex items-center justify-center text-white rounded-b-lg rounded-tl-lg w-36 h-14 bg-primary-900">Go
@@ -30,7 +30,7 @@
         </section>
     </main>
 
-    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]"/>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" lid="2"/>
 </body>
 
 </html>
