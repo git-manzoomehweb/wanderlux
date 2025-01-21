@@ -1272,6 +1272,9 @@ body {
   color: var(--primary-900);
 }
 
+.text-secondary-100 {
+  color: var(--secondary-100);
+}
 .text-secondary-400 {
   color: var(--secondary-400);
 }

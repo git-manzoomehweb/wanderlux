@@ -629,6 +629,10 @@ body {
   height: 100%;
 }
 
+.max-h-72 {
+  max-height: 18rem;
+}
+
 .w-1\/12 {
   width: 8.333333%;
 }
@@ -829,6 +833,10 @@ body {
 
 .overflow-y-scroll {
   overflow-y: scroll;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .rounded-\[17px\] {
@@ -1379,6 +1387,9 @@ body {
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
+.text-secondary-100 {
+  color: var(--secondary-100);
+}
 .text-secondary-400 {
   color: var(--secondary-400);
 }

@@ -43,6 +43,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreBtn = document.querySelector(".read-btn")
+  const contactText = document.querySelector(".contact-text")
+  if(readMoreBtn){
+    readMoreBtn.addEventListener("click", function(){
+      contactText.classList.toggle("line-clamp-10")
+    })
+  }
+})
 
 if (document.querySelector('input[name="category-radio"]')) {
   document.addEventListener("DOMContentLoaded", function () {

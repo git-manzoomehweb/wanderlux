@@ -634,6 +634,10 @@ body {
   margin-top: 2.25rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem /* 8px */;
+}
+
 .ml-2 {
   margin-left: 0.5rem /* 8px */;
 }
@@ -861,9 +865,9 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-  .bg-defaultBg {
-    background-image: var(--default-bg);
-  }
+.bg-defaultBg {
+  background-image: var(--default-bg);
+}
 
 .object-cover {
   -o-object-fit: cover;
@@ -1022,7 +1026,7 @@ body {
   --special-5: #03194780;
 
   ---bg: url("");
-  --default-bg: url("../images/china-wall-default-min.jpg")
+  --default-bg: url("../images/china-wall-default-min.jpg");
 }
 
 @font-face {
@@ -1173,6 +1177,11 @@ body {
   .footer-form [data-bc-schema-column] {
     flex-direction: row-reverse !important;
   }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:w-52 {
     width: 13rem;
   }
@@ -1196,12 +1205,24 @@ body {
     top: -31%;
   }
 
+  .lg\:pl-4 {
+    padding-left: 1rem /* 16px */;
+  }
+
+  .lg\:pr-7 {
+    padding-right: 1.75rem /* 28px */;
+  }
+
   .lg\:ml-2 {
     margin-left: 0.5rem;
   }
 
   .lg\:ml-5 {
     margin-left: 1.25rem /* 20px */;
+  }
+
+  .lg\:mr-0 {
+    margin-right: 0px;
   }
 
   .lg\:mr-4 {

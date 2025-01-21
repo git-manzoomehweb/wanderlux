@@ -1,7 +1,7 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid | (0)##]">
     <member name="article-list-load" type="list" link="article.bc" propertyid="7244" perpage="9"
         pageno="[##cms.query.pagenum|(1)##]" size="314x527" typeid="159" order="ord" />
-    <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list-load" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372680">
@@ -18,7 +18,7 @@
             </div>
         </layout>
         <face filter="link is null and RowNumber in(1,2,3)">
-            <a href="article.bc?id=@id" class="relative transition-all duration-300 group hover:scale-95">
+            <a href="/article.bc?id=@id" class="relative transition-all duration-300 group hover:scale-95">
                 <img src="@00314X00527prp"
                     class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
                     width="100%" height="527" />
@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
                         loading="lazy" />
                     <h2 class="mt-16 text-3xl text-white">@title</h2>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
                         loading="lazy" />
                     <h2 class="mt-16 text-3xl text-white">@title</h2>
                 </div>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
                         loading="lazy" />
                     <h2 class="mt-16 text-3xl text-white">@title</h2>
                 </div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="../images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
                         loading="lazy" />
                     <h2 class="mt-16 text-3xl text-white">@title</h2>
                 </div>
@@ -128,7 +128,7 @@
     </basis>
 
     <div id="paging" class="flex justify-center mt-16">
-        <ul class="flex items-center gap-2 cd-pagination no-space dir-ltr" id="wibpaging">
+        <ul class="flex items-center gap-4 cd-pagination no-space dir-ltr" id="wibpaging">
             <basis core="print" datamembername="db.paging">
                 <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
                     <li
