@@ -49,7 +49,7 @@
           <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo" width="321" height="77" loading="lazy">
           <basis core="print" datamembername="db.info">
             <face filter="prpID in(8004)">
-              <div class="text-sm text-justify mt-4">
+              <div class="mt-4 text-sm text-justify">
                 @largetext
               </div>
             </face>
@@ -74,7 +74,7 @@
           <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute top-[7%] right-[5%] z-30"
             alt="wanderlux-sign" width="118" height="122" loading="lazy">
           <img src="[##cms.cms.cdn##]/images/successful-young-businesswoman.png" alt="successful-young-businesswoman"
-            class="absolute left-0 right-0 bottom-0 mx-auto" width="322" height="508" loading="lazy">
+            class="absolute bottom-0 left-0 right-0 mx-auto" width="322" height="508" loading="lazy">
         </div>
       </div>
     </section>
@@ -92,9 +92,9 @@
             @child
           </div>
         </layout>
-        <face filter="RowNumber not in(1)">
+        <face filter="valueID in(4099886)">
           <div
-            class="flex items-center justify-center flex-col px-3 cursor-pointer py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
+            class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
             <div
               class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
               <svg width="58" height="62" viewBox="0 0 58 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,6 +115,45 @@
             </div>
           </div>
         </face>
+        <face filter="valueID in(4099887)">
+          <div
+            class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
+            <div
+              class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
+              <img src="[##cms.cms.cdn##]/images/moon.svg" alt="moon" width="62" height="62">
+            </div>
+            <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+            <div class="text-sm text-center text-zinc-500 line-clamp-3">
+              @largetext
+            </div>
+          </div>
+        </face>
+        <face filter="valueID in(4099888)">
+          <div
+            class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
+            <div
+              class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
+              <img src="[##cms.cms.cdn##]/images/earth.svg" alt="earth" width="58" height="62">
+            </div>
+            <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+            <div class="text-sm text-center text-zinc-500 line-clamp-3">
+              @largetext
+            </div>
+          </div>
+        </face>
+        <face filter="valueID in(4099889)">
+          <div
+            class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
+            <div
+              class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
+              <img src="[##cms.cms.cdn##]/images/wallet.svg" alt="wallet" width="62" height="62">
+            </div>
+            <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
+            <div class="text-sm text-center text-zinc-500 line-clamp-3">
+              @largetext
+            </div>
+          </div>
+        </face>
       </basis>
 
 
@@ -125,8 +164,16 @@
       <div class="flex items-center pb-9 px-9">
         <div class="flex-[1.8] border-r border-solid border-secondary-50 pr-6 mr-6">
           <h1 class="mb-6 text-2xl font-bold text-zinc-900">Contact us</h1>
-          <img src="[##cms.cms.cdn##]/images/map.png" class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]"
-            alt="map" width="100%" height="140" loading="lazy">
+          <basis core="print" datamembername="db.info">
+            <layout>
+              <div class="w-fit h-fit">@child</div>
+            </layout>
+            <face filter="prpID=91462"><iframe defer title="wanderlux-location"
+              class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]" width="100%" height="140"
+                loading="lazy" target="_blank" allowfullscreen
+                src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"></iframe></face>
+          </basis>
+
 
           <basis core="print" datamembername="db.info">
             <layout>
@@ -155,7 +202,7 @@
                 <div class="flex flex-col">
                   <h3 class="font-bold text-primary-900">Contact Us</h3>
                   <a href="tel:@text"
-                    class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">@text
+                    class="relative text-sm transition-all duration-300 group text-zinc-800 hover:text-tertiary-950">@text
                     <span
                       class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
                   </a>
@@ -171,7 +218,7 @@
                 <div class="flex flex-col">
                   <h3 class="font-bold text-primary-900">Email</h3>
                   <a href="mailto:@text"
-                    class="relative group text-sm transition-all duration-300 text-zinc-800 hover:text-tertiary-950">@text
+                    class="relative text-sm transition-all duration-300 group text-zinc-800 hover:text-tertiary-950">@text
                     <span
                       class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
                   </a>
@@ -250,7 +297,7 @@
           </div>
         </div>
 
-        <div class="mt-10 flex-1">
+        <div class="flex-1 mt-10">
           <h2 class="text-2xl font-bold text-zinc-900">Stay in touch with us</h2>
           <div class="mt-2 mb-6 text-sm text-zinc-900">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
             do eiusmod tempor incididunt ut labore </div>
@@ -292,7 +339,7 @@
                 </basis>
               </div>
               <button
-                class="w-full mt-6 text-white transition-all duration-300 y-2 px-4 data-body-btn h-14 bg-tertiary-950 rounded-xl hover:bg-primary-600"
+                class="w-full px-4 mt-6 text-white transition-all duration-300 y-2 data-body-btn h-14 bg-tertiary-950 rounded-xl hover:bg-primary-600"
                 type="button" data-btn-uploadContact><span class="">Send Message</span></button>
               <div
                 class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">

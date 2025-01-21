@@ -3,9 +3,12 @@ module.exports = {
   content: ["./design/src/**/*.{html,js}"],
   theme: {
     extend: {
+      backgroundImage: {
+        defaultBg: "var(--default-bg)",
+      },
       colors: {
         primary: {
-           DEFAULT: "var(--primary)",
+          DEFAULT: "var(--primary)",
           50: "var(--primary-50)",
           100: "var(--primary-100)",
           200: "var(--primary-200)",
@@ -19,7 +22,7 @@ module.exports = {
           950: "var(--primary-950)",
         },
         secondary: {
-           DEFAULT: "var(--secondary)",
+          DEFAULT: "var(--secondary)",
           50: "var(--secondary-50)",
           100: "var(--secondary-100)",
           200: "var(--secondary-200)",
@@ -34,33 +37,31 @@ module.exports = {
         },
         tertiary: {
           DEFAULT: "var(--tertiary)",
-         50: "var(--tertiary-50)",
-         100: "var(--tertiary-100)",
-         200: "var(--tertiary-200)",
-         300: "var(--tertiary-300)",
-         400: "var(--tertiary-400)",
-         500: "var(--tertiary-500)",
-         600: "var(--tertiary-600)",
-         700: "var(--tertiary-700)",
-         800: "var(--tertiary-800)",
-         900: "var(--tertiary-900)",
-         950: "var(--tertiary-950)",
-       },
+          50: "var(--tertiary-50)",
+          100: "var(--tertiary-100)",
+          200: "var(--tertiary-200)",
+          300: "var(--tertiary-300)",
+          400: "var(--tertiary-400)",
+          500: "var(--tertiary-500)",
+          600: "var(--tertiary-600)",
+          700: "var(--tertiary-700)",
+          800: "var(--tertiary-800)",
+          900: "var(--tertiary-900)",
+          950: "var(--tertiary-950)",
+        },
         specialcolor: {
           1: "var(--special-1)",
           2: "var(--special-2)",
           3: "var(--special-3)",
           4: "var(--special-4)",
           5: "var(--special-5)",
-       },
-
+        },
       },
 
       boxShadow: {
-        'custom': '18px 20px 32.5px 6px rgba(10, 10, 10, 0.25)',
+        custom: "18px 20px 32.5px 6px rgba(10, 10, 10, 0.25)",
       },
     },
   },
   plugins: [],
-}
-
+};

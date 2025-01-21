@@ -1,276 +1,650 @@
-<basis core="dbsource" source="basiscore" lid="2" mid="18" name="db" usedforid="[##cms.query.catid##]">
-    <member name="scalar" type="scalar" typeid="150" />
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2360949">
+    <member name="aboutus" type="view" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2362448">
+    <member name="services" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
     <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
 </basis>
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="root">
-    <member name="cat" type="tree" request="cat" parentid="211776" order="ord"
-        postsql="select * from [root.cat] where catid=213026"></member>
+<basis core="dbsource" source="basiscore" mid="18" name="db" lid="1" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
 </basis>
-
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="213025">
-    <member name="other-news" type="list" link="article.bc" order="ord" propertyid="7244" />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="articles" type="list" link="article.bc" propertyid="7244,7248,7249,3087371" perpage="7"
+        pageno="[##cms.query.pagenum|(1)##]" size="394x311" typeid="159" order="ord" />
+    <member name="paging" type="list" request="paging" count="4" parentname="articles" />
+    <member name="searchlistcat" type="tree" request="cat" parentid="[##cms.query.catid##]" />
+    <member name="descriptioncat" type="tree" request="cat" parentid="110387"
+        postsql="select * from [db.descriptioncat] where catid = [##cms.query.catid##]" />
 </basis>
-
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372780">
-    <member name="first-article" type="view" />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.impoid|(0)##]">
+    <member name="impoarticles" type="list" link="article.bc" perpage="8" propertyid="7244,7248,7249,3087371"
+        size="394x311" typeid="159" order="ord" />
 </basis>
-
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372729">
-    <member name="summer-tours" type="view" />
-  </basis>
-
-  <basis core="dbsource" source="basiscore" lid="2" mid="1" name="countries">
-    <member name="cat" type="tree" request="cat" parentid="213015" order="ord"></member>
-  </basis>
-
-  <basis core="dbsource" source="basiscore" lid="2" mid="1" name="categories">
-    <member name="cat" type="tree" request="cat" parentid="213016" order="ord"></member>
-  </basis>
-
-  <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" q="[##cms.query.search-content-name##]">
-    <member name="article-list" type="list" link="article.bc" propertyid="7244" perpage="6"
-        pageno="[##cms.query.pagenum|(1)##]" size="314x527" order="ord" />
-    <member name="paging" type="list" request="paging" count="2" parentname="article-list" />
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.relid|(0)##]">
+    <member name="relatedarticles" type="list" link="article.bc" perpage="12" propertyid="7244,7248,7249,3087371"
+        size="394x311" typeid="159" order="ord" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.aid##]">
+    <member name="seo-text" type="view"></member>
 </basis>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
-    <!-- Title & Description -->
-    <title>[##cms.seo.title|(Wanderlux Travel Agency)##]</title>
+    <title>[##cms.seo.title|(لاچین سیر)##]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="[##cms.seo.description|(Experience the best and easiets trip with Wanderlux  Travel Agency.)##]">
-    <!-- Title & Description -->
+        content="[##cms.seo.description|(آژانس مسافرتی لاچین سیر ارائه کننده تور خارجی و داخلی ، بلیط هواپیما، رزرو هتل در اقصی نقاط دنیا و اخذ ویزا، پرواز های چارتری و هتل های گارانتی . 41664166- 021)##]">
+    <link rel="canonical" href="https://[##cms.request.full-url##]" />
     <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
         <member type="list" name="list" request="taglist" preview=""></member>
     </basis>
     <basis core="print" datamembername="tag.list">
-        <face filter="key = 'canonical'">
+        <face filter="key='canonical'">
             <link rel="canonical" href="@value" />
         </face>
         <face>
             <meta property="@key" content="@value" />
         </face>
     </basis>
-    <!-- pwa metatags -->
-    <basis core="call" file="pwa.inc" lid="2" />
-    <!-- common styles for all page -->
-    <basis core="call" file="style.inc" lid="2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="[##cms.cms.cdn##]/images/custom_icon.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="homescreen-manifest.inc">
+    <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.basiscore.net/lachinseir.com/_js/jquery/jquery-3.6.3.min.js"
+        type="text/javascript"></script>
 </head>
 
 <body>
-    <basis core="call" file="header.inc" lid="2" />
-
-
-    <main>
-        <section class="relative flex justify-center">
-            <img src="[##cms.cms.cdn##]/images/paris2.jpg" class="object-cover h-[451px]" alt="turkey" width="100%" height="451"
-                loading="lazy" />
-            <div class="absolute inset-0 w-full h-full bg-specialcolor-4"></div>
-            <div class="absolute max-lg:w-[90%] mx-auto text-center pt-14">
-
-
-                        <h1 class="mb-4 text-4xl font-bold text-white">Blog</h1>
-
-
-                <ul itemscope itemtype="https://schema.org/BreadcrumbList" class="flex items-center justify-center mt-2 gap-0-1">
-                    <li class="inline-block font-normal text-white" itemprop="itemListElement" itemscope
-                        itemtype="https://schema.org/ListItem">
-                        <a class="text-white hover:text-tertiary-900" itemprop="item" href="/" aria-label="home"><span
-                                itemprop="name">Home</span>
-                            <meta itemprop="position" content="1" />
-                        </a>
-                    </li>
-                    <span class="text-white"> > </span>
-                    <basis core="print" datamembername="db.navigation">
-                        <face filter="RowNumber=max(RowNumber) and parentcatid<>211776">
-                            <li class="inline-block font-normal text-black" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <span itemprop="name">@title</span>
-                                <meta itemprop="position" content="@rownumber" />
-                            </li>
-                        </face>
-                        <face filter="link is null and parentcatid<>211776">
-                            <li class="flex gap-1 font-normal text-white" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <a class="text-white hover:text-tertiary-900" itemprop="item"
-                                    href="/article-list.bc?catid=@parentcatid" aria-label="@title"><span
-                                        itemprop="name">@title</span>
-                                    <meta itemprop="position" content="@rownumber" />
-                                </a>
-                                <span class="text-white"> > </span>
-                            </li>
-                        </face>
-                        <face filter="parentcatid<>211776">
-                            <li class="flex gap-1 font-normal" itemprop="itemListElement" itemscope
-                                itemtype="https://schema.org/ListItem">
-                                <a class="text-white hover:text-tertiary-900" itemprop="item" href="@link"
-                                    aria-label="@title"><span class="text-white hover:text-tertiary-900"
-                                        itemprop="name">@title</span>
-                                    <meta itemprop="position" content="@rownumber" />
-                                </a>
-                                <span class="text-white"> > </span>
-                            </li>
-                        </face>
-                    </basis>
-                </ul>
-                <div class="w-[1000px] mx-auto text-sm text-white mt-4">
-                    [##root.cat.urldescription##]
-                </div>
-
-            </div>
-        </section>
-
-        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl -mt-24 mx-auto">
-            <div class="relative flex flex-col justify-center rounded-b-[32px] rounded-tl-[32px] overflow-hidden">
-                <img src="[##cms.cms.cdn##]/images/airplane.jpg" alt="plane" class="object-cover h-[326px]" width="100%"
-                    height="326" />
-                <div class="absolute left-0 right-0 px-6 mx-auto">
-                    <basis core="print" datamembername="db.first-article">
-                        <face filter="TypeID in(150)">
-                            <h2 class="mb-1 text-4xl font-bold text-zinc-800">
-                                @text
-                            </h2>
-                        </face>
-                        <face filter="TypeID in(129)">
-                            <div class="mb-6 text-sm text-zinc-900">
-                                @largetext
-                            </div>
-                        </face>
-                    </basis>
-                    <a href="/article.bc?id=2372780"
-                        class="flex items-center justify-center w-40 pl-6 mt-6 font-medium text-white transition-all duration-300 hover:bg-tertiary-900 h-14 rounded-b-xl rounded-tl-xl bg-primary-900">View
-                        More
-                        <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
-                                fill="#D0B98F" />
-                        </svg>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-
-        <div class="flex gap-6 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-9">
-
-
-            <aside class="w-[313px]">
-                <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mb-2 pl-3 py-5 mx-auto bg-specialcolor-1">
-                    <div class="">
-                        <h2 class="mb-6 text-2xl font-bold text-primary-900">Categories</h2>
-                        <basis core="tree" datamembername="categories.cat" idcol="catid" parentidcol="parentid" nullvalue="213016">
-                            <layout>
-                                <ul class="flex flex-col gap-4 pl-4">
-                                    @child
-                                </ul>
-                            </layout>
-                            <face>
-                                <li class="flex items-center gap-3 text-zinc-900 hover:text-primary-600">
-                                    <input type="radio" name="category-radio" id="" value="@catid"
-                                        class="cursor-pointer size-4 accent-primary-600">
-                                    <span class="cursor-pointer">
-                                        @title
-                                    </span>
-                                </li>
-                            </face>
-                        </basis>
-                    </div>
-                </section>
-                <basis core="list" datamembername="db.other-news">
+    <!-- Header start-->
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <!-- header end -->
+    <section class="relative mx-auto dir-rtl max-w-7xl rounded-20px h-476px mt-90px max-xl:w-95per">
+        <basis core="print" datamembername="db.scalar">
+            <face>
+                <h1 class="absolute z-10 w-full text-4xl text-center text-white font-danabold top-36 ">
+                    <span>@column1</span>اینجا بخون
+                </h1>
+            </face>
+        </basis>
+        <div class="absolute left-0 right-0 z-10 p-2 mx-auto bg-white/50 rounded-10px top-1/2 w-745px">
+            <form id="search-content-article" action="article-list.bc?catid=@catid" method="get"
+                class="search-content w-724px h-60px leading-60px pr-4 float-right dir-rtl bg-white relative rounded-[10px] max-lg:w-full max-lg:float-none max-lg:m-auto max-lg:pr-2">
+                <svg class="absolute top-0 z-10 w-8 h-full" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.9784 22.8776C18.1009 22.8776 22.2536 18.725 22.2536 13.6024C22.2536 8.47981 18.1009 4.32715 12.9784 4.32715C7.85579 4.32715 3.70312 8.47981 3.70312 13.6024C3.70312 18.725 7.85579 22.8776 12.9784 22.8776Z"
+                        stroke="#B8B8B8" stroke-width="1.38462" stroke-linecap="square" />
+                    <path d="M19.3125 20.4326L24.5665 25.6729" stroke="#B8B8B8" stroke-width="1.38462"
+                        stroke-linecap="square" />
+                </svg>
+                <input aria-label="contect-searching" autocomplete="off"
+                    class="absolute right-0 float-right h-full text-sm bg-transparent outline-none contect-searching pr-14 font-danaregular w-550px"
+                    type="text" value="" placeholder="جستجوی مطلب" id="input">
+                    <input id="catidsearched" type="hidden"
+                    value="0" name="catid"><button
+                    class="absolute top-0 left-0 float-left h-full text-xl font-bold text-white cursor-pointer rounded-tl-10px rounded-bl-10px bg-primary w-172px hover:bg-black font-danaregular"
+                    type="submit"><span class="text-sm">جستجو</span></button>
+                <basis core="print" datamembername="db.searchlistcat">
                     <layout>
-                        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-14">
-                            <h2 class="mb-4 text-2xl font-bold text-primary-900">Other news</h2>
-                            @child
-                        </section>
+                        <ul
+                            class="mt-2 hidden absolute top-full right-0 w-550px z-50 shadow-lg bg-white rounded-[7px] border border-third max-h-72 overflow-y-auto p-4">
+                            @child </ul>
                     </layout>
-                    <face filter="link is null">
-                        <div class="pt-10 mb-10 border-t border-solid border-zinc-200">
-                            <h3 class="mb-3 text-3xl font-bold text-zinc-900">
-                                @title
-                            </h3>
-                            <div class="mb-3 text-sm text-justify text-zinc-900">
-                                @prp_7244
-                            </div>
-                            <a href="/article.bc?id=@id"
-                                class="relative z-10 font-bold transition-all duration-300 group text-primary-900 hover:text-tertiary-900">View
-                                More
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
-                            </a>
-                        </div>
-                    </face>
-                    <face>
-                        <div class="pt-10 mb-10 border-t border-solid border-zinc-200">
-                            <h3 class="mb-3 text-3xl font-bold text-zinc-900">
-                                @title
-                            </h3>
-                            <div class="mb-3 text-sm text-justify text-zinc-900">
-                                @prp_7244
-                            </div>
-                            <a href="@link"
-                                class="relative z-10 font-bold transition-all duration-300 group text-primary-900 hover:text-tertiary-900">View
-                                More
-                                <span
-                                    class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
-                            </a>
-                        </div>
+                    <face filter="rownumber <>1">
+                        <li class="text-base cursor-pointer text-gray-950 hover:text-primary font-danaregular leading-30px name list-item hover:bg-primary-50"
+                            onclick="contentSearched('@title','@catid')">@title</li>
                     </face>
                 </basis>
-
-            </aside>
-
-            <div class="flex-1">
-                <div class="fetch-content-article" data-catid="[##cms.query.catid##]">
-
-                </div>
-
-            </div>
+            </form>
         </div>
-
-        <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mb-28 mx-auto mt-9">
-            <div
-                class="relative flex items-center overflow-hidden h-28 rounded-b-[32px] rounded-tl-[32px] bg-tertiary-950 mt-6">
-                <img src="../images/wanderlux-sign.png" class="object-contain absolute h-[122px] right-[30%] top-0"
-                    alt="wanderlux-sign" width="117" height="122" loading="lazy">
-                <img src="../images/wanderlux-sign.png" class="object-contain absolute left-[27%] top-[-35%] h-[189px]"
-                    alt="wanderlux-sign" width="181" height="189" loading="lazy">
-                <div class="absolute left-0 right-0 z-20 flex items-center justify-between gap-1 px-6 mx-auto">
-                    <basis core="print" datamembername="db.summer-tours">
-                        <layout>
-                          <div class="flex items-center gap-1">
-                            <img src="[##cms.cms.cdn##]/images/peresent.svg" alt="peresent" width="49" height="49" loading="lazy">
-                            @child
-                          </div>
-                        </layout>
-                        <face filter="TypeID in(150)">
-                          <h2 class="mt-1 text-3xl font-bold text-white">@text</h2>
-                        </face>
-                      </basis>
-                    <a href="/article.bc?id=2372729"
-                        class="flex items-center justify-center w-40 font-medium text-white transition-all duration-300 h-14 rounded-b-xl rounded-tl-xl bg-primary-900 group hover:text-secondary-200">View
-                        More
-                        <svg width="49" height="48" class="transition-all duration-300 group-hover:translate-x-5"
-                            viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
-                                fill="#D0B98F" />
-                        </svg>
-
-                    </a>
+        <basis core="tree" datamembername="db.descriptioncat" idcol="catid" parentidcol="parentid"
+            nullvalue="[##db.descriptioncat.parentid##]">
+            <layout>@child </layout>
+            <face>
+                <figure class="absolute left-0 right-0 rounded-20px bg-primary"><img
+                        class="block object-cover max-w-7xl h-476px rounded-20px max-xl:w-full"
+                        src="[##cms.cms.cdn##]/@image" width="1280" height="476" alt="@title"></figure>
+            </face>
+        </basis>
+    </section>
+    <!-- main content -->
+    <section class="mx-auto mt-12 max-w-7xl dir-rtl max-xl:w-95per">
+        <basis core="print" datamembername="db.scalar">
+            <face>
+                <h2 class="mb-5 text-4xl text-neutralcolor-900 font-danabold">@column1</h2>
+            </face>
+        </basis>
+        <div class="flex flex-wrap justify-between float-right w-8/12 h-481px gap-y-3">
+            <basis core="list" datamembername="db.articles">
+                <layout>@child </layout>
+                <face filter="link is null and rownumber <>1">
+                    <div class="flex w-1/2 ">
+                        <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a
+                                href="/article.bc?id=@id" class="flex justify-between gap-x-2">
+                                <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                        src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                                <div class="w-[calc(100%-140px)] ml-2">
+                                    <h2
+                                        class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                        @title</h2>
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 h-60px">
+                                        @prp_7244 </div>
+                                    <div class="flex justify-between leading-42px">
+                                        <div><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                            </span><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                            </span></div>
+                                        <div
+                                            class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                            <i
+                                                class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a></article>
+                    </div>
+                </face>
+                <face filter="rownumber <>1">
+                    <div class="flex w-1/2 ">
+                        <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a href="/@link"
+                                class="flex justify-between gap-x-2">
+                                <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                        src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                                <div class="w-[calc(100%-140px)] ml-2">
+                                    <h2
+                                        class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                        @title</h2>
+                                    <div class="h-60px">
+                                        <div
+                                            class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                            @prp_7244 </div>
+                                    </div>
+                                    <div class="flex justify-between leading-42px">
+                                        <div><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                            </span><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                            </span></div>
+                                        <div
+                                            class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                            <i
+                                                class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a></article>
+                    </div>
+                </face>
+            </basis>
+        </div>
+        <div class="flex justify-end float-left w-4/12 ">
+            <basis core="list" datamembername="db.articles">
+                <layout>@child </layout>
+                <face filter="link is null and rownumber in(1)">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a
+                            href="/article.bc?id=@id" class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </face>
+                <face filter="rownumber in(1)">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a href="/@link"
+                            class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </face>
+            </basis>
+        </div>
+    </section>
+    <div class="clear-both"></div>
+    <!-- article related -->
+    <div class="mx-auto mt-12 max-w-7xl dir-rtl max-xl:w-95per">
+        <basis core="list" datamembername="db.impoarticles">
+            <layout>
+                <section class="float-right w-8/12 ">
+                    <h2
+                        class="w-full pb-5 text-4xl text-right border-b-4 text-neutralcolor-900 font-danabold border-neutralcolor-100 ">
+                        مطالب مهم</h2>
+                    <div class="flex flex-wrap justify-between mt-3 gap-y-3">@child </div>
+                </section>
+            </layout>
+            <face filter="link is null">
+                <div class="w-1/2 max-xl:w-49per">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a
+                            href="/article.bc?id=@id" class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
                 </div>
+            </face>
+            <face>
+                <div class="w-1/2 max-xl:w-49per">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a href="/@link"
+                            class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </div>
+            </face>
+        </basis>
+        <basis core="list" datamembername="db.relatedarticles">
+            <layout>
+                <section class="float-left w-4/12 ">
+                    <h2
+                        class="w-full pb-5 mr-3 text-4xl text-right border-b-4 text-neutralcolor-900 font-danabold border-neutralcolor-100">
+                        دیگر مطالب</h2>
+                    <div class="flex flex-wrap justify-end mt-3 gap-y-3">@child </div>
+                </section>
+            </layout>
+            <face filter="link is null">
+                <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a
+                        href="/article.bc?id=@id" class="flex justify-between gap-x-2">
+                        <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                        <div class="w-[calc(100%-140px)] ml-2">
+                            <h2
+                                class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                @title</h2>
+                            <div class="h-60px">
+                                <div
+                                    class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                    @prp_7244 </div>
+                            </div>
+                            <div class="flex justify-between leading-42px">
+                                <div><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                    </span><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                    </span></div>
+                                <div
+                                    class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                    <i
+                                        class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a></article>
+            </face>
+            <face>
+                <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a href="/@link"
+                        class="flex justify-between gap-x-2">
+                        <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                        <div class="w-[calc(100%-140px)] ml-2">
+                            <h2
+                                class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                @title</h2>
+                            <div class="h-60px">
+                                <div
+                                    class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                    @prp_7244 </div>
+                            </div>
+                            <div class="flex justify-between leading-42px">
+                                <div><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                    </span><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                    </span></div>
+                                <div
+                                    class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                    <i
+                                        class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a></article>
+            </face>
+        </basis>
+    </div>
+    <div class="clear-both"></div>
+    <div class="relative z-10 flex justify-center w-full text-center mt-9">
+        <div id="paging" class="float-right clear-both w-full text-center">
+            <ul class="flex items-center justify-center gap-4 cd-pagination no-space font-danaregular" id="wibpaging">
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 prev-page hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.link_page##]&pagenum=@page" aria-label="angle-left"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.2623 11.692C8.0395 11.9149 7.9275 12.2074 7.9275 12.5C7.9275 12.7926 8.0395 13.0851 8.2623 13.308L15.1192 20.1649C15.5661 20.6117 16.2883 20.6117 16.7352 20.1649C17.182 19.718 17.182 18.9958 16.7352 18.5489L10.6863 12.5L16.7352 6.45107C17.182 6.00423 17.182 5.28197 16.7352 4.83513C16.2883 4.38829 15.5661 4.38829 15.1192 4.83513L8.2623 11.692Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                    <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 prev-page hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.pageurl##]?pagenum=@page" aria-label="angle-left"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.2623 11.692C8.0395 11.9149 7.9275 12.2074 7.9275 12.5C7.9275 12.7926 8.0395 13.0851 8.2623 13.308L15.1192 20.1649C15.5661 20.6117 16.2883 20.6117 16.7352 20.1649C17.182 19.718 17.182 18.9958 16.7352 18.5489L10.6863 12.5L16.7352 6.45107C17.182 6.00423 17.182 5.28197 16.7352 4.83513C16.2883 4.38829 15.5661 4.38829 15.1192 4.83513L8.2623 11.692Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                </basis>
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="page-no w-10 h-10 bg-primary-400 leading-10 text-base mx-1.5 mb-2.5 text-white inline-block">
+                            <a class="leading-10 current" href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="page-no w-10 h-10 bg-primary-400 leading-10 text-base mx-1.5 mb-2.5 text-white inline-block">
+                            <a class="leading-10 current" href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face
+                        filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                        <li
+                            class="page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-600 inline-block hover:bg-primary-400 cursor-pointer">
+                            <a class="leading-10" href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face
+                        filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                        <li
+                            class="page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-600 inline-block hover:bg-primary-400 cursor-pointer">
+                            <a class="leading-10" href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                </basis>
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no next-page w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.link_page##]&pagenum=@page" aria-label="angle-right"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.7377 13.308C16.9605 13.0851 17.0725 12.7926 17.0725 12.5C17.0725 12.2074 16.9605 11.9149 16.7377 11.692L9.88076 4.8351C9.43392 4.3883 8.71166 4.3883 8.26482 4.8351C7.81798 5.282 7.81798 6.0042 8.26482 6.4511L14.3137 12.5L8.26482 18.5489C7.81798 18.9958 7.81798 19.718 8.26482 20.1649C8.71166 20.6117 9.43392 20.6117 9.88076 20.1649L16.7377 13.308Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                    <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no next-page w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.pageurl##]?pagenum=@page" aria-label="angle-right"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.7377 13.308C16.9605 13.0851 17.0725 12.7926 17.0725 12.5C17.0725 12.2074 16.9605 11.9149 16.7377 11.692L9.88076 4.8351C9.43392 4.3883 8.71166 4.3883 8.26482 4.8351C7.81798 5.282 7.81798 6.0042 8.26482 6.4511L14.3137 12.5L8.26482 18.5489C7.81798 18.9958 7.81798 19.718 8.26482 20.1649C8.71166 20.6117 9.43392 20.6117 9.88076 20.1649L16.7377 13.308Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                </basis>
+            </ul>
+        </div>
+    </div>
+    <div class="clear-both"></div>
+    <!-- about -->
+    <div class="clear-both"></div>
+    <div class="w-full ">
+        <section class="flex mx-auto mt-32 max-w-7xl dir-rtl max-xl:mt-20 max-xl:w-95per">
+            <div class="w-6/12">
+                <h2
+                    class="text-center text-transparent bg-cover text-9xl font-danaheavy bg-aboutbg bg-clip-text h-80 max-xl:text-8xl max-xl:align-bottom max-xl:flex max-xl:justify-center max-xl:items-center ">
+                    دربــــاره‌ی <br>لاچین سیر</h2>
+                <div class="text-base text-justify line-clamp-7 font-danaregular text-neutralcolor-900">
+                    <basis core="print" datamembername="db.aboutus">
+                        <face filter="rownumber=2">@largetext </face>
+                    </basis>
+                </div>
+            </div>
+            <div class="w-6/12">
+                <basis core="print" datamembername="db.services">
+                    <layout>
+                        <ul
+                            class="flex flex-col w-11/12 h-full pr-12 mr-auto border-r-2 border-neutralcolor-100 justify-evenly max-xl:pr-6 ">
+                            @child </ul>
+                    </layout>
+                    <face filter="rownumber=2">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-attention-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=3">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-warning-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px ">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=4">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-error-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=5">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-success-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                </basis>
             </div>
         </section>
-
-    </main>
-
-    <basis core="call" file="footer.inc" lid="2" />
+    </div>
+    <!-- about -->
+    <!-- footer start-->
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <!-- footer end-->
 </body>
 
 </html>

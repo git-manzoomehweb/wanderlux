@@ -861,6 +861,10 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+  .bg-defaultBg {
+    background-image: var(--default-bg);
+  }
+
 .object-cover {
   -o-object-fit: cover;
   object-fit: cover;
@@ -1016,6 +1020,9 @@ body {
   --special-3: #00000099;
   --special-4: #00000080;
   --special-5: #03194780;
+
+  ---bg: url("");
+  --default-bg: url("../images/china-wall-default-min.jpg")
 }
 
 @font-face {

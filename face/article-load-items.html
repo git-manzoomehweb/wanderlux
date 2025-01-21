@@ -1,7 +1,7 @@
-<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid##]">
-    <member name="article-list" type="list" link="article.bc" propertyid="7244" perpage="6"
-        pageno="[##cms.query.pagenum|(1)##]" size="314x527" order="ord" />
-    <member name="paging" type="list" request="paging" count="2" parentname="article-list" />
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid | (0)##]">
+    <member name="article-list-load" type="list" link="article.bc" propertyid="7244" perpage="9"
+        pageno="[##cms.query.pagenum|(1)##]" size="314x527" typeid="159" order="ord" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list" />
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372680">
@@ -10,21 +10,21 @@
 
 
 <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
-    <basis core="list" datamembername="db.article-list">
+    <basis core="list" datamembername="db.article-list-load">
         <layout>
-            <div class="flex gap-2">
+            <div class="grid grid-cols-3 gap-2">
                 <!-- items -->
                 @child
             </div>
         </layout>
-        <face filter="link is null and Ord in(1,2,3)">
+        <face filter="link is null and RowNumber in(1,2,3)">
             <a href="article.bc?id=@id" class="relative transition-all duration-300 group hover:scale-95">
                 <img src="@00314X00527prp"
                     class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
                     width="100%" height="527" />
                 <div
                     class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto">
+                    <div class="w-[85%] mx-auto line-clamp-10">
                         @prp_7244
                     </div>
                 </div>
@@ -36,14 +36,14 @@
             </a>
         </face>
 
-        <face filter="Ord in(1,2,3)">
+        <face filter="RowNumber in(1,2,3)">
             <a href="@link" class="relative transition-all duration-300 group hover:scale-95">
                 <img src="@00314X00527prp"
                     class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
                     width="100%" height="527" />
                 <div
                     class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto">
+                    <div class="w-[85%] mx-auto line-clamp-10">
                         @prp_7244
                     </div>
                 </div>
@@ -57,7 +57,7 @@
     </basis>
 
     <div class="relative flex mt-12 overflow-hidden rounded-b-3xl rounded-tl-3xl">
-        <img src="[##cms.cms.cdn##]/images/beach2.jpg" class="object-cover h-[326px]" alt="beach2" width="100%"
+        <img src="[##cms.cms.cdn##]/images/beach2-min.jpg" class="object-cover h-[326px]" alt="beach2" width="100%"
             height="326" loading="lazy">
         <div class="absolute left-0 right-0 pb-6 mx-auto mt-14 ml-14">
             <basis core="print" datamembername="db.trending-destinations">
@@ -81,21 +81,21 @@
         </div>
     </div>
 
-    <basis core="list" datamembername="db.article-list">
+    <basis core="list" datamembername="db.article-list-load">
         <layout>
-            <div class="flex gap-2 mt-12">
+            <div class="grid grid-cols-3 gap-2 mt-12">
                 <!-- items -->
                 @child
             </div>
         </layout>
-        <face filter="link is null and Ord > 3">
+        <face filter="link is null and RowNumber > 3">
             <a href="article.bc?id=@id" class="relative transition-all duration-300 group hover:scale-95">
                 <img src="@00314X00527prp"
                     class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
                     width="100%" height="527" />
                 <div
                     class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto">
+                    <div class="w-[85%] mx-auto line-clamp-10">
                         @prp_7244
                     </div>
                 </div>
@@ -107,14 +107,14 @@
             </a>
         </face>
 
-        <face filter="Ord > 3">
+        <face filter="RowNumber > 3">
             <a href="@link" class="relative transition-all duration-300 group hover:scale-95">
                 <img src="@00314X00527prp"
                     class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title"
                     width="100%" height="527" />
                 <div
                     class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto">
+                    <div class="w-[85%] mx-auto line-clamp-10">
                         @prp_7244
                     </div>
                 </div>

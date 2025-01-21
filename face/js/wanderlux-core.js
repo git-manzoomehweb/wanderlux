@@ -57,7 +57,7 @@ if (document.querySelector('input[name="category-radio"]')) {
       const cmsQuery = fetchContentArticle.getAttribute("data-catid");
 
       async function firstContent() {
-        const firstResponse = await fetch(`/article-load-items.bc?catid=213026`);
+        const firstResponse = await fetch(`/article-load-items.bc?catid=${cmsQuery}`);
         const firstData = await firstResponse.text();
         fetchContentArticle.innerHTML = firstData;
       }
@@ -156,6 +156,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+var input = document.getElementById('search');
+var isItemSelected = false; // برای بررسی اینکه آیا چیزی انتخاب شده است یا خیر
+
+if(input){
+    input.onkeyup = function () {
+        if (this.value.length !== 0) {
+            document.querySelector('.search-content ul').classList.remove('hidden');
+            var filter = input.value.toUpperCase();
+            var lis = document.querySelector('.search-content').getElementsByTagName('li');
+            isItemSelected = false; // ریست کردن وقتی که کاربر چیزی در ورودی می‌نویسد
+
+            for (var i = 0; i < lis.length; i++) {
+                var name = lis[i].innerHTML;
+                if (name.toUpperCase().indexOf(filter) == 0) {
+                    lis[i].style.display = 'list-item';
+                } else {
+                    lis[i].style.display = 'none';
+                }
+            }
+        } else {
+            var lis = document.querySelector('.search-content').getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.display = 'list-item';
+            }
+            document.querySelector('.search-content ul').classList.remove('hidden');
+        }
+    };
+
+    document.getElementById('search-content-article').addEventListener('submit', function(e) {
+        if (!isItemSelected) {
+            e.preventDefault(); 
+            document.getElementById('catidsearched').value = 0; // اگر هیچ چیزی انتخاب نشده باشد catid را 0 قرار دهید
+            var lis = document.querySelector('.search-content').getElementsByTagName('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.display = 'list-item';
+            }
+            document.querySelector('.search-content ul').classList.remove('hidden');
+        }
+    });
+
+    function contentSearched(datatitle, datacatid) {
+        input.value = datatitle;
+        document.getElementById('catidsearched').value = datacatid;
+        document.querySelector('.search-content ul').classList.add('hidden');
+        isItemSelected = true; // وقتی آیتمی انتخاب می‌شود، این متغیر true شود
+    }
+}
 
 function loadContentHomePage() {
   loadSearchEngine("search-engine-en.bc", "search-box");
@@ -401,111 +449,136 @@ if (document.querySelector(".tour-swiper")) {
   });
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   const fetchContentTour = document.querySelector(".fetch-content-tour");
+//   const tourLi = document.querySelectorAll(".tour-li");
+
+//   if (fetchContentTour) {
+//     async function firstContent() {
+//       const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
+//       const firstData = await firstResponse.text();
+//       fetchContentTour.innerHTML = firstData;
+//       refreshSwiper();
+//     }
+
+//     firstContent();
+
+//     tourLi.forEach((item) => {
+//       item.addEventListener("click", function () {
+//         tourLi.forEach((li) => {
+//           li.style.backgroundColor = "";
+//           li.style.color = "";
+//         });
+
+//         item.style.backgroundColor = "#D0B98F";
+//         item.style.color = "#031947";
+
+//         let cmsQuery = item.getAttribute("data-id");
+
+//         async function secondContent() {
+//           try {
+//             const response = await fetch(`/tour-load-items.bc?catid=${cmsQuery}`);
+//             if (!response.ok) {
+//               throw new Error(`HTTP error! Status: ${response.status}`);
+//             }
+//             const data = await response.text();
+//             fetchContentTour.innerHTML = data;
+
+//             refreshSwiper();
+//           } catch (error) {
+//             console.error("Fetch failed:", error);
+//             fetchContentTour.innerHTML =
+//               "<p>Error in load: " + error.message + "</p>";
+//           }
+//         }
+//         secondContent();
+//       });
+//     });
+//   }
+
+//   function refreshSwiper() {
+//     if (tourSwiper) {
+//       tourSwiper.update(); 
+//     } else {
+//       tourSwiper = new Swiper(".tour-swiper", {
+//         slidesPerView: 5,
+//         speed: 400,
+//         centeredSlides: false,
+//         spaceBetween: 8,
+//         grabCursor: true,
+//         loop: true,
+//         autoplay: {
+//           delay: 3000,
+//           disableOnInteraction: false,
+//         },
+//         pagination: {
+//           el: ".swiper-pagination",
+//           clickable: true,
+//         },
+//         navigation: {
+//           nextEl: ".swiper-button-next-custom",
+//           prevEl: ".swiper-button-prev-custom",
+//         },
+//       });
+//     }
+//   }
+// });
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTour = document.querySelector(".fetch-content-tour");
   const tourLi = document.querySelectorAll(".tour-li");
 
   if (fetchContentTour) {
+
     async function firstContent() {
-      const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
-      const firstData = await firstResponse.text();
-      fetchContentTour.innerHTML = firstData;
-      refreshSwiper();
-    }
-
-    firstContent();
-
-    tourLi.forEach((item) => {
-      item.addEventListener("click", function () {
-        tourLi.forEach((li) => {
-          li.style.backgroundColor = "";
-          li.style.color = "";
-        });
-
-        item.style.backgroundColor = "#D0B98F";
-        item.style.color = "#031947";
-
-        let cmsQuery = item.getAttribute("data-id");
-
-        async function secondContent() {
-          try {
-            const response = await fetch(`/tour-load-items.bc?catid=${cmsQuery}`);
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.text();
-            fetchContentTour.innerHTML = data;
-
-            refreshSwiper();
-          } catch (error) {
-            console.error("Fetch failed:", error);
-            fetchContentTour.innerHTML =
-              "<p>Error in load: " + error.message + "</p>";
-          }
+      fetchContentTour.innerHTML =
+        '<div class="loading-text">Loading...</div>'; 
+      try {
+        const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
+        if (!firstResponse.ok) {
+          throw new Error(`HTTP error! Status: ${firstResponse.status}`);
         }
-        secondContent();
-      });
-    });
-  }
-
-  function refreshSwiper() {
-    if (tourSwiper) {
-      tourSwiper.update(); 
-    } else {
-      tourSwiper = new Swiper(".tour-swiper", {
-        slidesPerView: 5,
-        speed: 400,
-        centeredSlides: false,
-        spaceBetween: 8,
-        grabCursor: true,
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next-custom",
-          prevEl: ".swiper-button-prev-custom",
-        },
-      });
+        const firstData = await firstResponse.text();
+        fetchContentTour.innerHTML = firstData; 
+      } catch (error) {
+        console.error("Fetch failed:", error);
+        fetchContentTour.innerHTML =
+          "<p>Error loading data: " + error.message + "</p>";
+      }
     }
-  }
-});
+    firstContent(); 
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  const fetchContentTour = document.querySelector(".fetch-content-tour");
-  const tourLi = document.querySelectorAll(".tour-li");
-  if (fetchContentTour) {
-    async function firstContent() {
-      const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
-      const firstData = await firstResponse.text();
-      fetchContentTour.innerHTML = firstData;
-    }
-    firstContent();
+    // تنظیمات برای swiper
     if (tourSwiper) {
       tourSwiper.params.spaceBetween = 8; // Reapply spaceBetween
       tourSwiper.update(); // Recalculate
     }
+    if (tourSwiperMobile) {
+      tourSwiperMobile.params.spaceBetween = 0; // Reapply spaceBetween
+      tourSwiperMobile.update(); // Recalculate
+    }
 
+    
     tourLi.forEach((item) => {
       item.addEventListener("click", function () {
+        
         tourLi.forEach((li) => {
           li.style.backgroundColor = "";
           li.style.color = "";
         });
 
-
+        
         item.style.backgroundColor = "#D0B98F";
         item.style.color = "#031947";
 
+        
         let cmsQuery = item.getAttribute("data-id");
 
+       
         async function secondContent() {
+          fetchContentTour.innerHTML =
+            '<div class="loading-text">Loading...</div>'; 
           try {
             const firstResponse = await fetch(
               `/tour-load-items.bc?catid=${cmsQuery}`
@@ -514,11 +587,11 @@ document.addEventListener("DOMContentLoaded", function () {
               throw new Error(`HTTP error! Status: ${firstResponse.status}`);
             }
             const firstData = await firstResponse.text();
-            fetchContentTour.innerHTML = firstData;
+            fetchContentTour.innerHTML = firstData; 
           } catch (error) {
             console.error("Fetch failed:", error);
             fetchContentTour.innerHTML =
-              "<p>error in load: " + error.message + "</p>";
+              "<p>Error loading data: " + error.message + "</p>";
           }
         }
         secondContent();
@@ -527,18 +600,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 if (document.querySelector(".tour-swiper-mobile")) {
   var tourSwiperMobile = new Swiper(".tour-swiper-mobile", {
     slidesPerView: 1,
     speed: 400,
     centeredSlides: false,
-    spaceBetween: 30,
+    spaceBetween: 0,
     grabCursor: true,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
     },
-    loop: true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
