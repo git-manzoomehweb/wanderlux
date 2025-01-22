@@ -121,4 +121,99 @@
             </a>
         </face>
     </basis>
+    <div id="paging" class="flex justify-center mt-16">
+        <ul class="flex items-center gap-2 cd-pagination no-space dir-ltr" id="wibpaging">
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full cursor-pointer" aria-label="angle-left"
+                            onclick="FetchPageNumPrev('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+                <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full cursor-pointer" aria-label="angle-left"
+                            onclick="FetchPageNumPrev('@page')"><svg width="11" height="17"
+                                class="align-middle transition-all duration-300inline-block" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
+                        <span
+                            class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
+                        <span
+                            class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face
+                    filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face
+                    filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                            aria-label="angle-right" onclick="FetchPageNumNext('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="transition-all duration-300 group-hover:fill-white" fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+                <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer "
+                            aria-label="angle-right" onclick="FetchPageNumNext('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+            </basis>
+        </ul>
+    </div>
 </section>

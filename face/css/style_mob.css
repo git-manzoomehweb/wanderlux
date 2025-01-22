@@ -8,7 +8,6 @@
   src: url("../_fonts/fontawesome-webfont.eot");
   src: url("../_fonts/fontawesome-webfont.eot") format("embedded-opentype"),
     url("../_fonts/fontawesome-webfont.ttf") format("truetype"),
-    url("../_fonts/fontawesome-webfont.woff") format("truetype"),
     url("../_fonts/fontawesome-webfont.svg") format("svg");
 }
 @font-face {

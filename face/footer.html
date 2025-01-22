@@ -2,11 +2,11 @@
     <div
     class=" mx-auto max-lg:w-[90%] max-xl:w-[97%] pb-6 pt-6 lg:pt-28 xl:max-w-7xl lg:flex lg:border-b lg:border-solid border-secondary-50">
     <section
-    class="relative border-b border-solid border-secondary-100 lg:border-b-0 lg:border-secondary-50 lg:pr-6 lg:border-r lg:flex-1 pb-3">
+    class="relative pb-3 border-b border-solid border-secondary-100 lg:border-b-0 lg:border-secondary-50 lg:pr-6 lg:border-r lg:flex-1">
     <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="hidden lg:block absolute lg:top-[-31%] 2xl:left-[-14%]" alt="wanderlux-sign" width="181" height="189">
         <img src="[##cms.cms.cdn##]/images/logo.png" alt="logo-header-mobile" class="w-[114px] [h-28px] lg:w-[224px] lg:h-[54px]"
           width="224" height="54" loading="lazy">
-        <div class="text-zinc-800 text-sm text-justify mt-5">
+        <div class="mt-5 text-sm text-justify text-zinc-800">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel
           elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et
@@ -14,7 +14,7 @@
         </div>
         <basis core="print" datamembername="db.info">
           <layout>
-            <ul class="flex justify-between lg:gap-2 mt-5 lg:justify-normal">
+            <ul class="flex justify-between mt-5 lg:gap-2 lg:justify-normal">
               @child
             </ul>
           </layout>
@@ -77,7 +77,7 @@
       </basis>
       </section>
       <section
-        class="relative flex flex-col mt-3 border-b border-solid border-secondary-100 lg:flex-col-reverse lg:pl-6 lg:border-none pb-6 lg:mt-0 lg:flex-1">
+        class="relative flex flex-col pb-6 mt-3 border-b border-solid border-secondary-100 lg:flex-col-reverse lg:pl-6 lg:border-none lg:mt-0 lg:flex-1">
         <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="hidden lg:block lg:right-0 lg:top-[-9%] absolute 2xl:right-[-14%] " alt="wanderlux-sign" width="117" height="122">
         <basis core="print" datamembername="db.info">
           <layout>
@@ -87,8 +87,8 @@
           </layout>
           <face filter="prpID in(7999)">
             <div class="flex items-center gap-3">
-              <div class="bg-primary-900 self-start rounded-b-xl rounded-tl-xl flex-shrink-0">
-                <img src="[##cms.cms.cdn##]/images/addres55.svg" alt="addessIcon" class=" object-cover rounded-xl lg:self-auto" width="56"
+              <div class="self-start flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
+                <img src="[##cms.cms.cdn##]/images/addres55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
                   height="56" loading="lazy" />
               </div>
               <div class="flex flex-col">
@@ -99,13 +99,13 @@
           </face>
           <face filter="prpID in(8000)">
             <div class="flex items-center gap-3">
-              <div class="bg-primary-900 rounded-b-xl rounded-tl-xl flex-shrink-0">
-                <img src="[##cms.cms.cdn##]/images/phone55.svg" alt="addessIcon" class=" object-cover rounded-xl lg:self-auto" width="56"
+              <div class="flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
+                <img src="[##cms.cms.cdn##]/images/phone55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
                   height="56" loading="lazy" />
               </div>
               <div class="flex flex-col">
                 <h3 class="font-bold text-primary-900">Contact Us</h3>
-                <a href="tel:@text" class="relative group text-sm text-zinc-800 transition-all duration-300 hover:text-tertiary-950">@text
+                <a href="tel:@text" class="relative text-sm transition-all duration-300 group text-zinc-800 hover:text-tertiary-950">@text
                   <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
                 </a>
               </div>
@@ -113,13 +113,13 @@
           </face>
           <face filter="prpID in(8001)">
             <div class="flex items-center gap-3">
-              <div class="bg-primary-900 self-start rounded-b-xl rounded-tl-xl flex-shrink-0">
-                <img src="[##cms.cms.cdn##]/images/email55.svg" alt="addessIcon" class=" object-cover rounded-xl lg:self-auto" width="56"
+              <div class="self-start flex-shrink-0 bg-primary-900 rounded-b-xl rounded-tl-xl">
+                <img src="[##cms.cms.cdn##]/images/email55.svg" alt="addessIcon" class="object-cover rounded-xl lg:self-auto" width="56"
                   height="56" loading="lazy" />
               </div>
               <div class="flex flex-col">
                 <h3 class="font-bold text-primary-900">Email</h3>
-                <a href="mailto:@text" class="relative group text-sm text-zinc-800 transition-all duration-300 hover:text-tertiary-950">@text
+                <a href="mailto:@text" class="relative text-sm transition-all duration-300 group text-zinc-800 hover:text-tertiary-950">@text
                   <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
                 </a>
               </div>
@@ -128,20 +128,20 @@
         </basis>
 
         <div class="mt-6 lg:mt-0 lg:pb-6">
-          <ul class="relative z-10 flex justify-between items-center">
-            <li><a href="/" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-950">Home
+          <ul class="relative z-10 flex items-center justify-between">
+            <li><a href="/" rel="nofollow" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-950">Home
               <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
             </a></li>
-            <li><a href="" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-950">Contact us
+            <li><a href="/contact-us" rel="nofollow" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-950">Contact us
               <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
             </a></li>
-            <li><a href="/Blog" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-950">BLog
+            <li><a href="/Blog" rel="nofollow" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-950">BLog
               <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
             </a></li>
-            <li><a href="" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-950">Hotel
+            <li><a href="/hotel" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-950">Hotel
               <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
             </a></li>
-            <li><a href="" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-950">Tour
+            <li><a href="/tour" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-950">Tour
               <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-950 group-hover:w-full"></span>
             </a></li>
           </ul>
@@ -150,13 +150,13 @@
     </div>
     <section
       class="mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl lg:mt-6 border-b border-solid border-secondary-100 lg:border-secondary-50 pb-6">
-      <div class="flex items-center flex-col lg:flex-row">
+      <div class="flex flex-col items-center lg:flex-row">
         <div class="flex items-center gap-7 lg:w-[268px]">
           <img src="[##cms.cms.cdn##]/images/email-open.svg" alt="email-open">
-          <h2 class="text-secondary-200 font-bold text-lg">Subscribe to our news channel</h2>
+          <h2 class="text-lg font-bold text-secondary-200">Subscribe to our news channel</h2>
         </div>
         <div class="flex-1 w-full p-3 rounded-b-xl rounded-tl-xl mt-9 lg:mt-0 bg-secondary-50">
-          <div class="flex flex-col lg:flex-row mx-auto footer-form" id="footer-form-resize">
+          <div class="flex flex-col mx-auto lg:flex-row footer-form" id="footer-form-resize">
 
             <basis core="schema" run="atclient"
                 schemaurl="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/D7F10AA5-D466-4521-9AA5-3614155D313C/en/Subscribe-to-our-news-channel"
@@ -170,7 +170,7 @@
             <basis core="callback" run="atclient" method="uploadDocumentFooter" triggers="upload.datafooter">
             </basis>
 
-            <div class="captcha-button flex flex-col items-center lg:ml-2 lg:flex-row">
+            <div class="flex flex-col items-center captcha-button lg:ml-2 lg:flex-row">
                 <div id="captchaContainer"
                     class="captchaContainerclass captcha-sefaresh flex items-center max-xl:ml-0 max-xl:mb-[20px]"
                     data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
@@ -181,10 +181,10 @@
                     </basis>
                     <basis datamembername="captcha.code" core="print" run="atclient">
                         <face>
-                            <script type="text/template"><div class="d-inline-block mt-2 lg:mt-0"><div class="flex flex-col lg:flex-row justify-between">
+                            <script type="text/template"><div class="mt-2 d-inline-block lg:mt-0"><div class="flex flex-col justify-between lg:flex-row">
         
                             <div class="float-right"><input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
-                            <div class="flex items-center mt-7 lg:mt-0 gap-8">
+                            <div class="flex items-center gap-8 mt-7 lg:mt-0">
                                 <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16" />
                                 <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaFooter()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#71717A"/></svg>
                             </div>
@@ -193,7 +193,7 @@
                         </face>
                     </basis>
                 </div>
-                <button class="w-full lg:w-52 lg:ml-5 mt-3 lg:mt-0 text-white transition-all duration-300 y-2 px-4 data-body-btn h-14 bg-primary-800 rounded-xl hover:bg-secondary-600"
+                <button class="w-full px-4 mt-3 text-white transition-all duration-300 lg:w-52 lg:ml-5 lg:mt-0 y-2 data-body-btn h-14 bg-primary-800 rounded-xl hover:bg-secondary-600"
                     type="button" data-btn-uploadfooter><span class="">Send</span></button>
                 <div
                     class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
@@ -223,7 +223,7 @@
           </a>
         </div>
 
-        <div class="flex justify-center items-center gap-5 lg:flex-1 lg:justify-between">
+        <div class="flex items-center justify-center gap-5 lg:flex-1 lg:justify-between">
           
          <span> <img src="[##cms.cms.cdn##]/images/basisfly.png" class="inline" alt="basisfly" width="68px" height="17px" loading="lazy"></span>
           <img src="[##cms.cms.cdn##]/images/Trust-logo.png" class="inline" alt="Trust-logo" loading="lazy" width="90px" height="15px">

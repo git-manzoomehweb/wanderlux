@@ -550,7 +550,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 img,
 video {
-  max-width: 100%;
   height: auto;
 }
 
@@ -634,6 +633,11 @@ body {
   margin-top: 2.25rem;
 }
 
+.mt-36 {
+  margin-top: 9rem;
+  margin-bottom: 9rem;
+}
+
 .mr-2 {
   margin-right: 0.5rem /* 8px */;
 }
@@ -680,6 +684,10 @@ body {
 
 .w-0 {
   width: 0px;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-14 {
@@ -1007,7 +1015,7 @@ body {
   --secondary-800: #574417;
   --secondary-900: #4c360f;
   --secondary-950: #3e2802;
-  --tertiary-: #903c3a;
+  --tertiary: #903c3a;
   --tertiary-50: #ffc6c3;
   --tertiary-100: #f69a96;
   --tertiary-200: #e16e68;
@@ -1374,6 +1382,10 @@ body {
   .\32xl\:right-\[-14\%\] {
     right: -14%;
   }
+}
+
+.loading-img img{
+  max-width: 100%;
 }
 
 .footer-form [data-bc-schema-direction="rtl"] [data-bc-title-container] {

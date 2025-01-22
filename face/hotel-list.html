@@ -18,13 +18,13 @@
 </basis>
   
   <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="213014">
-    <member name="tourism-magazine" type="list" link="article.bc" order="ord" size="314x527" propertyid="" />
+    <member name="tourism-magazine" type="list" link="article.bc" order="ord" size="314x527" propertyid="7244" />
   </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="213013">
   <member name="hotel-list" type="list" link="article.bc" order="ord" size="421x271" propertyid="7243,3087479,3087478,3087480,3087477,3087481"
-      pageno="[##cms.query.pagenum|(1)##]" perpage="2" />
-  <member name="paging" type="list" request="paging" count="2" parentname="hotel-list" />
+      pageno="[##cms.query.pagenum|(1)##]" perpage="9" />
+  <member name="paging" type="list" request="paging" count="3" parentname="hotel-list" />
 </basis>
 
 <!DOCTYPE html>
@@ -61,7 +61,7 @@
 
     <main>
         <section class="relative flex items-center justify-center">
-            <img src="../images/pink-paris.png" class="object-cover h-[450px]" alt="turkey" width="100%" height="450"
+            <img src="[##cms.cms.cdn##]/images/pink-paris-min.png" class="object-cover h-[450px]" alt="turkey" width="100%" height="450"
                 loading="lazy">
             <div class="absolute mx-auto text-center">
               <basis core="print" datamembername="db.scalar">
@@ -151,14 +151,14 @@
                         </div>
                       </div>
                       <a href="/article.bc?id=@id"
-                        class="relative z-10 group overflow-hidden flex items-center justify-center w-full mt-4 font-medium border border-solid h-14 rounded-b-xl rounded-tl-xl border-primary-900 transition-all duration-300 hover:text-white">View
+                        class="relative z-10 flex items-center justify-center w-full mt-4 overflow-hidden font-medium transition-all duration-300 border border-solid group h-14 rounded-b-xl rounded-tl-xl border-primary-900 hover:text-white">View
                         More
                         <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
                             fill="#D0B98F" />
                         </svg>
-                        <span class="absolute -z-10 inset-0 bg-tertiary-900 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl rounded-tl-xl"></span>
+                        <span class="absolute inset-0 transition-transform duration-300 origin-left scale-x-0 -z-10 bg-tertiary-900 group-hover:scale-x-100 rounded-b-xl rounded-tl-xl"></span>
                       </a>
                     </div>
                 </face>
@@ -184,14 +184,14 @@
                         </div>
                       </div>
                       <a href="@link"
-                        class="relative z-10 group overflow-hidden flex items-center justify-center w-full mt-4 font-medium border border-solid h-14 rounded-b-xl rounded-tl-xl border-primary-900 transition-all duration-300 hover:text-white">View
+                        class="relative z-10 flex items-center justify-center w-full mt-4 overflow-hidden font-medium transition-all duration-300 border border-solid group h-14 rounded-b-xl rounded-tl-xl border-primary-900 hover:text-white">View
                         More
                         <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
                             fill="#D0B98F" />
                         </svg>
-                        <span class="absolute -z-10 inset-0 bg-tertiary-900 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl rounded-tl-xl"></span>
+                        <span class="absolute inset-0 transition-transform duration-300 origin-left scale-x-0 -z-10 bg-tertiary-900 group-hover:scale-x-100 rounded-b-xl rounded-tl-xl"></span>
                       </a>
                     </div>
                 </face>
@@ -202,7 +202,7 @@
                       <basis core="print" datamembername="db.paging">
                           <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
                               <li
-                                  class="page-no prev-page flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
                                   <a class="flex items-center justify-center w-full cursor-pointer"
                                       aria-label="angle-left" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
                                           width="11" height="17"
@@ -216,7 +216,7 @@
                           </face>
                           <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
                               <li
-                                  class="page-no prev-page flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
                                   <a class="flex items-center justify-center w-full cursor-pointer"
                                       aria-label="angle-left" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
                                           height="17" class="align-middle transition-all duration-300inline-block"
@@ -232,26 +232,26 @@
                           <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
                               <li
                                   class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
-                                  <a class="flex items-center justify-center w-full h-full text-primary-900 cursor-pointer page-number bg-secondary-200"
+                                  <a class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
                                       href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
                           </face>
                           <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
                               <li
                                   class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
-                                  <a class="flex items-center justify-center w-full h-full text-primary-900 cursor-pointer page-number bg-secondary-200"
+                                  <a class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
                                       href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
                           </face>
                           <face
                               filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
                               <li
-                                  class="flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100 page-no">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
                                   <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                       href="/[##cms.cms.link_page##]&pagenum=@page">@page</a></li>
                           </face>
                           <face
                               filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
                               <li
-                                  class="flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100 page-no">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
                                   <a class="flex items-center justify-center w-full h-full cursor-pointer page-number"
                                       href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a></li>
                           </face>
@@ -259,7 +259,7 @@
                       <basis core="print" datamembername="db.paging">
                           <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
                               <li
-                                  class="page-no next-page flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
                                   <a class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
                                       aria-label="angle-right" href="/[##cms.cms.link_page##]&pagenum=@page"><svg
                                           width="11" height="17"
@@ -273,7 +273,7 @@
                           </face>
                           <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
                               <li
-                                  class=" page-no next-page flex items-center justify-center w-12 h-12 p-2 text-primary-900 rounded-b-2xl hover:bg-secondary-200 transition-all duration-300 rounded-tl-2xl bg-zinc-100">
+                                  class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
                                   <a class="flex items-center justify-center w-full h-full cursor-pointer "
                                       aria-label="angle-right" href="/[##cms.cms.pageurl##]?pagenum=@page"><svg width="11"
                                           height="17" class="inline-block align-middle transition-all duration-300"
@@ -305,11 +305,11 @@
       </basis>
         <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16">
 
-            <div class="swiper tourism-swiper-hotel pt-20">
+            <div class="pt-20 swiper tourism-swiper-hotel">
                 <!-- Additional required wrapper -->
                 <basis core="list" datamembername="db.tourism-magazine">
                     <layout>
-                      <div class="swiper-wrapper flex items-center">
+                      <div class="flex items-center swiper-wrapper">
                         <!-- Slides -->
               
                         @child
@@ -317,18 +317,12 @@
                     </layout>
                     <face filter="link is null">
                       <a href="article.bc?id=@id" class="swiper-slide">
-                        <div class="relative group hover:scale-95 transition-all duration-300">
+                        <div class="relative transition-all duration-300 group hover:scale-95">
                           <img src="@00314X00527prp" class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title" width="100%" height="527">
                           <div
                             class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
                             <div class="w-[85%] mx-auto">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                              labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus
-                              vitae
-                              congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod
-                              nisi
-                              porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id
-                              aliquet lectus
+                              @prp_7244
                             </div>
                           </div>
                           <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
@@ -340,18 +334,12 @@
                     </face>
                     <face>
                       <a href="@link" class="swiper-slide">
-                        <div class="relative group hover:scale-95 transition-all duration-300">
+                        <div class="relative transition-all duration-300 group hover:scale-95">
                           <img src="@00314X00527prp" class="h-[527px] object-cover group-hover:grayscale transition-all duration-300" alt="@title" width="100%" height="527">
                           <div
                             class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
                             <div class="w-[85%] mx-auto">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                              labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus
-                              vitae
-                              congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod
-                              nisi
-                              porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id
-                              aliquet lectus
+                              @prp_7244
                             </div>
                           </div>
                           <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
@@ -371,7 +359,7 @@
                   <span class="font-bold text-tertiary-950">Magazine<span
                       class="absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
                 </h2>
-                <a href="" class="relative group text-primary-900 font-medium transition-all duration-300 hover:text-tertiary-900">View more
+                <a href="" class="relative font-medium transition-all duration-300 group text-primary-900 hover:text-tertiary-900">View more
                   <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-tertiary-400 group-hover:w-full"></span>
                 </a>
                 </div>
@@ -383,14 +371,14 @@
                   <div class="swiper-button-prev-custom group">
                     <div class="p-3 bg-zinc-100 rounded-b-[18px] rounded-tl-[18px] hover:bg-primary-600 transition-all duration-300">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.75 19L8.75 12L15.75 5" class="group-hover:stroke-white transition-all duration-300" stroke="#031947" stroke-width="1.5" stroke-linecap="square"></path>
+                        <path d="M15.75 19L8.75 12L15.75 5" class="transition-all duration-300 group-hover:stroke-white" stroke="#031947" stroke-width="1.5" stroke-linecap="square"></path>
                       </svg>
                     </div>
                   </div>
                   <div class="swiper-button-next-custom group">
                     <div class="p-3 bg-zinc-100 rounded-b-[18px] rounded-tl-[18px] hover:bg-tertiary-900 transition-all duration-300">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.75 5L15.75 12L8.75 19" class="group-hover:stroke-white transition-all duration-300" stroke="#031947" stroke-width="1.5" stroke-linecap="square"></path>
+                        <path d="M8.75 5L15.75 12L8.75 19" class="transition-all duration-300 group-hover:stroke-white" stroke="#031947" stroke-width="1.5" stroke-linecap="square"></path>
                       </svg>
                     </div>
                   </div>
@@ -422,6 +410,91 @@
             </basis>
       
           </section>
+          <div class="floating-icons fixed right-[5%] bottom-0 z-10">
+            <div
+              class="flex items-center justify-center transition-all duration-300 cursor-pointer email-icon bg-tertiary-950 rounded-b-xl rounded-tl-xl w-14 h-14 hover:bg-primary-400">
+              <svg width="32" height="34" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.3783 26.3173L15.2737 28.257C16.0443 29.0457 17.291 29.0457 18.0603 28.257L19.957 26.3173C20.4966 25.765 21.2283 25.4556 21.9911 25.4556H23.4155C26.3163 25.4556 28.667 23.0484 28.667 20.0796V10.6422C28.667 7.6734 26.3163 5.26758 23.4155 5.26758H9.91975C7.01899 5.26758 4.66699 7.6734 4.66699 10.6422V20.0796C4.66699 23.0484 7.01899 25.4556 9.91975 25.4556"
+                  stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.8955 13.8442V17.7517M20.4373 13.8442V17.7517" stroke="white" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div
+            class="email-popup z-20 overflow-auto fixed top-0 bottom-0 right-0 bg-specialcolor-1 transition-all translate-x-full duration-300 pointer-events-none opacity-0 p-6 rounded-lg lg:w-[470px] lg:h-[625px]">
+            <div>
+              <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-zinc-900">Stay in touch with us</h2>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer close-icon"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                    fill="#284E65" />
+                </svg>
+              </div>
+              <div class="mt-2 mb-6 text-sm text-zinc-900">To reserve the best price of flight and hotel stay in touch with
+                Wanderlux travel agency
+              </div>
+              <div class="flex flex-col mx-auto contact-form" id="contact-form-resize">
+      
+                <basis core="schema" run="atclient"
+                  schemaurl="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/5426C56D-8972-4353-943A-ADF9D3156098/fa/Stay-in-touch"
+                  displaymode="new" button="[data-btn-uploadContact]" resultsourceid="upload.dataContact"
+                  OnRendered="RenderFormContact"></basis>
+                <basis core="api" if="{##cms.uploadContact.run|(false)##}" run="atclient"
+                  url="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/en/editobject" method="post"
+                  body="object_edit={##cms.uploadContact.value##}&captcha={##cms.uploadContact.captcha##}&captchaid={##cms.uploadContact.captchaid##}"
+                  content-type="application/x-www-form-urlencoded" triggers='cms.uploadContact'
+                  OnProcessed="OnProcessedEditObjectContact"></basis>
+                <basis core="callback" run="atclient" method="uploadDocumentContact" triggers="upload.dataContact">
+                </basis>
+      
+                <div class="captcha-button">
+                  <div id="captchaContainer"
+                    class="captchaContainerclass captcha-sefaresh ml-2.5 max-xl:ml-0 max-xl:mb-[20px]"
+                    data-bc-answer-container data-bc-schema-info-multi="0" data-bc-schema-info-word="58"
+                    data-bc-schema-info-part="1" data-bc-schema-info-part-0-type="text">
+                    <basis core="dbsource" source="trust_login" name="captcha" run="atclient"
+                      triggers="captcha.refreshContact">
+                      <member name="code" type="scalar" request="captcha"></member>
+                    </basis>
+                    <basis datamembername="captcha.code" core="print" run="atclient">
+                      <face>
+                        <script type="text/template"><div class="d-inline-block"><div class="flex gap-4">
+                
+                                    <div class="flex-1 float-right"><input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                                    <div class="flex items-center w-1/3 gap-4">
+                                        <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16" />
+                                        <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaContact()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#031947"/></svg>
+                                    </div>
+                                    
+                                </div></div></script>
+                      </face>
+                    </basis>
+                  </div>
+                  <button
+                    class="w-full px-4 mt-6 text-white transition-all duration-300 y-2 data-body-btn h-14 bg-tertiary-950 rounded-xl hover:bg-primary-600"
+                    type="button" data-btn-uploadContact><span class="">Send Message</span></button>
+                  <div
+                    class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
+                    <div id="ballsWaveG" class="text-base font-normal leading-normal ext-zinc-50">
+                      <div id="ballsWaveG_1" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_2" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_3" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_4" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_5" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_6" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_7" class="ballsWaveG"></div>
+                      <div id="ballsWaveG_8" class="ballsWaveG"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 text-center text-primary-900 message-api"></div>
+              </div>
+            </div>
+          </div>
     </main>
 
     <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>

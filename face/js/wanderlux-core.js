@@ -43,15 +43,67 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const readMoreBtn = document.querySelector(".read-btn")
-  const contactText = document.querySelector(".contact-text")
-  if(readMoreBtn){
-    readMoreBtn.addEventListener("click", function(){
-      contactText.classList.toggle("line-clamp-10")
-    })
+if (document.querySelector(".floating-icons")) {
+  const media = window.matchMedia("screen and (min-width:1540px)");
+  if (media.matches) {
+    const floatingIconEl = document.querySelector(".floating-icons");
+    const footerEl = document.querySelector("footer");
+    const footerElOffsetTop =
+      footerEl.getBoundingClientRect().top + window.scrollY;
+
+    function updateFloatingIconPosition() {
+      const windowHeight = window.innerHeight;
+      const floatingIconHeight = floatingIconEl.offsetHeight;
+
+      if (window.scrollY + windowHeight > footerElOffsetTop) {
+        floatingIconEl.style.position = "absolute";
+        floatingIconEl.style.top = `${
+          footerElOffsetTop - floatingIconHeight
+        }px`;
+        floatingIconEl.style.bottom = "unset";
+      } else {
+        floatingIconEl.style.position = "fixed";
+        floatingIconEl.style.bottom = "20px";
+        floatingIconEl.style.top = "unset";
+      }
+    }
+
+    updateFloatingIconPosition();
+    window.addEventListener("scroll", updateFloatingIconPosition);
+    window.addEventListener("resize", updateFloatingIconPosition);
+  } else {
+    const footerEl = document.querySelector("footer");
+    const floatingIconEl = document.querySelector(".floating-icons");
+
+    window.addEventListener("scroll", function () {
+      const st = this.scrollY;
+      const footerElOffsetTop =
+        footerEl.getBoundingClientRect().top + window.scrollY;
+
+      if (st + window.innerHeight > footerElOffsetTop) {
+        floatingIconEl.style.position = "absolute";
+        floatingIconEl.style.top = `${
+          footerElOffsetTop - floatingIconEl.offsetHeight
+        }px`;
+        floatingIconEl.style.bottom = "unset";
+      } else {
+        floatingIconEl.style.position = "fixed";
+        floatingIconEl.style.bottom = "0";
+        floatingIconEl.style.top = "unset";
+      }
+    });
   }
-})
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreBtn = document.querySelector(".read-btn");
+  const contactText = document.querySelector(".contact-text");
+  if (readMoreBtn) {
+    readMoreBtn.addEventListener("click", function () {
+      contactText.classList.toggle("line-clamp-10");
+    });
+  }
+});
 
 if (document.querySelector('input[name="category-radio"]')) {
   document.addEventListener("DOMContentLoaded", function () {
@@ -66,7 +118,9 @@ if (document.querySelector('input[name="category-radio"]')) {
       const cmsQuery = fetchContentArticle.getAttribute("data-catid");
 
       async function firstContent() {
-        const firstResponse = await fetch(`/article-load-items.bc?catid=${cmsQuery}`);
+        const firstResponse = await fetch(
+          `/article-load-items.bc?catid=${cmsQuery}`
+        );
         const firstData = await firstResponse.text();
         fetchContentArticle.innerHTML = firstData;
       }
@@ -92,11 +146,9 @@ if (document.querySelector('input[name="category-radio"]')) {
           }
         });
       });
-
     }
   });
 }
-
 
 // paging
 const FetchPageNumPrev = async (dataPageNum) => {
@@ -128,7 +180,6 @@ const FetchWithPageNum = async (dataPageNum) => {
   const pagingData = await pagingResponse.text();
   fetchContentArticle.innerHTML = pagingData;
 };
-
 
 document.addEventListener("DOMContentLoaded", function () {
   if (document.querySelector(".email-icon")) {
@@ -162,56 +213,62 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
 });
 
-
-var input = document.getElementById('search');
+var input = document.getElementById("search");
 var isItemSelected = false; // برای بررسی اینکه آیا چیزی انتخاب شده است یا خیر
 
-if(input){
-    input.onkeyup = function () {
-        if (this.value.length !== 0) {
-            document.querySelector('.search-content ul').classList.remove('hidden');
-            var filter = input.value.toUpperCase();
-            var lis = document.querySelector('.search-content').getElementsByTagName('li');
-            isItemSelected = false; // ریست کردن وقتی که کاربر چیزی در ورودی می‌نویسد
+if (input) {
+  input.onkeyup = function () {
+    if (this.value.length !== 0) {
+      document.querySelector(".search-content ul").classList.remove("hidden");
+      var filter = input.value.toUpperCase();
+      var lis = document
+        .querySelector(".search-content")
+        .getElementsByTagName("li");
+      isItemSelected = false; // ریست کردن وقتی که کاربر چیزی در ورودی می‌نویسد
 
-            for (var i = 0; i < lis.length; i++) {
-                var name = lis[i].innerHTML;
-                if (name.toUpperCase().indexOf(filter) == 0) {
-                    lis[i].style.display = 'list-item';
-                } else {
-                    lis[i].style.display = 'none';
-                }
-            }
+      for (var i = 0; i < lis.length; i++) {
+        var name = lis[i].innerHTML;
+        if (name.toUpperCase().indexOf(filter) == 0) {
+          lis[i].style.display = "list-item";
         } else {
-            var lis = document.querySelector('.search-content').getElementsByTagName('li');
-            for (var i = 0; i < lis.length; i++) {
-                lis[i].style.display = 'list-item';
-            }
-            document.querySelector('.search-content ul').classList.remove('hidden');
+          lis[i].style.display = "none";
         }
-    };
+      }
+    } else {
+      var lis = document
+        .querySelector(".search-content")
+        .getElementsByTagName("li");
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].style.display = "list-item";
+      }
+      document.querySelector(".search-content ul").classList.remove("hidden");
+    }
+  };
 
-    document.getElementById('search-content-article').addEventListener('submit', function(e) {
-        if (!isItemSelected) {
-            e.preventDefault(); 
-            document.getElementById('catidsearched').value = 0; // اگر هیچ چیزی انتخاب نشده باشد catid را 0 قرار دهید
-            var lis = document.querySelector('.search-content').getElementsByTagName('li');
-            for (var i = 0; i < lis.length; i++) {
-                lis[i].style.display = 'list-item';
-            }
-            document.querySelector('.search-content ul').classList.remove('hidden');
+  document
+    .getElementById("search-content-article")
+    .addEventListener("submit", function (e) {
+      if (!isItemSelected) {
+        e.preventDefault();
+        document.getElementById("catidsearched").value = 0; // اگر هیچ چیزی انتخاب نشده باشد catid را 0 قرار دهید
+        var lis = document
+          .querySelector(".search-content")
+          .getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+          lis[i].style.display = "list-item";
         }
+        document.querySelector(".search-content ul").classList.remove("hidden");
+      }
     });
 
-    function contentSearched(datatitle, datacatid) {
-        input.value = datatitle;
-        document.getElementById('catidsearched').value = datacatid;
-        document.querySelector('.search-content ul').classList.add('hidden');
-        isItemSelected = true; // وقتی آیتمی انتخاب می‌شود، این متغیر true شود
-    }
+  function contentSearched(datatitle, datacatid) {
+    input.value = datatitle;
+    document.getElementById("catidsearched").value = datacatid;
+    document.querySelector(".search-content ul").classList.add("hidden");
+    isItemSelected = true; // وقتی آیتمی انتخاب می‌شود، این متغیر true شود
+  }
 }
 
 function loadContentHomePage() {
@@ -241,6 +298,38 @@ async function loadSearchEngine(url, sectionload) {
           document.head
             .appendChild(scriptTag)
             .parentNode.removeChild(scriptTag);
+        }
+        const pathnamehome = window.location.pathname;
+        if (pathnamehome) {
+          if (pathnamehome == "/hotel") {
+            sessionStorage.setItem("pageName", "hotel");
+            $("#Hotel").click(function () {
+              $("#flight-type-items").hide();
+              $(".nav-module").each(function () {
+                var checknav = $(this).attr("data-nav");
+                if (checknav == "hotel") {
+                  $(this).addClass("nav-module-selected");
+                } else {
+                  $(this).removeClass("nav-module-selected");
+                }
+              });
+              LoadHotel();
+            });
+          } 
+        } else if (pathnamehome == "/tour") {
+          sessionStorage.setItem("pageName", "tour");
+          $("#Tour").click(function () {
+            $("#flight-type-items").hide();
+            $(".nav-module").each(function () {
+              var checknav = $(this).attr("data-nav");
+              if (checknav == "tour") {
+                $(this).addClass("nav-module-selected");
+              } else {
+                $(this).removeClass("nav-module-selected");
+              }
+            });
+            LoadTour();
+          });
         }
       }
     };
@@ -300,11 +389,9 @@ async function RenderFormFooter() {
     " .footer-email input[data-bc-text-input]"
   );
   inputElementVisa7.setAttribute("placeholder", "Email");
-
 }
 
-
-//form contact 
+//form contact
 
 function uploadDocumentContact(args) {
   document.querySelector("#contact-form-resize .Loading_Form").style.display =
@@ -371,8 +458,7 @@ async function RenderFormContact() {
   inputElementVisa7.setAttribute("placeholder", "Message");
 }
 
-
-//wanderlux-form 
+//wanderlux-form
 
 function uploadDocumentPassenger(args) {
   document.querySelector("#passenger-form-resize .Loading_Form").style.display =
@@ -401,8 +487,9 @@ async function OnProcessedEditObjectPassenger(args) {
   var json = await response.json();
   var errorid = json.errorid;
   if (errorid == "6") {
-    document.querySelector("#passenger-form-resize .Loading_Form").style.display =
-      "none";
+    document.querySelector(
+      "#passenger-form-resize .Loading_Form"
+    ).style.display = "none";
     document.querySelector("#passenger-form-resize .message-api").innerHTML =
       "Your request has been successfully registered.";
   } else {
@@ -433,8 +520,6 @@ async function RenderFormPassenger() {
   );
   inputElementVisa7.setAttribute("placeholder", "Email Address");
 }
-
-
 
 if (document.querySelector(".tour-swiper")) {
   var tourSwiper = new Swiper(".tour-swiper", {
@@ -507,7 +592,7 @@ if (document.querySelector(".tour-swiper")) {
 
 //   function refreshSwiper() {
 //     if (tourSwiper) {
-//       tourSwiper.update(); 
+//       tourSwiper.update();
 //     } else {
 //       tourSwiper = new Swiper(".tour-swiper", {
 //         slidesPerView: 5,
@@ -533,30 +618,27 @@ if (document.querySelector(".tour-swiper")) {
 //   }
 // });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const fetchContentTour = document.querySelector(".fetch-content-tour");
   const tourLi = document.querySelectorAll(".tour-li");
 
   if (fetchContentTour) {
-
     async function firstContent() {
-      fetchContentTour.innerHTML =
-        '<div class="loading-text">Loading...</div>'; 
+      fetchContentTour.innerHTML = '<div class="loading-text">Loading...</div>';
       try {
         const firstResponse = await fetch("/tour-load-items.bc?catid=212998");
         if (!firstResponse.ok) {
           throw new Error(`HTTP error! Status: ${firstResponse.status}`);
         }
         const firstData = await firstResponse.text();
-        fetchContentTour.innerHTML = firstData; 
+        fetchContentTour.innerHTML = firstData;
       } catch (error) {
         console.error("Fetch failed:", error);
         fetchContentTour.innerHTML =
           "<p>Error loading data: " + error.message + "</p>";
       }
     }
-    firstContent(); 
+    firstContent();
 
     // تنظیمات برای swiper
     if (tourSwiper) {
@@ -568,26 +650,21 @@ document.addEventListener("DOMContentLoaded", function () {
       tourSwiperMobile.update(); // Recalculate
     }
 
-    
     tourLi.forEach((item) => {
       item.addEventListener("click", function () {
-        
         tourLi.forEach((li) => {
           li.style.backgroundColor = "";
           li.style.color = "";
         });
 
-        
         item.style.backgroundColor = "#D0B98F";
         item.style.color = "#031947";
 
-        
         let cmsQuery = item.getAttribute("data-id");
 
-       
         async function secondContent() {
           fetchContentTour.innerHTML =
-            '<div class="loading-text">Loading...</div>'; 
+            '<div class="loading-text">Loading...</div>';
           try {
             const firstResponse = await fetch(
               `/tour-load-items.bc?catid=${cmsQuery}`
@@ -596,7 +673,7 @@ document.addEventListener("DOMContentLoaded", function () {
               throw new Error(`HTTP error! Status: ${firstResponse.status}`);
             }
             const firstData = await firstResponse.text();
-            fetchContentTour.innerHTML = firstData; 
+            fetchContentTour.innerHTML = firstData;
           } catch (error) {
             console.error("Fetch failed:", error);
             fetchContentTour.innerHTML =
@@ -608,8 +685,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-
 
 if (document.querySelector(".tour-swiper-mobile")) {
   var tourSwiperMobile = new Swiper(".tour-swiper-mobile", {
@@ -685,21 +760,20 @@ if (document.querySelector(".tourism-swiper-tour")) {
 }
 
 if (document.querySelector(".tourism-swiper-hotel")) {
-var tourismSwiperHotel = new Swiper(".tourism-swiper-hotel", {
-  slidesPerView: 4,
-  speed: 400,
-centeredSlides: false,
-spaceBetween: 8,
-grabCursor: true,
-autoplay: {
-  delay: 2500,
-  disableOnInteraction: false,
-},
-loop:true,
-navigation: {
-nextEl: '.swiper-button-next-custom',
-prevEl: '.swiper-button-prev-custom',
-},
-
-});
+  var tourismSwiperHotel = new Swiper(".tourism-swiper-hotel", {
+    slidesPerView: 4,
+    speed: 400,
+    centeredSlides: false,
+    spaceBetween: 8,
+    grabCursor: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next-custom",
+      prevEl: ".swiper-button-prev-custom",
+    },
+  });
 }
