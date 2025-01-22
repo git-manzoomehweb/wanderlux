@@ -2,7 +2,7 @@
 <basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
   <member name="info" type="view" />
 </basis>
-<header>
+<header id="header-resize">
     <div class="relative flex items-center justify-between h-[78px] mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
       <a href="/"><img src="[##cms.cms.cdn##]/images/logo.png" alt="logo-header" width="111" height="36" loading="lazy"
           class="transition-transform duration-300 lg:hidden hover:scale-90" /></a>
@@ -31,13 +31,22 @@
       <div class="flex items-center gap-2">
         <div class="items-center gap-2">
 
-          <div
-            class="flex items-center justify-center w-12 h-12 transition-all duration-300 cursor-pointer bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
-            <svg width="32" height="32" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M17.3301 23.0256V18.747C18.4781 18.7592 19.4074 19.7099 19.4074 20.8795C19.4074 22.0559 18.4781 23.0133 17.3301 23.0256ZM12.5915 13.7395C12.5915 12.544 13.5074 11.573 14.6634 11.4846V16.008C13.5087 15.9196 12.5915 14.9417 12.5915 13.7395ZM22.0741 20.8795C22.0741 18.2098 19.9474 16.0392 17.3301 16.027V11.4683H17.7834C18.6781 11.4683 19.4061 12.2068 19.4061 13.1139V13.2893C19.4061 14.0414 20.0034 14.6493 20.7394 14.6493C21.4754 14.6493 22.0727 14.0414 22.0727 13.2893V13.1139C22.0727 10.7067 20.1487 8.74828 17.7834 8.74828H17.3301V7.56508C17.3301 6.813 16.7327 6.20508 15.9967 6.20508C15.2607 6.20508 14.6634 6.813 14.6634 7.56508V8.7646C12.0368 8.85572 9.9248 11.044 9.9248 13.7408C9.92614 16.4418 12.0395 18.6368 14.6634 18.728V23.0283H14.2154C13.3208 23.0283 12.5941 22.2844 12.5941 21.3691C12.5941 20.617 11.9968 20.0091 11.2608 20.0091C10.5248 20.0091 9.92747 20.617 9.92747 21.3691C9.92747 23.7831 11.8515 25.7483 14.2154 25.7483H14.6634V26.6051C14.6634 27.3558 15.2607 27.9651 15.9967 27.9651C16.7327 27.9651 17.3301 27.3558 17.3301 26.6051V25.7456C19.9474 25.7333 22.0741 23.556 22.0741 20.8795Z"
-                fill="white" />
-            </svg>
+          <div class="currency-rate relative">
+            <div class="currency-content">
+              <div class="currency-selected" data-active="1" onclick="currency_selected(this)">
+                  <div
+                  class="flex items-center justify-center w-12 h-12 transition-all duration-300 cursor-pointer bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
+                  <svg width="32" height="32" viewBox="0 0 32 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M17.3301 23.0256V18.747C18.4781 18.7592 19.4074 19.7099 19.4074 20.8795C19.4074 22.0559 18.4781 23.0133 17.3301 23.0256ZM12.5915 13.7395C12.5915 12.544 13.5074 11.573 14.6634 11.4846V16.008C13.5087 15.9196 12.5915 14.9417 12.5915 13.7395ZM22.0741 20.8795C22.0741 18.2098 19.9474 16.0392 17.3301 16.027V11.4683H17.7834C18.6781 11.4683 19.4061 12.2068 19.4061 13.1139V13.2893C19.4061 14.0414 20.0034 14.6493 20.7394 14.6493C21.4754 14.6493 22.0727 14.0414 22.0727 13.2893V13.1139C22.0727 10.7067 20.1487 8.74828 17.7834 8.74828H17.3301V7.56508C17.3301 6.813 16.7327 6.20508 15.9967 6.20508C15.2607 6.20508 14.6634 6.813 14.6634 7.56508V8.7646C12.0368 8.85572 9.9248 11.044 9.9248 13.7408C9.92614 16.4418 12.0395 18.6368 14.6634 18.728V23.0283H14.2154C13.3208 23.0283 12.5941 22.2844 12.5941 21.3691C12.5941 20.617 11.9968 20.0091 11.2608 20.0091C10.5248 20.0091 9.92747 20.617 9.92747 21.3691C9.92747 23.7831 11.8515 25.7483 14.2154 25.7483H14.6634V26.6051C14.6634 27.3558 15.2607 27.9651 15.9967 27.9651C16.7327 27.9651 17.3301 27.3558 17.3301 26.6051V25.7456C19.9474 25.7333 22.0741 23.556 22.0741 20.8795Z"
+                      fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <div class="currency-list text-sm absolute z-10 rounded shadow invisible">
+                <ul class="bg-white p-4 max-h-72 overflow-y-auto"><li data-cost="1" data-floatdigit="2">OMR</li><li data-cost="2120000" data-floatdigit="2">IRR</li><li data-cost="2.597808394010474" data-floatdigit="2">USD</li><li data-cost="2.4927274676132383" data-floatdigit="2">EUR</li><li data-cost="2.1070377174593125" data-floatdigit="2">GBP</li><li data-cost="9.541632287800342" data-floatdigit="2">AED</li><li data-cost="3.7296362861352006" data-floatdigit="2">CAD</li><li data-cost="4.135881066987065" data-floatdigit="2">AUD</li><li data-cost="9.744620070943023" data-floatdigit="2">SAR</li><li data-cost="92.61758070828358" data-floatdigit="2">TRY</li><li data-cost="28.562456533064786" data-floatdigit="2">SEK</li><li data-cost="11.522580371765375" data-floatdigit="2">MYR</li><li data-cost="87.9874865081126" data-floatdigit="2">THB</li><li data-cost="18.89282518252997" data-floatdigit="2">CNY</li><li data-cost="1" data-floatdigit="2">USDS</li><li data-cost="1035.8506557119604" data-floatdigit="2">AMD</li><li data-cost="257.8276478374343" data-floatdigit="2">RUB</li></ul>
+                </div>
+            </div>
           </div>
         </div>
         <div

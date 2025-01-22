@@ -150,6 +150,99 @@ if (document.querySelector('input[name="category-radio"]')) {
   });
 }
 
+// currency
+document.addEventListener("DOMContentLoaded", function () {
+  localStorage_getCurrency();
+
+  if (document.querySelector(".contain-currency-show")) {
+      document.querySelector(".currency-selected").setAttribute("onclick", "");
+  }
+
+  document.addEventListener('click', function (event) {
+      if (!event.target.closest('.currency-selected,.currency-list')) {
+          document.querySelector(".currency-list").classList.add("invisible");
+      }
+  });
+});
+
+function currency_selected(element) {
+  if (!document.querySelector(".contain-currency")) {
+      if (!document.querySelector(".contain-currency-show")) {
+          let headerResize = element.closest("#header-resize");
+          let currencySelected = headerResize.querySelector(".currency-selected");
+
+          if (currencySelected.getAttribute("data-active") == 0) {
+              headerResize.querySelector(".currency-loading").classList.toggle("hidden");
+
+              fetch('/Client_Currency_Rate.bc')
+                  .then(response => response.text())
+                  .then(text => {
+                      const data_currency = JSON.parse(text.replace(/\'/g, '"'));
+                      let currencyList = headerResize.querySelector(".currency-list ul");
+                      data_currency.rate.forEach(rate => {
+                          let listItem = document.createElement("li");
+                          listItem.setAttribute("data-cost", rate.rate_cost);
+                          listItem.setAttribute("data-floatdigit", data_currency.floatdigit);
+                          listItem.textContent = rate.rate_unit;
+                          listItem.addEventListener("click", function () { select_currency(listItem); });
+                          currencyList.appendChild(listItem);
+                      });
+
+                      headerResize.querySelector(".currency-loading").classList.toggle("hidden");
+                      currencySelected.setAttribute("data-active", 1);
+                      headerResize.querySelector(".currency-list").classList.toggle("invisible");
+                  })
+                  .catch(error => console.error(error));
+          } else {
+              headerResize.querySelector(".currency-list").classList.toggle("invisible");
+          }
+      }
+  }
+}
+
+function select_currency(element) {
+  let headerResize = element.closest("#header-resize");
+  headerResize.querySelector(".currency-list").classList.toggle("invisible");
+  headerResize.querySelector(".currency-selected").innerText = element.innerText;
+  localStorage_setCurrency(
+      element.innerText, 
+      element.getAttribute("data-cost"), 
+      element.getAttribute("data-floatdigit")
+  );
+}
+
+function localStorage_setCurrency(currency_unit, currency_cost, floatdigit) {
+  let currencyObject = {
+      'currency_unit': currency_unit,
+      'currency_cost': currency_cost,
+      'floatdigit': floatdigit,
+      'time': new Date().getTime(),
+      'expire': 1200000,
+  };
+  localStorage.setItem('currencyObject', JSON.stringify(currencyObject));
+  localStorage_getCurrency();
+}
+
+function localStorage_getCurrency() {
+  let getCurrencyObject = localStorage.getItem('currencyObject');
+  let jsonCurrency = JSON.parse(getCurrencyObject);
+  
+  if (jsonCurrency) {
+      document.querySelector(".currency-selected").innerText = jsonCurrency.currency_unit;
+
+      var timer = setInterval(function () {
+          if (new Date().getTime() - jsonCurrency.time >= jsonCurrency.expire) {
+              localStorage.removeItem('currencyObject');
+              document.querySelector(".currency-selected").innerText = '--Select--';
+              document.querySelector(".currency-selected").setAttribute("data-active", 0);
+              clearInterval(timer);
+              console.log('localStorage has expired');
+          }
+      }, 1000);
+  }
+}
+
+
 // paging
 const FetchPageNumPrev = async (dataPageNum) => {
   const fetchContentArticle = document.querySelector(".fetch-content-article");
