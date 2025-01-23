@@ -571,6 +571,10 @@ body {
   position: fixed;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -670,6 +674,10 @@ body {
   height: 0.125rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -719,6 +727,10 @@ body {
 
 .w-full {
   width: 100%;
+}
+
+.max-h-72 {
+  max-height: 18rem;
 }
 
 .flex-1 {
@@ -803,6 +815,10 @@ body {
   overflow: scroll;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -842,6 +858,10 @@ body {
 
 .border-secondary-50 {
   border-color: var(--secondary-50);
+}
+
+.bg-primary-800 {
+  background-color: var(--primary-800);
 }
 
 .bg-primary-900 {
@@ -1442,3 +1462,41 @@ body {
 .footer-form [data-bc-question] {
   margin-bottom: 0 !important;
 }
+
+.fa-spinner::before {
+  content: "\f110";
+  font-family: 'fontawesome';
+}
+ .currency-selected{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transition: all;
+  animation-duration: 300ms;
+  background-color: #9f8b60;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.75rem 0 0.75rem 0.75rem;
+ }
+ .currency-selected:hover{
+  background-color: #4c360f;
+ }
+
+ .currency-list{
+  z-index: 30;
+ }
+ .currency-list ul{
+  background-color: #faf7f2;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 18rem;
+  overflow-y: auto;
+ }
+
+ .currency-list ul li{
+  cursor: pointer;
+ }

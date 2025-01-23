@@ -41,9 +41,6 @@ body {
   visibility: visible;
 }
 
-.invisible {
-  visibility: hidden;
-}
 
 .absolute {
   position: absolute;
@@ -423,10 +420,6 @@ body {
   height: 2.5rem;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .h-14 {
   height: 3.5rem;
 }
@@ -549,10 +542,6 @@ body {
 
 .h-full {
   height: 100%;
-}
-
-.max-h-72 {
-  max-height: 18rem;
 }
 
 .w-0 {
@@ -785,10 +774,6 @@ body {
 
 .overflow-y-scroll {
   overflow-y: scroll;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
 }
 
 .rounded {

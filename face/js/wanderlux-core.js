@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('click', function (event) {
       if (!event.target.closest('.currency-selected,.currency-list')) {
-          document.querySelector(".currency-list").classList.add("invisible");
+          document.querySelector(".currency-list").classList.add("hidden");
       }
   });
 });
@@ -190,11 +190,11 @@ function currency_selected(element) {
 
                       headerResize.querySelector(".currency-loading").classList.toggle("hidden");
                       currencySelected.setAttribute("data-active", 1);
-                      headerResize.querySelector(".currency-list").classList.toggle("invisible");
+                      headerResize.querySelector(".currency-list").classList.toggle("hidden");
                   })
                   .catch(error => console.error(error));
           } else {
-              headerResize.querySelector(".currency-list").classList.toggle("invisible");
+              headerResize.querySelector(".currency-list").classList.toggle("hidden");
           }
       }
   }
@@ -202,10 +202,10 @@ function currency_selected(element) {
 
 function select_currency(element) {
   let headerResize = element.closest("#header-resize");
-  headerResize.querySelector(".currency-list").classList.toggle("invisible");
-  headerResize.querySelector(".currency-selected").innerText = element.innerText;
+  headerResize.querySelector(".currency-list").classList.toggle("hidden");
+  headerResize.querySelector(".currency-selected").innerHTML = element.innerHTML;
   localStorage_setCurrency(
-      element.innerText, 
+      element.innerHTML, 
       element.getAttribute("data-cost"), 
       element.getAttribute("data-floatdigit")
   );
