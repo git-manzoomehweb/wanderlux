@@ -676,3 +676,8 @@ function empty_value(t) {
         $(this).closest(".city").find(".fclass").text(t);
       });
     });
+
+
+
+
+    
