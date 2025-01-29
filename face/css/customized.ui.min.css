@@ -1161,6 +1161,10 @@ body {
   background-color: var(--primary-50);
 }
 
+.hover\:bg-secondary-600:hover {
+  background-color: var(--secondary-600);
+}
+
 .hover\:bg-secondary-900:hover {
   background-color: var(--secondary-900);
 }

@@ -1416,6 +1416,10 @@ body {
   stroke: white;
 }
 
+.flight-svg path {
+  stroke: white;
+}
+
 .swiper-pagination-bullet {
   opacity: 1 !important;
   background-color: white !important;

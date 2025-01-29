@@ -89,6 +89,9 @@
 .tour-svg path {
   stroke: white;
 }
+.flight-svg path {
+  stroke: white;
+}
 
 .tour-swiper .swiper-pagination-bullet {
   opacity: 1 !important;

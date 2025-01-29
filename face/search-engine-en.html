@@ -1,8 +1,8 @@
 <div class="relative z-10 py-10 px-4 bg-white rounded-b-[34px] mx-auto flex flex-col search-box search-box-container">
-    <div class="select float-left rounded-b-2xl rounded-tl-2xl bg-white">
-      <ul class="overflow-auto flex items-center rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr gap-2">
+    <div class="float-left bg-white select rounded-b-2xl rounded-tl-2xl">
+      <ul class="flex items-center gap-2 overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr">
         <li
-          class="selected hotel-svg w-32 hotel-btn group cursor-pointer flex items-center justify-center font-medium text-center text-white bg-tertiary-950 rounded-b-xl rounded-tl-xl h-14"
+          class="flex items-center justify-center w-32 font-medium text-center text-white cursor-pointer selected hotel-svg hotel-btn group bg-tertiary-950 rounded-b-xl rounded-tl-xl h-14"
           data-id="r-hotel" onclick="check_searchHistory('hotel')">
           <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -34,7 +34,7 @@
         </li>
 
         <li
-          class="selected tour-btn w-32 group inactive cursor-pointer flex items-center justify-center font-medium text-center text-white bg-tertiary-950 rounded-b-xl rounded-tl-xl h-14"
+          class="flex items-center justify-center w-32 font-medium text-center text-white cursor-pointer selected tour-btn group inactive bg-tertiary-950 rounded-b-xl rounded-tl-xl h-14"
           data-id="r-tour" onclick="check_searchHistory('tour')">
           <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -55,14 +55,14 @@
         </li>
       </ul>
     </div>
-    <div class="relative z-20 search-box-shadow mt-6 clear-both float-right w-full">
+    <div class="relative z-20 float-right clear-both w-full mt-6 search-box-shadow">
       <div class=" r-hotel dir-ltr" id="Hotel">
         <form class="relative flex items-center float-right clear-both w-full frm form-search en" method="post"
           data-form="hotel" action="/Tem3_Hotel_Search.bc" id="hotelsearch"
           onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="persiancurrent" class="persiancurrent" value=""
             aria-label="persiancurrent">
-          <div class="relative flex-1 cursor-pointer mr-2 city box_city max-xl:w-full ">
+          <div class="relative flex-1 mr-2 cursor-pointer city box_city max-xl:w-full ">
             <div class="inner-city h-14">
               <div onclick="empty_value(this)" class="h-full click-content">
                 <div class="relative flex items-center">
@@ -79,7 +79,7 @@
                     </svg>
                   </div>
                   <input type="text" aria-label="city" value=""
-                    class="relative float-left w-full pl-16 font-medium cursor-pointer leading-6 outline-none placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth departure"
+                    class="relative float-left w-full pl-16 font-medium leading-6 outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth departure"
                     id="departure2" name="coHotel" autocomplete="off" required="" placeholder="Destination">
                   <input value="1182289" class="co-id from" type="hidden" name="cityid" aria-label="cityid">
                 </div>
@@ -359,7 +359,7 @@
               </div>
             </div>
           </div>
-          <div class="flex gap-2 flex-1 Basis_Date_Box max-xl:w-full ">
+          <div class="flex flex-1 gap-2 Basis_Date_Box max-xl:w-full ">
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex items-center overflow-hidden inner-city h-14">
                 <label class="hidden float-right text-base text-fourth" for="fromdate2">
@@ -370,7 +370,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="check out" value="" placeholder="Check in Date"
-                  class="relative float-right placeholder-primary-900 cursor-pointer font-medium w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
+                  class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
                   data-cache="0" readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -387,7 +387,7 @@
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="Check out" value="" placeholder="Check out Date"
-                  class="relative float-right w-full h-full placeholder-primary-900 cursor-pointer font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
+                  class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -409,21 +409,21 @@
                   </svg>
               </div>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
-                class="absolute top-0 right-0 w-full h-full outline-none cursor-pointer text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
+                class="absolute top-0 right-0 w-full h-full text-left outline-none cursor-pointer bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
                 id="passenger2">
               <div class="relative flex items-center w-full gap-2 pl-16">
                 <div
-                  class="flex items-center h-6 gap-1 text-left font-medium passenger-counts text-primary-900 count-room text-fourth">
+                  class="flex items-center h-6 gap-1 font-medium text-left passenger-counts text-primary-900 count-room text-fourth">
                   <span class="count">1</span>
                   <span class="block"> room </span>
                 </div>
                 <div
-                  class="flex items-center h-6 gap-1 text-left font-medium text-primary-900 passenger-counts count-adultRoom text-fourth">
+                  class="flex items-center h-6 gap-1 font-medium text-left text-primary-900 passenger-counts count-adultRoom text-fourth">
                   <span class="count">2</span>
                   <span class="block">adult </span>
                 </div>
                 <div
-                  class="flex items-center float-left h-6 gap-1 text-left font-medium text-primary-900 passenger-counts count-childRoom text-fourth">
+                  class="flex items-center float-left h-6 gap-1 font-medium text-left text-primary-900 passenger-counts count-childRoom text-fourth">
                   <span class="count">0</span>
                   <span class="block">child </span>
                 </div>
@@ -468,11 +468,11 @@
                     class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute left-0 right-0 mx-auto top-[50%] text-center"
                     maxlength="4000" value="1" aria-label="roomcount1" readonly="">
                 </div>
-                <div class=" w-full mb-4 countRoom countRoomHT ShowRow">
+                <div class="w-full mb-4 countRoom countRoomHT ShowRow">
                   <div
                     class="w-full pb-4 mt-4 mb-3 border-b border-dashed contentRooms contentRoom border-primary-100">
                     <div
-                      class=" w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                      class="w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow">
                       Room 1</div>
                     <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
                       <label for="textbox-adultcount2"
@@ -565,25 +565,25 @@
 
 
           <button type="submit"
-            class="relative z-10 group flex overflow-hidden w-40 items-center justify-center ml-2 text-white rounded-b-xl rounded-tl-xl cursor-pointer submit search-flight bg-primary-900 h-14 duration-300 transition-all">
-            <span class="w-40 h-14 -z-10 rounded bg-tertiary-900 absolute bottom-0 left-0 translate-x-full translate-y-full ease-out duration-300 transition-all group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            class="relative z-10 flex items-center justify-center w-40 ml-2 overflow-hidden text-white transition-all duration-300 cursor-pointer group rounded-b-xl rounded-tl-xl submit search-flight bg-primary-900 h-14">
+            <span class="absolute bottom-0 left-0 w-40 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-tertiary-900 group-hover:translate-x-0 group-hover:translate-y-0"></span>
             Search
           </button>
 
         </form>
       </div>
 
-      <div class="r-tour dir-ltr hidden" id="tour">
-        <form class="frm form-search flex items-center en clear-both relative float-left w-full" method="post"
+      <div class="hidden r-tour dir-ltr" id="tour">
+        <form class="relative flex items-center float-left clear-both w-full frm form-search en" method="post"
           data-form="tour" action="/Tem3_Tour_Search.bc" id="tourSearch"
           onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="persiancurrent" class="persiancurrent" value=""
             aria-label="persiancurrent" />
-          <div class="city box_city relative mr-2 flex-1 cursor-pointer max-xl:w-full ">
+          <div class="relative flex-1 mr-2 cursor-pointer city box_city max-xl:w-full ">
             <div class="inner-city h-14">
-              <div onclick="empty_value(this)" class="click-content h-full">
-                <div class="relative items-center flex">
-                  <label class="float-left text-fourth text-base RokhFaNum-Medium hidden" for="departure3"><span
+              <div onclick="empty_value(this)" class="h-full click-content">
+                <div class="relative flex items-center">
+                  <label class="hidden float-left text-base text-fourth RokhFaNum-Medium" for="departure3"><span
                       class="block w-10 h-[54px] bg-third rounded-[28px] leading-[54px] text-center"><img
                         loading="lazy" class="align-middle" src="[##cms.cms.cdn##]/images/des_icon.png"
                         width="27" height="27" alt="des_icon"></span><span
@@ -599,7 +599,7 @@
                   </div>
                   <input type="text" aria-label="tours" value="" onclick="city_search(this)" data-type="4"
                     name="tour-search-text" placeholder="Destination" readonly
-                    class="tour-search-text departure relative float-left cursor-pointer w-full pl-16 outline-none font-medium leading-6 placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth"
+                    class="relative float-left w-full pl-16 font-medium leading-6 outline-none cursor-pointer tour-search-text departure placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth"
                     id="departure3" autocomplete="off" required />
                   <input value="" class="co-id from" type="hidden" name="tourname" aria-label="co-id" />
                 </div>
@@ -609,13 +609,13 @@
                 <input type="text" aria-label="select tour"
                   class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
                   autocomplete="off" value="" />
-                <span class="mini-loading absolute hidden top-2 right-2" aria-label="spinner"><i
-                    class="fas fa-spinner fa-spin not-italic"></i></span>
-                <div class="countryFlight Inter-Regular p-1 tour-search-content"></div>
+                <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
+                    class="not-italic fas fa-spinner fa-spin"></i></span>
+                <div class="p-1 countryFlight Inter-Regular tour-search-content"></div>
               </div>
             </div>
           </div>
-          <div class="flex gap-2 flex-1 Basis_Date_Box max-xl:w-full ">
+          <div class="flex flex-1 gap-2 Basis_Date_Box max-xl:w-full ">
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex items-center overflow-hidden inner-city h-14">
                 <label class="hidden float-right text-base text-fourth" for="fromdate2">
@@ -625,8 +625,8 @@
                   class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
-                <input type="text" aria-label="check out" value="" placeholder="Check in Date"
-                  class="relative float-right placeholder-primary-900 font-medium cursor-pointer w-full h-full pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
+                <input type="text" aria-label="check out" value="" placeholder="Depart"
+                  class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
                   id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
                   data-cache="0" readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
@@ -642,8 +642,8 @@
                   class="absolute z-10 flex gap-2 left-[2%] sm:left-[2%] items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
-                <input type="text" aria-label="Check out" value="" placeholder="Check out Date"
-                  class="relative float-right w-full h-full placeholder-primary-900 cursor-pointer font-medium pl-16 outline-none leading-6 text-left bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
+                <input type="text" aria-label="Check out" value="" placeholder="Return"
+                  class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
                   readonly="" name="tdate" required="" id="inp2-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
@@ -665,21 +665,21 @@
                   </svg>
               </div>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
-                class="absolute top-0 right-0 w-full h-full outline-none text-left cursor-pointer bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
+                class="absolute top-0 right-0 w-full h-full text-left outline-none cursor-pointer bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
                 id="passenger2">
               <div class="relative flex items-center w-full gap-2 pl-16">
                 <div
-                  class="flex items-center h-6 gap-1 text-left font-medium passenger-counts text-primary-900 count-room text-fourth">
+                  class="flex items-center h-6 gap-1 font-medium text-left passenger-counts text-primary-900 count-room text-fourth">
                   <span class="count">1</span>
                   <span class="block"> room </span>
                 </div>
                 <div
-                  class="flex items-center h-6 gap-1 text-left font-medium text-primary-900 passenger-counts count-adultRoom text-fourth">
+                  class="flex items-center h-6 gap-1 font-medium text-left text-primary-900 passenger-counts count-adultRoom text-fourth">
                   <span class="count">2</span>
                   <span class="block">adult </span>
                 </div>
                 <div
-                  class="flex items-center float-left h-6 gap-1 text-left font-medium text-primary-900 passenger-counts count-childRoom text-fourth">
+                  class="flex items-center float-left h-6 gap-1 font-medium text-left text-primary-900 passenger-counts count-childRoom text-fourth">
                   <span class="count">0</span>
                   <span class="block">child </span>
                 </div>
@@ -724,11 +724,11 @@
                     class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-0 left-0 mx-auto top-[50%] text-center"
                     maxlength="4000" value="1" aria-label="roomcount1" readonly="">
                 </div>
-                <div class=" w-full mb-4 countRoom countRoomHT ShowRow">
+                <div class="w-full mb-4 countRoom countRoomHT ShowRow">
                   <div
                     class="w-full pb-4 mt-4 mb-3 border-b border-dashed contentRooms contentRoom border-primary-100">
                     <div
-                      class=" w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow ">
+                      class="w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow">
                       Room 1</div>
                     <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
                       <label for="textbox-adultcount2"
@@ -822,8 +822,8 @@
 
 
           <button type="submit"
-            class="relative z-10 group overflow-hidden flex w-40 items-center justify-center ml-2 text-white rounded-b-xl rounded-tl-xl cursor-pointer submit search-flight bg-primary-900 h-14">
-            <span class="w-40 h-14 -z-10 rounded bg-tertiary-900 absolute bottom-0 left-0 translate-x-full translate-y-full ease-out duration-300 transition-all group-hover:translate-x-0 group-hover:translate-y-0"></span>
+            class="relative z-10 flex items-center justify-center w-40 ml-2 overflow-hidden text-white cursor-pointer group rounded-b-xl rounded-tl-xl submit search-flight bg-primary-900 h-14">
+            <span class="absolute bottom-0 left-0 w-40 transition-all duration-300 ease-out translate-x-full translate-y-full rounded h-14 -z-10 bg-tertiary-900 group-hover:translate-x-0 group-hover:translate-y-0"></span>
             Search
           </button>
         </form>

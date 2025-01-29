@@ -57,7 +57,108 @@ function empty_value(t) {
   }
   
   $(window).width() <= 750 &&
-    $("#hotelsearch").attr("action", "/M_Hotel_Search.bc");
+  ($("#flightSearch").attr("action") === "/Tem3_Roundtrip_Search_EN.bc" &&
+  $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc"),
+$("#flightSearch").attr("action") === "/Tem3_Oneway_Search_EN.bc" &&
+  $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
+$("#hotelsearch").attr("action", "/M_Hotel_Search_en.bc"),
+$("#flightHotelSearch").attr("action", "/M_FlightHotel_Search_en.bc"),
+$("#tourSearch").attr("action", "/M_Tour_Search_en.bc")),
+
+$(".formflight").each(function () {
+  $(this).submit(function (event) {
+    var ageString = "";
+    $(this)
+      .find(".createChildDropdown")
+      .each(function () {
+        ageString += $(this).find("select").val() + ",";
+      });
+    if (ageString !== "") {
+      $(this).find(".select-age-value").val(ageString);
+      var updatedAgeString = $(this)
+        .find(".select-age-value")
+        .val()
+        .replace(/,(?=[^,]*$)/, "");
+      $(this).find(".select-age-value").val(updatedAgeString);
+    }
+
+    var adults = $(this).find(".adultcount").val(),
+      children = $(".childcount").val(),
+      totalPassengers = parseInt(adults) + parseInt(children),
+      infants = 0;
+
+    $(".select-age").each(function () {
+      if (parseInt($(this).val()) <= 2) {
+        infants += 1;
+      }
+    });
+
+    if (infants > adults) {
+      event.preventDefault();
+      $(".alert-text").html("Choose only one child per adult!");
+    }
+    if (totalPassengers > 10) {
+      event.preventDefault();
+      $(".alert-text").html(
+        "The total number of adults and children must be less than 10!"
+      );
+    }
+    if (adults < 1) {
+      event.preventDefault();
+      $(".alert-text").html("Choose at least one adult!");
+    }
+  });
+});
+
+$("#return").click(function () {
+$(this).addClass("active-r-btn");
+$("#direct").removeClass("active-r-btn");
+$("#multi").removeClass("active-r-btn"), 
+$("#multi-flight").addClass("hidden"),
+$(".disabled-label").removeClass("hidden"), 
+$("#flightSearch #inp2-flight").prop("disabled", false);
+$("#flightSearch").find(".end_date").addClass("nextCalOpening");
+$(window).width() <= 750 &&
+  $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc");
+$("#flightSearch").show();
+});
+
+$("#direct").click(function () {
+$(this).addClass("active-r-btn"),
+  $("#return").removeClass("active-r-btn"),
+  $("#multi").removeClass("active-r-btn"), 
+  $("#multi-flight").addClass("hidden"),
+  $(".disabled-label").addClass("hidden"), 
+  $("#flightSearch #inp2-flight").prop("disabled", !0),
+  $("#flightSearch").find(".end_date").removeClass("nextCalOpening"),
+  $(window).width() <= 750 &&
+    $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
+  $("#flightSearch").show();
+});
+$(".flight-btn").click(function () {
+$(".date_info_selected").find(".type_date").text("Departure date:"),
+  $(".date_info_selected").find(".day_of_date").text("---"),
+  $(".date_info_selected").find(".month_of_date").text(" "),
+  $(this).removeClass("inactive"),
+  $(".hotel-btn").addClass("inactive"),
+  $(".flighthotel-btn").addClass("inactive"),
+  $(".tour-btn").addClass("inactive"),
+  $(".r-flight").show(),
+  $(".r-hotel").hide(),
+  $(".r-flighthotel").hide(),
+  $(".r-tour").hide()
+  if($(window).width() <= 1024){
+    $(".search-bg").css(
+      "background-image",
+      'url("../images/searchbox-bg-mobile.jpg")'
+    );
+  }else {
+    $(".search-bg").css(
+      "background-image",
+      'url("../images/searchbox-bg.jpg")'
+    );
+  }
+});
   
   $(".hotel-btn").click(function () {
     console.log("ok1")
@@ -127,9 +228,27 @@ function empty_value(t) {
         $(".show-flightclass").addClass("hidden");
       }
     });
+    $("#FlightClass1, .FlightClass ul").on("click", function (event) {
+      event.stopPropagation();
+    });
   });
   
-  
+  $(document).ready(function () {
+    $(".FlightClass li").each(function () {
+      $(this).click(function () {
+        var data_value = $(this).attr("data-value");
+        var data_text = $(this).text();
+        $(this)
+          .closest(".flightclass-box")
+          .find(".FlightClass-value")
+          .val(data_value);
+        $(this)
+          .closest(".flightclass-box")
+          .find(".FlightClass-text")
+          .text(data_text);
+      });
+    });
+  });
   $(document).ready(function () {
     $(".close-hotel-psg").click(function () {
       $(".HotelPassengers").addClass("hidden");
@@ -180,6 +299,15 @@ function empty_value(t) {
     });
   });
   
+  $("#tourSearch .country").on("keyup", function () {
+    var t = $(this).val().toLowerCase();
+    $(".selectCountry").hide(),
+      $(".selectCountry")
+        .filter(function () {
+          return $(this).text().toLowerCase().includes(t);
+        })
+        .show();
+  });
   
   function change_room_count(t) {
     (e = parseInt($(t).closest("ul").next().val())),
@@ -676,3 +804,103 @@ function empty_value(t) {
         $(this).closest(".city").find(".fclass").text(t);
       });
     });
+    function exchangeDepDes(t) {
+      var e = $(t).closest(".route-content").find(".FCD1").val(),
+        i = $(t).closest(".route-content").find(".FCD2").val(),
+        n = $(t).closest(".route-content").find(".FCDid1").val(),
+        o = $(t).closest(".route-content").find(".FCDid2").val(),
+        s = $(t).closest(".route-content").find(".split-text-des").text(),
+        a = $(t).closest(".route-content").find(".split-text-dep").text();
+      $(t).closest(".route-content").find(".FCD1").val(i),
+        $(t).closest(".route-content").find(".FCD2").val(e),
+        $(t).closest(".route-content").find(".FCDid1").val(o),
+        $(t).closest(".route-content").find(".FCDid2").val(n),
+        $(t).closest(".route-content").find(".split-text-des").text(a),
+        $(t).closest(".route-content").find(".split-text-dep").text(s);
+    }
+  
+  
+    var persiancurrentTime = new Date,
+     persiangregorian_month = persiancurrentTime.getMonth() + 1,
+     persiangregorian_day = persiancurrentTime.getDate(),
+     persiangregorian_year = persiancurrentTime.getFullYear(),
+     persiancurrent = persiangregorian_year + "-" + persiangregorian_month + "-" + persiangregorian_day;
+  $(".persiancurrent").val(persiancurrent);
+  var currentTime = new Date;
+  currentTime.setDate(currentTime.getDate() + 2);
+  var gregorian_month = currentTime.getMonth() + 1,
+     gregorian_day = currentTime.getDate(),
+     gregorian_year = currentTime.getFullYear(),
+     tomorrow = new Date;
+  tomorrow.setDate(tomorrow.getDate() + 4);
+  var gregorian_month_tomorrow = tomorrow.getMonth() + 1,
+     gregorian_day_tomorrow = tomorrow.getDate(),
+     gregorian_year_tomorrow = tomorrow.getFullYear();
+  $(".mstring_fdate").val(gregorian_year + "-" + gregorian_month + "-" + gregorian_day), $(".mstring_tdate").val(gregorian_year_tomorrow + "-" + gregorian_month_tomorrow + "-" + gregorian_day_tomorrow);
+  var persian_today = gregorian_year + "-" + gregorian_month + "-" + gregorian_day,
+     persian_tomorrow = gregorian_year_tomorrow + "-" + gregorian_month_tomorrow + "-" + gregorian_day_tomorrow,
+     persian_today_split = persian_today.split("-"),
+     persian_tomorrow_split = persian_tomorrow.split("-"),
+     selected_month_today = "",
+     selected_month_tomorrow = "",
+     months = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+     };
+  
+     
+    $(".sp-start").val(persian_today), $(".sp-start").closest("div").find(".selected-day").text(persian_today_split[2]), $(".sp-start").closest("div").find(".selected-month").text(months[persian_today_split[1]]), $(".sp-end").val(persian_tomorrow), $(".sp-end").closest("div").find(".selected-day").text(persian_tomorrow_split[2]), $(".sp-end").closest("div").find(".selected-month").text(months[persian_tomorrow_split[1]]), $(".sp-start").val(persian_today), $(".sp-start").closest("div").find(".selected-day").text(persian_today_split[2]), $(".sp-start").closest("div").find(".selected-month").text(months[persian_today_split[1]]), $(".sp-end").each(function () {
+      0 == $(this).prop("disabled") && ($(this).val(persian_tomorrow), $(this).closest("div").find(".selected-day").text(persian_tomorrow_split[2]), $(this).closest("div").find(".selected-month").text(months[persian_tomorrow_split[1]]))
+   })
+  
+   function showMultiCity(t) {
+    $("#multi-flight").removeClass("hidden"), $(t).addClass("active-r-btn"), $("#direct").removeClass("active-r-btn"), $("#return").removeClass("active-r-btn"), $("#flightSearch").hide(), $("#multi-flight").show(), $(window).width() <= 750 && $("#multi-flight").attr("action", "/M_MultiCity_Search_en.bc")
+  }
+  $(window).width() >= 1024 && $("#multi-flight").find(".route-content").each(function () {
+    $(this).addClass("set_Date_Box")
+  });
+  const destination_nth_txt = ["First Destination", "Second Destination", "Third Destination", "Fourth Destination"];
+  function addMulticityRoute(t) {
+     if (document.querySelector(".route-container").querySelectorAll(".route-content").length < 4) {
+        const e = document.querySelector(".route-container").querySelectorAll(".route-content")[0].innerHTML,
+           i = document.createElement("div");
+        i.innerHTML = e, $(window).width() >= 1024 ? i.className = "relative float-left w-full mt-6 route-content set_Date_Box" : i.className = "relative float-left w-full mt-6 route-content", i.querySelector(".multi-route-tlt").innerText = destination_nth_txt[document.querySelector(".route-container").querySelectorAll(".route-content").length], i.querySelectorAll("input").forEach(t => {
+           t.value = ""
+        }), i.insertAdjacentHTML("beforeend", '<div class="route-minus-btn cursor-pointer clear-both absolute top-0 right-2 bg-third rounded-full max-xl:-right-[10px] max-xl:bg-inherit" onclick="deleteMulticityRoute(this)"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z" fill="#F87171"/></svg></div>'), i.querySelector(".gregorian_date") && i.querySelector(".gregorian_date").remove(), document.querySelector(".route-container").append(i), i.setAttribute("data-index", t.closest("form").querySelector(".route-container").querySelectorAll(".route-content").length), i.querySelector(".fromcity_container").querySelector(".country").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".country").value, i.querySelector(".fromcity_container").querySelector(".fromcity").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".tocity").value
+     }
+     checkButtonAddCity()
+  }
+  
+  function deleteMulticityRoute(t) {
+     t.closest(".route-content").remove();
+     let e = 0;
+     document.querySelector("#multi-flight").querySelector(".route-container").querySelectorAll(".route-content").forEach(t => {
+        t.querySelector(".multi-route-tlt").innerText = destination_nth_txt[e], e++, t.setAttribute("data-index", e)
+     }), checkButtonAddCity()
+  }
+  
+  function checkButtonAddCity(t) {
+     document.querySelector(".route-container").querySelectorAll(".route-content").length >= 4 ? (document.getElementsByClassName("route-plus-btn")[0].classList.remove("hvr-outline-out"), document.getElementsByClassName("route-plus-btn")[0].classList.add("deactive-addmc")) : (document.getElementsByClassName("route-plus-btn")[0].classList.remove("deactive-addmc"), document.getElementsByClassName("route-plus-btn")[0].classList.add("hvr-outline-out"))
+  }
+  
+  function formMulticity_search_isSubmited(t, e) {
+     let i = "";
+     if (t.querySelector(".childDropdowns").querySelectorAll("select").forEach(t => {
+           i = i + t.value + ","
+        }), "" !== i) {
+        t.querySelector(".select-age-value").value = i;
+        var n = t.querySelector(".select-age-value").value.replace(/,(?=[^,]*$)/, "");
+        t.querySelector(".select-age-value").value = n
+     } else t.querySelector(".select-age-value").value = 0;
+     for (let e = 0; e < t.getElementsByClassName("route-content").length; e++) t.getElementsByClassName("route-content")[e].querySelector(".fromcity").setAttribute("name", `_root.route__${e}.fromcity`), t.getElementsByClassName("route-content")[e].querySelector(".tocity").setAttribute("name", `_root.route__${e}.tocity`), t.getElementsByClassName("route-content")[e].querySelector(".start_date").setAttribute("name", `_root.route__${e}.departuredate`), t.getElementsByClassName("route-content")[e].querySelector(".fromcity-text").setAttribute("name", `_root.route__${e}.fromcityName`), t.getElementsByClassName("route-content")[e].querySelector(".tocity-text").setAttribute("name", `_root.route__${e}.tocityName`), t.getElementsByClassName("route-content")[e].querySelector(".multi-route-tlt").insertAdjacentHTML("beforeend", `<input type="hidden" value="${destination_nth_txt[e]}" name="_root.route__${e}.index"/>`)
+  }

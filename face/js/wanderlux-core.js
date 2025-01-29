@@ -83,7 +83,7 @@ if (document.querySelector(".floating-icons")) {
       if (st + window.innerHeight > footerElOffsetTop) {
         floatingIconEl.style.position = "absolute";
         floatingIconEl.style.top = `${
-          footerElOffsetTop - floatingIconEl.offsetHeight
+          footerElOffsetTop - floatingIconEl.offsetHeight + 26
         }px`;
         floatingIconEl.style.bottom = "unset";
       } else {
@@ -781,10 +781,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 if (document.querySelector(".tour-swiper-mobile")) {
   var tourSwiperMobile = new Swiper(".tour-swiper-mobile", {
-    slidesPerView: 1,
+    slidesPerView: 1.5,
     speed: 400,
     centeredSlides: false,
-    spaceBetween: 0,
+    spaceBetween: 32,
     grabCursor: true,
     autoplay: {
       delay: 2500,
