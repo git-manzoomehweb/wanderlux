@@ -114,7 +114,7 @@ $(this).addClass("active-r-btn");
 $("#direct").removeClass("active-r-btn");
 $("#multi").removeClass("active-r-btn"), 
 $("#multi-flight").addClass("hidden"),
-$(".disabled-label").removeClass("hidden"), 
+// $(".disabled-label").removeClass("hidden"), 
 $("#flightSearch #inp2-flight").prop("disabled", false);
 $("#flightSearch").find(".end_date").addClass("nextCalOpening");
 $(window).width() <= 750 &&
@@ -127,7 +127,7 @@ $(this).addClass("active-r-btn"),
 $("#return").removeClass("active-r-btn"),
 $("#multi").removeClass("active-r-btn"), 
 $("#multi-flight").addClass("hidden"),
-$(".disabled-label").addClass("hidden"), 
+// $(".disabled-label").addClass("hidden"), 
 $("#flightSearch #inp2-flight").prop("disabled", !0),
 $("#flightSearch").find(".end_date").removeClass("nextCalOpening"),
 $(window).width() <= 750 &&
@@ -232,7 +232,7 @@ $(document).ready(function () {
       $(".show-flightclass").addClass("hidden");
     }
   });
-  $("#FlightClass1, .FlightClass select").on("change", function (event) {
+  $("#FlightClass1, .FlightClass ul").on("click", function (event) {
     event.stopPropagation();
   });
 });
@@ -913,16 +913,4 @@ function show_flighttype(e) {
   $(e).find('.show-flighttype').toggleClass("hidden");
 }
 
-
-function changeFlightType(e, text) {
-  $(e).closest('.absolute').find('.search-type-text').text(text);
-  $(e).closest('.absolute').find('.show-flighttype').addClass('hidden');
-  if (text === "One Way") {
-      document.getElementById('flightSearch').action = '/Tem3_Oneway_Search.bc';
-  } else if (text === "Round Trip") {
-      document.getElementById('flightSearch').action = '/Tem3_Roundtrip_Search.bc';
-  } else {
-    showMultiCity()
-  }
-}
 

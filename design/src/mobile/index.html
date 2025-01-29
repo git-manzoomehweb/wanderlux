@@ -22,7 +22,7 @@
             <div
               class="float-left bg-white select rounded-b-2xl rounded-tl-2xl">
               <ul
-                class="grid grid-cols-3 gap-2 overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr">
+                class="flex items-center gap-2 overflow-auto rezervation-item RokhFaNum-SemiBold bg-opacity dir-ltr">
                 <li class="flex items-center justify-center w-32 font-medium text-center text-white cursor-pointer selected flight-btn group bg-tertiary-950 rounded-b-xl rounded-tl-xl h-14"  data-id="r-flight" onclick="check_searchHistory('flight')">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M33 20.7421V20.2932C33 19.745 33 19.471 32.9643 19.2416C32.7634 17.9517 31.7515 16.9397 30.4616 16.7389C30.2322 16.7031 29.9559 16.7031 29.4035 16.7031C29.263 16.7031 29.1928 16.7031 29.1253 16.7077C28.729 16.7345 28.3497 16.8787 28.0357 17.122C27.9822 17.1634 27.9301 17.2097 27.8259 17.3023C27.5937 17.5087 27.4775 17.612 27.3651 17.6875C26.6907 18.1405 25.8093 18.1405 25.1349 17.6875C25.0225 17.612 24.9063 17.5087 24.6741 17.3023C24.5699 17.2097 24.5178 17.1634 24.4643 17.122C24.1503 16.8787 23.771 16.7345 23.3747 16.7077C23.3072 16.7031 23.2375 16.7031 23.0981 16.7031H19.041C18.0756 16.7031 17.5929 16.7031 17.1979 16.8132C16.1848 17.0954 15.3934 17.8875 15.1122 18.9009C15.0025 19.296 15.003 19.7787 15.0039 20.7442C15.0042 20.9941 15.0043 21.119 15.0164 21.1957C15.0706 21.541 15.0309 21.4586 15.2671 21.7162C15.3195 21.7734 15.6293 22.0209 16.2489 22.5158C16.6831 22.8627 16.9594 23.3914 16.9589 23.9993V24.057C16.9392 24.6152 16.6803 25.1087 16.2842 25.4419C15.6276 25.9942 15.2993 26.2703 15.25 26.3262C15.0112 26.5969 15.0645 26.4824 15.011 26.8394C15 26.9131 15 27.0334 15 27.274C15 28.2264 15 28.7026 15.1072 29.0927C15.3875 30.1132 16.1848 30.9105 17.2053 31.1908C17.5954 31.298 18.0716 31.298 19.0241 31.298H23.0981C23.2375 31.298 23.3072 31.298 23.3747 31.2934C23.771 31.2666 24.1503 31.1224 24.4643 30.8792C24.5178 30.8378 24.5699 30.7914 24.6741 30.6988C24.9063 30.4924 25.0225 30.3891 25.1349 30.3137C25.8093 29.8607 26.6907 29.8607 27.3651 30.3137C27.4775 30.3891 27.5937 30.4924 27.8259 30.6988C27.9301 30.7914 27.9822 30.8378 28.0357 30.8792C28.3497 31.1224 28.729 31.2666 29.1253 31.2934C29.1928 31.298 29.263 31.298 29.4035 31.298C29.9555 31.298 30.2315 31.298 30.4608 31.2623C31.7511 31.0616 32.7633 30.0492 32.9639 28.7588C32.9995 28.5295 32.9995 28.2556 32.9994 27.7078L32.9993 27.2589C32.9993 27.0082 32.9993 26.8827 32.9872 26.8058C32.9331 26.46 32.973 26.543 32.7365 26.285C32.684 26.2277 32.3727 25.9791 31.7506 25.4824C31.3157 25.1352 31.0389 24.6057 31.0394 23.9975C31.0394 23.3893 31.3159 22.8623 31.7503 22.517C32.3723 22.0224 32.6834 21.775 32.7362 21.7176C32.9731 21.4599 32.9336 21.5416 32.9879 21.1959C33 21.1188 33 20.9932 33 20.7421Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,8 +62,16 @@
             </div>
             <div class="relative z-20 float-right clear-both w-full mt-6 search-box-shadow">
                 <div class="relative r-flight dir-ltr">
-                    <ul class="z-40 float-left flight-items absolute -top-[124px] -right-[22px] h-16 leading-[64px] RokhFaNum-SemiBold max-xl:-top-[110px] max-xl:left[unset] max-xl:right-0">
-                      <li id="direct" class="relative inline-block mr-10 text-xl text-white hover:text-primary active-r-btn" onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search_EN.bc';">
+                  <div class="px-4 w-full rounded-b-xl rounded-tl-xl bg-specialcolor-1 mb-6" onclick="show_flighttype(this)">
+                    <div class="flex items-center justify-between h-14">
+                      <span class="search-type-text">One Way</span>
+                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M31 20.75L24 27.75L17 20.75" stroke="#031947" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
+                        
+                    </div>
+                    <ul class="absolute left-0 z-40 hidden w-full px-4 py-2 show-flighttype top-12 rounded-b-xl flight-items bg-specialcolor-1">
+                      <li id="direct" class="relative pt-2 mb-2 border-t border-solid active-r-btn" onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search_EN.bc';">
                         <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="direct-input" checked type="radio" name="1">
                         <label class="cursor-pointer" for="direct-input">
                           <div>
@@ -71,7 +79,7 @@
                           </div>
                         </label>
                       </li>
-                      <li id="return" class="relative inline-block mr-10 text-xl text-white active-flight-type hover:text-primary" onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search_EN.bc';">
+                      <li id="return" class="relative mb-2 active-flight-type" onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search_EN.bc';">
                         <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="return-input" type="radio" name="1">
                         <label class="cursor-pointer" for="return-input">
                           <div>
@@ -79,7 +87,7 @@
                           </div>
                         </label>
                       </li>
-                      <li id="multi" class="relative inline-block text-xl text-white active-flight-type hover:text-primary" onclick="showMultiCity(this)">
+                      <li id="multi" class="relative active-flight-type" onclick="showMultiCity(this)">
                           <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="multi-input" type="radio" name="1">
                           <label class="cursor-pointer" for="multi-input">
                             <div>
@@ -88,6 +96,7 @@
                           </label>
                         </li>
                       </ul>
+                  </div>
                     <form action="/Tem3_Oneway_Search_EN.bc" method="get" data-form="flight" data-flightType="1" class="relative flex flex-col items-center clear-both w-full form-search en frm formflight" id="flightSearch" onsubmit="form_search_isSubmited(this,event)">
                       <input type="hidden" name="currentdate" class="currentdate" value="" aria-label="currentdate"/>
                       <input type="hidden" value="0" name="select-age" class="select-age-value" aria-label="select-age"/>
@@ -239,7 +248,7 @@
                           <div class="relative flex items-center w-full gap-2 pl-16">
                             <span class="passenger-counts count-adult"><span class="count">1</span> adult</span><span class="passenger-counts count-child"><span class="count">0</span> child</span>
                           </div>
-                          <div class="HotelPassengers rounded-[7px] w-full py-4 px-2 shadow-lg float-right text-sm z-20 absolute clear-both top-full bg-white z-10 left-0 text-left leading-6 border max-xl:w-full ">
+                          <div class="HotelPassengers hidden rounded-[7px] w-full py-4 px-2 shadow-lg float-right text-sm z-20 absolute clear-both top-full bg-white left-0 text-left leading-6 border max-xl:w-full ">
                             <div class="float-right clear-both w-full mb-4 itemlable2 IRANSansWeb">
                               <label for="FlightClass1" class="float-left text-sm leading-[48px]"><span>Flight Class</span></label>
                               <div class="float-right Classname-box">

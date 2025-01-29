@@ -62,7 +62,6 @@ function empty_value(t) {
 $("#flightSearch").attr("action") === "/Tem3_Oneway_Search_EN.bc" &&
   $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
 $("#hotelsearch").attr("action", "/M_Hotel_Search_en.bc"),
-$("#flightHotelSearch").attr("action", "/M_FlightHotel_Search_en.bc"),
 $("#tourSearch").attr("action", "/M_Tour_Search_en.bc")),
 
 $(".formflight").each(function () {
@@ -115,7 +114,7 @@ $(this).addClass("active-r-btn");
 $("#direct").removeClass("active-r-btn");
 $("#multi").removeClass("active-r-btn"), 
 $("#multi-flight").addClass("hidden"),
-$(".disabled-label").removeClass("hidden"), 
+// $(".disabled-label").removeClass("hidden"), 
 $("#flightSearch #inp2-flight").prop("disabled", false);
 $("#flightSearch").find(".end_date").addClass("nextCalOpening");
 $(window).width() <= 750 &&
@@ -128,7 +127,7 @@ $(this).addClass("active-r-btn"),
   $("#return").removeClass("active-r-btn"),
   $("#multi").removeClass("active-r-btn"), 
   $("#multi-flight").addClass("hidden"),
-  $(".disabled-label").addClass("hidden"), 
+  // $(".disabled-label").addClass("hidden"), 
   $("#flightSearch #inp2-flight").prop("disabled", !0),
   $("#flightSearch").find(".end_date").removeClass("nextCalOpening"),
   $(window).width() <= 750 &&
@@ -140,9 +139,11 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
   $(".date_info_selected").find(".day_of_date").text("---"),
   $(".date_info_selected").find(".month_of_date").text(" "),
   $(this).removeClass("inactive"),
+  $(this).addClass("flight-svg"),
   $(".hotel-btn").addClass("inactive"),
-  $(".flighthotel-btn").addClass("inactive"),
+  $(".hotel-btn").removeClass("hotel-svg"),
   $(".tour-btn").addClass("inactive"),
+  $(".tour-btn").removeClass("tour-svg"),
   $(".r-flight").show(),
   $(".r-hotel").hide(),
   $(".r-flighthotel").hide(),
@@ -161,15 +162,15 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
 });
   
   $(".hotel-btn").click(function () {
-    console.log("ok1")
+
     if ($(window).width() <= 1024) {
-      console.log("ok2")
+
       $(".search-bg").css(
         "background-image",
         'url("../images/hotel-searchbox-bg-mobile.jpg")'
       );
     } else {
-      console.log("ok3")
+
       $(".search-bg").css(
         "background-image",
         'url("../images/hotel-searchbox-bg.jpg")'
@@ -185,6 +186,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(".flighthotel-btn").addClass("inactive"),
       $(".tour-btn").addClass("inactive"),
       $(".tour-btn").removeClass("tour-svg"),
+      $(".flight-btn").removeClass("flight-svg"),
       $(".r-hotel").show(),
       $(".r-flight").hide(),
       $(".r-tour").hide(),
@@ -211,6 +213,8 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(".flight-btn").addClass("inactive"),
       $(".hotel-btn").addClass("inactive"),
       $(".hotel-btn").removeClass("hotel-svg"),
+      $(".flight-btn").addClass("inactive"),
+      $(".flight-btn").removeClass("flight-svg"),
       $(".flighthotel-btn").addClass("inactive"),
       $(".insurance-btn").addClass("inactive"),
       $(".cip-btn").addClass("inactive"),
@@ -904,3 +908,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
      } else t.querySelector(".select-age-value").value = 0;
      for (let e = 0; e < t.getElementsByClassName("route-content").length; e++) t.getElementsByClassName("route-content")[e].querySelector(".fromcity").setAttribute("name", `_root.route__${e}.fromcity`), t.getElementsByClassName("route-content")[e].querySelector(".tocity").setAttribute("name", `_root.route__${e}.tocity`), t.getElementsByClassName("route-content")[e].querySelector(".start_date").setAttribute("name", `_root.route__${e}.departuredate`), t.getElementsByClassName("route-content")[e].querySelector(".fromcity-text").setAttribute("name", `_root.route__${e}.fromcityName`), t.getElementsByClassName("route-content")[e].querySelector(".tocity-text").setAttribute("name", `_root.route__${e}.tocityName`), t.getElementsByClassName("route-content")[e].querySelector(".multi-route-tlt").insertAdjacentHTML("beforeend", `<input type="hidden" value="${destination_nth_txt[e]}" name="_root.route__${e}.index"/>`)
   }
+  function show_flighttype(e) {
+    $(e).find('.show-flighttype').toggleClass("hidden");
+  }
+  

@@ -62,12 +62,20 @@ body {
   right: -1rem;
 }
 
+.top-12 {
+  top: 3rem /* 48px */;
+}
+
 .-top-1 {
   top: -0.25rem;
 }
 
 .-top-8 {
   top: -2rem;
+}
+
+.-top-20 {
+  top: -5rem /* -80px */;
 }
 
 .bottom-0 {
@@ -206,6 +214,10 @@ body {
   z-index: 30;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .float-right {
   float: right;
 }
@@ -230,6 +242,11 @@ body {
 .mx-1 {
   margin-left: 0.25rem /* 4px */;
   margin-right: 0.25rem /* 4px */;
+}
+
+.mx-2 {
+  margin-left: 0.5rem /* 8px */;
+  margin-right: 0.5rem /* 8px */;
 }
 
 .my-2 {
@@ -456,6 +473,10 @@ body {
   height: 1.75rem;
 }
 
+.h-10 {
+  height: 1.75rem;
+}
+
 .h-\[122px\] {
   height: 122px;
 }
@@ -576,6 +597,10 @@ body {
   width: 10rem;
 }
 
+.w-44 {
+  width: 11rem /* 176px */;
+}
+
 .w-60 {
   width: 15rem /* 240px */;
 }
@@ -640,8 +665,16 @@ body {
   flex: 0.6;
 }
 
+.flex-\[1\.1\] {
+  flex: 1.1;
+}
+
 .flex-\[1\.8\] {
   flex: 1.8;
+}
+
+.flex-\[2\] {
+  flex: 2;
 }
 
 .flex-shrink-0 {
@@ -1418,6 +1451,10 @@ body {
 
 .flight-svg path {
   stroke: white;
+}
+
+.Noactive-date{
+  opacity: 30%;
 }
 
 .swiper-pagination-bullet {

@@ -644,10 +644,6 @@ body {
   top: -0.25rem;
 }
 
-.-top-12 {
-  top: -3rem;
-}
-
 .-top-2 {
   top: -0.5rem;
 }
@@ -792,6 +788,10 @@ body {
   top: 0.25rem;
 }
 
+.top-12 {
+  top: 3rem;
+}
+
 .top-2 {
   top: 0.5rem;
 }
@@ -870,10 +870,6 @@ body {
 
 .top-full {
   top: 100%;
-}
-
-.top-12 {
-  top: 3rem;
 }
 
 .-z-10 {
@@ -2456,6 +2452,10 @@ body {
 
 .flight-svg path {
   stroke: white;
+}
+
+.Noactive-date{
+  opacity: 30%;
 }
 
 .tour-swiper .swiper-pagination-bullet {
