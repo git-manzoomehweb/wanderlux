@@ -767,6 +767,10 @@ body {
   flex-direction: column;
 }
 
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
 .items-center {
   align-items: center;
 }

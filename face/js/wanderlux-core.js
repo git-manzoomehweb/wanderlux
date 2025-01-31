@@ -784,7 +784,7 @@ if (document.querySelector(".tour-swiper-mobile")) {
     slidesPerView: 1.5,
     speed: 400,
     centeredSlides: false,
-    spaceBetween: 32,
+    spaceBetween: 8,
     grabCursor: true,
     autoplay: {
       delay: 2500,

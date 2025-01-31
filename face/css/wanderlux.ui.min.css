@@ -70,6 +70,10 @@ body {
   top: -0.25rem;
 }
 
+.-top-2 {
+  top: -0.5rem /* -8px */;
+}
+
 .-top-8 {
   top: -2rem;
 }
@@ -473,10 +477,6 @@ body {
   height: 1.75rem;
 }
 
-.h-10 {
-  height: 1.75rem;
-}
-
 .h-\[122px\] {
   height: 122px;
 }
@@ -565,6 +565,10 @@ body {
   height: 100%;
 }
 
+.max-h-\[2123px\] {
+  max-height: 2123px;
+}
+
 .w-0 {
   width: 0px;
 }
@@ -619,6 +623,10 @@ body {
 
 .w-\[269px\] {
   width: 269px;
+}
+
+.w-\[389px\] {
+  width: 389px;
 }
 
 .w-\[29\.3px\] {

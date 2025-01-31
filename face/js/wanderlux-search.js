@@ -148,34 +148,9 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
   $(".r-hotel").hide(),
   $(".r-flighthotel").hide(),
   $(".r-tour").hide()
-  if($(window).width() <= 1024){
-    $(".search-bg").css(
-      "background-image",
-      'url("../images/searchbox-bg-mobile.jpg")'
-    );
-  }else {
-    $(".search-bg").css(
-      "background-image",
-      'url("../images/searchbox-bg.jpg")'
-    );
-  }
 });
   
   $(".hotel-btn").click(function () {
-
-    if ($(window).width() <= 1024) {
-
-      $(".search-bg").css(
-        "background-image",
-        'url("../images/hotel-searchbox-bg-mobile.jpg")'
-      );
-    } else {
-
-      $(".search-bg").css(
-        "background-image",
-        'url("../images/hotel-searchbox-bg.jpg")'
-      );
-    }
     return (
       $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(".date_info_selected").find(".day_of_date").text("---"),
@@ -183,7 +158,6 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(this).removeClass("inactive"),
       $(this).addClass("hotel-svg"),
       $(".flight-btn").addClass("inactive"),
-      $(".flighthotel-btn").addClass("inactive"),
       $(".tour-btn").addClass("inactive"),
       $(".tour-btn").removeClass("tour-svg"),
       $(".flight-btn").removeClass("flight-svg"),
@@ -194,17 +168,6 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
     );
   });
   $(".tour-btn").click(function () {
-    if($(window).width() <= 1024){
-      $(".search-bg").css(
-        "background-image",
-        'url("../images/tour-searchbox-bg-mobile.jpg")'
-      );
-    }else {
-      $(".search-bg").css(
-        "background-image",
-        'url("../images/tour-searchbox-bg.jpg")'
-      );
-    }
     $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(".date_info_selected").find(".day_of_date").text("---"),
       $(".date_info_selected").find(".month_of_date").text(" "),
@@ -215,8 +178,6 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       $(".hotel-btn").removeClass("hotel-svg"),
       $(".flight-btn").addClass("inactive"),
       $(".flight-btn").removeClass("flight-svg"),
-      $(".flighthotel-btn").addClass("inactive"),
-      $(".insurance-btn").addClass("inactive"),
       $(".cip-btn").addClass("inactive"),
       $(".r-tour").show(),
       $(".r-flight").hide(),
@@ -236,7 +197,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       event.stopPropagation();
     });
   });
-  
+
   $(document).ready(function () {
     $(".FlightClass li").each(function () {
       $(this).click(function () {
@@ -522,7 +483,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
             .append(
               '<div class="age-selection dir-rtl createChildDropdown clear-both w-full mb-4 float-right"><div class="label float-left text-sm leading-[48px]">child age' +
               i +
-              '</div><select  class="select-age float-left bg-[#F8F8F8] w-[88px] h-12 leading-12 rounded-[7px] px-2"><option value="1">to 1 year</option><option value="2">1 to 2</option><option value="3">2 to 3</option><option value="4">3 to 4</option><option value="5">4 to 5</option><option value="6">5 to 6</option><option value="7">6 to 7</option><option value="8">7 to 8</option><option value="9">8 to 9</option><option value="10">9 to 10</option><option value="11">10 to 11</option><option value="12">11 to 12</option></select></div>'
+              '</div><select  class="select-age float-left bg-secondary-100 h-12 leading-12 rounded-[7px] px-2"><option value="1">to 1 year</option><option value="2">1 to 2</option><option value="3">2 to 3</option><option value="4">3 to 4</option><option value="5">4 to 5</option><option value="6">5 to 6</option><option value="7">6 to 7</option><option value="8">7 to 8</option><option value="9">8 to 9</option><option value="10">9 to 10</option><option value="11">10 to 11</option><option value="12">11 to 12</option></select></div>'
             );
         $(t).closest(".inner-city").find(".count-childRoom .count") &&
           $(t).closest(".inner-city").find(".count-childRoom .count").text(n);
@@ -540,29 +501,29 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
   var destroyChildDropdownRoom = function (t, e) {
     t.find("div.createChildDropdown").get(e).remove();
   };
-  // $(".button-click .button").on("click", function () {
-  //   var t = $(this),
-  //     e = parseInt(t.closest("ul").next().val()),
-  //     i = "+" == t.text() ? e + 1 : e > 0 ? e - 1 : 0;
-  //   i >= 10 ||
-  //     i < 1 ||
-  //     (t.closest("ul").next().val(i),
-  //       $(".cat_textbox").each(function () {
-  //         $(this).next("span").text();
-  //       }),
-  //       t.closest("form").find(".hotel-inputF").attr("placeholder", ""),
-  //       t.closest("form").find(".hotel-inputH").attr("placeholder", ""),
-  //       t
-  //         .closest("form")
-  //         .find(".count-adult")
-  //         .text(i + " adult"),
-  //       t.closest(".inner-city").find(".passenger-counts").show(),
-  //       $(this).closest(".inner-city").find(".count-adultRoom .count") &&
-  //       $(this).closest(".inner-city").find(".count-adultRoom .count").text(i));
-  // });
+  $(".button-click .button").on("click", function () {
+    var t = $(this),
+      e = parseInt(t.closest("ul").next().val()),
+      n = t.find("svg").attr("data-function") === "plus" ? e + 1 : e > 0 ? e - 1 : 0;
+    n >= 10 ||
+      n < 1 ||
+      (t.closest("ul").next().val(n),
+        $(".cat_textbox").each(function () {
+          $(this).next("span").text();
+        }),
+        t.closest("form").find(".hotel-inputF").attr("placeholder", ""),
+        t.closest("form").find(".hotel-inputH").attr("placeholder", ""),
+        t
+          .closest("form")
+          .find(".count-adult")
+          .text(n + " adult"),
+        t.closest(".inner-city").find(".passenger-counts").show(),
+        $(this).closest(".inner-city").find(".count-adultRoom .count") &&
+        $(this).closest(".inner-city").find(".count-adultRoom .count").text(n));
+  });
   var createChildDropdown = function (t) {
     var e = $("<div />", {
-      class: "createChildDropdown mb-4 w-full float-right clear-both",
+      class: "createChildDropdown flex justify-between mb-4 w-full float-right clear-both",
     });
     return (
       e.append(
@@ -573,7 +534,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
       ),
       e.append(
         $(
-          '<select class="select-age float-left bg-[#F8F8F8] w-[88px] h-12 leading-12 rounded-[7px] px-2" id="select-age' +
+          '<select class="select-age float-left bg-secondary-100 h-12 leading-12 rounded-[7px] px-2" id="select-age' +
           t +
           '"/>'
         )
@@ -697,7 +658,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
   $(".button-click-child .button").on("click", function () {
     var t = $(this),
       e = parseInt(t.closest("ul").next().val()),
-      i = "+" == t.text() ? e + 1 : e > 0 ? e - 1 : 0,
+      i = t.find("svg").attr("data-function") === "plus" ? e + 1 : e > 0 ? e - 1 : 0, // Changed from "+" to SVG check
       n = "";
     i >= 5 ||
       (t.closest("ul").next().val(i),
@@ -723,7 +684,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
           .closest("form")
           .find(".count-child")
           .text(i + " child"));
-  }),
+  });
     $(".search-flight").click(function () {
       (s = $(this).closest("form").find(".childcountinput").val()),
         "0," == s && $(this).closest("form").find(".childcountinput").val(0),
@@ -880,7 +841,7 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
            i = document.createElement("div");
         i.innerHTML = e, $(window).width() >= 1024 ? i.className = "relative float-left w-full mt-6 route-content set_Date_Box" : i.className = "relative float-left w-full mt-6 route-content", i.querySelector(".multi-route-tlt").innerText = destination_nth_txt[document.querySelector(".route-container").querySelectorAll(".route-content").length], i.querySelectorAll("input").forEach(t => {
            t.value = ""
-        }), i.insertAdjacentHTML("beforeend", '<div class="route-minus-btn cursor-pointer clear-both absolute top-0 right-2 bg-third rounded-full max-xl:-right-[10px] max-xl:bg-inherit" onclick="deleteMulticityRoute(this)"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z" fill="#F87171"/></svg></div>'), i.querySelector(".gregorian_date") && i.querySelector(".gregorian_date").remove(), document.querySelector(".route-container").append(i), i.setAttribute("data-index", t.closest("form").querySelector(".route-container").querySelectorAll(".route-content").length), i.querySelector(".fromcity_container").querySelector(".country").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".country").value, i.querySelector(".fromcity_container").querySelector(".fromcity").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".tocity").value
+        }), i.insertAdjacentHTML("beforeend", '<div class="route-minus-btn cursor-pointer clear-both absolute -top-2 right-2 bg-third rounded-full max-xl:-right-[10px] max-xl:bg-inherit" onclick="deleteMulticityRoute(this)"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z" fill="#F87171"/></svg></div>'), i.querySelector(".gregorian_date") && i.querySelector(".gregorian_date").remove(), document.querySelector(".route-container").append(i), i.setAttribute("data-index", t.closest("form").querySelector(".route-container").querySelectorAll(".route-content").length), i.querySelector(".fromcity_container").querySelector(".country").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".country").value, i.querySelector(".fromcity_container").querySelector(".fromcity").value = i.previousElementSibling.querySelector(".tocity_container").querySelector(".tocity").value
      }
      checkButtonAddCity()
   }
@@ -908,7 +869,33 @@ $(".date_info_selected").find(".type_date").text("Departure date:"),
      } else t.querySelector(".select-age-value").value = 0;
      for (let e = 0; e < t.getElementsByClassName("route-content").length; e++) t.getElementsByClassName("route-content")[e].querySelector(".fromcity").setAttribute("name", `_root.route__${e}.fromcity`), t.getElementsByClassName("route-content")[e].querySelector(".tocity").setAttribute("name", `_root.route__${e}.tocity`), t.getElementsByClassName("route-content")[e].querySelector(".start_date").setAttribute("name", `_root.route__${e}.departuredate`), t.getElementsByClassName("route-content")[e].querySelector(".fromcity-text").setAttribute("name", `_root.route__${e}.fromcityName`), t.getElementsByClassName("route-content")[e].querySelector(".tocity-text").setAttribute("name", `_root.route__${e}.tocityName`), t.getElementsByClassName("route-content")[e].querySelector(".multi-route-tlt").insertAdjacentHTML("beforeend", `<input type="hidden" value="${destination_nth_txt[e]}" name="_root.route__${e}.index"/>`)
   }
+
+
   function show_flighttype(e) {
-    $(e).find('.show-flighttype').toggleClass("hidden");
-  }
+    var dropdown = $(e).find('.show-flighttype');
+    
+    dropdown.slideToggle(200); 
+
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest(e).length) {
+            dropdown.slideUp(200); 
+        }
+    });
+    $(e).find('li').on('click', function(event) {
+        event.stopPropagation();
+        var selectedText = $(this).find('span').text();
+        $(e).find('.search-type-text').text(selectedText);
+        dropdown.slideUp(200); 
+    });
+}
   
+$(document).ready(function() {
+  $('.mobile-type-search .text').not(':first').hide();
+
+  $('.mobile-type-search').on('click', function() {
+      $('.mobile-type-search .text').not($(this).find('.text')).hide();
+      $(this).find('.text').show();
+      $('.mobile-type-search').removeClass('px-4');
+      $(this).addClass('px-4');
+  });
+});

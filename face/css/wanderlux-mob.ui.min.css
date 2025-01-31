@@ -81,8 +81,20 @@ body {
   top: -0.25rem;
 }
 
+.-top-2 {
+  top: -0.5rem;
+}
+
 .-top-8 {
   top: -2rem;
+}
+
+.top-8 {
+  top: 2rem /* 32px */;
+}
+
+.top-12 {
+  top: 3rem;
 }
 
 .-top-\[124px\] {
@@ -103,6 +115,10 @@ body {
 
 .left-0 {
   left: 0px;
+}
+
+.left-2 {
+  left: 0.5rem;
 }
 
 .left-12 {
@@ -251,6 +267,10 @@ body {
 
 .z-30 {
   z-index: 30;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-\[1\] {
@@ -631,6 +651,10 @@ body {
 
 .max-h-72 {
   max-height: 18rem;
+}
+
+.min-w-14 {
+  min-width: 3.5rem /* 56px */;
 }
 
 .w-1\/12 {
@@ -1513,6 +1537,10 @@ body {
 }
 
 .tour-svg path {
+  stroke: white;
+}
+
+.flight-svg path {
   stroke: white;
 }
 

@@ -662,7 +662,7 @@ fieldset hr {
     bottom: 0;
 }
 
-.currency-selected span {
+.currency-selected .currency__icon {
   display: inline-block;
   width: 12px;
   height: 22px;
