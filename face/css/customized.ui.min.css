@@ -674,6 +674,10 @@ body {
   height: 0.125rem;
 }
 
+.h-7 {
+    height: 1.75rem /* 28px */;
+}
+
 .h-12 {
   height: 3rem;
 }

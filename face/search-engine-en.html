@@ -105,9 +105,9 @@
         <form action="/Tem3_Oneway_Search_EN.bc" method="get" data-form="flight" data-flightType="1" class="relative flex items-center clear-both w-full form-search en frm formflight" id="flightSearch" onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="currentdate" class="currentdate" value="" aria-label="currentdate"/>
           <input type="hidden" value="0" name="select-age" class="select-age-value" aria-label="select-age"/>
-          <div class="city departure-city float-left relative cursor-pointer flex-[1.1]">
-            <div class="inner-city inner-container h-14">
-            <div onclick="empty_value(this)" class="h-full click-content">
+          <div class="city departure-city float-left relative cursor-pointer flex-[1.5]">
+            <div class="flex inner-city inner-container h-14">
+            <div onclick="empty_value(this)" class="flex-1 h-full click-content">
                 <div class="relative flex items-center">
                   <label class="hidden float-right text-base text-fourth RokhFaNum-Medium" for="departure1"><span class="block w-10 h-[54px] bg-third rounded-[28px] leading-[54px] text-center"><img loading="lazy" class="align-middle" src="[##cms.cms.cdn##]/images/dep_icon.png" width="27" height="27" alt="dep_icon"></span><span class="absolute top-0.5 left-12">From</span></label>
                   <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
@@ -121,25 +121,27 @@
             </div>
             <input value="1182289" class="co-id FCDid1 from" type="hidden" name="from" aria-label="co-id"/>
             <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                 <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                 <div class="p-1 countryFlight Inter-Regular"></div>
                 <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                   <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198422"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Trabzon - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1170764"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cairo - all airports</span></li> -->
-                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phuket - all airports</span></li> -->
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198768"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bali - all airports</span></li> -->
+                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180496"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Maldives - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li> -->
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li> -->
@@ -148,23 +150,22 @@
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li> -->
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li> -->
                   <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li> -->
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
                 </ul>
             </div>
-            <i class="hidden fas fa-exchange-alt not-italic absolute top-[15px] -right-[15px] z-[1] h-7 w-7 leading-7 text-center text-white rounded-full bg-primary hover:bg-black" data-index="0" onclick="ExchangeRoute(this)"></i>
-
-              
-            </div>
-          </div>
-          <span class="mx-2 fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
+                      <span class="mx-2 fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
             <svg width="57" height="56"  viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.666992 16C0.666992 7.16344 7.83044 0 16.667 0H56.667V40C56.667 48.8366 49.5035 56 40.667 56H16.667C7.83044 56 0.666992 48.8366 0.666992 40V16Z" fill="#031947"/>
               <path d="M35.1009 23.1053L26.5224 23.1053L26.5224 25.5527L35.1009 25.5527L35.1009 29.2107L39.9697 24.3419L35.1009 19.4473L35.1009 23.1053ZM17.9697 31.658L22.8643 36.5527L22.8643 32.8946L31.417 32.8946L31.417 30.4473L22.8643 30.4473L22.8643 26.7892L17.9697 31.658Z" fill="#E0F8F8"/>
               </svg>
           </span>
+            <i class="hidden fas fa-exchange-alt not-italic absolute top-[15px] -right-[15px] z-[1] h-7 w-7 leading-7 text-center text-white rounded-full bg-primary hover:bg-black" data-index="0" onclick="ExchangeRoute(this)"></i>
+
+              
+            </div>
+          </div>
+
 
           <div class="city destination-city float-left relative cursor-pointer flex-[1.1]">
             <div class="inner-city inner-container h-14">
@@ -181,12 +182,22 @@
             </div>
             <input value="1177676" class="co-id FCDid2 to" type="hidden" name="to" aria-label="co-id"/>
             <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                 <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                 <div class="p-1 countryFlight Inter-Regular"></div>
                <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                   <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                  <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li>
@@ -196,22 +207,7 @@
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phuket - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
                   <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baghdad - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baku - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li>
-                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li> -->
                  </ul>
             </div>
             </div>
@@ -223,18 +219,18 @@
                   <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                     <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                   </div>
-                  <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1" required="" placeholder="select date"/>
+                  <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1" required="" placeholder="select date"/>
                   <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate" aria-label="mstring_fdate"/>
                 </div>
             </div>
             <div class="city date-city float-left relative cursor-pointer w-1/2 max-xl:w-[150px]">
-                <div class="flex items-center overflow-hidden inner-city inner-container h-14">
+                <div class="flex items-center overflow-hidden inner-city inner-container h-14 Noactive-date">
                   <label class="hidden float-right text-base text-fourth RokhFaNum-Medium disabled-label" for="inp2-flight"><span class="absolute top-0.5 left-[23px]">Return</span></label>
                   <span class="hidden mx-2 IRANSansWeb font-bold text-fourth leading-[80px]">-</span>
                   <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                     <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                   </div>
-                  <input type="text" aria-label="return date" value="1402-07-29" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none Basis_Date end_date end_date_filled Noactive-date sp-end placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="tdate" required="" disabled id="inp2-flight" placeholder="select date"/>
+                  <input type="text" aria-label="return date" value="1402-07-29" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer Basis_Date end_date end_date_filled sp-end placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="tdate" required="" disabled id="inp2-flight" placeholder="select date"/>
                   <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate" aria-label="mstring_tdate"/>
                 </div>
             </div>
@@ -279,12 +275,12 @@
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></span></div></li>
                     </ul>
-                    <input id="textbox-adultcount1" type="text" class="cat_textbox IRANSansWeb adultcount adult adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" name="adult" maxlength="4000" value="1">
+                    <input id="textbox-adultcount1" type="text" class="cat_textbox IRANSansWeb adultcount adult adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" readonly name="adult" maxlength="4000" value="1">
                   </div>
                   <div class="relative float-right clear-both w-full mb-4 itemlable2 IRANSansWeb">
                     <label for="textbox-childcount1" class="float-left text-sm text-primary-800 leading-[48px]"><span>child</span></label>
                     <input type="hidden" value="0" class="childcountinput" id="textbox-childcount1" name="child" aria-label="childcount">
-                    <ul class="flex justify-between flex-row-reverse float-right w-full h-12 button-click-child leading-12">
+                    <ul class="flex flex-row-reverse justify-between float-right w-full h-12 button-click-child leading-12">
                       <li class="float-right h-12 text-center leading-12"><div class="button secondary h-full leading-[48px]"><span class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-secondary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -295,12 +291,12 @@
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></span></div></li>
                     </ul>
-                    <input type="text" aria-label="chcount" class="cat_textbox IRANSansWeb chcount child-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" name="chcount" maxlength="4000" value="0">
+                    <input type="text" aria-label="chcount" class="cat_textbox IRANSansWeb chcount child-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" readonly name="chcount" maxlength="4000" value="0">
                   </div>
                   <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
                 </div>
               </div>
-              <div class="close-hotel-psg clear-both text-center flex items-center justify-center RokhFaNum-Regular text-primary cursor-pointer w-full transition-all duration-300 font-bold text-sm h-10 float-right border border-primary px-1 rounded-lg hover:bg-primary-600 hover:text-white">confirm</div>
+              <div class="flex items-center justify-center float-right clear-both w-full h-10 px-1 text-sm font-bold text-center transition-all duration-300 border rounded-lg cursor-pointer close-hotel-psg RokhFaNum-Regular text-primary border-primary hover:bg-primary-600 hover:text-white">confirm</div>
             </div>
             </div>
           </div>
@@ -311,16 +307,16 @@
           </section>
           <p class="clear-both text-base text-left text-red-600 alert-text warning dir-ltr"></p>
         </form>
-        <form action="/Tem3_Multicity_Search_EN.bc" method="post" data-form="" class="relative hidden clear-both mt-5 form-search en frm formflight multicity-form" id="multi-flight" onsubmit="formMulticity_search_isSubmited(this,event)">
+        <form action="/Tem3_Multicity_Search.bc" method="post" data-form="" class="relative hidden clear-both mt-5 form-search en frm formflight multicity-form" id="multi-flight" onsubmit="formMulticity_search_isSubmited(this,event)">
           <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent"/>
           <input type="hidden" value="0" name="select-age" class="select-age-value" aria-label="select-age"/>
           <div class="float-left w-full route-container">
             <div class="relative float-left w-full mb-6 route-content" data-index="1">
               <div class="clear-both w-full mb-2 text-base text-left multi-route-tlt text-primary RokhFaNum-Medium">First Route</div>
               <div class="flex items-center float-left clear-both w-full gap-2 mb-3">
-                <div class="relative flex-1 float-left cursor-pointer city fromcity_container departure-city max-xl:w-full max-xl:mb-6">
-                  <div class="inner-city inner-container h-14">
-                  <div onclick="empty_value(this)" class="h-full click-content">
+                <div class="relative flex-[1.17] float-left cursor-pointer city fromcity_container departure-city max-xl:w-full max-xl:mb-6">
+                  <div class="flex gap-2 inner-city inner-container h-14">
+                  <div onclick="empty_value(this)" class="flex-1 h-full click-content">
                       <div class="relative flex items-center">
                         <label class="hidden float-right text-base text-fourth RokhFaNum-Medium" for="departure1-3"><span class="block w-10 h-[54px] bg-third rounded-[28px] leading-[54px] text-center"><img loading="lazy" class="align-middle" src="[##cms.cms.cdn##]/images/dep_icon.png" width="27" height="27" alt="dep_icon"></span><span class="absolute top-0.5 left-12">From</span></label>
                         <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
@@ -329,17 +325,27 @@
                             <path d="M5.24609 19.9697H18.7563" stroke="#BFAB86" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>                                    
                         </div>
-                        <input id="departure1-3" type="text" class="relative float-left w-full pl-16 font-medium leading-6 outline-none cursor-pointer FCD1 departure placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth" required="" aria-label="departure" autocomplete="off" value="Muscat" placeholder="select departure"/>
+                        <input id="departure1-3" type="text" class="relative float-left w-full pl-16 font-medium leading-6 outline-none cursor-pointer FCD1 departure fromcity-text placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-900 h-14 text-value text-fourth" required="" aria-label="departure" autocomplete="off" value="Muscat" placeholder="select departure"/>
                       </div>
                   </div>
                   <input value="1182289" class="co-id FCDid1 from fromcity" type="hidden" name="from" aria-label="co-id"/>
                   <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                      <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                      <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                       <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                       <div class="p-1 countryFlight Inter-Regular"></div>
                       <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                           <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                    <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li>
@@ -351,31 +357,20 @@
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baghdad - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baku - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li> -->
+
                       </ul>
                   </div>
+                  <span class="fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
+                    <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.666992 16C0.666992 7.16344 7.83044 0 16.667 0H56.667V40C56.667 48.8366 49.5035 56 40.667 56H16.667C7.83044 56 0.666992 48.8366 0.666992 40V16Z" fill="#031947"/>
+                      <path d="M35.1009 23.1053L26.5224 23.1053L26.5224 25.5527L35.1009 25.5527L35.1009 29.2107L39.9697 24.3419L35.1009 19.4473L35.1009 23.1053ZM17.9697 31.658L22.8643 36.5527L22.8643 32.8946L31.417 32.8946L31.417 30.4473L22.8643 30.4473L22.8643 26.7892L17.9697 31.658Z" fill="#E0F8F8"/>
+                      </svg>
+                  </span>
                   <i class="hidden fas fa-exchange-alt not-italic absolute top-[15px] -right-[15px] z-[1] h-7 w-7 leading-7 text-center text-white rounded-full bg-primary hover:bg-black" data-index="0" onclick="ExchangeRoute(this)"></i>
                   </div>
                 </div>
-                <span class="fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
-                  <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.666992 16C0.666992 7.16344 7.83044 0 16.667 0H56.667V40C56.667 48.8366 49.5035 56 40.667 56H16.667C7.83044 56 0.666992 48.8366 0.666992 40V16Z" fill="#031947"/>
-                    <path d="M35.1009 23.1053L26.5224 23.1053L26.5224 25.5527L35.1009 25.5527L35.1009 29.2107L39.9697 24.3419L35.1009 19.4473L35.1009 23.1053ZM17.9697 31.658L22.8643 36.5527L22.8643 32.8946L31.417 32.8946L31.417 30.4473L22.8643 30.4473L22.8643 26.7892L17.9697 31.658Z" fill="#E0F8F8"/>
-                    </svg>
-                </span>
+
                 <div class="relative flex-1 float-left cursor-pointer city tocity_container destination-city max-xl:w-full max-xl:mb-6">
                   <div class="inner-city inner-container h-14">
                   <div onclick="empty_value(this)" class="h-full click-content">
@@ -391,12 +386,22 @@
                   </div>
                   <input value="1177676" class="co-id FCDid2 to tocity" type="hidden" name="to" aria-label="co-id"/>
                   <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                      <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                      <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                       <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                       <div class="p-1 countryFlight Inter-Regular"></div>
                      <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                       <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                      <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li>
@@ -406,22 +411,8 @@
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phuket - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baghdad - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baku - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li> -->
+
                        </ul>
                   </div>
                   </div>
@@ -433,7 +424,7 @@
                         <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                           <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                         </div>
-                        <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1-3" required="" placeholder="select date"/>
+                        <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1-3" required="" placeholder="select date"/>
                         <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate" aria-label="mstring_fdate"/>
                       </div>
                   </div>
@@ -451,9 +442,9 @@
             <div class="relative float-left w-full route-content" data-index="2">
               <div class="clear-both w-full mb-2 text-base text-left multi-route-tlt text-primary RokhFaNum-Medium">Second Route</div>
               <div class="flex float-left clear-both w-full gap-2 mb-3">
-                <div class="relative flex-1 float-left cursor-pointer city fromcity_container departure-city">
-                  <div class="inner-city inner-container h-14">
-                  <div onclick="empty_value(this)" class="h-full click-content">
+                <div class="relative flex-[1.17] float-left cursor-pointer city fromcity_container departure-city">
+                  <div class="flex gap-2 inner-city inner-container h-14">
+                  <div onclick="empty_value(this)" class="flex-1 h-full click-content">
                       <div class="relative flex items-center">
                         <label class="hidden float-right text-base text-fourth RokhFaNum-Medium" for="departure1-4"><span class="block w-10 h-[54px] bg-third rounded-[28px] leading-[54px] text-center"><img loading="lazy" class="align-middle" src="[##cms.cms.cdn##]/images/dep_icon.png" width="27" height="27" alt="dep_icon"></span><span class="absolute top-0.5 left-12">From</span></label>
                         <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
@@ -467,12 +458,22 @@
                   </div>
                   <input value="1182289" class="co-id FCDid1 from fromcity" type="hidden" name="from" aria-label="co-id"/>
                   <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                      <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                      <input type="text" aria-label="cities" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                       <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                       <div class="p-1 countryFlight Inter-Regular"></div>
                       <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                           <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                          <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                    <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li>
@@ -484,31 +485,22 @@
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li>
                     <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baghdad - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baku - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li>
-                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                    <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li> -->
+
                       </ul>
+
                   </div>
+                  <span class="fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
+                    <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.666992 16C0.666992 7.16344 7.83044 0 16.667 0H56.667V40C56.667 48.8366 49.5035 56 40.667 56H16.667C7.83044 56 0.666992 48.8366 0.666992 40V16Z" fill="#031947"/>
+                      <path d="M35.1009 23.1053L26.5224 23.1053L26.5224 25.5527L35.1009 25.5527L35.1009 29.2107L39.9697 24.3419L35.1009 19.4473L35.1009 23.1053ZM17.9697 31.658L22.8643 36.5527L22.8643 32.8946L31.417 32.8946L31.417 30.4473L22.8643 30.4473L22.8643 26.7892L17.9697 31.658Z" fill="#E0F8F8"/>
+                      </svg>
+                  </span>
                   <i class="hidden fas fa-exchange-alt not-italic absolute top-[15px] -right-[15px] z-[1] h-7 w-7 leading-7 text-center text-white rounded-full bg-primary hover:bg-black"></i>
+
                   </div>
                 </div>
-                <span class="fas fa-exchange-alt" data-index="0" onclick="ExchangeRoute(this)">
-                  <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.666992 16C0.666992 7.16344 7.83044 0 16.667 0H56.667V40C56.667 48.8366 49.5035 56 40.667 56H16.667C7.83044 56 0.666992 48.8366 0.666992 40V16Z" fill="#031947"/>
-                    <path d="M35.1009 23.1053L26.5224 23.1053L26.5224 25.5527L35.1009 25.5527L35.1009 29.2107L39.9697 24.3419L35.1009 19.4473L35.1009 23.1053ZM17.9697 31.658L22.8643 36.5527L22.8643 32.8946L31.417 32.8946L31.417 30.4473L22.8643 30.4473L22.8643 26.7892L17.9697 31.658Z" fill="#E0F8F8"/>
-                    </svg>
-                </span>
+
                 <div class="relative flex-1 float-left cursor-pointer city tocity_container destination-city max-xl:w-full max-xl:mb-6">
                   <div class="inner-city inner-container h-14">
                   <div onclick="empty_value(this)" class="h-full click-content">
@@ -524,37 +516,30 @@
                   </div>
                   <input value="1177676" class="co-id FCDid2 to tocity" type="hidden" name="to" aria-label="co-id"/>
                   <div class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
-                      <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
+                      <input aria-label="return route" type="text" oninput="city_search(this)" data-type="1" class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block" autocomplete="off" value="" />
                       <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i class="not-italic fas fa-spinner fa-spin"></i></span>
                       <div class="p-1 countryFlight Inter-Regular"></div>
                      <ul class="ul-list Rokh-Regular  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                       <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1189441"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sydney - all airports</span></li>
+                      <!-- <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tehran - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Shiraz - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mashhad - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Muscat - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Istanbul - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198422"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Trabzon - all airports</span></li>
                       <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1170764"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cairo - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phuket - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jeddah - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Riyadh - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Medina - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dammam - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bahrain - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuwait - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Doha - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baghdad - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Baku - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Zanzibar - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delhi - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Milan - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Jakarta - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kuala Lumpur - all airports</span></li>
-                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                      <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Phuket - all airports</span></li> -->
+
                        </ul>
                   </div>
                   </div>
@@ -566,7 +551,7 @@
                         <div class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                           <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                         </div>
-                        <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1-4" required="" placeholder="select date"/>
+                        <input type="text" aria-label ="departure date" value="1403-07-26" class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer Basis_Date start_date sp-start placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 text-fourth" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0" readonly="" name="fdate" id="fromdate1-4" required="" placeholder="select date"/>
                         <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate" aria-label="mstring_fdate"/>
                       </div>
                   </div>
@@ -598,7 +583,7 @@
                 </div>
               <input id="passenger1-3" type="text" aria-label="passenger1" placeholder="" readonly  class="absolute top-0 right-0 w-full h-full text-left outline-none cursor-pointer hotel-inputF hotel-input bg-specialcolor-1 rounded-b-xl rounded-tl-xl">
              <div class="relative flex items-center w-full gap-2 pl-16">
-              <span class="passenger-counts count-adult "><span class="count">1</span> adult</span><span class="passenger-counts count-child "><span class="count">0</span> child</span>
+              <span class="passenger-counts count-adult "><span class="count">1</span> adult</span><span class="flex-1 passenger-counts count-child"><span class="count">0</span> child</span>
              </div>
              <div class="HotelPassengers rounded-[7px] w-full py-4 px-2 shadow-lg float-right text-sm z-20 absolute clear-both top-full bg-white left-0 text-left leading-6 border max-xl:w-full hidden">
               <div class="float-right clear-both w-full mb-4 itemlable2 IRANSansWeb">
@@ -615,7 +600,7 @@
                 <div class="contentRooms">
                   <div class="relative flex flex-col float-right w-full mb-3">
                     <label for="textbox-adultcount5" class="float-left text-sm text-primary-800 leading-[48px]"><span>adult</span></label>
-                    <ul class="flex justify-between flex-row-reverse float-right w-full h-12 button-click leading-12">
+                    <ul class="flex flex-row-reverse justify-between float-right w-full h-12 button-click leading-12">
                       <li class="float-right h-12 text-center leading-12"><div class="button secondary h-full leading-[48px]"><span class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-secondary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -626,12 +611,12 @@
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></span></div></li>
                     </ul>
-                    <input id="textbox-adultcount5" type="text" class="cat_textbox IRANSansWeb adultcount adult adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" name="adult" maxlength="4000" value="1">
+                    <input id="textbox-adultcount5" type="text" class="cat_textbox IRANSansWeb adultcount adult adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" readonly name="adult" maxlength="4000" value="1">
                   </div>
                   <div class="relative float-right clear-both w-full mb-4 itemlable2 IRANSansWeb">
                     <label for="textbox-childcount2" class="float-left text-sm text-primary-800 leading-[48px]"><span>child</span></label>
                     <input type="hidden" value="0" class="childcountinput" id="textbox-childcount2" name="child" aria-label="childcount">
-                    <ul class="flex justify-between flex-row-reverse float-right w-full h-12 button-click-child leading-12">
+                    <ul class="flex flex-row-reverse justify-between float-right w-full h-12 button-click-child leading-12">
                       <li class="float-right h-12 text-center leading-12"><div class="button secondary h-full leading-[48px]"><span class="hide"><svg width="48" height="48" data-function="plus" class="rounded-full bg-secondary-100" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C30.6279 12 36 17.3721 36 24C36 30.6265 30.6279 36 24 36C17.3721 36 12 30.6265 12 24C12 17.3721 17.3721 12 24 12Z" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -642,12 +627,12 @@
                         <path d="M28 24H20" stroke="#284E65" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></span></div></li>
                     </ul>
-                    <input type="text" aria-label="chcount" class="cat_textbox IRANSansWeb chcount child-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" name="chcount" maxlength="4000" value="0">
+                    <input type="text" aria-label="chcount" class="cat_textbox IRANSansWeb chcount child-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] left-0 right-0 mx-auto text-center" readonly name="chcount" maxlength="4000" value="0">
                   </div>
                   <div class="clear-both childDropdowns IRANSansWeb section-select-age"></div>
                 </div>
               </div>
-              <div class="close-hotel-psg clear-both text-center RokhFaNum-Regular text-primary flex items-center justify-center cursor-pointer w-full transition-all duration-300 font-bold text-sm h-10 float-right border  border-primary-900 px-1 rounded-lg hover:bg-primary-600 hover:text-white">confirm</div>
+              <div class="flex items-center justify-center float-right clear-both w-full h-10 px-1 text-sm font-bold text-center transition-all duration-300 border rounded-lg cursor-pointer close-hotel-psg RokhFaNum-Regular text-primary border-primary-900 hover:bg-primary-600 hover:text-white">confirm</div>
             </div>
               </div>
             </div>
@@ -687,7 +672,7 @@
 
                     <span class="absolute left-0 text-white -top-8">City</span></label>
                   <div
-                    class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                    class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -712,266 +697,16 @@
                 <ul
                   class="ul-list Rokh-Regular divide-y divide-y-primary-100  dir-ltr overflow-y-scroll h-[290px] scroll-thin">
                   <li class="p-1 text-white bg-primary"><span>Crowded cities</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1203548"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Tehran</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1211086"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Shiraz</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1211083"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Mashhad</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1182289"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Muscat</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1177676"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Istanbul</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1198422"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Trabzon</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1170764"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Cairo</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1184371"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Phuket</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Bangkok</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1177429"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Jeddah</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1186252"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Riyadh</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1198709"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Medina</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1198706"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Dammam</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Dubai</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1198705"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Bahrain</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1178628"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Kuwait</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1439622"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Doha</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1198681"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Baghdad</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1168993"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Baku</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1195622"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Zanzibar</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1173548"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Delhi</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1181434"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Milan</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Rome</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1177412"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Jakarta</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1178542"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>Kuala Lumpur</span></li>
-                  <li class="flex items-center gap-1 p-1 cursor-pointer hover:bg-slate-200"
-                    onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"
-                      fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round"
-                        stroke-linejoin="round">
-                      </path>
-                      <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                        stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg><span>London</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1173505"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dubai - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1184034"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Paris - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1182736"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>New York City - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180496"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Maldives - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1180000"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>London - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1168998"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bangkok - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1169023"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bali - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1190139"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Tokyo - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1186397"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rome - all airports</span></li>
+                  <li class="p-1 cursor-pointer hover:bg-slate-200" onclick="SelectPlace(this)" data-id="1188510"><svg class="inline w-3 h-3 align-middle"  fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sinagapore - all airports</span></li>
                 </ul>
               </div>
             </div>
@@ -983,7 +718,7 @@
                   <span class="absolute left-0 text-white -top-8">Check in Date</span>
                 </label>
                 <div
-                  class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                  class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="check out" value="" placeholder="Check in Date"
@@ -996,11 +731,11 @@
             </div>
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex items-center overflow-hidden inner-city h-14">
-                <label class="hidden float-right text-base text-fourth" for="fromdate2">
+                <label class="hidden float-right text-base text-fourth" for="fromdate3">
                   <span class="absolute left-0 text-white -top-8">Departure Date</span>
                 </label>
                 <div
-                  class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                  class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="Check out" value="" placeholder="Check out Date"
@@ -1019,7 +754,7 @@
               <label class="hidden float-left text-fourth" for="passenger2">
                 <span class="absolute left-0 text-white -top-8">Rooms, Passengers</span></label>
               <div
-                class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.0703 32.5008C17.5513 32.5008 16.6333 31.5152 16.5684 30.1424C16.5684 27.348 19.5929 26.3841 24.1499 26.3516C28.7152 26.3949 31.7478 27.3588 31.7315 30.1424C31.6584 31.5152 30.7459 32.5008 29.2296 32.5008H19.0703Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
                   <path d="M24.1576 23.1628C26.2736 23.1628 27.989 21.4474 27.989 19.3314C27.989 17.2154 26.2736 15.5 24.1576 15.5C22.0416 15.5 20.3262 17.2154 20.3262 19.3314C20.3262 21.4474 22.0416 23.1628 24.1576 23.1628Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
@@ -1095,7 +830,7 @@
                       <label for="textbox-adultcount2"
                         class="float-left text-sm text-primary-800 leading-[48px]"> <span
                           class="notshow">Adult</span> </label>
-                      <ul class="flex justify-between flex-row-reverse float-right w-full h-12 button-click leading-12">
+                      <ul class="flex flex-row-reverse justify-between float-right w-full h-12 button-click leading-12">
                         <li class="float-left h-12 text-center leading-12 hover:text-primary">
                           <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)">
                             <span class="hide"><svg width="48" height="48" data-function="minus"
@@ -1131,7 +866,7 @@
                         readonly="">
                     </div>
                     <div class="relative flex flex-col float-right w-full itemlable2">
-                      <label for="textbox-childcount2"
+                      <label for="textbox-childcount3"
                         class="float-left text-primary-800 text-sm leading-[48px]"> <span
                           class="notshow">Child</span> </label>
                       <ul
@@ -1167,7 +902,7 @@
                       </ul>
                       <input type="text"
                         class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] left-0 right-0 mx-auto leading-12"
-                        id="textbox-childcount2" maxlength="4000" value="0" readonly="">
+                        id="textbox-childcount3" maxlength="4000" value="0" readonly="">
                     </div>
                     <div class="childDropdowns section-select-age"></div>
                     <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage"
@@ -1206,7 +941,7 @@
                         width="27" height="27" alt="des_icon"></span><span
                       class="absolute top-0.5 left-12">To</span></label>
                   <div
-                    class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                    class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd"
@@ -1224,7 +959,7 @@
               <div
                 class="searchList shadow-lg w-full hidden float-right text-sm absolute z-30 clear-both top-full bg-white rounded-[7px] right-0 text-left leading-6 border-2 border-third">
                 <input type="text" aria-label="select tour"
-                  class="country Inter-Regular form-search-input p-1 rounded-lg border-2  text-left w-[98%] m-auto my-2 block"
+                  class="country Inter-Regular form-search-input p-1 rounded-lg border-2 outline-none text-left w-[98%] m-auto my-2 block"
                   autocomplete="off" value="" />
                 <span class="absolute hidden mini-loading top-2 right-2" aria-label="spinner"><i
                     class="not-italic fas fa-spinner fa-spin"></i></span>
@@ -1235,16 +970,16 @@
           <div class="flex flex-1 gap-2 Basis_Date_Box max-xl:w-full ">
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex items-center overflow-hidden inner-city h-14">
-                <label class="hidden float-right text-base text-fourth" for="fromdate2">
+                <label class="hidden float-right text-base text-fourth" for="fromdate3">
                   <span class="absolute left-0 text-white -top-8">Check in Date</span>
                 </label>
                 <div
-                  class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                  class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="check out" value="" placeholder="Depart"
                   class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date start_date sp-start text-fourth"
-                  id="fromdate2" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
+                  id="fromdate3" onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0"
                   data-cache="0" readonly="" name="fdate" required="">
                 <input value="" class="mstring_date mstring_fdate" type="hidden" name="mstring_fdate"
                   aria-label="mstring_fdate">
@@ -1252,17 +987,17 @@
             </div>
             <div class="relative float-left cursor-pointer city date-city">
               <div class="flex items-center overflow-hidden inner-city h-14">
-                <label class="hidden float-right text-base text-fourth" for="fromdate2">
+                <label class="hidden float-right text-base text-fourth" for="fromdate4">
                   <span class="absolute left-0 text-white -top-8">Departure Date</span>
                 </label>
                 <div
-                  class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                  class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                   <img src="[##cms.cms.cdn##]/images/Date.svg" alt="date" width="48" height="48">
                 </div>
                 <input type="text" aria-label="Check out" value="" placeholder="Return"
                   class="relative float-right w-full h-full pl-16 font-medium leading-6 text-left outline-none cursor-pointer placeholder-primary-900 bg-specialcolor-1 rounded-b-xl rounded-tl-xl text-primary-800 Basis_Date end_date sp-end nextCalOpening end_date_filled IRANSansWeb text-fourth"
                   onclick="Basis_Calendar(this,'[##cms.cms.date##]', 1)" data-active="0" data-cache="0"
-                  readonly="" name="tdate" required="" id="inp2-hotel">
+                  readonly="" name="tdate" required="" id="inp3-hotel">
                 <input value="" class="mstring_date mstring_tdate" type="hidden" name="mstring_tdate"
                   aria-label="mstring_tdate">
               </div>
@@ -1272,10 +1007,10 @@
 
           <div class="relative w-full flex-[0.6] cursor-pointer city pass-box ">
             <div class="flex flex-col justify-center inner-city h-14">
-              <label class="hidden float-left text-fourth" for="passenger2">
+              <label class="hidden float-left text-fourth" for="passenger3">
                 <span class="absolute left-0 text-white -top-8">Rooms, Passengers</span></label>
               <div
-                class="absolute z-10 flex gap-2 left-1 sm:left-1 items-center justify-center w-12 h-12 bg-secondary-50 rounded-b-xl rounded-tl-xl">
+                class="absolute z-10 flex items-center justify-center w-12 h-12 gap-2 left-1 sm:left-1 bg-secondary-50 rounded-b-xl rounded-tl-xl">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.0703 32.5008C17.5513 32.5008 16.6333 31.5152 16.5684 30.1424C16.5684 27.348 19.5929 26.3841 24.1499 26.3516C28.7152 26.3949 31.7478 27.3588 31.7315 30.1424C31.6584 31.5152 30.7459 32.5008 29.2296 32.5008H19.0703Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
                   <path d="M24.1576 23.1628C26.2736 23.1628 27.989 21.4474 27.989 19.3314C27.989 17.2154 26.2736 15.5 24.1576 15.5C22.0416 15.5 20.3262 17.2154 20.3262 19.3314C20.3262 21.4474 22.0416 23.1628 24.1576 23.1628Z" stroke="#BFAB86" stroke-width="1.5" stroke-miterlimit="10"/>
@@ -1283,7 +1018,7 @@
               </div>
               <input type="text" aria-label="Hotel passenger" placeholder="" readonly=""
                 class="absolute top-0 right-0 w-full h-full text-left outline-none cursor-pointer bg-specialcolor-1 rounded-b-xl rounded-tl-xl hotel-inputH hotel-input"
-                id="passenger2">
+                id="passenger3">
               <div class="relative flex items-center w-full gap-2 pl-16">
                 <div
                   class="flex items-center h-6 gap-1 font-medium text-left passenger-counts text-primary-900 count-room text-fourth">
@@ -1304,7 +1039,7 @@
               <div
                 class="HotelPassengers top-full h-[420px] overflow-y-scroll rounded-lg w-full p-6 shadow-lg float-right text-sm absolute clear-both bg-white z-10 left-0 text-left leading-6 border max-xl:w-full hidden">
                 <div class="relative flex flex-col float-right w-full mb-8 itemlable2">
-                  <label for="textbox-roomcount1" class="float-left text-primary-800 font-bold leading-[48px]">
+                  <label for="textbox-roomcount2" class="float-left text-primary-800 font-bold leading-[48px]">
                     <span class="notshow">Room(S)</span> </label>
                   <ul class="button-click-room flex justify-between float-right h-12 leading-12 rounded-[7px]">
 
@@ -1337,7 +1072,7 @@
                           </svg></span></div>
                     </li>
                   </ul>
-                  <input type="text" id="textbox-roomcount1"
+                  <input type="text" id="textbox-roomcount2"
                     class="cat_textbox room rounded-full bg-primary-800 text-white outline-none w-12 h-12 leading-12 absolute right-0 left-0 mx-auto top-[50%] text-center"
                     maxlength="4000" value="1" aria-label="roomcount1" readonly="">
                 </div>
@@ -1348,10 +1083,10 @@
                       class="w-full mb-3 text-sm font-bold text-left text-primary-800 numberOfRooms RoomRow">
                       Room 1</div>
                     <div class="relative flex flex-col float-right w-full mb-3 itemlable2 ">
-                      <label for="textbox-adultcount2"
+                      <label for="textbox-adultcount3"
                         class="float-left text-sm text-primary-800 leading-[48px]"> <span
                           class="notshow">Adult</span> </label>
-                      <ul class="flex justify-between flex-row float-right w-full h-12 button-click leading-12">
+                      <ul class="flex flex-row justify-between float-right w-full h-12 button-click leading-12">
                         <li class="float-left h-12 text-center leading-12 hover:text-primary">
                           <div class="button secondary h-full leading-[48px]" onclick="decreaseAdult(this)">
                             <span class="hide"><svg width="48" height="48" data-function="minus"
@@ -1383,11 +1118,11 @@
                       </ul>
                       <input type="text"
                         class="cat_textbox adultcount adult-count text-white outline-none rounded-full bg-primary-800 w-12 h-12 leading-12 absolute top-[50%] right-0 left-0 mx-auto text-center"
-                        id="textbox-adultcount2" name="_root.rooms__1.adultcount" maxlength="4000" value="2"
+                        id="textbox-adultcount3" name="_root.rooms__1.adultcount" maxlength="4000" value="2"
                         readonly="">
                     </div>
                     <div class="relative flex flex-col float-right w-full itemlable2">
-                      <label for="textbox-childcount2"
+                      <label for="textbox-childcount4"
                         class="float-left text-primary-800 text-sm leading-[48px]"> <span
                           class="notshow">Child</span> </label>
                       <ul
@@ -1423,7 +1158,7 @@
                       </ul>
                       <input type="text"
                         class="absolute w-12 h-12 text-white outline-none text-center rounded-full cat_textbox chcount child-count bg-primary-800 top-[50%] right-0 left-0 mx-auto leading-12"
-                        id="textbox-childcount2" maxlength="4000" value="0" readonly="">
+                        id="textbox-childcount4" maxlength="4000" value="0" readonly="">
                     </div>
                     <div class="childDropdowns section-select-age"></div>
                     <input type="hidden" name="_root.rooms__1.childcountandage" class="childcountandage"
