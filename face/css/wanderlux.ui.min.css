@@ -1273,6 +1273,10 @@ body {
   line-height: 1.25rem;
 }
 
+.text-\[26px\] {
+  font-size: 26px;
+}
+
 .font-bold {
   font-weight: 700;
 }
