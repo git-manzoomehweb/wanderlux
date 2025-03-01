@@ -111,12 +111,12 @@ function city_search(t) {
 }
 
 $(window).width() <= 750 &&
-  ($("#flightSearch").attr("action") === "/Tem3_Roundtrip_Search_EN.bc" &&
-    $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc"),
-  $("#flightSearch").attr("action") === "/Tem3_Oneway_Search_EN.bc" &&
-    $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
-  $("#hotelsearch").attr("action", "/M_Hotel_Search_en.bc"),
-  $("#tourSearch").attr("action", "/M_Tour_Search_en.bc")),
+  ($("#flightSearch").attr("action") === "/Tem3_Roundtrip_Search.bc" &&
+    $("#flightSearch").attr("action", "/M_Roundtrip_Search.bc"),
+  $("#flightSearch").attr("action") === "/Tem3_Oneway_Search.bc" &&
+    $("#flightSearch").attr("action", "/M_Oneway_Search.bc"),
+  $("#hotelsearch").attr("action", "/M_Hotel_Search.bc"),
+  $("#tourSearch").attr("action", "/M_Tour_Search.bc")),
   $(".formflight").each(function () {
     $(this).submit(function (event) {
       var ageString = "";
@@ -175,7 +175,7 @@ $("#return").click(function () {
     .closest(".inner-container")
     .removeClass("Noactive-date");
   $(window).width() <= 750 &&
-    $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc");
+    $("#flightSearch").attr("action", "/M_Roundtrip_Search.bc");
   $("#flightSearch").show();
 });
 
@@ -192,7 +192,7 @@ $("#direct").click(function () {
       .closest(".inner-container")
       .addClass("Noactive-date");
   $(window).width() <= 750 &&
-    $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
+    $("#flightSearch").attr("action", "/M_Oneway_Search.bc"),
     $("#flightSearch").show();
 });
 $(".flight-btn").click(function () {

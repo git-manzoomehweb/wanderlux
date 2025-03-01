@@ -86,7 +86,7 @@
         <ul
           class="absolute left-0 z-40 hidden w-full px-4 py-2 show-flighttype top-12 rounded-b-xl flight-items bg-specialcolor-1">
           <li id="direct" class="relative pt-2 mb-2 border-t border-solid active-r-btn"
-            onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search_EN.bc';">
+            onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search.bc';">
             <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="direct-input" checked type="radio" name="1">
             <label class="cursor-pointer" for="direct-input">
               <div>
@@ -95,7 +95,7 @@
             </label>
           </li>
           <li id="return" class="relative mb-2 active-flight-type"
-            onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search_EN.bc';">
+            onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search.bc';">
             <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="return-input" type="radio" name="1">
             <label class="cursor-pointer" for="return-input">
               <div>
@@ -114,7 +114,7 @@
         </ul>
       </div>
 
-      <form action="/Tem3_Oneway_Search_EN.bc" method="get" data-form="flight" data-flightType="1"
+      <form action="/Tem3_Oneway_Search.bc" method="get" data-form="flight" data-flightType="1"
         class="relative flex items-center clear-both w-full form-search en frm formflight" id="flightSearch"
         onsubmit="form_search_isSubmited(this,event)">
         <input type="hidden" name="currentdate" class="currentdate" value="" aria-label="currentdate" />

@@ -52,7 +52,7 @@
             
         </div>
         <ul class="absolute left-0 z-40 hidden w-full px-4 py-2 show-flighttype top-12 rounded-b-xl flight-items bg-specialcolor-1">
-          <li id="direct" class="relative pt-2 mb-2 border-t border-solid active-r-btn" onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search_EN.bc';">
+          <li id="direct" class="relative pt-2 mb-2 border-t border-solid active-r-btn" onclick="document.getElementById('flightSearch').action='/Tem3_Oneway_Search.bc';">
             <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="direct-input" checked type="radio" name="1">
             <label class="cursor-pointer" for="direct-input">
               <div>
@@ -60,7 +60,7 @@
               </div>
             </label>
           </li>
-          <li id="return" class="relative mb-2 active-flight-type" onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search_EN.bc';">
+          <li id="return" class="relative mb-2 active-flight-type" onclick="document.getElementById('flightSearch').action='/Tem3_Roundtrip_Search.bc';">
             <input class="absolute right-0 w-2 h-2 opacity-0 t-0" id="return-input" type="radio" name="1">
             <label class="cursor-pointer" for="return-input">
               <div>
@@ -78,7 +78,7 @@
             </li>
           </ul>
       </div>
-        <form action="/Tem3_Oneway_Search_EN.bc" method="get" data-form="flight" data-flightType="1" class="relative flex flex-col items-center clear-both w-full form-search en frm formflight" id="flightSearch" onsubmit="form_search_isSubmited(this,event)">
+        <form action="/Tem3_Oneway_Search.bc" method="get" data-form="flight" data-flightType="1" class="relative flex flex-col items-center clear-both w-full form-search en frm formflight" id="flightSearch" onsubmit="form_search_isSubmited(this,event)">
           <input type="hidden" name="currentdate" class="currentdate" value="" aria-label="currentdate"/>
           <input type="hidden" value="0" name="select-age" class="select-age-value" aria-label="select-age"/>
           <div class="city departure-city w-full float-left relative cursor-pointer flex-[1.1] mb-2">
@@ -553,7 +553,7 @@
       </div>
     <div class="hidden r-hotel dir-ltr" id="Hotel">
       <form class="relative flex flex-col items-center float-right clear-both w-full frm form-search en" method="post"
-        data-form="hotel" action="/Tem3_Hotel_Search_EN.bc" id="hotelsearch"
+        data-form="hotel" action="/Tem3_Hotel_Search.bc" id="hotelsearch"
         onsubmit="form_search_isSubmited(this,event)">
         <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent">
         <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
@@ -741,7 +741,7 @@
 
     <div class="hidden r-tour dir-ltr" id="tour">
       <form class="relative float-left clear-both w-full frm form-search en" method="post" data-form="tour"
-        action="/Tem3_Tour_Search_EN.bc" id="tourSearch" onsubmit="form_search_isSubmited(this,event)">
+        action="/Tem3_Tour_Search.bc" id="tourSearch" onsubmit="form_search_isSubmited(this,event)">
         <input type="hidden" name="persiancurrent" class="persiancurrent" value="" aria-label="persiancurrent" />
         <div class="relative flex-1 cursor-pointer city box_city max-xl:w-full ">
           <div class="inner-city h-14">
