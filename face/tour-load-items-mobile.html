@@ -1,0 +1,64 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="[##cms.query.catid##]">
+    <member name="tour-list" type="list" link="tour.bc" propertyid="8070,3087474,3087475,8181" perpage="7" size="202x229" order="ord" />
+</basis>
+
+
+<basis core="list" datamembername="db.tour-list">
+    <layout>
+        @child
+    </layout>
+    <face filter="link is null">
+        <div class="flex items-center justify-center swiper-slide">
+            <div class="flex flex-col w-48 gap-1 p-3 bg-white">
+              <h2 class="font-bold text-zinc-900">@title</h2>
+              <div class="flex justify-between">
+                <span class="text-zinc-900">@prp_3087474</span>
+                <span class="flex items-center gap-1 text-sm text-zinc-900">
+                  <img src="[##cms.cms.cdn##]/images/Star 2.svg" alt="star">
+                  @prp_3087475
+                </span>
+              </div>
+              <div>From <span class="font-bold text-green-600">@prp_8181</span></div>
+              <img src="@00202X00229prp" class="h-[229px] object-cover" alt="@title" width="100%"
+                height="229" loading="lazy">
+              <a href="/tour-list.bc?catid=@catid"
+                class="flex items-center justify-center w-full font-medium text-white h-14 rounded-b-xl rounded-tl-xl bg-primary-900">View
+                More
+                <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
+                    fill="#D0B98F" />
+                </svg>
+      
+              </a>
+            </div>
+          </div>
+    </face>
+    <face>
+        <div class="flex items-center justify-center swiper-slide h-[395px] ">
+            <div class="flex flex-col w-48 gap-1 p-3 bg-white">
+              <h2 class="font-bold text-zinc-900 line-clamp-1">@title</h2>
+              <div class="flex justify-between">
+                <span class="text-zinc-900">@prp_3087474</span>
+                <span class="flex items-center gap-1 text-sm text-zinc-900">
+                  <img src="[##cms.cms.cdn##]/images/Star 2.svg" alt="star">
+                  @prp_3087475
+                </span>
+              </div>
+              <div>From <span class="font-bold text-green-600">@prp_8181</span></div>
+              <img src="@00202X00229prp" class="h-[229px] object-cover" alt="@title" width="100%"
+                height="229" loading="lazy">
+              <a href="/tour-list.bc?catid=@catid"
+                class="flex items-center justify-center w-full font-medium text-white h-14 rounded-b-xl rounded-tl-xl bg-primary-900">View
+                More
+                <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
+                    fill="#D0B98F" />
+                </svg>
+      
+              </a>
+            </div>
+          </div>
+    </face>
+</basis>

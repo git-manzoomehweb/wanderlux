@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Dana";
+  }
+}
+:root {
+  --primary: #0b2a70;
+  --primary-50: #bed2ff;
+  --primary-100: #83a5f3;
+  --primary-200: #4c74cf;
+  --primary-300: #2b54b1;
+  --primary-400: #1c439b;
+  --primary-500: #103382;
+  --primary-600: #0b2a70;
+  --primary-700: #062261;
+  --primary-800: #061f55;
+  --primary-900: #031947;
+  --primary-950: #021335;
+
+  --secondary: #6f5a26;
+  --secondary-50: #f4e6cb;
+  --secondary-100: #d1bf9b;
+  --secondary-200: #d0b98f;
+  --secondary-300: #bfab86;
+  --secondary-400: #9f8b60;
+  --secondary-500: #877243;
+  --secondary-600: #6f5a26;
+  --secondary-700: #655120;
+  --secondary-800: #574417;
+  --secondary-900: #4c360f;
+  --secondary-950: #3e2802;
+
+  --tertiary-: #903c3a;
+  --tertiary-50: #ffc6c3;
+  --tertiary-100: #f69a96;
+  --tertiary-200: #e16e68;
+  --tertiary-300: #c75c56;
+  --tertiary-400: #a84b46;
+  --tertiary-500: #994442;
+  --tertiary-600: #903c3a;
+  --tertiary-700: #8e312f;
+  --tertiary-800: #872321;
+  --tertiary-900: #821613;
+  --tertiary-950: #811105;
+
+  --special-1: #faf7f2;
+  --special-2: #00000066;
+  --special-3: #00000099;
+  --special-4: #00000080;
+  --special-5: #03194780;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Dana-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Dana-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Dana";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Dana-Bold.ttf") format("truetype");
+}
+
+.inactive {
+  --tw-bg-opacity: 1;
+  background-color: #f4f4f5 !important;
+  --tw-text-opacity: 1;
+  color: #52525b !important;
+}
+
+.hotel-svg path {
+  fill: white;
+}
+.tour-svg path {
+  stroke: white;
+}
+.flight-svg path {
+  stroke: white;
+}
+
+.Noactive-date{
+  opacity: 30%;
+}
+
+.tour-swiper .swiper-pagination-bullet {
+  opacity: 1 !important;
+  background-color: white !important;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #d0b98f !important;
+}
+
+.notification{
+  position: absolute;
+  right: 4%;
+  top: 4%;
+}

@@ -1,0 +1,219 @@
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid | (0)##]">
+    <member name="article-list-load" type="list" link="article.bc" propertyid="7244" perpage="6"
+        pageno="[##cms.query.pagenum|(1)##]" size="288x527" typeid="159" order="ord" />
+    <member name="paging" type="list" request="paging" count="3" parentname="article-list-load" />
+</basis>
+
+<basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" usedforid="2372680">
+    <member name="trending-destinations" type="view" />
+</basis>
+
+<section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-6">
+    <basis core="list" datamembername="db.article-list-load">
+        <layout>
+            <div class="flex flex-col gap-2">
+                <!-- items -->
+                @child
+            </div>
+        </layout>
+        <face filter="link is null and RowNumber in(1,2,3)">
+            <a href="/article.bc?id=@id" class="relative">
+                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
+                    height="527" />
+                <div
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                    <div class="w-[85%] mx-auto line-clamp-10">
+                        @prp_7244
+                    </div>
+                </div>
+                <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                        loading="lazy" />
+                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                </div>
+            </a>
+        </face>
+        <face filter="RowNumber in(1,2,3)">
+            <a href="@link" class="relative">
+                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
+                    height="527" />
+                <div
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                    <div class="w-[85%] mx-auto line-clamp-10">
+                        @prp_7244
+                    </div>
+                </div>
+                <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                        loading="lazy" />
+                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                </div>
+            </a>
+        </face>
+    </basis>
+
+    <div class="relative flex items-end mt-6 overflow-hidden rounded-b-3xl rounded-tl-3xl">
+        <img src="[##cms.cms.cdn##]/images/beach2-min.jpg" class="object-cover h-[322px]" alt="" width="100%" height="322" />
+        <div class="absolute left-0 right-0 mx-auto w-[84%] pb-6">
+            <basis core="print" datamembername="db.trending-destinations">
+                <face filter="TypeID in(150)">
+                    <h2 class="mb-3 text-2xl font-bold text-tertiary-950">
+                        @text
+                    </h2>
+                </face>
+                <face filter="TypeID in(129)">
+                    <div class="mb-3 text-sm font-medium text-primary-900">
+                        @largetext
+                    </div>
+                </face>
+            </basis>
+            <a href="/trending-destinations"
+                class="flex items-center justify-center w-full pl-6 font-medium text-white h-14 rounded-b-xl rounded-tl-xl bg-primary-900">View
+                More
+                <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.5 23.7258C16.5 23.3461 16.7822 23.0323 17.1482 22.9826L17.25 22.9758L30.434 22.9764L25.671 18.2328C25.3775 17.9406 25.3765 17.4657 25.6687 17.1722C25.9344 16.9053 26.351 16.8802 26.6451 17.0975L26.7294 17.1699L32.7794 23.1939C32.8181 23.2324 32.8517 23.2741 32.8802 23.3181C32.8883 23.3314 32.8965 23.345 32.9042 23.3588C32.9114 23.3706 32.9178 23.383 32.9239 23.3954C32.9324 23.4135 32.9407 23.4322 32.9482 23.4513C32.9543 23.466 32.9594 23.4803 32.964 23.4948C32.9696 23.5127 32.9749 23.5317 32.9796 23.5511C32.983 23.5646 32.9857 23.5776 32.9881 23.5907C32.9914 23.6101 32.9943 23.6302 32.9963 23.6506C32.998 23.6661 32.9991 23.6815 32.9997 23.6968C32.9998 23.7062 33 23.716 33 23.7258L32.9996 23.7548C32.999 23.7695 32.998 23.7842 32.9966 23.7989L33 23.7258C33 23.7731 32.9956 23.8194 32.9872 23.8643C32.9853 23.875 32.983 23.886 32.9804 23.897C32.9751 23.9196 32.9689 23.9413 32.9618 23.9626C32.9584 23.9732 32.9543 23.9845 32.95 23.9958C32.9412 24.0183 32.9317 24.0398 32.9212 24.0608C32.9163 24.0706 32.9109 24.081 32.9052 24.0912C32.8958 24.1078 32.8861 24.1237 32.8759 24.1391C32.8687 24.15 32.8607 24.1614 32.8524 24.1726L32.8459 24.1812C32.8257 24.2076 32.8038 24.2326 32.7803 24.2561L32.7794 24.2568L26.7294 30.2818C26.4359 30.5741 25.9611 30.5731 25.6688 30.2796C25.4031 30.0128 25.3797 29.5961 25.5982 29.3029L25.671 29.2189L30.432 24.4764L17.25 24.4758C16.8358 24.4758 16.5 24.14 16.5 23.7258Z"
+                        fill="#D0B98F" />
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <basis core="list" datamembername="db.article-list-load">
+        <layout>
+            <div class="flex flex-col gap-2 mt-6">
+                <!-- items -->
+                @child
+            </div>
+        </layout>
+        <face filter="link is null and RowNumber > 3">
+            <a href="/article.bc?id=@id" class="relative">
+                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
+                    height="527" />
+                <div
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                    <div class="w-[85%] mx-auto line-clamp-10">
+                        @prp_7244
+                    </div>
+                </div>
+                <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                        loading="lazy" />
+                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                </div>
+            </a>
+        </face>
+        <face filter="RowNumber > 3">
+            <a href="@link" class="relative">
+                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
+                    height="527" />
+                <div
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                    <div class="w-[85%] mx-auto line-clamp-10">
+                        @prp_7244
+                    </div>
+                </div>
+                <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                        loading="lazy" />
+                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                </div>
+            </a>
+        </face>
+    </basis>
+    <div id="paging" class="flex justify-center mt-16">
+        <ul class="flex items-center gap-2 cd-pagination no-space dir-ltr" id="wibpaging">
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full cursor-pointer" aria-label="angle-left"
+                            onclick="FetchPageNumPrev('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+                <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no prev-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full cursor-pointer" aria-label="angle-left"
+                            onclick="FetchPageNumPrev('@page')"><svg width="11" height="17"
+                                class="align-middle transition-all duration-300inline-block" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.7499 16.914L0.335938 8.5L8.7499 0.0859985L10.1639 1.5L3.1639 8.5L10.1639 15.5L8.7499 16.914Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
+                        <span
+                            class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-300 rounded-b-2xl rounded-tl-2xl page-no">
+                        <span
+                            class="flex items-center justify-center w-full h-full cursor-pointer text-primary-900 page-number bg-secondary-200"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face
+                    filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+                <face
+                    filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100 page-no">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer page-number"
+                            data-pagenum="@page" onclick="FetchWithPageNum('@page')">@page</span>
+                    </li>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.paging">
+                <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer text-zinc-900"
+                            aria-label="angle-right" onclick="FetchPageNumNext('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="transition-all duration-300 group-hover:fill-white" fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+                <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                    <li
+                        class="flex items-center justify-center w-12 h-12 p-2 transition-all duration-300 page-no next-page text-primary-900 rounded-b-2xl hover:bg-secondary-200 rounded-tl-2xl bg-zinc-100">
+                        <span class="flex items-center justify-center w-full h-full cursor-pointer "
+                            aria-label="angle-right" onclick="FetchPageNumNext('@page')"><svg width="11" height="17"
+                                class="inline-block align-middle transition-all duration-300" viewBox="0 0 11 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.2501 0.0860016L10.6641 8.5L2.2501 16.914L0.836102 15.5L7.8361 8.5L0.836103 1.5L2.2501 0.0860016Z"
+                                    fill="#284E65" />
+                            </svg></span>
+                    </li>
+                </face>
+            </basis>
+        </ul>
+    </div>
+</section>

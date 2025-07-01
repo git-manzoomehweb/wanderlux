@@ -1,0 +1,650 @@
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2360949">
+    <member name="aboutus" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" name="db" mid="1" lid="1" usedforid="2362448">
+    <member name="services" type="view" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="navigation" type="tree" request="navcatid" parentid="[##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" mid="18" name="db" lid="1" usedforid="[##cms.query.catid##]">
+    <member name="scalar" type="scalar" typeid="150" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.catid##]">
+    <member name="articles" type="list" link="article.bc" propertyid="7244,7248,7249,3087371" perpage="7"
+        pageno="[##cms.query.pagenum|(1)##]" size="394x311" typeid="159" order="ord" />
+    <member name="paging" type="list" request="paging" count="4" parentname="articles" />
+    <member name="searchlistcat" type="tree" request="cat" parentid="[##cms.query.catid##]" />
+    <member name="descriptioncat" type="tree" request="cat" parentid="110387"
+        postsql="select * from [db.descriptioncat] where catid = [##cms.query.catid##]" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.impoid|(0)##]">
+    <member name="impoarticles" type="list" link="article.bc" perpage="8" propertyid="7244,7248,7249,3087371"
+        size="394x311" typeid="159" order="ord" />
+</basis>
+<basis core="dbsource" source="basiscore" lid="1" mid="1" name="db" catid="[##cms.query.relid|(0)##]">
+    <member name="relatedarticles" type="list" link="article.bc" perpage="12" propertyid="7244,7248,7249,3087371"
+        size="394x311" typeid="159" order="ord" />
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.aid##]">
+    <member name="seo-text" type="view"></member>
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[##cms.seo.title|(لاچین سیر)##]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="[##cms.seo.description|(آژانس مسافرتی لاچین سیر ارائه کننده تور خارجی و داخلی ، بلیط هواپیما، رزرو هتل در اقصی نقاط دنیا و اخذ ویزا، پرواز های چارتری و هتل های گارانتی . 41664166- 021)##]">
+    <link rel="canonical" href="https://[##cms.request.full-url##]" />
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview=""></member>
+    </basis>
+    <basis core="print" datamembername="tag.list">
+        <face filter="key='canonical'">
+            <link rel="canonical" href="@value" />
+        </face>
+        <face>
+            <meta property="@key" content="@value" />
+        </face>
+    </basis>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="[##cms.cms.cdn##]/images/custom_icon.png" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="homescreen-manifest.inc">
+    <basis core="call" file="style.inc" pageindex="[##cms.cms.pageindex##]" />
+    <link rel="stylesheet" href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css">
+    <script src="https://cdn.basiscore.net/basisfly.com/js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.basiscore.net/lachinseir.com/_js/jquery/jquery-3.6.3.min.js"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- Header start-->
+    <basis core="call" file="header.inc" pageindex="[##cms.cms.pageindex##]" />
+    <!-- header end -->
+    <section class="relative mx-auto dir-rtl max-w-7xl rounded-20px h-476px mt-90px max-xl:w-95per">
+        <basis core="print" datamembername="db.scalar">
+            <face>
+                <h1 class="absolute z-10 w-full text-4xl text-center text-white font-danabold top-36 ">
+                    <span>@column1</span>اینجا بخون
+                </h1>
+            </face>
+        </basis>
+        <div class="absolute left-0 right-0 z-10 p-2 mx-auto bg-white/50 rounded-10px top-1/2 w-745px">
+            <form id="search-content-article" action="article-list.bc?catid=@catid" method="get"
+                class="search-content w-724px h-60px leading-60px pr-4 float-right dir-rtl bg-white relative rounded-[10px] max-lg:w-full max-lg:float-none max-lg:m-auto max-lg:pr-2">
+                <svg class="absolute top-0 z-10 w-8 h-full" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.9784 22.8776C18.1009 22.8776 22.2536 18.725 22.2536 13.6024C22.2536 8.47981 18.1009 4.32715 12.9784 4.32715C7.85579 4.32715 3.70312 8.47981 3.70312 13.6024C3.70312 18.725 7.85579 22.8776 12.9784 22.8776Z"
+                        stroke="#B8B8B8" stroke-width="1.38462" stroke-linecap="square" />
+                    <path d="M19.3125 20.4326L24.5665 25.6729" stroke="#B8B8B8" stroke-width="1.38462"
+                        stroke-linecap="square" />
+                </svg>
+                <input aria-label="contect-searching" autocomplete="off"
+                    class="absolute right-0 float-right h-full text-sm bg-transparent outline-none contect-searching pr-14 font-danaregular w-550px"
+                    type="text" value="" placeholder="جستجوی مطلب" id="input">
+                    <input id="catidsearched" type="hidden"
+                    value="0" name="catid"><button
+                    class="absolute top-0 left-0 float-left h-full text-xl font-bold text-white cursor-pointer rounded-tl-10px rounded-bl-10px bg-primary w-172px hover:bg-black font-danaregular"
+                    type="submit"><span class="text-sm">جستجو</span></button>
+                <basis core="print" datamembername="db.searchlistcat">
+                    <layout>
+                        <ul
+                            class="mt-2 hidden absolute top-full right-0 w-550px z-50 shadow-lg bg-white rounded-[7px] border border-third max-h-72 overflow-y-auto p-4">
+                            @child </ul>
+                    </layout>
+                    <face filter="rownumber <>1">
+                        <li class="text-base cursor-pointer text-gray-950 hover:text-primary font-danaregular leading-30px name list-item hover:bg-primary-50"
+                            onclick="contentSearched('@title','@catid')">@title</li>
+                    </face>
+                </basis>
+            </form>
+        </div>
+        <basis core="tree" datamembername="db.descriptioncat" idcol="catid" parentidcol="parentid"
+            nullvalue="[##db.descriptioncat.parentid##]">
+            <layout>@child </layout>
+            <face>
+                <figure class="absolute left-0 right-0 rounded-20px bg-primary"><img
+                        class="block object-cover max-w-7xl h-476px rounded-20px max-xl:w-full"
+                        src="[##cms.cms.cdn##]/@image" width="1280" height="476" alt="@title"></figure>
+            </face>
+        </basis>
+    </section>
+    <!-- main content -->
+    <section class="mx-auto mt-12 max-w-7xl dir-rtl max-xl:w-95per">
+        <basis core="print" datamembername="db.scalar">
+            <face>
+                <h2 class="mb-5 text-4xl text-neutralcolor-900 font-danabold">@column1</h2>
+            </face>
+        </basis>
+        <div class="flex flex-wrap justify-between float-right w-8/12 h-481px gap-y-3">
+            <basis core="list" datamembername="db.articles">
+                <layout>@child </layout>
+                <face filter="link is null and rownumber <>1">
+                    <div class="flex w-1/2 ">
+                        <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a
+                                href="/article.bc?id=@id" class="flex justify-between gap-x-2">
+                                <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                        src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                                <div class="w-[calc(100%-140px)] ml-2">
+                                    <h2
+                                        class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                        @title</h2>
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 h-60px">
+                                        @prp_7244 </div>
+                                    <div class="flex justify-between leading-42px">
+                                        <div><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                            </span><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                            </span></div>
+                                        <div
+                                            class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                            <i
+                                                class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a></article>
+                    </div>
+                </face>
+                <face filter="rownumber <>1">
+                    <div class="flex w-1/2 ">
+                        <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a href="/@link"
+                                class="flex justify-between gap-x-2">
+                                <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                        src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                                <div class="w-[calc(100%-140px)] ml-2">
+                                    <h2
+                                        class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                        @title</h2>
+                                    <div class="h-60px">
+                                        <div
+                                            class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                            @prp_7244 </div>
+                                    </div>
+                                    <div class="flex justify-between leading-42px">
+                                        <div><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                            </span><span
+                                                class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                            </span></div>
+                                        <div
+                                            class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                            <i
+                                                class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a></article>
+                    </div>
+                </face>
+            </basis>
+        </div>
+        <div class="flex justify-end float-left w-4/12 ">
+            <basis core="list" datamembername="db.articles">
+                <layout>@child </layout>
+                <face filter="link is null and rownumber in(1)">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a
+                            href="/article.bc?id=@id" class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </face>
+                <face filter="rownumber in(1)">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a href="/@link"
+                            class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </face>
+            </basis>
+        </div>
+    </section>
+    <div class="clear-both"></div>
+    <!-- article related -->
+    <div class="mx-auto mt-12 max-w-7xl dir-rtl max-xl:w-95per">
+        <basis core="list" datamembername="db.impoarticles">
+            <layout>
+                <section class="float-right w-8/12 ">
+                    <h2
+                        class="w-full pb-5 text-4xl text-right border-b-4 text-neutralcolor-900 font-danabold border-neutralcolor-100 ">
+                        مطالب مهم</h2>
+                    <div class="flex flex-wrap justify-between mt-3 gap-y-3">@child </div>
+                </section>
+            </layout>
+            <face filter="link is null">
+                <div class="w-1/2 max-xl:w-49per">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a
+                            href="/article.bc?id=@id" class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </div>
+            </face>
+            <face>
+                <div class="w-1/2 max-xl:w-49per">
+                    <article class="w-414px bg-neutralcolor-50 h-481px rounded-20px max-xl:w-98per"><a href="/@link"
+                            class="flex flex-col justify-between gap-x-2">
+                            <figure class="relative mt-2 ml-2 mr-2 "><img
+                                    class="object-cover rounded-10px w-394px h-311px"
+                                    src="[##cms.cms.cdn##]/@00394X00311prp" width="394" height="311" alt="@title">
+                                <figcaption
+                                    class="absolute text-base text-center text-white font-danamedium leading-46px bg-primary-400 rounded-10px w-135px h-46px hover:bg-primary-800 -bottom-5 left-5">
+                                    مطالعه مطلب </figcaption>
+                            </figure>
+                            <div class="m-2">
+                                <div class="flex justify-between leading-42px">
+                                    <div><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-clockCircleIcon after:align-[-5px] max-xl:after:content-none max-xl:border-l max-xl:ml-1 max-xl:pl-1 ">@prp_3087371
+                                        </span><span
+                                            class="text-sm font-danaregular text-neutralcolor-600 leading-6 after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none ">@prp_7249
+                                        </span></div>
+                                </div>
+                                <h2
+                                    class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                    @title</h2>
+                                <div class="h-60px">
+                                    <div
+                                        class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                        @prp_7244 </div>
+                                </div>
+                            </div>
+                        </a></article>
+                </div>
+            </face>
+        </basis>
+        <basis core="list" datamembername="db.relatedarticles">
+            <layout>
+                <section class="float-left w-4/12 ">
+                    <h2
+                        class="w-full pb-5 mr-3 text-4xl text-right border-b-4 text-neutralcolor-900 font-danabold border-neutralcolor-100">
+                        دیگر مطالب</h2>
+                    <div class="flex flex-wrap justify-end mt-3 gap-y-3">@child </div>
+                </section>
+            </layout>
+            <face filter="link is null">
+                <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a
+                        href="/article.bc?id=@id" class="flex justify-between gap-x-2">
+                        <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                        <div class="w-[calc(100%-140px)] ml-2">
+                            <h2
+                                class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                @title</h2>
+                            <div class="h-60px">
+                                <div
+                                    class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                    @prp_7244 </div>
+                            </div>
+                            <div class="flex justify-between leading-42px">
+                                <div><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                    </span><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                    </span></div>
+                                <div
+                                    class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                    <i
+                                        class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a></article>
+            </face>
+            <face>
+                <article class="w-415px bg-neutralcolor-50 h-153px rounded-20px max-xl:w-95per"><a href="/@link"
+                        class="flex justify-between gap-x-2">
+                        <figure class="mt-2 mr-2 "><img class="object-cover rounded-20px w-137px h-137px"
+                                src="[##cms.cms.cdn##]/@image" width="137" height="137" alt="@title"></figure>
+                        <div class="w-[calc(100%-140px)] ml-2">
+                            <h2
+                                class="w-full mt-2 text-xl text-right text-neutralcolor-900 font-danamedium line-clamp-1">
+                                @title</h2>
+                            <div class="h-60px">
+                                <div
+                                    class="mt-1 text-sm text-justify font-danaregular text-neutralcolor-800 line-clamp-2 ">
+                                    @prp_7244 </div>
+                            </div>
+                            <div class="flex justify-between leading-42px">
+                                <div><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-clockCircleIcon max-xl:border-l max-xl:pl-1 max-xl:ml-1 after:align-[-5px] max-xl:after:content-none max-xl:text-xs ">@prp_3087371
+                                    </span><span
+                                        class="text-sm font-danaregular text-neutralcolor-600 leading-42px after:content-calendarCircleIcon after:align-[-4px] max-xl:after:content-none max-xl:text-xs ">@prp_7249
+                                    </span></div>
+                                <div
+                                    class="text-center bg-primary-400 rounded-10px w-54px h-42px hover:bg-primary-800 max-xl:w-10 ">
+                                    <i
+                                        class="before:content-arrowRightWhiteIcon leading-42px align-[-10px] mx-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a></article>
+            </face>
+        </basis>
+    </div>
+    <div class="clear-both"></div>
+    <div class="relative z-10 flex justify-center w-full text-center mt-9">
+        <div id="paging" class="float-right clear-both w-full text-center">
+            <ul class="flex items-center justify-center gap-4 cd-pagination no-space font-danaregular" id="wibpaging">
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 prev-page hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.link_page##]&pagenum=@page" aria-label="angle-left"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.2623 11.692C8.0395 11.9149 7.9275 12.2074 7.9275 12.5C7.9275 12.7926 8.0395 13.0851 8.2623 13.308L15.1192 20.1649C15.5661 20.6117 16.2883 20.6117 16.7352 20.1649C17.182 19.718 17.182 18.9958 16.7352 18.5489L10.6863 12.5L16.7352 6.45107C17.182 6.00423 17.182 5.28197 16.7352 4.83513C16.2883 4.38829 15.5661 4.38829 15.1192 4.83513L8.2623 11.692Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                    <face filter="(@sta='pre')and('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 prev-page hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.pageurl##]?pagenum=@page" aria-label="angle-left"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.2623 11.692C8.0395 11.9149 7.9275 12.2074 7.9275 12.5C7.9275 12.7926 8.0395 13.0851 8.2623 13.308L15.1192 20.1649C15.5661 20.6117 16.2883 20.6117 16.7352 20.1649C17.182 19.718 17.182 18.9958 16.7352 18.5489L10.6863 12.5L16.7352 6.45107C17.182 6.00423 17.182 5.28197 16.7352 4.83513C16.2883 4.38829 15.5661 4.38829 15.1192 4.83513L8.2623 11.692Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                </basis>
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="page-no w-10 h-10 bg-primary-400 leading-10 text-base mx-1.5 mb-2.5 text-white inline-block">
+                            <a class="leading-10 current" href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face filter="(@page=[##cms.query.pagenum|(1)##])and('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="page-no w-10 h-10 bg-primary-400 leading-10 text-base mx-1.5 mb-2.5 text-white inline-block">
+                            <a class="leading-10 current" href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face
+                        filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'='') ">
+                        <li
+                            class="page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-600 inline-block hover:bg-primary-400 cursor-pointer">
+                            <a class="leading-10" href="/[##cms.cms.link_page##]&pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                    <face
+                        filter="(@page<>[##cms.query.pagenum|(1)##]) and (@page>0) and (@sta='no') and ('[##cms.cms.pageurl##]'<>'') ">
+                        <li
+                            class="page-no w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-600 inline-block hover:bg-primary-400 cursor-pointer">
+                            <a class="leading-10" href="/[##cms.cms.pageurl##]?pagenum=@page">@page</a>
+                        </li>
+                    </face>
+                </basis>
+                <basis core="print" datamembername="db.paging">
+                    <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'='')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no next-page w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.link_page##]&pagenum=@page" aria-label="angle-right"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.7377 13.308C16.9605 13.0851 17.0725 12.7926 17.0725 12.5C17.0725 12.2074 16.9605 11.9149 16.7377 11.692L9.88076 4.8351C9.43392 4.3883 8.71166 4.3883 8.26482 4.8351C7.81798 5.282 7.81798 6.0042 8.26482 6.4511L14.3137 12.5L8.26482 18.5489C7.81798 18.9958 7.81798 19.718 8.26482 20.1649C8.71166 20.6117 9.43392 20.6117 9.88076 20.1649L16.7377 13.308Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                    <face filter="(@sta='nex') and ('[##cms.cms.pageurl##]'<>'')">
+                        <li
+                            class="flex flex-col justify-center items-center page-no next-page w-10 h-10 bg-neutralcolor-50 leading-10 text-base mx-1.5 mb-2.5 text-neutralcolor-700 hover:bg-primary-400 cursor-pointer">
+                            <a href="/[##cms.cms.pageurl##]?pagenum=@page" aria-label="angle-right"><svg width="25"
+                                    height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.7377 13.308C16.9605 13.0851 17.0725 12.7926 17.0725 12.5C17.0725 12.2074 16.9605 11.9149 16.7377 11.692L9.88076 4.8351C9.43392 4.3883 8.71166 4.3883 8.26482 4.8351C7.81798 5.282 7.81798 6.0042 8.26482 6.4511L14.3137 12.5L8.26482 18.5489C7.81798 18.9958 7.81798 19.718 8.26482 20.1649C8.71166 20.6117 9.43392 20.6117 9.88076 20.1649L16.7377 13.308Z"
+                                        fill="#7A7A7A" />
+                                </svg></a>
+                        </li>
+                    </face>
+                </basis>
+            </ul>
+        </div>
+    </div>
+    <div class="clear-both"></div>
+    <!-- about -->
+    <div class="clear-both"></div>
+    <div class="w-full ">
+        <section class="flex mx-auto mt-32 max-w-7xl dir-rtl max-xl:mt-20 max-xl:w-95per">
+            <div class="w-6/12">
+                <h2
+                    class="text-center text-transparent bg-cover text-9xl font-danaheavy bg-aboutbg bg-clip-text h-80 max-xl:text-8xl max-xl:align-bottom max-xl:flex max-xl:justify-center max-xl:items-center ">
+                    دربــــاره‌ی <br>لاچین سیر</h2>
+                <div class="text-base text-justify line-clamp-7 font-danaregular text-neutralcolor-900">
+                    <basis core="print" datamembername="db.aboutus">
+                        <face filter="rownumber=2">@largetext </face>
+                    </basis>
+                </div>
+            </div>
+            <div class="w-6/12">
+                <basis core="print" datamembername="db.services">
+                    <layout>
+                        <ul
+                            class="flex flex-col w-11/12 h-full pr-12 mr-auto border-r-2 border-neutralcolor-100 justify-evenly max-xl:pr-6 ">
+                            @child </ul>
+                    </layout>
+                    <face filter="rownumber=2">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-attention-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=3">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-warning-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px ">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=4">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-error-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                    <face filter="rownumber=5">
+                        <li class="flex items-center justify-between">
+                            <div class="ml-3 rounded-full min-w-76px min-h-76px bg-success-100"><svg fill="none"
+                                    class="mx-auto my-4 w-42px h-42px " viewBox="0 0 42 42"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#a)" fill="#FFA000">
+                                        <path
+                                            d="m3.1697 22.86c-0.6178-0.6177-0.6178-1.623 0-2.2404l15.076-15.076c0.2403-0.24033 0.2403-0.62997 0-0.86998-0.2403-0.24065-0.63-0.24033-0.87 0l-15.076 15.076c-1.0972 1.0972-1.0972 2.8829 0 3.9804l3.7975 3.7972c0.11984 0.1198 0.27749 0.1801 0.43483 0.1801 0.15765 0 0.31499-0.0599 0.43515-0.1801 0.24033-0.2403 0.24033-0.63 0-0.87l-3.7972-3.7972z" />
+                                        <path
+                                            d="m15.264 12.17-9.3099 9.31c-0.24032 0.2403-0.24032 0.6299 0 0.8703 0.12017 0.1198 0.2775 0.1801 0.43515 0.1801 0.15734 0 0.31467-0.06 0.43483-0.1801l9.3099-9.31c0.2403-0.2403 0.2403-0.6299 0-0.8703-0.24-0.24-0.6297-0.24-0.87 0z" />
+                                        <path
+                                            d="m20.896 11.187c0.6376 0 1.2753-0.2425 1.7607-0.728l1.8624-1.8624c0.9709-0.97092 0.9709-2.5507 0-3.5216s-2.5507-0.97092-3.5216 0l-1.8623 1.8624c-0.4704 0.4704-0.7294 1.0956-0.7294 1.7608 0 0.6649 0.259 1.2904 0.7294 1.7608 0.4854 0.4855 1.1231 0.728 1.7608 0.728zm-0.8909-3.3796 1.8624-1.8624c0.4912-0.49123 1.2904-0.49123 1.7813 0 0.4912 0.49123 0.4912 1.2904 0 1.7813l-1.8624 1.8624c-0.4909 0.49118-1.29 0.49118-1.7813 0-0.2377-0.23776-0.3688-0.55403-0.3688-0.89049s0.1311-0.65305 0.3688-0.89081z" />
+                                        <path
+                                            d="m37.835 20.471h-5.9222l4.5629-4.563c1.0975-1.0975 1.0975-2.8833 0-3.9808l-11.185-11.185c-0.5316-0.5316-1.2384-0.82448-1.9902-0.82448-0.7517 0-1.4586 0.29288-1.9905 0.82448l-2.1918 2.1918c-0.24 0.24032-0.24 0.62965 0 0.86998 0.2403 0.24032 0.63 0.24032 0.87 0l2.1921-2.1918c0.2989-0.29929 0.6969-0.46399 1.1202-0.46399 0.423 0 0.821 0.1647 1.1203 0.46399l11.185 11.185c0.6178 0.6178 0.6178 1.6227 0 2.2405l-5.4329 5.433h-15.548l4.472-4.472c0.2404-0.24 0.2404-0.6297 0-0.87-0.2403-0.2403-0.6299-0.2403-0.87 0l-5.3419 5.3423h-1.9294c-1.5522 0-2.8147 1.2625-2.8147 2.8144v15.818c0 1.5519 1.2625 2.8147 2.8147 2.8147h26.88c1.5522 0 2.8147-1.2628 2.8147-2.8147v-2.2738c0-0.3399-0.2752-0.6152-0.6152-0.6152-0.3397 0-0.6152 0.2753-0.6152 0.6152v2.2738c0 0.8736-0.7104 1.5843-1.5843 1.5843h-26.88c-0.8735 0-1.5842-0.7107-1.5842-1.5843v-8.6328h30.048v3.8981c0 0.3397 0.2752 0.6152 0.6152 0.6152s0.6152-0.2755 0.6152-0.6152v-11.083c0-1.5522-1.2625-2.8147-2.8147-2.8147zm-26.88 1.2305h26.88c0.8735 0 1.5843 0.7107 1.5843 1.5842v2.1546h-30.048v-2.1546c0-0.8735 0.7107-1.5842 1.5842-1.5842zm-1.5842 7.5385v-2.5692h30.048v2.5692h-30.048z" />
+                                        <path
+                                            d="m32.67 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h3.728c0.52 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4233-0.9434-0.9433-0.9434h-3.728zm3.4409 2.9999h-3.1538v-1.7694h3.1538v1.7694z" />
+                                        <path
+                                            d="m21.428 34.983c-0.52 0-0.9433 0.4233-0.9433 0.9434v2.3436c0 0.5204 0.4233 0.9434 0.9433 0.9434h7.885c0.5201 0 0.9433-0.423 0.9433-0.9434v-2.3436c0-0.5201-0.4232-0.9434-0.9433-0.9434h-7.885zm7.5979 2.9999h-7.3108v-1.7694h7.3108v1.7694z" />
+                                        <path
+                                            d="m13.959 37.983c-0.3397 0-0.6152 0.2756-0.6152 0.6152 0 0.34 0.2755 0.6153 0.6152 0.6153h3.9285c0.3397 0 0.6153-0.2753 0.6153-0.6153 0-0.3396-0.2756-0.6152-0.6153-0.6152h-3.9285z" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="a">
+                                            <rect width="42" height="42" fill="#fff" />
+                                        </clipPath>
+                                    </defs>
+                                </svg></div>
+                            <div class="max-w-478px">
+                                <h3 class="text-base text-primary-400 font-danabold leading-30px">@text</h3>
+                                <div class="text-base text-neutralcolor-800 font-danaregular line-clamp-2 leading-30px">
+                                    @largetext </div>
+                            </div>
+                        </li>
+                    </face>
+                </basis>
+            </div>
+        </section>
+    </div>
+    <!-- about -->
+    <!-- footer start-->
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    <!-- footer end-->
+</body>
+
+</html>
