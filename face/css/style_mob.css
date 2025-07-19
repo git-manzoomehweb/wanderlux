@@ -175,6 +175,9 @@
   color: #fff !important;
   background: var(--primary);
 }
+.col1-second-part-header{
+ width: 28%;
+}
 .second-part-header .col1-second-part-header a:after,
 .second-part-header .col1-second-part-header a:before,
 .second-part-header .col1-second-part-header a:after {
@@ -292,7 +295,7 @@
   color: #fff;
 }
 .top-menu img {
-  width: 42px;
+  width: 150px;
   height: auto;
   filter: unset;
 }
@@ -341,11 +344,14 @@
 input,
 select,
 button {
-  font-family: "IRANSansWeb";
+  font-family: "Dana";
 }
 html,
 html body {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
+}
+.currency-selected {
+  padding: 4px 33px 2px !important;
 }
 .currency-selected::after {
   font-size: 15px;
@@ -364,3 +370,4 @@ html body {
 	font-family: 'fontawesome';
 	font-style: normal;
 }
+

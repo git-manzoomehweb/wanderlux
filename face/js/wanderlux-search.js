@@ -111,12 +111,12 @@ function city_search(t) {
 }
 
 $(window).width() <= 750 &&
-  ($("#flightSearch").attr("action") === "/Tem3_Roundtrip_Search_EN.bc" &&
-    $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc"),
-  $("#flightSearch").attr("action") === "/Tem3_Oneway_Search_EN.bc" &&
-    $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
-  $("#hotelsearch").attr("action", "/M_Hotel_Search_en.bc"),
-  $("#tourSearch").attr("action", "/M_Tour_Search_en.bc")),
+  ($("#flightSearch").attr("action") === "/Tem3_Roundtrip_Search.bc" &&
+    $("#flightSearch").attr("action", "/M_Roundtrip_Search.bc"),
+  $("#flightSearch").attr("action") === "/Tem3_Oneway_Search.bc" &&
+    $("#flightSearch").attr("action", "/M_Oneway_Search.bc"),
+  $("#hotelsearch").attr("action", "/M_Hotel_Search.bc"),
+  $("#tourSearch").attr("action", "/M_Tour_Search.bc")),
   $(".formflight").each(function () {
     $(this).submit(function (event) {
       var ageString = "";
@@ -166,7 +166,7 @@ $("#return").click(function () {
   $(this).addClass("active-r-btn");
   $("#direct").removeClass("active-r-btn");
   $("#multi").removeClass("active-r-btn"),
-    $("#multi-flight").addClass("hidden"),
+    $("#multi-flight-form").addClass("hidden"),
     // $(".disabled-label").removeClass("hidden"),
     $("#flightSearch #inp2-flight").prop("disabled", false);
   $("#flightSearch").find(".end_date").addClass("nextCalOpening");
@@ -175,7 +175,7 @@ $("#return").click(function () {
     .closest(".inner-container")
     .removeClass("Noactive-date");
   $(window).width() <= 750 &&
-    $("#flightSearch").attr("action", "/M_Roundtrip_Search_en.bc");
+    $("#flightSearch").attr("action", "/M_Roundtrip_Search.bc");
   $("#flightSearch").show();
 });
 
@@ -183,7 +183,7 @@ $("#direct").click(function () {
   $(this).addClass("active-r-btn"),
     $("#return").removeClass("active-r-btn"),
     $("#multi").removeClass("active-r-btn"),
-    $("#multi-flight").addClass("hidden"),
+    $("#multi-flight-form").addClass("hidden"),
     // $(".disabled-label").addClass("hidden"),
     $("#flightSearch #inp2-flight").prop("disabled", !0),
     $("#flightSearch").find(".end_date").removeClass("nextCalOpening"),
@@ -192,7 +192,7 @@ $("#direct").click(function () {
       .closest(".inner-container")
       .addClass("Noactive-date");
   $(window).width() <= 750 &&
-    $("#flightSearch").attr("action", "/M_Oneway_Search_en.bc"),
+    $("#flightSearch").attr("action", "/M_Oneway_Search.bc"),
     $("#flightSearch").show();
 });
 $(".flight-btn").click(function () {
@@ -966,17 +966,17 @@ $(".sp-start").val(persian_today),
   });
 
 function showMultiCity(t) {
-  $("#multi-flight").removeClass("hidden"),
+  $("#multi-flight-form").removeClass("hidden"),
     $(t).addClass("active-r-btn"),
     $("#direct").removeClass("active-r-btn"),
     $("#return").removeClass("active-r-btn"),
     $("#flightSearch").hide(),
-    $("#multi-flight").show(),
+    $("#multi-flight-form").show(),
     $(window).width() <= 750 &&
-      $("#multi-flight").attr("action", "/M_MultiCity_Search_en.bc");
+      $("#multi-flight-form").attr("action", "/M_MultiCity_Search_en.bc");
 }
 $(window).width() >= 1024 &&
-  $("#multi-flight")
+  $("#multi-flight-form")
     .find(".route-content")
     .each(function () {
       $(this).addClass("set_Date_Box");
@@ -1041,7 +1041,7 @@ function deleteMulticityRoute(t) {
   t.closest(".route-content").remove();
   let e = 0;
   document
-    .querySelector("#multi-flight")
+    .querySelector("#multi-flight-form")
     .querySelector(".route-container")
     .querySelectorAll(".route-content")
     .forEach((t) => {
@@ -1146,3 +1146,4 @@ $(document).ready(function () {
     $(this).addClass("px-4");
   });
 });
+

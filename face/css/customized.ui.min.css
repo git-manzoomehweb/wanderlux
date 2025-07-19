@@ -1573,3 +1573,6 @@ body {
   background-repeat: no-repeat;
 } */
  .currency-selected .currency__icon{display: none;}
+ .layout__body__container{
+  text-transform: capitalize;
+ }
