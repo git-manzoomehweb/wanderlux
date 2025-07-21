@@ -194,6 +194,10 @@ body {
   top: 50%;
 }
 
+.top-\[86\%\] {
+    top: 86%;
+}
+
 .top-\[7\%\] {
   top: 7%;
 }
@@ -1023,25 +1027,6 @@ body {
   background-color: var(--secondary-50);
 }
 
-.bg-specialcolor-1 {
-  background-color: var(--special-1);
-}
-
-.bg-specialcolor-2 {
-  background-color: var(--special-2);
-}
-
-.bg-specialcolor-3 {
-  background-color: var(--special-3);
-}
-
-.bg-specialcolor-4 {
-  background-color: var(--special-4);
-}
-
-.bg-specialcolor-5 {
-  background-color: var(--special-5);
-}
 
 .bg-tertiary-400 {
   background-color: var(--tertiary-400);
@@ -1400,15 +1385,6 @@ body {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
-    0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -1432,6 +1408,11 @@ body {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-\[2px_4px_6px_rgba\(3\2c 25\2c 71\2c 0\.9\)\] {
+    --tw-drop-shadow: drop-shadow(2px 4px 6px rgba(3,25,71,0.9));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all {
@@ -1569,6 +1550,10 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:top-\[4\%\] {
+    top: 4%;
 }
 
 .group:hover .group-hover\:visible {
@@ -2009,3 +1994,11 @@ body {
 .max-w-max{max-width: max-content;}
 .w-\[314px\] {width: 314px;}
 .unvisible {display: none;}
+
+.text-shadow-black{
+  text-shadow: 
+  0 2px 4px rgba(0, 0, 0, 0.6),
+  0 4px 6px rgba(0, 0, 0, 0.7),
+  0 6px 8px rgba(0, 0, 0, 0.8),
+  0 8px 10px rgba(0, 0, 0, 0.9);
+}

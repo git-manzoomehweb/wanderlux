@@ -604,6 +604,10 @@ body {
   z-index: 30;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -769,6 +773,15 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -791,6 +804,10 @@ body {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
 }
 
 .gap-10 {
@@ -892,6 +909,22 @@ body {
 
 .bg-specialcolor-1 {
   background-color: var(--special-1);
+}
+
+.bg-specialcolor-2 {
+  background-color: var(--special-2);
+}
+
+.bg-specialcolor-3 {
+  background-color: var(--special-3);
+}
+
+.bg-specialcolor-4 {
+  background-color: var(--special-4);
+}
+
+.bg-specialcolor-5 {
+  background-color: var(--special-5);
 }
 
 .bg-tertiary-400 {
@@ -1085,7 +1118,7 @@ body {
   --special-2: #00000066;
   --special-3: #00000099;
   --special-4: #00000080;
-  --special-5: #03194780;
+  --special-5: #031947CC;
 
   ---bg: url("");
   --default-bg: url("../images/china-wall-default-min.jpg");

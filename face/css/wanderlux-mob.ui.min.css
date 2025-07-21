@@ -674,6 +674,10 @@ body {
   min-width: 3.5rem /* 56px */;
 }
 
+.min-w-\[102px\] {
+    min-width: 102px;
+}
+
 .w-1\/12 {
   width: 8.333333%;
 }
@@ -778,6 +782,10 @@ body {
   width: auto;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -848,6 +856,14 @@ body {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-y-3 {
+    row-gap: 0.75rem /* 12px */;
+}
+
+.gap-x-2 {
+    column-gap: 0.5rem /* 8px */;
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -1536,6 +1552,11 @@ body {
     var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.drop-shadow-\[2px_4px_6px_rgba\(3\2c 25\2c 71\2c 0\.9\)\] {
+    --tw-drop-shadow: drop-shadow(2px 4px 6px rgba(3,25,71,0.9));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2053,3 +2074,11 @@ body {
 .max-w-max{max-width: max-content;}
 .w-\[314px\] {width: 314px;}
 .unvisible {display: none;}
+
+.text-shadow-black{
+  text-shadow: 
+  0 2px 4px rgba(0, 0, 0, 0.6),
+  0 4px 6px rgba(0, 0, 0, 0.7),
+  0 6px 8px rgba(0, 0, 0, 0.8),
+  0 8px 10px rgba(0, 0, 0, 0.9);
+}

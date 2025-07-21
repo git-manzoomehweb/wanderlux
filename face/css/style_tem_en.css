@@ -22,8 +22,8 @@
 @font-face {
   font-display: swap;
   font-family: "flaticon";
-  src: url("../_fonts/fontFlaticon.ttf") format("truetype"),
-    url("../_fonts/fontFlaticon.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/fontFlaticon.ttf") format("truetype"),
+    url("../fonts/fontFlaticon.eot?#iefix") format("embedded-opentype");
 }
 i[class^="flaticon-"]:before,
 i[class*=" flaticon-"]:before {
@@ -37,7 +37,7 @@ i[class*=" flaticon-"]:before {
 input,
 select,
 button {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
 }
 .flaticon-phone-call:before {
   content: "\f136";
@@ -390,7 +390,7 @@ fieldset hr {
 .note-content textarea,
 .package-info-item input,
 .package-info-item select {
-  font-family: "IRANSansWebEnNum";
+  font-family: "Dana";
 }
 .fa-spoon::before {
   font-weight: normal;

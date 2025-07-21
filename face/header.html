@@ -1,13 +1,14 @@
 <basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
   <member name="info" type="view" />
 </basis>
-<header id="header-resize">
+<div id="header-spacer"></div>
+<header id="header-resize" class="left-0 right-0 z-50 bg-white shadow-lg">
   <div class="relative flex items-center justify-between h-[78px] mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-    <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160" height="28" loading="lazy"
-        class="object-cover transition-transform duration-300 lg:hidden hover:scale-90" /></a>
+    <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160" height="28"
+        loading="lazy" class="object-cover transition-transform duration-300 lg:hidden hover:scale-90" /></a>
     <div class="flex items-center flex-1 gap-6">
-      <a href="/" class=""><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header-mobile" width="166" height="40"
-          loading="lazy" class="hidden lg:block" /></a>
+      <a href="/" class=""><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header-mobile" width="166"
+          height="40" loading="lazy" class="hidden lg:block" /></a>
       <nav class="hidden h-full lg:flex">
         <ul class="flex items-center gap-8">
           <li>
@@ -34,10 +35,10 @@
         <div class="relative currency-rate">
           <span class="absolute top-0 right-0 hidden currency-loading"><i class="fas fa-spinner fa-spin"></i></span>
           <div class="currency-content">
-              <div data-active="0" onclick="currency_selected(this)"
-                class="flex items-center justify-center w-12 h-12 text-white transition-all duration-300 cursor-pointer currency-selected bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
-              </div>
-            <div class="absolute z-20 unvisible text-sm rounded shadow currency-list">
+            <div data-active="0" onclick="currency_selected(this)"
+              class="flex items-center justify-center w-12 h-12 text-white transition-all duration-300 cursor-pointer currency-selected bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
+            </div>
+            <div class="absolute z-20 text-sm rounded shadow unvisible currency-list">
               <ul class="flex flex-col gap-2 p-4 overflow-y-auto bg-specialcolor-1 max-h-72"></ul>
             </div>
           </div>

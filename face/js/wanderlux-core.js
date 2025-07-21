@@ -133,6 +133,50 @@ if (document.querySelector(".floating-icons")) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('header');
+  const currencyList = document.querySelector('.currency-list');
+
+  if (!header) return;
+
+  header.style.position = '';
+  header.style.transform = '';
+  header.style.transition = 'transform 0.3s ease';
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const entranceBody = document.querySelector('.user-entrance-body');
+
+    if (currentScrollY === 0) {
+      header.style.position = '';
+      header.style.transform = '';
+    } else {
+      header.style.position = 'fixed';
+      header.style.top = '0';
+      header.style.left = '0';
+      header.style.width = '100%';
+      header.style.zIndex = '999';
+
+      if (currentScrollY > lastScrollY) {
+        header.style.transform = 'translateY(-10000px)';
+        if (entranceBody) entranceBody.style.display = 'none';
+        if (currencyList) currencyList.classList.add('unvisible');
+      } else {
+        header.style.transform = '';
+      }
+    }
+
+    lastScrollY = currentScrollY;
+  });
+});
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const contactBg = document.querySelector(".bg-contactBg");
   const readMoreBtn = document.querySelector(".read-btn");

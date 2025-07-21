@@ -114,11 +114,11 @@
         </div>
       </section>
       <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto">
-        <h2 class="relative text-xl inline-block"><span
-            class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Tourist
-          <span class="font-bold text-tertiary-950">Destination<span
+        <h2 class="relative inline-block text-xl"><span
+            class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Travel by
+          <span class="font-bold text-tertiary-950">Experience<span
               class="hidden absolute -z-10 -right-1 top-1 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
-        </h2>
+        </h2> 
   
   
         <basis core="tree" datamembername="tourist-destination.cat" idcol="catid" parentidcol="parentid"
@@ -133,12 +133,12 @@
             <div>
               <a href="/tour-list.bc?catid=@catid" class="relative flex items-center justify-center">
                 <img src="@image" class="object-cover h-[223px]" alt="@title" width="100%" height="223" loading="lazy">
-                <div class="absolute inset-0 mx-auto w-[90%] top-4">
-                  <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                <div class="flex items-end absolute inset-0 mx-auto w-[90%] top-4">
+                  <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo" width="86" height="21"
                     loading="lazy">
                   <div class="text-white mt-28">
-                    <h2 class="text-3xl font-bold">@title</h2>
-                    <div class="line-clamp-1">@urldescription</div>
+                    <h2 class="text-2xl font-medium text-shadow-black">@title</h2>
+                    <div class="hidden">@urldescription</div>
                   </div>
                 </div>
               </a>
@@ -148,12 +148,12 @@
             <div>
               <a href="@link" class="relative flex items-center justify-center">
                 <img src="@image" class="object-cover h-[223px]" alt="@title" width="100%" height="223" loading="lazy">
-                <div class="absolute inset-0 mx-auto w-[90%] top-4">
-                  <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                <div class="flex items-end absolute inset-0 mx-auto w-[90%] top-4">
+                  <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo" width="86" height="21"
                     loading="lazy">
                   <div class="text-white mt-28">
-                    <h2 class="text-3xl font-bold">@title</h2>
-                    <div class="line-clamp-1">@urldescription</div>
+                    <h2 class="text-2xl font-medium text-shadow-black">@title</h2>
+                    <div class="hidden">@urldescription</div>
                   </div>
                 </div>
               </a>
@@ -190,7 +190,7 @@
         </div>
       </section>
       <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-6">
-        <h2 class="relative text-xl inline-block"><span
+        <h2 class="relative inline-block text-xl"><span
             class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
           <span class="font-bold text-tertiary-950">Services<span
               class="hidden absolute -z-10 -right-1 top-1 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
@@ -282,19 +282,19 @@
               <div class="text-sm text-justify text-white">[##root.cat.urldescription##]</div>
               <basis core="tree" datamembername="tour-list.cat" idcol="catid" parentidcol="parentid" nullvalue="212998">
                 <layout>
-                  <ul class="flex justify-between px-1 my-6">
+                  <ul class="flex flex-wrap px-1 my-6 gap-y-3 gap-x-2">
                     @child
                   </ul>
                 </layout>
                 <face filter="RowNumber not in(1)">
-                  <li class="tour-li px-1 py-4 bg-white text-sm text-zinc-600 rounded-b-[18px] rounded-tl-[18px]"
+                  <li class="tour-li text-center min-w-[102px] px-1 py-4 bg-white text-sm text-zinc-600 rounded-b-[18px] rounded-tl-[18px]"
                     data-id="@catid">
                     @title
                   </li>
                 </face>
               </basis>
               <!-- Slider main container -->
-              <div class="swiper tour-swiper-mobile">
+              <div class="h-full swiper tour-swiper-mobile">
                 <!-- Additional required wrapper -->
                 <div class="fetch-content-tour swiper-wrapper">
   
@@ -338,7 +338,7 @@
   
       <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-6">
         <div class="flex justify-between">
-          <h2 class="relative text-xl inline-block"><span
+          <h2 class="relative inline-block text-xl"><span
               class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Popular
             <span class="font-bold text-tertiary-950">Hotels<span
                 class="hidden absolute -z-10 -right-2 top-1 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
@@ -421,7 +421,7 @@
   
       <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-6">
         <div class="flex justify-between">
-          <h2 class="relative text-xl inline-block"><span
+          <h2 class="relative inline-block text-xl"><span
               class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Tourism
             <span class="font-bold text-tertiary-950">Magazine<span
                 class="hidden absolute -z-10 -right-3 top-1 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
@@ -440,15 +440,15 @@
             <a href="/article.bc?id=@id" class="relative">
               <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
               <div
-                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
                 <div class="w-[85%] mx-auto">
                   @prp_7244
                 </div>
               </div>
               <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo" width="86" height="21"
                   loading="lazy">
-                <h2 class="mt-16 text-3xl text-white">@title</h2>
+                <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
               </div>
             </a>
           </face>
@@ -456,15 +456,15 @@
             <a href="@link" class="relative">
               <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
               <div
-                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
+                class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
                 <div class="w-[85%] mx-auto">
                   @prp_7244
                 </div>
               </div>
               <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
+                <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo" width="86" height="21"
                   loading="lazy">
-                <h2 class="mt-16 text-3xl text-white">@title</h2>
+                <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
               </div>
             </a>
           </face>
@@ -473,7 +473,7 @@
       </section>
   
       <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-8 mb-3">
-        <h2 class="relative text-xl inline-block"><span
+        <h2 class="relative inline-block text-xl"><span
             class="hidden absolute -z-10 left-[-2px] top-[-2px] w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
           <span class="font-bold text-tertiary-950">Goal<span
               class="hidden absolute -z-10 -right-2 top-1 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
