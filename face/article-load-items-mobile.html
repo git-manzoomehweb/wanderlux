@@ -1,6 +1,6 @@
 <basis core="dbsource" source="basiscore" lid="2" mid="1" name="db" catid="[##cms.query.catid | (0)##]">
     <member name="article-list-load" type="list" link="article.bc" propertyid="7244" perpage="6"
-        pageno="[##cms.query.pagenum|(1)##]" size="288x527" typeid="159" order="ord" />
+        pageno="[##cms.query.pagenum|(1)##]" size="314x527" typeid="159" order="ord" />
     <member name="paging" type="list" request="paging" count="3" parentname="article-list-load" />
 </basis>
 
@@ -17,43 +17,42 @@
             </div>
         </layout>
         <face filter="link is null and RowNumber in(1,2,3)">
-            <a href="/article.bc?id=@id" class="relative">
-                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
-                    height="527" />
+            <a href="/article.bc?id=@id" class="flex flex-col relative">
+                <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
                 <div
-                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto line-clamp-10">
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
+                    <div class="w-[85%] mx-auto">
                         @prp_7244
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
-                        loading="lazy" />
-                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo"
+                        width="86" height="21" loading="lazy">
+                    <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
                 </div>
             </a>
         </face>
         <face filter="RowNumber in(1,2,3)">
-            <a href="@link" class="relative">
-                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
-                    height="527" />
+            <a href="@link" class="flex flex-col relative">
+                <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
                 <div
-                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto line-clamp-10">
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
+                    <div class="w-[85%] mx-auto">
                         @prp_7244
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
-                        loading="lazy" />
-                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo"
+                        width="86" height="21" loading="lazy">
+                    <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
                 </div>
             </a>
         </face>
     </basis>
 
     <div class="relative flex items-end mt-6 overflow-hidden rounded-b-3xl rounded-tl-3xl">
-        <img src="[##cms.cms.cdn##]/images/beach2-min.jpg" class="object-cover h-[322px]" alt="" width="100%" height="322" />
+        <img src="[##cms.cms.cdn##]/images/beach2-min.jpg" class="object-cover h-[322px]" alt="" width="100%"
+            height="322" />
         <div class="absolute left-0 right-0 mx-auto w-[84%] pb-6">
             <basis core="print" datamembername="db.trending-destinations">
                 <face filter="TypeID in(150)">
@@ -86,37 +85,36 @@
                 @child
             </div>
         </layout>
+
         <face filter="link is null and RowNumber > 3">
-            <a href="/article.bc?id=@id" class="relative">
-                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
-                    height="527" />
+            <a href="/article.bc?id=@id" class="flex flex-col relative">
+                <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
                 <div
-                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto line-clamp-10">
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
+                    <div class="w-[85%] mx-auto">
                         @prp_7244
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
-                        loading="lazy" />
-                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo"
+                        width="86" height="21" loading="lazy">
+                    <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
                 </div>
             </a>
         </face>
         <face filter="RowNumber > 3">
-            <a href="@link" class="relative">
-                <img src="@00288X00527prp" class="h-[527px] object-cover" alt="@title" width="100%"
-                    height="527" />
+            <a href="@link" class="flex flex-col relative">
+                <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
                 <div
-                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-3">
-                    <div class="w-[85%] mx-auto line-clamp-10">
+                    class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
+                    <div class="w-[85%] mx-auto">
                         @prp_7244
                     </div>
                 </div>
                 <div class="absolute top-[4%] left-0 right-0 mx-auto w-[85%]">
-                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" alt="wanderlux-logo" width="86" height="21"
-                        loading="lazy" />
-                    <h2 class="mt-16 text-3xl text-white">@title</h2>
+                    <img src="[##cms.cms.cdn##]/images/WANDERLUX-LOGO2 1.png" class="hidden" alt="wanderlux-logo"
+                        width="86" height="21" loading="lazy">
+                    <h2 class="mt-16 text-2xl font-medium text-white text-shadow-black">@title</h2>
                 </div>
             </a>
         </face>

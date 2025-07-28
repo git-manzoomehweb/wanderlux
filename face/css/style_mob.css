@@ -29,6 +29,13 @@
 .EnNum {
   font-family: "IRANSansWebEnNum";
 }
+.fa,
+.fab,
+.far,
+.fas {
+  font-family: "fontawesome";
+  font-style: normal;
+}
 .font-color_1 {
   color: var(--primary);
 }

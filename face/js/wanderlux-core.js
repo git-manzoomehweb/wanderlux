@@ -136,6 +136,7 @@ if (document.querySelector(".floating-icons")) {
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header');
   const currencyList = document.querySelector('.currency-list');
+  const mainContainer = document.querySelector('.main-container'); 
 
   if (!header) return;
 
@@ -148,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
     const entranceBody = document.querySelector('.user-entrance-body');
+
+    if (mainContainer) return;
 
     if (currentScrollY === 0) {
       header.style.position = '';

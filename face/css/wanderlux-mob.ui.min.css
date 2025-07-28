@@ -109,6 +109,10 @@ body {
   bottom: 0px;
 }
 
+.bottom-2 {
+  bottom: 8px;
+}
+
 .bottom-\[-24\%\] {
   bottom: -24%;
 }
@@ -2073,7 +2077,7 @@ body {
 }
 .max-w-max{max-width: max-content;}
 .w-\[314px\] {width: 314px;}
-.unvisible {display: none;}
+
 
 .text-shadow-black{
   text-shadow: 

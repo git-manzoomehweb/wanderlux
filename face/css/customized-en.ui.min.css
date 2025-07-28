@@ -1609,3 +1609,5 @@ body {
  .layout__body__container{
   text-transform: capitalize;
  }
+
+ .unvisible {display: none;}
