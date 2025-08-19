@@ -10,12 +10,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no,viewport-fit=cover" />
   <!-- Title & Description -->
   <title>[##cms.seo.title|(Wanderlux Travel Agency)##]</title>
   <meta name="description"
-    content="[##cms.seo.description|(Experience the best and easiets trip with Wanderlux  Travel Agency.)##]">
+    content="[##cms.seo.description|(Experience the best and easiets trip with Wanderlux  Travel Agency.)##]" />
   <!-- Title & Description -->
   <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
     <member type="list" name="list" request="taglist" preview=""></member>
@@ -35,52 +35,49 @@
 </head>
 
 <body>
-
   <basis core="call" file="header.inc" lid="2" />
 
   <main>
     <section class="relative">
       <img src="[##cms.cms.cdn##]/images/contact-background.jpg" alt="contact-background" class="h-[741px] object-cover"
-        width="100%" height="741" loading="lazy">
+        width="100%" height="741" loading="lazy" />
 
       <div
-        class="flex items-end gap-28 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto absolute top-0 left-0 right-0 pt-28">
+        class="flex items-center gap-28 max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto absolute top-0 left-0 right-0 pt-28">
         <div class="w-1/2">
-          <img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo" width="321" height="77" loading="lazy">
+          <!-- <img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo" width="321" height="77" loading="lazy" /> -->
           <basis core="print" datamembername="db.info">
             <face filter="prpID in(8004)">
-              <div class="mt-4 text-sm text-justify">
-                @largetext
-              </div>
+              <div class="text-sm text-justify">@largetext</div>
             </face>
           </basis>
-
         </div>
 
         <div class="w-[461px] relative bg-primary-900 h-[490px] mt-16">
-          <div
-            class="absolute xl:right-[-14%] bottom-[21%] z-10 shadow-custom right-0  rounded-b-2xl rounded-tl-2xl w-60 xl:w-[269px] bg-white text-zinc-900 px-7 py-5">
+          <!-- <div
+            class="absolute xl:right-[-14%] bottom-[21%] z-10 shadow-custom right-0 rounded-b-2xl rounded-tl-2xl w-60 xl:w-[269px] bg-white text-zinc-900 px-7 py-5">
             <img src="[##cms.cms.cdn##]/images/emoji.png" alt="emoji" class="mb-2" width="38" height="38"
-              loading="lazy">
+              loading="lazy" />
             Holding more than 150 mazes and booking more than 200,000 hotels
-          </div>
-          <div
-            class=" flex items-center gap-2 absolute bottom-[35%] shadow-sm z-10 left-[-23%] rounded-b-2xl rounded-tl-2xl w-[269px] bg-white text-zinc-900 px-3 py-5">
-            <img src="[##cms.cms.cdn##]/images/heart-emoji.png" alt="emoji" width="45" height="45" loading="lazy">
+          </div> -->
+          <!-- <div
+            class="flex items-center gap-2 absolute bottom-[35%] shadow-sm z-10 left-[-23%] rounded-b-2xl rounded-tl-2xl w-[269px] bg-white text-zinc-900 px-3 py-5">
+            <img src="[##cms.cms.cdn##]/images/heart-emoji.png" alt="emoji" width="45" height="45" loading="lazy" />
             50,000 thousand customer satisfaction
-          </div>
-          <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute left-[10%] top-[37%]"
-            alt="wanderlux-sign" width="77" height="80" loading="lazy">
-          <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute top-[7%] right-[5%] z-30"
-            alt="wanderlux-sign" width="118" height="122" loading="lazy">
+          </div> -->
+          <!-- <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute left-[10%] top-[37%]"
+            alt="wanderlux-sign" width="77" height="80" loading="lazy" /> -->
+          <!-- <img src="[##cms.cms.cdn##]/images/wanderlux-sign.png" class="absolute top-[7%] right-[5%] z-30"
+            alt="wanderlux-sign" width="118" height="122" loading="lazy" /> -->
           <img src="[##cms.cms.cdn##]/images/successful-young-businesswoman.png" alt="successful-young-businesswoman"
-            class="absolute bottom-0 left-0 right-0 mx-auto" width="322" height="508" loading="lazy">
+            class="absolute bottom-0 left-0 right-0 mx-auto" width="322" height="508" loading="lazy" />
         </div>
       </div>
     </section>
 
     <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-24">
-      <h2 class="relative inline-block text-3xl"><span
+      <h2 class="relative inline-block text-3xl">
+        <span
           class="hidden absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
         <span class="font-bold text-tertiary-950">Services<span
             class="hidden absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
@@ -120,7 +117,7 @@
             class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
             <div
               class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
-              <img src="[##cms.cms.cdn##]/images/moon.svg" alt="moon" width="62" height="62">
+              <img src="[##cms.cms.cdn##]/images/moon.svg" alt="moon" width="62" height="62" />
             </div>
             <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
             <div class="text-sm text-center text-zinc-500 line-clamp-3">
@@ -133,7 +130,7 @@
             class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
             <div
               class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
-              <img src="[##cms.cms.cdn##]/images/earth.svg" alt="earth" width="58" height="62">
+              <img src="[##cms.cms.cdn##]/images/earth.svg" alt="earth" width="58" height="62" />
             </div>
             <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
             <div class="text-sm text-center text-zinc-500 line-clamp-3">
@@ -146,7 +143,7 @@
             class="flex items-center justify-center flex-col px-3 py-10 border border-solid border-zinc-300 group transition-all duration-300 hover:border-secondary-700 rounded-b-[30px] rounded-tl-[30px]">
             <div
               class="bg-primary-900 group-hover:bg-tertiary-900 transition-all duration-300 rounded-b-[20px] rounded-tl-[20px] px-3 py-2">
-              <img src="[##cms.cms.cdn##]/images/wallet.svg" alt="wallet" width="62" height="62">
+              <img src="[##cms.cms.cdn##]/images/wallet.svg" alt="wallet" width="62" height="62" />
             </div>
             <h2 class="mt-6 mb-3 font-bold text-primary-900">@text</h2>
             <div class="text-sm text-center text-zinc-500 line-clamp-3">
@@ -155,8 +152,6 @@
           </div>
         </face>
       </basis>
-
-
     </section>
 
     <section
@@ -169,17 +164,14 @@
               <div class="w-fit h-fit">@child</div>
             </layout>
             <face filter="prpID=91462"><iframe defer title="wanderlux-location"
-              class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]" width="100%" height="140"
-                loading="lazy" target="_blank" allowfullscreen
+                class="object-cover h-36 rounded-b-[32px] rounded-tl-[32px]" width="100%" height="140" loading="lazy"
+                target="_blank" allowfullscreen
                 src="https://maps.google.com/maps?q=@largetext,@text&z=14&output=embed"></iframe></face>
           </basis>
 
-
           <basis core="print" datamembername="db.info">
             <layout>
-              <div class="flex flex-col gap-3 mt-6">
-                @child
-              </div>
+              <div class="flex flex-col gap-3 mt-6">@child</div>
             </layout>
             <face filter="prpID in(7999)">
               <div class="flex items-center gap-3">
@@ -226,7 +218,6 @@
               </div>
             </face>
           </basis>
-
 
           <div class="mt-6">
             <h2 class="mb-3 text-2xl font-bold text-zinc-900">Follow us</h2>
@@ -293,24 +284,26 @@
                 </li>
               </face>
             </basis>
-
           </div>
         </div>
 
         <div class="flex-1 mt-10">
-          <h2 class="text-2xl font-bold text-zinc-900">Stay in touch with us</h2>
-          <div class="mt-2 mb-6 text-sm text-zinc-900">To reserve the best price of flight and hotel stay in touch with
-            Wanderlux travel agency </div>
+          <h2 class="text-2xl font-bold text-zinc-900">
+            Stay in touch with us
+          </h2>
+          <div class="mt-2 mb-6 text-sm text-zinc-900">
+            To reserve the best price of flight and hotel stay in touch with
+            Wanderlux travel agency
+          </div>
           <div class="flex flex-col mx-auto contact-form" id="contact-form-resize">
-
             <basis core="schema" run="atclient"
-              schemaurl="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/5426C56D-8972-4353-943A-ADF9D3156098/fa/Stay-in-touch"
+              schemaurl="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/64F69F6A-96A6-45C4-9151-7C31A81C8ECF/en/Stay-Touch"
               displaymode="new" button="[data-btn-uploadContact]" resultsourceid="upload.dataContact"
               OnRendered="RenderFormContact"></basis>
             <basis core="api" if="{##cms.uploadContact.run|(false)##}" run="atclient"
               url="/schema/domainform/712FB6BB-B4C0-42AA-9B4B-71C624BA408C/en/editobject" method="post"
               body="object_edit={##cms.uploadContact.value##}&captcha={##cms.uploadContact.captcha##}&captchaid={##cms.uploadContact.captchaid##}"
-              content-type="application/x-www-form-urlencoded" triggers='cms.uploadContact'
+              content-type="application/x-www-form-urlencoded" triggers="cms.uploadContact"
               OnProcessed="OnProcessedEditObjectContact"></basis>
             <basis core="callback" run="atclient" method="uploadDocumentContact" triggers="upload.dataContact">
             </basis>
@@ -326,21 +319,25 @@
                 </basis>
                 <basis datamembername="captcha.code" core="print" run="atclient">
                   <face>
-                    <script type="text/template"><div class="d-inline-block"><div class="flex gap-4">
-            
-                                <div class="flex-1 float-right"><input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
-                                <div class="flex items-center w-1/3 gap-4">
-                                    <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16" />
-                                    <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaContact()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#71717A"/></svg>
-                                </div>
-                                
-                            </div></div></script>
+                    <script type="text/template">
+                        <div class="d-inline-block"><div class="flex gap-4">
+
+                                                        <div class="flex-1 float-right"><input type="text" class="contactUsInput codeinputm" name="captcha" maxlength="4" placeholder="Security Code"/><input type="hidden" name="captchaid" value="@captcha@" /></div>
+                                                        <div class="flex items-center w-1/3 gap-4">
+                                                            <img src="/@captcha@" loading="lazy" width="120" height="60" alt="captcha" class="w-16" />
+                                                            <svg class="inline-block align-middle cursor-pointer w-9 h-9" onclick="refreshCaptchaContact()" width="24" height="24" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.1247 8.56165H18.1238C18.0007 8.56175 17.8788 8.5861 17.7651 8.63331C17.6514 8.68052 17.5481 8.74967 17.4611 8.8368C17.3741 8.92393 17.3052 9.02734 17.2581 9.14113C17.2111 9.25492 17.187 9.37685 17.1871 9.49997C17.1859 10.8143 16.8245 12.1032 16.1421 13.2265C15.4597 14.3498 14.4824 15.2646 13.3166 15.8714C12.1507 16.4782 10.8408 16.7538 9.52921 16.6683C8.21765 16.5827 6.95463 16.1393 5.87744 15.3862C2.63134 13.1132 1.83959 8.62309 4.11255 5.37696C6.38552 2.13083 10.8757 1.33899 14.1218 3.61204C14.6129 3.95501 15.0592 4.358 15.4504 4.81165H12.8121C12.5635 4.81165 12.325 4.91042 12.1492 5.08623C11.9734 5.26205 11.8746 5.5005 11.8746 5.74915C11.8746 5.99779 11.9734 6.23624 12.1492 6.41206C12.325 6.58787 12.5635 6.68665 12.8121 6.68665H17.1871C17.4358 6.68665 17.6742 6.58787 17.85 6.41206C18.0259 6.23624 18.1246 5.99779 18.1246 5.74915V1.37415C18.1246 1.12551 18.0259 0.887048 17.85 0.711233C17.6742 0.535418 17.4358 0.436646 17.1871 0.436646C16.9385 0.436646 16.7 0.535418 16.5242 0.711233C16.3484 0.887048 16.2496 1.12551 16.2496 1.37415V2.93536C15.9206 2.62321 15.5689 2.33596 15.1973 2.07598C14.2225 1.39342 13.1228 0.909542 11.9609 0.651979C10.7991 0.394417 9.59797 0.368213 8.42603 0.574863C7.25409 0.781513 6.13433 1.21697 5.13067 1.85637C4.12702 2.49578 3.25914 3.3266 2.57658 4.30141C1.19808 6.27013 0.658111 8.70582 1.07546 11.0727C1.49281 13.4395 2.83329 15.5436 4.80201 16.9221C6.31776 17.9898 8.12639 18.563 9.98041 18.5633C10.5144 18.5631 11.0474 18.5162 11.5732 18.4233C13.6714 18.0531 15.5722 16.9556 16.9417 15.3235C18.3112 13.6914 19.062 11.6289 19.0621 9.49833C19.0619 9.24983 18.963 9.01159 18.7873 8.83596C18.6115 8.66032 18.3732 8.56166 18.1247 8.56165Z" fill="#71717A"/></svg>
+                                                        </div>
+
+                                                    </div></div>
+                      </script>
                   </face>
                 </basis>
               </div>
               <button
                 class="w-full px-4 mt-6 text-white transition-all duration-300 y-2 data-body-btn h-14 bg-tertiary-950 rounded-xl hover:bg-primary-600"
-                type="button" data-btn-uploadContact><span class="">Send Message</span></button>
+                type="button" data-btn-uploadContact>
+                <span class="">Send Message</span>
+              </button>
               <div
                 class="Loading_Form hidden data-body-btn w-[126px] h-12 px-4 py-2 bg-secondary-800 rounded-2xl justify-center items-center gap-2.5">
                 <div id="ballsWaveG" class="text-base font-normal leading-normal ext-zinc-50">
@@ -359,11 +356,11 @@
           </div>
         </div>
       </div>
-
     </section>
 
     <section class="max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl mx-auto mt-16 mb-24">
-      <h2 class="relative inline-block text-3xl"><span
+      <h2 class="relative inline-block text-3xl">
+        <span
           class="hidden absolute -z-10 left-1 -top-1 w-5 h-5 rounded-br-[4px] bg-secondary-100 rounded-t-[4px]"></span>Our
         <span class="font-bold text-tertiary-950">Goal<span
             class="hidden absolute -z-10 right-0 top-3 w-5 h-5 bg-secondary-100 rounded-b-[4px] rounded-tl-[4px]"></span></span>
@@ -377,11 +374,9 @@
         </face>
       </basis>
     </section>
-
   </main>
 
   <basis core="call" file="footer.inc" lid="2" />
 </body>
-
 
 </html>

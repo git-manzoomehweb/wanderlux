@@ -867,103 +867,103 @@ function exchangeDepDes(t) {
     $(t).closest(".route-content").find(".split-text-dep").text(s);
 }
 
-var persiancurrentTime = new Date(),
-  persiangregorian_month = persiancurrentTime.getMonth() + 1,
-  persiangregorian_day = persiancurrentTime.getDate(),
-  persiangregorian_year = persiancurrentTime.getFullYear(),
-  persiancurrent =
-    persiangregorian_year +
-    "-" +
-    persiangregorian_month +
-    "-" +
-    persiangregorian_day;
-$(".persiancurrent").val(persiancurrent);
-var currentTime = new Date();
-currentTime.setDate(currentTime.getDate() + 2);
-var gregorian_month = currentTime.getMonth() + 1,
-  gregorian_day = currentTime.getDate(),
-  gregorian_year = currentTime.getFullYear(),
-  tomorrow = new Date();
-tomorrow.setDate(tomorrow.getDate() + 4);
-var gregorian_month_tomorrow = tomorrow.getMonth() + 1,
-  gregorian_day_tomorrow = tomorrow.getDate(),
-  gregorian_year_tomorrow = tomorrow.getFullYear();
-$(".mstring_fdate").val(
-  gregorian_year + "-" + gregorian_month + "-" + gregorian_day
-),
-  $(".mstring_tdate").val(
-    gregorian_year_tomorrow +
-      "-" +
-      gregorian_month_tomorrow +
-      "-" +
-      gregorian_day_tomorrow
-  );
-var persian_today =
-    gregorian_year + "-" + gregorian_month + "-" + gregorian_day,
-  persian_tomorrow =
-    gregorian_year_tomorrow +
-    "-" +
-    gregorian_month_tomorrow +
-    "-" +
-    gregorian_day_tomorrow,
-  persian_today_split = persian_today.split("-"),
-  persian_tomorrow_split = persian_tomorrow.split("-"),
-  selected_month_today = "",
-  selected_month_tomorrow = "",
-  months = {
-    1: "January",
-    2: "February",
-    3: "March",
-    4: "April",
-    5: "May",
-    6: "June",
-    7: "July",
-    8: "August",
-    9: "September",
-    10: "October",
-    11: "November",
-    12: "December",
-  };
+// var persiancurrentTime = new Date(),
+//   persiangregorian_month = persiancurrentTime.getMonth() + 1,
+//   persiangregorian_day = persiancurrentTime.getDate(),
+//   persiangregorian_year = persiancurrentTime.getFullYear(),
+//   persiancurrent =
+//     persiangregorian_year +
+//     "-" +
+//     persiangregorian_month +
+//     "-" +
+//     persiangregorian_day;
+// $(".persiancurrent").val(persiancurrent);
+// var currentTime = new Date();
+// currentTime.setDate(currentTime.getDate() + 2);
+// var gregorian_month = currentTime.getMonth() + 1,
+//   gregorian_day = currentTime.getDate(),
+//   gregorian_year = currentTime.getFullYear(),
+//   tomorrow = new Date();
+// tomorrow.setDate(tomorrow.getDate() + 4);
+// var gregorian_month_tomorrow = tomorrow.getMonth() + 1,
+//   gregorian_day_tomorrow = tomorrow.getDate(),
+//   gregorian_year_tomorrow = tomorrow.getFullYear();
+// $(".mstring_fdate").val(
+//   gregorian_year + "-" + gregorian_month + "-" + gregorian_day
+// ),
+//   $(".mstring_tdate").val(
+//     gregorian_year_tomorrow +
+//       "-" +
+//       gregorian_month_tomorrow +
+//       "-" +
+//       gregorian_day_tomorrow
+//   );
+// var persian_today =
+//     gregorian_year + "-" + gregorian_month + "-" + gregorian_day,
+//   persian_tomorrow =
+//     gregorian_year_tomorrow +
+//     "-" +
+//     gregorian_month_tomorrow +
+//     "-" +
+//     gregorian_day_tomorrow,
+//   persian_today_split = persian_today.split("-"),
+//   persian_tomorrow_split = persian_tomorrow.split("-"),
+//   selected_month_today = "",
+//   selected_month_tomorrow = "",
+//   months = {
+//     1: "January",
+//     2: "February",
+//     3: "March",
+//     4: "April",
+//     5: "May",
+//     6: "June",
+//     7: "July",
+//     8: "August",
+//     9: "September",
+//     10: "October",
+//     11: "November",
+//     12: "December",
+//   };
 
-$(".sp-start").val(persian_today),
-  $(".sp-start")
-    .closest("div")
-    .find(".selected-day")
-    .text(persian_today_split[2]),
-  $(".sp-start")
-    .closest("div")
-    .find(".selected-month")
-    .text(months[persian_today_split[1]]),
-  $(".sp-end").val(persian_tomorrow),
-  $(".sp-end")
-    .closest("div")
-    .find(".selected-day")
-    .text(persian_tomorrow_split[2]),
-  $(".sp-end")
-    .closest("div")
-    .find(".selected-month")
-    .text(months[persian_tomorrow_split[1]]),
-  $(".sp-start").val(persian_today),
-  $(".sp-start")
-    .closest("div")
-    .find(".selected-day")
-    .text(persian_today_split[2]),
-  $(".sp-start")
-    .closest("div")
-    .find(".selected-month")
-    .text(months[persian_today_split[1]]),
-  $(".sp-end").each(function () {
-    0 == $(this).prop("disabled") &&
-      ($(this).val(persian_tomorrow),
-      $(this)
-        .closest("div")
-        .find(".selected-day")
-        .text(persian_tomorrow_split[2]),
-      $(this)
-        .closest("div")
-        .find(".selected-month")
-        .text(months[persian_tomorrow_split[1]]));
-  });
+// $(".sp-start").val(persian_today),
+//   $(".sp-start")
+//     .closest("div")
+//     .find(".selected-day")
+//     .text(persian_today_split[2]),
+//   $(".sp-start")
+//     .closest("div")
+//     .find(".selected-month")
+//     .text(months[persian_today_split[1]]),
+//   $(".sp-end").val(persian_tomorrow),
+//   $(".sp-end")
+//     .closest("div")
+//     .find(".selected-day")
+//     .text(persian_tomorrow_split[2]),
+//   $(".sp-end")
+//     .closest("div")
+//     .find(".selected-month")
+//     .text(months[persian_tomorrow_split[1]]),
+//   $(".sp-start").val(persian_today),
+//   $(".sp-start")
+//     .closest("div")
+//     .find(".selected-day")
+//     .text(persian_today_split[2]),
+//   $(".sp-start")
+//     .closest("div")
+//     .find(".selected-month")
+//     .text(months[persian_today_split[1]]),
+//   $(".sp-end").each(function () {
+//     0 == $(this).prop("disabled") &&
+//       ($(this).val(persian_tomorrow),
+//       $(this)
+//         .closest("div")
+//         .find(".selected-day")
+//         .text(persian_tomorrow_split[2]),
+//       $(this)
+//         .closest("div")
+//         .find(".selected-month")
+//         .text(months[persian_tomorrow_split[1]]));
+//   });
 
 function showMultiCity(t) {
   $("#multi-flight-form").removeClass("hidden"),

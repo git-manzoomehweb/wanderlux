@@ -1611,3 +1611,7 @@ body {
  }
 
  .unvisible {display: none;}
+
+ .check-contrast:hover{
+  color: var(--secondary) !important;
+ }
