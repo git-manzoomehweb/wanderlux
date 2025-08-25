@@ -20,7 +20,7 @@
 </basis>
 
 <basis core="dbsource" source="basiscore" lid="2" mid="20" name="db" catid="[##cms.query.catid##]">
-    <member name="tour-list" type="list" link="tour.bc" order="ord" size="202x229"
+    <member name="tour-list" type="list" link="tour.bc" order="ord" size="314x527"
         propertyid="8070,3087474,3087475,8181" pageno="[##cms.query.pagenum|(1)##]" perpage="10" />
     <member name="paging" type="list" request="paging" count="3" parentname="tour-list" />
 </basis>
@@ -315,7 +315,7 @@
                     </div>
                 </layout>
           <face filter="link is null">
-            <a href="/article.bc?id=@id" class="relative">
+            <a href="/article.bc?id=@id" class="relative flex flex-col">
               <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
               <div
                 class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
@@ -331,7 +331,7 @@
             </a>
           </face>
           <face>
-            <a href="@link" class="relative">
+            <a href="@link" class="relative flex flex-col">
               <img src="@00314X00527prp" class="h-[527px] object-cover bg" alt="@title" width="100%" height="527">
               <div
                 class="absolute bottom-0 left-0 right-0 flex items-center justify-center w-full text-sm text-white h-[338px] bg-specialcolor-5">
