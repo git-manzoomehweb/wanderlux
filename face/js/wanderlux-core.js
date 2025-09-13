@@ -1,3 +1,65 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+  const isDesktop = window.innerWidth > 1024;
+  const requiredFiles = isDesktop ? ['wanderlux.ui.min.css'] : ['wanderlux-mob.ui.min.css'];
+
+  function checkAllResourcesLoaded() {
+    const resources = performance.getEntriesByType('resource');
+    const loadedFiles = resources.map((res) => res.name.split('/').pop()).filter((name) => requiredFiles.includes(name));
+
+    return requiredFiles.every((file) => loadedFiles.includes(file));
+  }
+
+  if (document.getElementById('search-box')) {
+    function fetchEngine() {
+      try {
+        const xhrobj = new XMLHttpRequest();
+        xhrobj.open('GET', 'search-engine.bc');
+        xhrobj.send();
+
+        xhrobj.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            const container = document.getElementById('search-box');
+            container.innerHTML = xhrobj.responseText;
+
+            ['.Basis_Date.end_date', '.Basis_Date.start_date'].forEach((selector) => {
+              const dateInputs = document.querySelectorAll(selector);
+              dateInputs.forEach((input) => {
+                input.placeholder = '';
+              });
+            });
+
+            let r = document.querySelector('.flighttype-field');
+            r.classList.add('flighttype-dropDown');
+            const scripts = container.getElementsByTagName('script');
+            for (let i = 0; i < scripts.length; i++) {
+              const scriptTag = document.createElement('script');
+              if (scripts[i].src) {
+                scriptTag.src = scripts[i].src;
+                scriptTag.async = false;
+              } else {
+                scriptTag.text = scripts[i].textContent;
+              }
+              document.head.appendChild(scriptTag).parentNode.removeChild(scriptTag);
+            }
+          }
+        };
+      } catch (error) {
+        console.error('مشکلی پیش آمده است. لطفا صبور باشید', error);
+      }
+    }
+
+    function waitForFiles() {
+      if (checkAllResourcesLoaded()) {
+        fetchEngine();
+      } else {
+        setTimeout(waitForFiles, 500);
+      }
+    }
+    waitForFiles();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   if (!document.querySelector(".contain-currency")) {
       if (!document.querySelector(".contain-currency-show")) {
@@ -137,6 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('header');
   const currencyList = document.querySelector('.currency-list');
   const mainContainer = document.querySelector('.main-container'); 
+  let placeholder = null; 
+  const headerHeight = header.offsetHeight;
 
   if (!header) return;
 
@@ -152,10 +216,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mainContainer) return;
 
+
     if (currentScrollY === 0) {
       header.style.position = '';
       header.style.transform = '';
+      if (placeholder) {
+        placeholder.remove(); 
+        placeholder = null;
+      }
     } else {
+      if (!placeholder) {
+        placeholder = document.createElement('div');
+        placeholder.style.height = `${headerHeight}px`;
+        header.parentNode.insertBefore(placeholder, header.nextSibling);
+      }
+
       header.style.position = 'fixed';
       header.style.top = '0';
       header.style.left = '0';
@@ -458,71 +533,6 @@ if (input) {
     document.querySelector(".search-content ul").classList.add("hidden");
     isItemSelected = true; // وقتی آیتمی انتخاب می‌شود، این متغیر true شود
   }
-}
-
-function loadContentHomePage() {
-  loadSearchEngine("search-engine-en.bc", "search-box");
-}
-
-async function loadSearchEngine(url, sectionload) {
-  try {
-    var xhrobj = new XMLHttpRequest();
-    xhrobj.open("GET", url);
-    xhrobj.send();
-
-    xhrobj.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        var container = document.getElementById(sectionload);
-        container.innerHTML = xhrobj.responseText;
-
-        var scripts = container.getElementsByTagName("script");
-        for (var i = 0; i < scripts.length; i++) {
-          var scriptTag = document.createElement("script");
-          if (scripts[i].src) {
-            scriptTag.src = scripts[i].src;
-            scriptTag.async = false;
-          } else {
-            scriptTag.text = scripts[i].textContent;
-          }
-          document.head
-            .appendChild(scriptTag)
-            .parentNode.removeChild(scriptTag);
-        }
-        const pathnamehome = window.location.pathname;
-        if (pathnamehome) {
-          if (pathnamehome == "/hotel") {
-            sessionStorage.setItem("pageName", "hotel");
-            $("#Hotel").click(function () {
-              $("#flight-type-items").hide();
-              $(".nav-module").each(function () {
-                var checknav = $(this).attr("data-nav");
-                if (checknav == "hotel") {
-                  $(this).addClass("nav-module-selected");
-                } else {
-                  $(this).removeClass("nav-module-selected");
-                }
-              });
-              LoadHotel();
-            });
-          } 
-        } else if (pathnamehome == "/tour") {
-          sessionStorage.setItem("pageName", "tour");
-          $("#Tour").click(function () {
-            $("#flight-type-items").hide();
-            $(".nav-module").each(function () {
-              var checknav = $(this).attr("data-nav");
-              if (checknav == "tour") {
-                $(this).addClass("nav-module-selected");
-              } else {
-                $(this).removeClass("nav-module-selected");
-              }
-            });
-            LoadTour();
-          });
-        }
-      }
-    };
-  } catch (error) {}
 }
 
 function uploadDocumentFooter(args) {
