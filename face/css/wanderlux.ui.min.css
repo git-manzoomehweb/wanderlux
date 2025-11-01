@@ -2255,7 +2255,7 @@ body {
 
 .flighttype-field-icon {
   display: block !important;
-  position: static !important;
+  right: 0;
 }
 
 #oneway,
@@ -2386,6 +2386,10 @@ body {
 .reserve-field.departure-date > div:first-of-type,
 .reserve-field.return-date > div:first-of-type {
   padding: 0 !important;
+}
+
+.reserve-field.departure-date > div:first-of-type{
+  margin-right: 0 !important;
 }
 
 .reserve-field.departure-route,

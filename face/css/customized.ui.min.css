@@ -1611,3 +1611,7 @@ body {
  }
 
  .unvisible {display: none;}
+
+ .tourItinerary__day__container{
+  color: white !important;
+ }
