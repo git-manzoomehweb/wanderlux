@@ -138,26 +138,27 @@ if (window.innerWidth >= 1024) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleDropdowns = document.querySelectorAll('.toggle-dropdown')
-  const dropdownIcon = document.querySelector('.dropdown-icon')
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleDropdowns = document.querySelectorAll(".toggle-dropdown");
+  const dropdownIcons = document.querySelectorAll(".dropdown-icon");
 
-  toggleDropdowns.forEach((toggle) => {
-    const submenu = toggle.nextElementSibling
+  toggleDropdowns.forEach((toggle, index) => {
+    const submenu = toggle.nextElementSibling;
+    const dropdownIcon = dropdownIcons[index];
 
-    toggle.addEventListener('click', function () {
-      dropdownIcon.classList.toggle('rotate-180')
+    toggle.addEventListener("click", function () {
+      dropdownIcon.classList.toggle("rotate-180");
 
       if (submenu.style.maxHeight) {
-        submenu.style.maxHeight = null
-        submenu.style.opacity = '0'
+        submenu.style.maxHeight = null;
+        submenu.style.opacity = "0";
       } else {
-        submenu.style.maxHeight = submenu.scrollHeight + 'px'
-        submenu.style.opacity = '1'
+        submenu.style.maxHeight = submenu.scrollHeight * 30 + "px";
+        submenu.style.opacity = "1";
       }
-    })
-  })
-})
+    });
+  });
+});
 
 if (document.querySelector('.floating-icons')) {
   const media = window.matchMedia('screen and (min-width:1540px)')

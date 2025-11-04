@@ -1226,6 +1226,10 @@ body {
   background-color: var(--primary-50);
 }
 
+.hover\:bg-primary-600:hover {
+  background-color: var(--primary-600);
+}
+
 .hover\:bg-secondary-600:hover {
   background-color: var(--secondary-600);
 }
@@ -1263,6 +1267,72 @@ body {
 }
 .group:hover .group-hover\:fill-green {
   fill: green;
+}
+.group\/levelthree:hover .group-hover\/levelthree\:visible {
+  visibility: visible;
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:visible {
+  visibility: visible;
+}
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+.group\/levelthree:hover .group-hover\/levelthree\:-rotate-90 {
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:-rotate-90 {
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group:hover .group-hover\:rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group\/levelthree:hover .group-hover\/levelthree\:fill-white {
+  fill: #fff;
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:fill-white {
+  fill: #fff;
+}
+.group\/levelfour:hover .group-hover\/levelfour\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.group\/levelfour:hover .group-hover\/levelfour\:text-primary-900 {
+  color: var(--primary-900);
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:text-primary-900 {
+  color: var(--primary-900);
+}
+.group\/levelthree:hover .group-hover\/levelthree\:text-primary-900 {
+  color: var(--primary-900);
+}
+.group\/levelthree:hover .group-hover\/levelthree\:w-full {
+  width: 100%;
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:w-full {
+  width: 100%;
+}
+.group\/levelfour:hover .group-hover\/levelfour\:w-full {
+  width: 100%;
+}
+.group\/levelthree:hover .group-hover\/levelthree\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.group\/levelthree:hover .group-hover\/levelthree\:opacity-100 {
+  opacity: 1;
+}
+.group\/leveltwo:hover .group-hover\/leveltwo\:opacity-100 {
+  opacity: 1;
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 
 @media not all and (min-width: 1280px) {
@@ -1615,3 +1685,56 @@ body {
  .tourItinerary__day__container{
   color: white !important;
  }
+
+.left-60 {
+  left: 15rem;
+}
+.top-0 {
+  top: 0px;
+}
+.top-full {
+  top: 100%;
+}
+.w-64 {
+  width: 16rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.text-zinc-900 {
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity, 1));
+}
+.opacity-0 {
+  opacity: 0;
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.duration-100 {
+  transition-duration: 100ms;
+}
+.max-h-0 {
+  max-height: 0px;
+}
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.overflow-hidden {
+  overflow: hidden;
+}

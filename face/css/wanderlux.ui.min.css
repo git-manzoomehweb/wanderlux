@@ -166,10 +166,6 @@ body {
   right: 5%;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .top-0\.5 {
   top: 0.125rem;
 }
@@ -212,10 +208,6 @@ body {
 
 .top-\[7\%\] {
   top: 7%;
-}
-
-.top-full {
-  top: 100%;
 }
 
 .-z-10 {
@@ -833,10 +825,6 @@ body {
 
 .overflow-auto {
   overflow: auto;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .overflow-y-scroll {
@@ -1537,10 +1525,6 @@ body {
 
 .hover\:border-tertiary-400:hover {
   border-color: var(--tertiary-400);
-}
-
-.hover\:bg-primary-600:hover {
-  background-color: var(--primary-600);
 }
 
 .hover\:bg-secondary-200:hover {
