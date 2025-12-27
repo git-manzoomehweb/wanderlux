@@ -1,366 +1,385 @@
 <basis core="call" file="add_to_home_screen_en.inc" lid="2" pageindex="[##cms.cms.pageindex##]"></basis>
 <basis core="dbsource" source="basiscore" name="db" mid="5" lid="2" usedforid="[##cms.cms.ownerid##]">
-  <member name="info" type="view" />
+    <member name="info" type="view" />
 </basis>
 <basis core="dbsource" source="basiscore" lid="2" mid="20" name="destination">
-  <member name="cat" type="tree" request="cat" parentid="218328" order="ord"></member>
+    <member name="cat" type="tree" request="cat" parentid="218328" order="ord"></member>
 </basis>
 <div id="header-spacer"></div>
 <header id="header-resize" class="left-0 right-0 z-50 bg-white shadow-lg">
-  <div class="relative flex items-center justify-between h-[78px] mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
-    <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160" height="28"
-        loading="lazy" class="object-cover transition-transform duration-300 lg:hidden hover:scale-90" /></a>
-    <div class="flex items-center flex-1 gap-6">
-      <a href="/" class=""><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header-mobile" width="166"
-          height="40" loading="lazy" class="hidden lg:block" /></a>
-      <nav class="hidden h-full lg:flex">
-        <ul class="flex items-center gap-8">
-          <li>
-            <a href="/" class="relative font-medium group text-zinc-500 hover:text-primary-900">Home
-              <span
-                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-            </a>
-          </li>
-          <li class="flex h-full group">
-            <a href="/tours"
-              class="relative flex items-center gap-2 font-medium group text-zinc-500 hover:text-primary-900">Tours
-              <span
-                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-            </a>
-          </li>
-          <basis core="tree" datamembername="destination.cat" idcol="catid" parentidcol="parentid" nullvalue="218328">
-            <layout>
-              <li class="relative flex items-center h-full group">
-                <a href="/destinations"
-                  class="flex items-center gap-4 transition-all duration-300 h-full group font-medium text-zinc-500 hover:text-primary-900 xl:flex-shrink-0">
-                  Destinations
-                  <svg width="25" height="24" class="transition-all duration-300 group-hover:rotate-180"
-                    viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" class="group-hover:fill-primary-900" clip-rule="evenodd"
-                      d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
-                      fill="#222222" />
-                  </svg>
-                </a>
-                <!-- submenu -->
-                <ul
-                  class="absolute z-30 flex flex-col invisible w-64 gap-2 p-2 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
-                  @child
-                </ul>
-                <!-- submenu end -->
-              </li>
-            </layout>
-            <face level="end" filter="link is null">
-              <li class="py-1 px-2 transition-all duration-300 rounded-md group/levelfour">
-                <a href="/tour-list.bc?catid=@catid"
-                  class="relative block w-full transition-all duration-300 font-medium text-zinc-500 group-hover/levelfour:text-primary-900">@title</a>
-              </li>
-            </face>
-            <face level="end">
-              <li class="py-1 px-2 transition-all duration-300 rounded-md group/levelfour">
-                <a href="@link"
-                  class="relative block w-full transition-all duration-300 font-medium text-zinc-500 group-hover/levelfour:text-primary-900">@title
-                  <span
-                  class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-                </a>
-              </li>
-            </face>
-            <face level="1" filter="link is null">
-              <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/leveltwo">
-                <div class="flex justify-between items-center cursor-pointer">
-                  <a href="/tour-list.bc?catid=@catid"
-                    class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/leveltwo:text-primary-900">@title
-                    <span
-                    class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-                  </a>
-                  <svg width="25" height="24" class="transition-all duration-300 group-hover/leveltwo:-rotate-90"
-                    viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" class="" clip-rule="evenodd"
-                      d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
-                      fill="#222222" />
-                  </svg>
-                </div>
-                <ul
-                  class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
-                  @child
-                </ul>
-              </li>
-            </face>
-            <face level="1">
-              <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/leveltwo hover:bg-primary-600">
-                <div class="flex justify-between items-center cursor-pointer">
-                  <a href="/@link"
-                    class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/leveltwo:text-primary-900">@title
-                    <span
-                    class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-                  </a>
-                  <svg width="25" height="24" class="transition-all duration-300 group-hover/leveltwo:-rotate-90"
-                    viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" class="" clip-rule="evenodd"
-                      d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
-                      fill="#222222" />
-                  </svg>
-                </div>
-                <ul
-                  class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
-                  @child
-                </ul>
-              </li>
-            </face>
-            <face level="2" filter="link is null">
-              <li
-                class="relative py-1 px-2 transition-all duration-300 rounded-md group/levelthree">
-                <div class="flex justify-between items-center cursor-pointer">
-                  <a href="/tour-list.bc?catid=@catid"
-                    class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/levelthree:text-primary-900">@title
-                    <span
-                    class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-                  </a>
-                  <svg width="25" height="24" class="transition-all duration-300 group-hover/levelthree:-rotate-90"
-                    viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" class="" clip-rule="evenodd"
-                      d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
-                      fill="#222222" />
-                  </svg>
-                </div>
-                <ul
-                  class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/levelthree:visible group-hover/levelthree:opacity-100">
-                  @child
-                </ul>
-              </li>
-            </face>
-            <face level="2">
-              <li
-                class="relative py-1 px-2 transition-all duration-300 rounded-md group/levelthree">
-                <div class="flex justify-between items-center cursor-pointer">
-                  <a href="/@link"
-                    class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/levelthree:text-primary-900">@title</a>
-                  <svg width="25" height="24" class="transition-all duration-300 group-hover/levelthree:-rotate-90"
-                    viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" class="" clip-rule="evenodd"
-                      d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
-                      fill="#222222" />
-                  </svg>
-                </div>
-                <ul
-                  class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/levelthree:visible group-hover/levelthree:opacity-100">
-                  @child
-                </ul>
-              </li>
-            </face>
+    <div class="relative flex items-center justify-between h-[78px] mx-auto max-lg:w-[90%] max-xl:w-[97%] xl:max-w-7xl">
+        <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160" height="28"
+                loading="lazy" class="object-cover transition-transform duration-300 lg:hidden hover:scale-90" /></a>
+        <div class="flex items-center flex-1 gap-6">
+            <a href="/" class=""><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header-mobile"
+                    width="166" height="40" loading="lazy" class="hidden lg:block" /></a>
+            <nav class="hidden h-full lg:flex">
+                <ul class="flex items-center gap-8">
+                    <li>
+                        <a href="/" class="relative font-medium group text-zinc-500 hover:text-primary-900">Home
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <li class="flex h-full group">
+                        <a href="/tours"
+                            class="relative flex items-center gap-2 font-medium group text-zinc-500 hover:text-primary-900">Tours
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <basis core="tree" datamembername="destination.cat" idcol="catid" parentidcol="parentid"
+                        nullvalue="218328">
+                        <layout>
+                            <li class="relative flex items-center h-full group">
+                                <span
+                                    class="flex items-center gap-4 transition-all duration-300 h-full group font-medium text-zinc-500 cursor-pointer hover:text-primary-900 xl:flex-shrink-0">
+                                    Destinations
+                                    <svg width="25" height="24"
+                                        class="transition-all duration-300 group-hover:rotate-180" viewBox="0 0 25 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" class="group-hover:fill-primary-900"
+                                            clip-rule="evenodd"
+                                            d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </span>
+                                <!-- submenu -->
+                                <ul
+                                    class="absolute z-30 flex flex-col invisible w-64 gap-2 p-2 font-medium transition-all duration-100 bg-white shadow-md opacity-0 rounded-xl top-full group-hover:visible group-hover:opacity-100">
+                                    @child
+                                </ul>
+                                <!-- submenu end -->
+                            </li>
+                        </layout>
+                        <face level="end" filter="link is null">
+                            <li class="py-1 px-2 transition-all duration-300 rounded-md group/levelfour">
+                                <a href="/tour-list.bc?catid=@catid"
+                                    class="relative block w-full transition-all duration-300 font-medium text-zinc-500 group-hover/levelfour:text-primary-900">@title
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/levelfour:w-full"></span>
+                                </a>
+                            </li>
+                        </face>
+                        <face level="end">
+                            <li class="py-1 px-2 transition-all duration-300 rounded-md group/levelfour">
+                                <a href="@link"
+                                    class="relative block w-full transition-all duration-300 font-medium text-zinc-500 group-hover/levelfour:text-primary-900">@title
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/levelfour:w-full"></span>
+                                </a>
+                            </li>
+                        </face>
+                        <face level="1" filter="link is null">
+                            <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/leveltwo">
+                                <div class="flex justify-between items-center cursor-pointer">
+                                    <span
+                                        class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/leveltwo:text-primary-900">@title
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/leveltwo:w-full"></span>
+                                    </span>
+                                    <svg width="25" height="24"
+                                        class="transition-all duration-300 group-hover/leveltwo:-rotate-90"
+                                        viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" class="" clip-rule="evenodd"
+                                            d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                                <ul
+                                    class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
+                                    @child
+                                </ul>
+                            </li>
+                        </face>
+                        <face level="1">
+                            <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/leveltwo">
+                                <div class="flex justify-between items-center cursor-pointer">
+                                    <span
+                                        class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/leveltwo:text-primary-900">@title
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/leveltwo:w-full"></span>
+                                    </span>
+                                    <svg width="25" height="24"
+                                        class="transition-all duration-300 group-hover/leveltwo:-rotate-90"
+                                        viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" class="" clip-rule="evenodd"
+                                            d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                                <ul
+                                    class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/leveltwo:visible group-hover/leveltwo:opacity-100">
+                                    @child
+                                </ul>
+                            </li>
+                        </face>
+                        <face level="2" filter="link is null">
+                            <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/levelthree">
+                                <div class="flex justify-between items-center cursor-pointer">
+                                    <span
+                                        class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/levelthree:text-primary-900">@title
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/levelthree:w-full"></span>
+                                    </span>
+                                    <svg width="25" height="24"
+                                        class="transition-all duration-300 group-hover/levelthree:-rotate-90"
+                                        viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" class="" clip-rule="evenodd"
+                                            d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                                <ul
+                                    class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/levelthree:visible group-hover/levelthree:opacity-100">
+                                    @child
+                                </ul>
+                            </li>
+                        </face>
+                        <face level="2">
+                            <li class="relative py-1 px-2 transition-all duration-300 rounded-md group/levelthree">
+                                <div class="flex justify-between items-center cursor-pointer">
+                                    <span
+                                        class="relative transition-all duration-300 font-medium text-zinc-500 group-hover/levelthree:text-primary-900">@title
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover/levelthree:w-full"></span>
+                                    </span>
+                                    <svg width="25" height="24"
+                                        class="transition-all duration-300 group-hover/levelthree:-rotate-90"
+                                        viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" class="" clip-rule="evenodd"
+                                            d="M19.0018 7.4392L12.0018 14.4392L5.00183 7.4392L3.94113 8.4999L12.0018 16.5605L20.0625 8.4999L19.0018 7.4392Z"
+                                            fill="#222222" />
+                                    </svg>
+                                </div>
+                                <ul
+                                    class="absolute top-0 z-30 flex flex-col invisible w-64 gap-2 p-4 font-medium transition-all duration-100 bg-white shadow-md opacity-0 left-60 rounded-xl group-hover/levelthree:visible group-hover/levelthree:opacity-100">
+                                    @child
+                                </ul>
+                            </li>
+                        </face>
 
-          </basis>
-          <li class="flex h-full group">
-            <a href="/contact-us"
-              class="relative flex items-center gap-2 font-medium group text-zinc-500 hover:text-primary-900">Contact
-              us
-              <span
-                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-            </a>
-          </li>
-          <!-- <li>
+                    </basis>
+                    <li class="flex h-full group">
+                        <a href="/contact-us"
+                            class="relative flex items-center gap-2 font-medium group text-zinc-500 hover:text-primary-900">Contact
+                            us
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <!-- <li>
                 <a href="/team" class="relative font-medium group text-zinc-500 hover:text-primary-900">Team
                   <span class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
                 </a>
               </li>-->
-          <li>
-            <a href="/Blog" class="relative font-medium group text-zinc-500 hover:text-primary-900">Blog
-              <span
-                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
-            </a>
-          </li>
+                    <li>
+                        <a href="/Blog" class="relative font-medium group text-zinc-500 hover:text-primary-900">Blog
+                            <span
+                                class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-primary-900 group-hover:w-full"></span>
+                        </a>
+                    </li>
 
-        </ul>
-      </nav>
-    </div>
-    <div class="flex items-center gap-2">
-      <div class="items-center gap-2">
-
-        <div class="relative currency-rate">
-          <span class="absolute top-0 right-0 hidden currency-loading"><i class="fas fa-spinner fa-spin"></i></span>
-          <div class="currency-content">
-            <div data-active="0" onclick="currency_selected(this)"
-              class="flex items-center justify-center w-12 h-12 text-white transition-all duration-300 cursor-pointer currency-selected bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
-            </div>
-            <div class="absolute z-20 text-sm rounded shadow unvisible currency-list">
-              <ul class="flex flex-col gap-2 p-4 overflow-y-auto bg-specialcolor-1 max-h-72"></ul>
-            </div>
-          </div>
+                </ul>
+            </nav>
         </div>
-      </div>
-      <div
-        class="flex items-center justify-center w-12 h-12 py-1 mr-2 text-sm text-center text-white transition-all duration-300 cursor-pointer lg:w-full lg:pl-4 Login_Information bg-primary-900 lg:pr-7 lg:mr-0 rounded-b-xl rounded-tl-xl hover:bg-tertiary-950">
-        <basis core="call" file="authentication/modal" lid="2"></basis>
-      </div>
-    </div>
-    <div class="relative flex items-center gap-2">
-      <!-- header menu -->
-      <div
-        class="header-menu bg-white fixed z-30 translate-x-[1024px] lg:translate-x-0 lg:hidden inset-0 w-full transition-all duration-300 overflow-scroll">
-        <div class="">
-          <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
-            <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160" height="28"
-                loading="lazy" class="transition-transform duration-300 hover:scale-105" /></a>
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" class="cursor-pointer header-menu-close"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
-                fill="#A1A1AA" />
-            </svg>
-          </div>
+        <div class="flex items-center gap-2">
+            <div class="items-center gap-2">
+
+                <div class="relative currency-rate">
+                    <span class="absolute top-0 right-0 hidden currency-loading"><i
+                            class="fas fa-spinner fa-spin"></i></span>
+                    <div class="currency-content">
+                        <div data-active="0" onclick="currency_selected(this)"
+                            class="flex items-center justify-center w-12 h-12 text-white transition-all duration-300 cursor-pointer currency-selected bg-secondary-400 rounded-b-xl rounded-tl-xl hover:bg-secondary-900">
+                        </div>
+                        <div class="absolute z-20 text-sm rounded shadow unvisible currency-list">
+                            <ul class="flex flex-col gap-2 p-4 overflow-y-auto bg-specialcolor-1 max-h-72"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="flex items-center justify-center w-12 h-12 py-1 mr-2 text-sm text-center text-white transition-all duration-300 cursor-pointer lg:w-full lg:pl-4 Login_Information bg-primary-900 lg:pr-7 lg:mr-0 rounded-b-xl rounded-tl-xl hover:bg-tertiary-950">
+                <basis core="call" file="authentication/modal" lid="2"></basis>
+            </div>
         </div>
-        <div class="flex flex-col mt-6 pb-3 bg-white w-[90%] mx-auto">
-          <nav class="pt-2">
-            <ul class="flex flex-col gap-10 text-lg font-medium">
-              <li class="flex items-center hover:bg-primary-50">
-                <a href="/" class="w-full text-zinc-500">Home</a>
-              </li>
-              <li class="flex items-center hover:bg-primary-50">
-                <a href="/tours" class="text-zinc-500">Tours</a>
-              </li>
-              <basis core="tree" datamembername="destination.cat" idcol="catid" parentidcol="parentid"
-                nullvalue="218328">
-                <layout>
-                  <li class="">
-                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                      <a href="/destinations" class="w-full text-zinc-500">Destinations</a>
-                      <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
+        <div class="relative flex items-center gap-2">
+            <!-- header menu -->
+            <div
+                class="header-menu bg-white fixed z-30 translate-x-[1024px] lg:translate-x-0 lg:hidden inset-0 w-full transition-all duration-300 overflow-scroll">
+                <div class="">
+                    <div class="flex items-center justify-between py-3 mx-auto w-[90%]">
+                        <a href="/"><img src="[##cms.cms.cdn##]/images/logo-contact.png" alt="logo-header" width="160"
+                                height="28" loading="lazy"
+                                class="transition-transform duration-300 hover:scale-105" /></a>
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+                            class="cursor-pointer header-menu-close" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M24.8129 23.5001L29.7277 18.5853C30.0908 18.2222 30.0908 17.6354 29.7277 17.2723C29.3646 16.9092 28.7778 16.9092 28.4148 17.2723L23.5 22.1871L18.5852 17.2723C18.2222 16.9092 17.6354 16.9092 17.2723 17.2723C16.9092 17.6354 16.9092 18.2222 17.2723 18.5853L22.187 23.5001L17.2723 28.415C16.9092 28.778 16.9092 29.3649 17.2723 29.7279C17.4534 29.909 17.6911 30 17.9288 30C18.1665 30 18.4042 29.909 18.5852 29.7279L23.5 24.8132L28.4148 29.7279C28.5958 29.909 28.8335 30 29.0712 30C29.3089 30 29.5466 29.909 29.7277 29.7279C30.0908 29.3649 30.0908 28.778 29.7277 28.415L24.8129 23.5001Z"
+                                fill="#A1A1AA" />
+                        </svg>
                     </div>
-                    <!-- submenu -->
-                    <ul
-                      class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
-                      @child
-                    </ul>
-                    <!-- submenu end -->
-                  </li>
-                </layout>
+                </div>
+                <div class="flex flex-col mt-6 pb-3 bg-white w-[90%] mx-auto">
+                    <nav class="pt-2">
+                        <ul class="flex flex-col gap-10 text-lg font-medium">
+                            <li class="flex items-center hover:bg-primary-50">
+                                <a href="/" class="w-full text-zinc-500">Home</a>
+                            </li>
+                            <li class="flex items-center hover:bg-primary-50">
+                                <a href="/tours" class="text-zinc-500">Tours</a>
+                            </li>
+                            <basis core="tree" datamembername="destination.cat" idcol="catid" parentidcol="parentid"
+                                nullvalue="218328">
+                                <layout>
+                                    <li class="">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <span class="w-full text-zinc-500">Destinations</span>
+                                            <svg width="48" class="transition-all duration-300 dropdown-icon"
+                                                height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <!-- submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- submenu end -->
+                                    </li>
+                                </layout>
 
-                <face level="end" filter="link is null">
-                  <li class="py-4 px-4">
-                    <a href="/tour-list.bc?catid=@catid" class="w-full text-zinc-500">@title</a>
-                  </li>
-                </face>
+                                <face level="end" filter="link is null">
+                                    <li class="py-4 px-4">
+                                        <a href="/tour-list.bc?catid=@catid" class="w-full text-zinc-500">@title</a>
+                                    </li>
+                                </face>
 
-                <face level="end">
-                  <li class="py-4 px-4">
-                    <a href="@link" class="w-full text-zinc-500">@title</a>
-                  </li>
-                </face>
+                                <face level="end">
+                                    <li class="py-4 px-4">
+                                        <a href="@link" class="w-full text-zinc-500">@title</a>
+                                    </li>
+                                </face>
 
-                <face level="1" filter="link is null">
-                  <li class="px-2">
-                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                      <a href="/tour-list.bc?catid=@catid" class="w-full text-zinc-500">@title</a>
-                      <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <!-- nested submenu -->
-                    <ul
-                      class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
-                      @child
-                    </ul>
-                    <!-- nested submenu end -->
-                  </li>
-                </face>
+                                <face level="1" filter="link is null">
+                                    <li class="px-2">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <span class="w-full text-zinc-500">@title</span>
+                                            <svg width="48" class="transition-all duration-300 dropdown-icon"
+                                                height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <!-- nested submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- nested submenu end -->
+                                    </li>
+                                </face>
 
-                <face level="1">
-                  <li class="px-2">
-                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                      <a href="/@link" class="w-full text-zinc-500">@title</a>
-                      <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <!-- nested submenu -->
-                    <ul
-                      class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
-                      @child
-                    </ul>
-                    <!-- nested submenu end -->
-                  </li>
-                </face>
-
-
-                <face level="2" filter="link is null">
-                  <li class="px-4">
-                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                      <a href="/tour-list.bc?catid=@catid" class="w-full text-zinc-500">@title</a>
-                      <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <!-- nested submenu -->
-                    <ul
-                      class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
-                      @child
-                    </ul>
-                    <!-- nested submenu end -->
-                  </li>
-                </face>
-
-                <face level="2">
-                  <li class="px-4">
-                    <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
-                      <a href="/@link" class="w-full text-zinc-500">@title</a>
-                      <svg width="48" class="transition-all duration-300 dropdown-icon" height="48" viewBox="0 0 48 48"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
-                    </div>
-                    <!-- nested submenu -->
-                    <ul
-                      class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
-                      @child
-                    </ul>
-                    <!-- nested submenu end -->
-                  </li>
-                </face>
+                                <face level="1">
+                                    <li class="px-2">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <span class="w-full text-zinc-500">@title</span>
+                                            <svg width="48" class="transition-all duration-300 dropdown-icon"
+                                                height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <!-- nested submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- nested submenu end -->
+                                    </li>
+                                </face>
 
 
-              </basis>
-              <li class="flex items-center hover:bg-primary-50">
-                <a href="/contact-us" class="text-zinc-500">Contact us</a>
-              </li>
-              <!-- <li class="flex items-center hover:bg-primary-50">
+                                <face level="2" filter="link is null">
+                                    <li class="px-4">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <span class="w-full text-zinc-500">@title</span>
+                                            <svg width="48" class="transition-all duration-300 dropdown-icon"
+                                                height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <!-- nested submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- nested submenu end -->
+                                    </li>
+                                </face>
+
+                                <face level="2">
+                                    <li class="px-4">
+                                        <div class="flex items-center justify-between cursor-pointer toggle-dropdown">
+                                            <span class="w-full text-zinc-500">@title</span>
+                                            <svg width="48" class="transition-all duration-300 dropdown-icon"
+                                                height="48" viewBox="0 0 48 48" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M31 20.5L24 27.5L17 20.5" stroke="#000" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <!-- nested submenu -->
+                                        <ul
+                                            class="flex flex-col overflow-hidden transition-all duration-300 bg-white divide-y opacity-0 header-nested-menu submenu divide-primary-50 max-h-0">
+                                            @child
+                                        </ul>
+                                        <!-- nested submenu end -->
+                                    </li>
+                                </face>
+
+
+                            </basis>
+                            <li class="flex items-center hover:bg-primary-50">
+                                <a href="/contact-us" class="text-zinc-500">Contact us</a>
+                            </li>
+                            <!-- <li class="flex items-center hover:bg-primary-50">
                 <a href="/team" class="w-full text-zinc-500">Team</a>
               </li> -->
-              <li class="flex items-center hover:bg-primary-50">
-                <div class="after:content-messageHeart"></div>
-                <a href="/Blog" class="w-full text-zinc-500">Blog</a>
-              </li>
+                            <li class="flex items-center hover:bg-primary-50">
+                                <div class="after:content-messageHeart"></div>
+                                <a href="/Blog" class="w-full text-zinc-500">Blog</a>
+                            </li>
 
-            </ul>
-          </nav>
+                        </ul>
+                    </nav>
 
+                </div>
+            </div>
+            <!-- header menu end -->
+
+            <div
+                class="flex items-center justify-center w-12 h-12 bg-secondary-400 rounded-b-xl rounded-tl-xl lg:hidden">
+                <svg width="48" height="48" class="cursor-pointer bars3 shrink-0" viewBox="0 0 48 48" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 32H16C15.448 32 15 31.553 15 31C15 30.447 15.448 30 16 30H32C32.552 30 33 30.447 33 31C33 31.553 32.552 32 32 32Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 18H16C15.448 18 15 17.553 15 17C15 16.447 15.448 16 16 16H32C32.552 16 33 16.447 33 17C33 17.553 32.552 18 32 18Z"
+                        fill="#fff" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M32 25H16C15.448 25 15 24.553 15 24C15 23.447 15.448 23 16 23H32C32.552 23 33 23.447 33 24C33 24.553 32.552 25 32 25Z"
+                        fill="#fff" />
+                </svg>
+            </div>
         </div>
-      </div>
-      <!-- header menu end -->
-
-      <div class="flex items-center justify-center w-12 h-12 bg-secondary-400 rounded-b-xl rounded-tl-xl lg:hidden">
-        <svg width="48" height="48" class="cursor-pointer bars3 shrink-0" viewBox="0 0 48 48" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M32 32H16C15.448 32 15 31.553 15 31C15 30.447 15.448 30 16 30H32C32.552 30 33 30.447 33 31C33 31.553 32.552 32 32 32Z"
-            fill="#fff" />
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M32 18H16C15.448 18 15 17.553 15 17C15 16.447 15.448 16 16 16H32C32.552 16 33 16.447 33 17C33 17.553 32.552 18 32 18Z"
-            fill="#fff" />
-          <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M32 25H16C15.448 25 15 24.553 15 24C15 23.447 15.448 23 16 23H32C32.552 23 33 23.447 33 24C33 24.553 32.552 25 32 25Z"
-            fill="#fff" />
-        </svg>
-      </div>
     </div>
-  </div>
 </header>

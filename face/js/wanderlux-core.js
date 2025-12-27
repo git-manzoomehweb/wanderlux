@@ -415,8 +415,11 @@ function localStorage_setCurrency(currency_unit, currency_cost, floatdigit) {
     time: new Date().getTime(),
     expire: 1200000,
   }
-  localStorage.setItem('currencyObject', JSON.stringify(currencyObject))
-  localStorage_getCurrency()
+  localStorage.setItem("currencyObject", JSON.stringify(currencyObject));
+  localStorage_getCurrency();
+  if (window.location.pathname === '/flight/search') {
+    updatePricesWithCurrency();
+  }
 }
 
 function localStorage_getCurrency() {
